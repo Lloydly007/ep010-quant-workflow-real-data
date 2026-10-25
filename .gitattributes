@@ -1,0 +1,17 @@
+# 统一换行：代码用 LF，文本按平台
+* text=auto
+*.py   text eol=lf
+*.ps1  text eol=crlf
+*.cmd  text eol=crlf
+*.yaml text eol=lf
+*.yml  text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.csv  text eol=lf
+# 二进制
+*.png  binary
+*.xlsx binary
+*.pptx binary
+*.parquet binary
+# 语言统计不把生成的配置单算进去
+strategies/funnel/** linguist-vendored
