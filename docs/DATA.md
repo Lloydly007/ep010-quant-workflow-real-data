@@ -50,4 +50,4 @@ python tools\check_limit_impact.py       # 已成交记录受影响比例
 python tools\merge_shards.py --check     # 分片合并前的行数/股票数/封存泄漏闸
 ```
 
-历史数据清单见 `data/MANIFEST.json`；原项目清单见 `../EP010_zcode-quant-workflow/results/data_manifest.json`（仅作核对）。
+历史数据清单见 `data/MANIFEST.json`；原项目的数据清单见其归档 `results/data_manifest.json`（不在本仓）。

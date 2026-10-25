@@ -5,7 +5,7 @@ r"""P18 前置测量：单配置回测的热点分布（因子计算 / 组合模
 
 用法：
   python tools\prof_hotpath.py --strategies <yaml目录> --limit 6
-  python tools\prof_hotpath.py --root D:\...\ep010-research-v2 --strategies ...\strategies\A\round1
+  python tools\prof_hotpath.py --root <研究根目录> --strategies <配置目录>
 """
 
 from __future__ import annotations

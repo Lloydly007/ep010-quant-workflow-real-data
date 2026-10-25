@@ -1,6 +1,6 @@
 # EP010 复刻（真实数据版）
 
-在**真实 A 股行情**上复刻 [EP010_zcode-quant-workflow](../EP010_zcode-quant-workflow) 的量化研究工作流：
+在**真实 A 股行情**上复刻 EP010（ZCode 量化工作流，原项目用 Tushare Pro） 的量化研究工作流：
 agent 写策略假设 → 回测 → 八层漏斗 → 冻结名单 → 封存期一次性评估。
 
 > 原项目用 Tushare Pro（19 张表、3,501 只股票）。本仓没有 token，改用 **BaoStock + akshare 东财/新浪**，
