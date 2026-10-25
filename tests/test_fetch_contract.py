@@ -12,6 +12,13 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 
+# 本仓改用 BaoStock + akshare 管线，没有 tools/fetch_tushare.py。
+# 这条契约测试针对的是原项目的 Tushare 抓取脚本，缺失时整体跳过而不是报错。
+if not (ROOT / 'tools' / 'fetch_tushare.py').exists():
+    raise unittest.SkipTest(
+        '本仓无 tools/fetch_tushare.py（数据源为 BaoStock/akshare），跳过 Tushare 抓取契约测试'
+    )
+
 class FetchContract(unittest.TestCase):
     def setUp(self):
         output = ROOT / 'setup_checks'
