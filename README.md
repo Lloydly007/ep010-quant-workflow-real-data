@@ -89,4 +89,6 @@ python tools/verify_report.py             # 报告数字回源门
 
 ## 许可与致谢
 
-研究框架复刻自 EP010（ZCode 量化工作流）。行情数据版权归各供应商所有，本仓不分发原始行情。
+代码与文档以 **MIT License** 发布（见 [LICENSE](LICENSE)）。
+研究框架复刻自 EP010（ZCode 量化工作流，Copyright © 2026 frank-quant），引擎与手册的版权声明随附保留。
+行情数据版权归各供应商（BaoStock / 东方财富 / 新浪）所有，**本仓不分发原始行情**，只包含派生的行数、判定与绩效指标。
