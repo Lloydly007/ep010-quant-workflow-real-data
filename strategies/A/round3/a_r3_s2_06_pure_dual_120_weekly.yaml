@@ -1,0 +1,14 @@
+name: a_r3_s2_06_pure_dual_120_weekly
+type: score
+desc: 同权纯双低但换手窗口取半年，假设“被忽视”是慢变量：周度只换边际名次，靠冷门股的低波动压低实际换手成本。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: turn_ma_n
+  n: 120
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,13 @@
+name: b_r2_s5_12_pb_ts_attention_wake
+type: rule
+desc: 现象：第1轮 s3_03 的「干柴点火」(60 日均换手 <1% 的票当日换手破 2%)没有任何估值约束，买的可能只是贵的冷门股；s1_01/s3_01 又把「冷门」本身当超额来源，最终也只做到少亏。为什么在 A 股该有超额：120 日均换手低于 2% 说明这只票长期没有机构覆盖，某天换手翻上 2% 是研究与资金关注第一次回来；若它的自身 PB 分位同时在历史底部，关注度回补的方向大概率向上。怎么进出：当日换手 >2% 且 120 日均换手低于 2% 时买入，按自身 250 日 PB 分位升序取 10 只，5 日均换手破 8%(炒作化)或满 20 日离场，止损 8%、同行业最多 3 只。改了什么：第1轮把「冷门」或「点火」单独当信号，本份把两者降级为条件，主信号换成估值分位，避免买到贵的冷门。
+buy:
+- {op: turn, dir: above, threshold: 2}
+- {op: turn_ma_n, n: 120, dir: below, threshold: 2}
+sell:
+- {op: turn_ma_n, n: 5, dir: above, threshold: 8}
+rank: {op: ts_pct, n: 250, of: {op: pb}, order: asc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

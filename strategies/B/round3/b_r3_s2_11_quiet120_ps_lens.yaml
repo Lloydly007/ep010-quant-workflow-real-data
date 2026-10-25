@@ -1,0 +1,16 @@
+name: b_r3_s2_11_quiet120_ps_lens
+type: score
+desc: 选 PS 极低、PB 偏低、近 120 日换手低的股票，理由是营收倍数对毛利率差异不敏感，能穿透行业间会计差异找到真正便宜的生意。
+factors:
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.85
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

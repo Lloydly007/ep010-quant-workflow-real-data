@@ -1,0 +1,23 @@
+name: a_r5_s3_16_mom60_confirm
+type: score
+desc: "便宜加季度动量确认：ret_n 60 日 +0.35，pb -0.5、行业内分位 -0.5、size_ln -0.6，配 20 日换手 -0.35。假设折价需要一点价格证据才不是陷阱，动量腿在这里是软否决——便宜但最近三个月仍在破位的名字排不上去，超额来自折价开始被修复的那一段。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: ret_n
+  n: 60
+  weight: 0.35
+- op: turn_ma_n
+  n: 20
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

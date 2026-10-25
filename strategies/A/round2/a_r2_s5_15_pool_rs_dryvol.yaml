@@ -1,0 +1,14 @@
+name: a_r2_s5_15_pool_rs_dryvol
+type: rule
+desc: 现象：相对强度高但量能萎缩（5 日量比低于 0.8）的股票，说明浮筹被锁定、没有人在派发，这类“缩量强势”在第 1 轮的量能类假设里被完全排除（第 1 轮只买放量）。为什么在 A 股该有超额：拉升前的典型形态是缩量整理而不是放量突破，放量往往意味着有人借流动性出货，缩量反而说明筹码稳定；用横截面排名选人、用缩量确认位置、用放量作为退出，是与追涨完全相反的量价逻辑。怎么进出：300ETF 站上 250 日线、个股站上 60 日线且 5 日量比低于 0.8 者，按 60 日涨幅的全池截面分位降序取前 10；5 日量比放到 2 倍以上（派发）即离场，20 日上限、8% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮的突破与量能假设一律要求放量买入、缩量视为无效；本配置把量能方向反转，买入缩量、卖出放量。
+buy:
+- {op: etf_above_ma_n, n: 250, dir: above, threshold: 0.5}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: vol_ratio_n, n: 5, dir: below, threshold: 0.8}
+rank: {op: xsec_pct, of: {op: ret_n, n: 60}, order: desc}
+sell:
+- {op: vol_ratio_n, n: 5, dir: above, threshold: 2.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

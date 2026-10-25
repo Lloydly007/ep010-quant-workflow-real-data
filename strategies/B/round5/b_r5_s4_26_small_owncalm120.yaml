@@ -1,0 +1,12 @@
+name: b_r5_s4_26_small_owncalm120
+type: score
+desc: "小市值 0.3、PB 0.4，低波改用「120 日波动在自身 250 日历史中的分位」（0.3）：小盘股绝对波动天生偏高，用绝对阈值选会几乎选不出小盘，自身分位让「比自己过去安静」的小盘也能进来，是规模腿与自身基准低波的交叉格。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: size_ln, weight: -0.3}
+- {op: ts_pct, n: 250, of: {op: vol_n, n: 120}, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

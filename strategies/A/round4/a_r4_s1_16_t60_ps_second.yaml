@@ -1,0 +1,18 @@
+name: a_r4_s1_16_t60_ps_second
+type: score
+desc: "60 日换手 -0.50 配 ps_ttm -0.50：季窗清淡加收入端便宜，检验在 pb -0.5 之外再压 PS 会不会把组合推向毛利薄的重资产行业。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

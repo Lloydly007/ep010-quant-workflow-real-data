@@ -1,0 +1,18 @@
+name: b_r3_s1_01_triple_balanced
+type: score
+desc: 三面估值镜等权合成（PB 看资产底、PS 看营收底、PE 看盈利底）再叠加 20 日均换手低者优先，理由是单一估值口径在行业间不可比、三镜同时便宜才是真便宜，而低换手意味着没有拥挤筹码抢跑，超额来自冷门标的的三重折价修复而非单一口径的风格暴露。
+factors:
+- op: pb
+  weight: -0.34
+- op: ps_ttm
+  weight: -0.33
+- op: pe_ttm
+  weight: -0.33
+- op: turn_ma_n
+  n: 20
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

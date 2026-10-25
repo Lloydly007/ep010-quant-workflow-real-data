@@ -1,0 +1,16 @@
+name: a_r5_s1_34_ps_core_industry_cap3
+type: score
+desc: "与第 1 份基准相比只加 industry_cap 3：同行业最多持有 3 只，比 neut_industry 更硬地限制行业集中。低营收倍数的便宜货高度扎堆在商贸、建筑、传统制造，本份检验基准名单的超额里有多少来自行业成堆下注。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 3

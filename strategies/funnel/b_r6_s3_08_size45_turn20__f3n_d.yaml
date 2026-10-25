@@ -1,0 +1,19 @@
+name: b_r6_s3_08_size45_turn20__f3n_d
+type: score
+desc: 07 号的短窗对照：只把换手窗口压到 20 日，其余一字不动。假设重规模之后，二次排序里唯一还带时变信息的就是最近一个月的成交冷热，短窗把“刚被砸过、还没人回头”的名字提前；风险是短窗更容易被单日事件带偏，需要与
+  07、10 一起读。归一化权重：pb 15.0% / ps_ttm 15.0% / size_ln 45.0% / turn_ma_n(20) 25.0%。
+factors:
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -1.35
+- op: turn_ma_n
+  n: 10
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

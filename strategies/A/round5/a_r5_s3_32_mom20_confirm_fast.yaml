@@ -1,0 +1,23 @@
+name: a_r5_s3_32_mom20_confirm_fast
+type: score
+desc: "便宜加快确认动量：ret_n 20 日 +0.3，pb -0.5、行业内分位 -0.5、size_ln -0.6，配 250 日换手 -0.4。与 16、17 构成 20、60、250 三个确认窗口的阶梯，测最快的确认窗口是否更贴合周度调仓的节奏，慢确认是不是在周度下被稀释。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: ret_n
+  n: 20
+  weight: 0.3
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

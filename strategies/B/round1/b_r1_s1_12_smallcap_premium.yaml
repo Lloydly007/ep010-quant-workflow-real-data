@@ -1,0 +1,12 @@
+name: b_r1_s1_12_smallcap_premium
+type: rule
+desc: 流通市值最小的个股在换手低于1%、交易尚未过热时仍被流动性折价压制，小盘溢价因此在无人问津的静默期最显著，故按市值升序买入、换手冲上8%的拥挤期退出，行业最多3只避免小盘行业抱团
+buy:
+- {op: turn, dir: below, threshold: 1}
+sell:
+- {op: turn, dir: above, threshold: 8}
+rank: {op: size_ln, order: asc}
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 3

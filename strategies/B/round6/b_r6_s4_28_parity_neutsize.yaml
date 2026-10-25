@@ -1,0 +1,16 @@
+name: b_r6_s4_28_parity_neutsize
+type: score
+desc: 半半轴心 + 开启 neut_size（市值五档内做截面秩）：等于只在同等规模里比估值，直接回答「半半轴的收益是否来自小盘暴露」。与 01 只差这一个开关，是本组最干净的规模中性化对照；若 28 大幅跑输 01，说明本轴有相当一部分收益其实是规模暴露，冻结时须写明。归一化权重：pb 50.0% / ts_pct(pb,250) 50.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

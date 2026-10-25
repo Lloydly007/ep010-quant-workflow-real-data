@@ -1,0 +1,16 @@
+name: b_r6_s4_03_pb_half_ts60_half
+type: score
+desc: 季度分位（60 日）配一半绝对 PB：现有档位里最短的估值分位窗口，检验「压缩刚发生」是否比「长期低位」更有信息量。若 03 明显不如 01/02，说明估值分位需要长记忆，后续复合不应再把分位窗口压到 60。归一化权重：pb 50.0% / ts_pct(pb,60) 50.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 60
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,21 @@
+name: b_r5_s3_32_xsec_pb_ts250_neutsize
+type: score
+desc: "PB 截面分位 xsec_pct -0.5 + 一年自身分位 -0.8 + 半年换手 -0.6，并且唯一开启 neut_size: true：在市值五档内做截面秩，等于把估值比较限制在同等规模内；用来与其余 33 份（neut_size 全关）对照“规模中性化是否改变估值分位的选股名单”。"
+factors:
+- op: xsec_pct
+  of:
+    op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.8
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

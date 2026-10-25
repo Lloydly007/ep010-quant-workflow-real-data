@@ -1,0 +1,24 @@
+name: b_r1_s2_18_dual_scale_calm
+type: rule
+desc: 收益波动低不等于风险低，只有收益波动与回撤两个尺度同时收敛才是真实的低风险，这类股票因被误认为没有弹性而长期折价、低PS让安全垫更厚，故买双尺度最稳者中PS最低的10只，持有60日或60日溃疡指数恶化到8%以上离场，8%止损且同行业最多5只。
+buy:
+- op: vol_n
+  n: 20
+  dir: below
+  threshold: 2
+- op: ulcer_n
+  n: 60
+  dir: below
+  threshold: 3
+rank:
+  op: ps_ttm
+  order: asc
+sell:
+- op: ulcer_n
+  n: 60
+  dir: above
+  threshold: 8
+max_hold_days: 60
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

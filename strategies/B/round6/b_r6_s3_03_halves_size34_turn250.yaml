@@ -1,0 +1,18 @@
+name: b_r6_s3_03_halves_size34_turn250
+type: score
+desc: "01 号的长窗版：换手取 250 日（一整年），其余不动。假设关注度是慢变量，一年平均换手才剔得掉事件驱动的脉冲；代价是该窗口对上市不足一年的票为空值，实际可用截面会变薄。01 与 03 一起读，可以区分“慢变量更干净”与“慢变量太钝”。归一化权重：pb 20.0% / ps_ttm 20.0% / size_ln 34.0% / turn_ma_n(250) 26.0%。"
+factors:
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+- op: size_ln
+  weight: -0.85
+- op: turn_ma_n
+  n: 250
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

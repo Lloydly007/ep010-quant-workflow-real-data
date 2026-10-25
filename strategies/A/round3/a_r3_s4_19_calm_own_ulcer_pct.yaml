@@ -1,0 +1,20 @@
+name: a_r3_s4_19_calm_own_ulcer_pct
+type: score
+desc: 用 60 日溃疡指数在自身 250 日历史中的分位取最低，再要求季级换手不高；对自己而言这一年最平顺捕捉的是个体风险消退，低换手条件则排除本来就一潭死水的僵尸股。
+factors:
+- op: size_ln
+  weight: -1.6
+- op: ts_pct
+  n: 250
+  of:
+    op: ulcer_n
+    n: 60
+  weight: -0.9
+- op: turn_ma_n
+  n: 60
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

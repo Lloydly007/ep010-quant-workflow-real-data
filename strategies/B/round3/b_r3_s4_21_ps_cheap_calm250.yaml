@@ -1,0 +1,12 @@
+name: b_r3_s4_21_ps_cheap_calm250
+type: score
+desc: "估值以PS为主（0.45）、PB只留0.15，配250日低波0.4、月度调仓：重资产与金融门类的低PB是行业属性而非错价，营收口径不受资产轻重与折旧政策干扰，换口径后才更接近真实便宜。"
+factors:
+- {op: ps_ttm, weight: -0.45}
+- {op: pb, weight: -0.15}
+- {op: vol_n, n: 250, weight: -0.4}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

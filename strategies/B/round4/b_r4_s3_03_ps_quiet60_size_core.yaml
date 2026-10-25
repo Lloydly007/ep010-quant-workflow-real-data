@@ -1,0 +1,16 @@
+name: b_r4_s3_03_ps_quiet60_size_core
+type: score
+desc: "ps 口径的季度窗口档：换手 n=60，处在事件与结构之间，既滤掉单日放量噪声，又能在三个月内确认一只票是否重新被交易。假设营收便宜的定价错误多在财报与季报之间的空窗期被修复，60 日窗口正好覆盖两次披露之间，是 ps 口径最自然的信息节奏。"
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

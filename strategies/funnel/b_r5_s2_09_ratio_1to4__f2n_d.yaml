@@ -1,0 +1,18 @@
+name: b_r5_s2_09_ratio_1to4__f2n_d
+type: score
+desc: 比值 1:4 端点：pb -0.60 / size_ln -2.40，规模占归一化权重 64%。与第 3 轮 A 路的 1:4 点（size -2.00
+  / pb -0.50 / turn120）同轴，但估值腿更重、换手腿相对更轻：用于检验估值只剩 16% 时组合是否还能被行业中性救回来，并给整条灰度轴定上界。归一化权重：pb
+  16.0% / size_ln 64.0% / turn_ma_n(120) 20.0%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -2.4
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

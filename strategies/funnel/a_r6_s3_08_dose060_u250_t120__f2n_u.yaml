@@ -1,0 +1,20 @@
+name: a_r6_s3_08_dose060_u250_t120__f2n_u
+type: score
+desc: 剂量顶端：ulcer_n(250) -0.60 距 turn_ma_n(120) -0.75 只差一档，size/pb 维持 -1.00/-0.50。极端加码路径质量，用来看「防御腿主导」是否只是走到另一个极端——若明显弱于中段，说明存在最优区间。归一化权重：size_ln
+  35.1% / pb 17.5% / turn_ma_n(120) 26.3% / ulcer_n(250) 21.1%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

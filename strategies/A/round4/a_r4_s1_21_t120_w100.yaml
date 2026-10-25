@@ -1,0 +1,16 @@
+name: a_r4_s1_21_t120_w100
+type: score
+desc: "120 日换手压到 -1.00 与规模等量：半年窗加满的上界测试，若超额不升反降，说明长窗换手与规模高度共线，加权重只是在重复押小盘。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

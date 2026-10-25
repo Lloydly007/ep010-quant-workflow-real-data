@@ -1,0 +1,20 @@
+name: b_r5_s3_17_dual_turn_60_250
+type: score
+desc: "换手双窗换成季度 + 年度，配一年估值分位：季度窗比月度窗稳、比年度窗灵敏，用来测“关注度衰减的确认周期”到底该多长；估值腿略降权，避免与换手腿共线后过度集中到同一批沉默小盘。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.85
+- op: turn_ma_n
+  n: 60
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

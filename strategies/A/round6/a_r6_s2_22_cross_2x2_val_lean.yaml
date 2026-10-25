@@ -1,0 +1,27 @@
+name: a_r6_s2_22_cross_2x2_val_lean
+type: score
+desc: "2×2 里把票数压向估值侧：pb 双窗各 -0.45、换手双窗各 -0.30。假设平滑的收益在两条轴上不对称——估值分位需要两窗平均来对抗盈利季节性与一次性减值，而换手本身已经是 120/250 日的长窗均值（已经平滑过一次），再给两份票是重复平滑。若 22 优于 21，后续冻结应把换手压成单窗；若 22 走弱，说明换手的双窗不是重复，而是两个不同经济含义（状态 vs 结构）的组合。归一化权重：size_ln 40.0% / ts_pct(250, pb) 18.0% / ts_pct(120, pb) 18.0% / turn_ma_n(120) 12.0% / turn_ma_n(250) 12.0%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.45
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+- op: turn_ma_n
+  n: 250
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

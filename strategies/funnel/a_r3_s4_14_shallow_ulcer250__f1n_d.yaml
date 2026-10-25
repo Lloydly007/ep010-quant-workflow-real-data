@@ -1,0 +1,19 @@
+name: a_r3_s4_14_shallow_ulcer250__f1n_d
+type: score
+desc: 给年窗溃疡指数与最重的小市值权重配对，再用季窗低波做一次确认；一年内收益路径最平顺的小盘股同时吃规模溢价与低风险溢价，季窗低波则防止年窗被一次久远深坑或一次久远暴涨扭曲。
+factors:
+- op: size_ln
+  weight: -2.0
+- op: ulcer_n
+  n: 120
+  weight: -1.15
+- op: vol_n
+  n: 60
+  weight: -0.35
+- op: pb
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: a_r4_s4_10_turn250_mom20_annualquiet
+type: score
+desc: "换手 250 日 -0.75、动量 20 日 +0.75，size_ln -1.25：把年度最低换手当硬约束，再用月内强势从“一年被遗忘”的名字里挑出已经启动的少数。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

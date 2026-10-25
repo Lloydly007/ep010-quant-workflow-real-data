@@ -1,0 +1,20 @@
+name: a_r5_s2_17_own_vs_indrank_pair
+type: score
+desc: "把截面腿换成 ind_rank(pb) -0.4：行业内 PB 排名剔掉了行业估值中枢差异，再与自身时序分位并列，测'行业内的便宜 + 自身的便宜'是否比全池截面更干净。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.4
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

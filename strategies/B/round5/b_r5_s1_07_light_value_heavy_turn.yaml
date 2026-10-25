@@ -1,0 +1,18 @@
+name: b_r5_s1_07_light_value_heavy_turn
+type: score
+desc: 1:1:1 等权但估值总权压到 0.30（单口径 -0.10），换手权重 1.00。假设真正的信息在低换手（少人关注），估值只是给已经没人看的名字再排一次序；这条与 09 号构成“谁该主导”的对照。
+factors:
+- op: pb
+  weight: -0.1
+- op: ps_ttm
+  weight: -0.1
+- op: pe_ttm
+  weight: -0.1
+- op: turn_ma_n
+  n: 120
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

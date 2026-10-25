@@ -1,0 +1,14 @@
+name: b_r3_s2_18_quiet250_weekly
+type: score
+desc: 选低 PB、近 250 日换手低的股票并按周调仓，理由是把年度换手当慢变量、用周度调仓做估值层面的微调，避免慢信号被拖成半年才修一次。
+factors:
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.85
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: b_r5_s3_01_pb_ts250_turn250_core
+type: score
+desc: "轴心假设：个股 PB 落在自身一年（250 日）分位低位、且 250 日均换手同处低位，说明悲观预期已把估值压到自身历史谷底、关注度也同步枯竭；两个零件都按自身历史而非截面绝对水平衡量，权重等量给负，周度只滚动替换重新抬估值或重新活跃的名字。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

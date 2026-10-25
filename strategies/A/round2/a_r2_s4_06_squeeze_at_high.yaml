@@ -1,0 +1,14 @@
+name: a_r2_s4_06_squeeze_at_high
+type: rule
+desc: 现象：距120日高点3%以内、但20日收益波动率低于2%的"高位窄幅"形态，后续上涨概率高于同位置的高波动股票（全池 vol20 中位2.34%，低于2%约占38%）。为什么A股该有超额：A股情绪加速后往往先横盘消化，横盘中波动收缩说明买卖双方在窄区间达成一致、上方套牢盘已被消化；这类形态的止损距离天然很小，止损被随机波动扫掉的概率低，盈亏比结构显著优于宽幅震荡中的突破；而宽幅新高的票一旦回落就是破位。进出：买入需距120日高点不足3%、20日收益波动率低于2%、收盘价高于60日均线，按20日波动率升序取前10；持有20日、止损8%，跌离120日高点超过8%即卖出。相对第1轮失败模式的改动：第1轮的突破条件要求放量，等于在波动扩张、情绪加速之后买入（买在高点）；本轮把"波动收缩"当成核心条件，与放量加速逻辑方向相反。
+buy:
+- {op: dist_high_n, n: 120, dir: above, threshold: -3}
+- {op: vol_n, n: 20, dir: below, threshold: 2}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: vol_n, n: 20, order: asc}
+sell:
+- {op: dist_high_n, n: 120, dir: below, threshold: -8}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

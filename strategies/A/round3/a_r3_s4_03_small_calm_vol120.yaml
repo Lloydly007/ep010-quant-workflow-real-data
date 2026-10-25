@@ -1,0 +1,16 @@
+name: a_r3_s4_03_small_calm_vol120
+type: score
+desc: 选半年尺度波动最低的小盘低 PB 股；120 日窗口刻画的是一整个基本面节奏内的风险，月度换手让低波信号有足够时间兑现，也压低噪声交易的摩擦成本。
+factors:
+- op: size_ln
+  weight: -1.7
+- op: vol_n
+  n: 120
+  weight: -0.9
+- op: pb
+  weight: -0.35
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

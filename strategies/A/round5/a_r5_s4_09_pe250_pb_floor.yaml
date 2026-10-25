@@ -1,0 +1,18 @@
+name: a_r5_s4_09_pe250_pb_floor
+type: score
+desc: "给 PE 负权垫一层账面价值地板：pb -0.40，size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。亏损股在 pe 截面秩里排最低、会被负权直接奖励；叠加低 PB 要求后，只有“利润与净资产都便宜”的才进名单，这是对价值陷阱最直接的对冲。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

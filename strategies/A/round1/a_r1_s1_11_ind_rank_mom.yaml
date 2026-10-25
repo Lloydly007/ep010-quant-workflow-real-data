@@ -1,0 +1,12 @@
+name: a_r1_s1_11_ind_rank_mom
+type: rule
+desc: 30只池同涨同跌明显，用同一证监会门类内的20日动量分位排序可剔除行业beta，挑出行业内真正的领涨者（相对强度而非绝对强度），其延续性不依赖行业整体行情｜行业上限3只强化分散，跌破20日线离场，20日上限、10%止损。
+buy:
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+rank: {op: ind_rank, of: {op: ret_n, n: 20}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 10%
+max_positions: 10
+industry_cap: 3

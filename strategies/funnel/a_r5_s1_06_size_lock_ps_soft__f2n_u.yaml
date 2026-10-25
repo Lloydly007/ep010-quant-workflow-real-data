@@ -1,0 +1,17 @@
+name: a_r5_s1_06_size_lock_ps_soft__f2n_u
+type: score
+desc: 锁死规模（size −1.80）而把 ps 压到软倾斜（−0.60）：在小市值已经是绝对主导的前提下，再问营收估值还剩多少增量信息——如果它与第 1 份名单几乎一样，则第
+  1 份的超额应归因于规模而非估值口径。这是估值轴的归因探针。
+factors:
+- op: size_ln
+  weight: -1.8
+- op: ps_ttm
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

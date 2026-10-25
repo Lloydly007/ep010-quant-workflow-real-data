@@ -1,0 +1,16 @@
+name: a_r5_s1_02_ps_size_parity
+type: score
+desc: "把 ps_ttm 权重抬到与 size_ln 平价（各 −1.00）：如果营收便宜真有独立信息，它应撑得住与规模同等的下注强度；若名单迅速退化成一堆微盘壳股，则说明 ps 只是把 size 的暴露再放大一遍。与第 1 份只差 ps 一个权重，读数可直接对比。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -1.00
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

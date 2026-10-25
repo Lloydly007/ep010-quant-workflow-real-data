@@ -1,0 +1,18 @@
+name: b_r3_s1_24_above_ma20_confirm
+type: score
+desc: 三镜低估叠加收盘价相对 20 日均线位置越高越优先，在便宜的股票里只买价格已经站上短均线的，用价格结构确认卖压耗尽，超额来自便宜且趋势已转的样本远比只有便宜的样本可靠。
+factors:
+- op: pb
+  weight: -0.35
+- op: ps_ttm
+  weight: -0.35
+- op: pe_ttm
+  weight: -0.30
+- op: close_over_ma_n
+  n: 20
+  weight: 0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

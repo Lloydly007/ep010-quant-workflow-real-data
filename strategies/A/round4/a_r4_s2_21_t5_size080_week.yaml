@@ -1,0 +1,14 @@
+name: a_r4_s2_21_t5_size080_week
+type: score
+desc: "换手窗口压到 5 日、规模 -0.80（占 51.6%），测一周交易热度而非长期冷门：短窗口捕捉的是刚被市场遗忘的名字，规模倾斜取最低档做基线。"
+factors:
+- op: size_ln
+  weight: -0.8
+- op: turn_ma_n
+  n: 5
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

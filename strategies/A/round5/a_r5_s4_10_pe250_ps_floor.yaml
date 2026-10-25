@@ -1,0 +1,18 @@
+name: a_r5_s4_10_pe250_ps_floor
+type: score
+desc: "给 PE 负权垫收入端地板：ps_ttm -0.45（PS 全为正，没有负值噪声），配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。周期股盈利高点时 PE 很低但收入并不便宜，PS 腿专门压住这类“假便宜”，并可与 PE 互相证伪。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.75
+- op: ps_ttm
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

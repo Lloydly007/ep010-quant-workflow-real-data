@@ -1,0 +1,24 @@
+name: b_r6_s2_06_ratio_path1_vol2__f2n_d
+type: score
+desc: 05 的镜像：总预算不变，2/3 给波动率（vol_n(250) −0.30）、1/3 给路径（ulcer_n(250) −0.15）。假设是「波动率才是可外推的风险度量，回撤只是它的一个已实现切片，给太多权重等于对历史路径过拟合」。若
+  06 与 05 同档、都接近 01，说明两条腿在 250 日上可近似线性互换，比值是自由参数；若一端明显掉档，替代关系就是有方向的，不能随便对半。归一化权重：pb
+  20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 5.0% / vol_n(250) 10.0%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.15
+- op: vol_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

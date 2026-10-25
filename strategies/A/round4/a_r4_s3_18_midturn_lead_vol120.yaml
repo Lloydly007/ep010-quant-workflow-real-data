@@ -1,0 +1,15 @@
+name: a_r4_s3_18_midturn_lead_vol120
+type: score
+desc: "中窗换手主导 -1.2 对双倍长窗波动 -0.45（2.7:1）：假设近季度的冷清信息量最大，而“稳”需要半年才能确认，所以两腿窗口错开、权重也错开。"
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -1.2
+- op: vol_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

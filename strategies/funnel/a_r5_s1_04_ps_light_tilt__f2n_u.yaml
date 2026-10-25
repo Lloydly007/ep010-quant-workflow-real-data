@@ -1,0 +1,17 @@
+name: a_r5_s1_04_ps_light_tilt__f2n_u
+type: score
+desc: ps 只作轻倾斜（−0.25，size 的 1/4）：核心是检验「营收便宜」会不会只是小市值的影子因子——权重缩小后若名单与纯 size 版高度重合，说明
+  PS 在 1,545 只池里的边际信息很薄。这是本组最保守的营收口径配置。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.25
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

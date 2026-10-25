@@ -1,0 +1,19 @@
+name: a_r6_s4_21_t120_ulcer120_pb_agg
+type: score
+desc: "半年回撤路径（ulcer 120）配 pb −0.4：短窗回撤对最近半年的下跌更敏感，容易和「跌多了该反弹」纠缠不清。激进档的 size −2.5 会放大小盘自身的回撤噪音，温和档则把判断权更多交给回撤与 pb。本对用来分辨 ulcer 腿在极端与温和规模下是不是同一个信号（对比 19/20 的 250 日版本）。本份为第 11 对的激进档：size_ln −2.50、turn_ma_n(120) −1.00。按 |w| 归一：size_ln 57.5% / turn_ma_n(120) 23.0% / ulcer_n(120) 10.3% / pb 9.2%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。"
+factors:
+- op: size_ln
+  weight: -2.50
+- op: turn_ma_n
+  n: 120
+  weight: -1.00
+- op: ulcer_n
+  n: 120
+  weight: -0.45
+- op: pb
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

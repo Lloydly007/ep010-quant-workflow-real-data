@@ -1,0 +1,14 @@
+name: b_r4_s1_09_pb_first_leads
+type: score
+desc: 估值首次反超且两轴同时抬高：pb -0.90 / turn_ma_n(120) -0.75（1.20:1，PB 55%），假设价值端需要足够权重才能压过低换手隐含的成长股排除效应，PB 提到 0.90 档可让深度折价标的进入前 30，同时保留 0.75 的拥挤度过滤。
+factors:
+- op: pb
+  weight: -0.90
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r5_s4_06_pe250_pe_light
+type: score
+desc: "PE 最小剂量：pe_ttm 只给 -0.25，size_ln -1.00、turn_ma_n(250) -0.75。等价于把 PE 当成“排掉极端贵”的弱护栏而不是选股主线；若本份与 01 持平，说明盈利口径的边际信息很少，容量主要来自规模与清淡。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.25
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

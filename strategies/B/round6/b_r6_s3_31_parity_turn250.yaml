@@ -1,0 +1,18 @@
+name: b_r6_s3_31_parity_turn250
+type: score
+desc: "29 号的长窗版：四腿平价不变，换手取一年平均。假设平价结构对慢变量最友好——四条腿里三条是结构量（pb、ps、size 都是当日截面水平），把第四条也换成慢变量可以让整个组合的换手率与信号周期一致；这一档同时用来检查 29/30/31 的窗口响应方向。归一化权重：四条腿各 25.0%（turn_ma_n 取 250 日）。"
+factors:
+- op: pb
+  weight: -0.65
+- op: ps_ttm
+  weight: -0.65
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

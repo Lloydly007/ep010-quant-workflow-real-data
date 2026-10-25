@@ -1,0 +1,28 @@
+name: b_r6_s2_26_ulcer_ind_rank__f4n_d
+type: score
+desc: 路径腿换成行业内排名（ind_rank 套 ulcer_n(250) −0.225）：只在同一行业内比较挖坑深度，波动腿仍是截面绝对 vol_n(250)。本份与
+  01 的差别有两层：ulcer 先做行业内名次、随后又被 neut_industry 的截面组内秩揉一次——等于把行业当双重基准。若 26 与 01 同档，说明
+  ulcer 的行业差异在被中性化后已经不重要；若明显更差，说明这个双重基准把 ulcer 的绝对水平信息压掉了，路径腿不宜再做一次行业内排序。归一化权重：pb
+  20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ind_rank(ulcer_n(250)) 7.5% / vol_n(250)
+  7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ind_rank
+  of:
+    op: ulcer_n
+    n: 250
+  weight: -0.225
+- op: vol_n
+  n: 120
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,20 @@
+name: a_r6_s1_19_mass09_ratio_2to1__f3n_u
+type: score
+desc: 2:1 配轻估值块（0.90）：营收腿主导但总量小，用来分离「主导」与「总量」两个概念。若 19 接近 12（2:1、总量 1.00）而远离其余轻估值档，说明起作用的是比例；若它向
+  Block 1 的中段塌陷，说明总量才是主因，比例刻度只是表象。归一化权重：size_ln 37.7% / turn_ma_n(120) 28.3% / ps_ttm
+  22.6% / pb 11.3%（ps:pb=0.60:0.30=2.00:1，总 |w|=2.65，估值块 34.0%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.6
+- op: pb
+  weight: -0.3
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

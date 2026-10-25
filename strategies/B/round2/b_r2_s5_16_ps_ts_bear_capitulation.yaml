@@ -1,0 +1,13 @@
+name: b_r2_s5_16_ps_ts_bear_capitulation
+type: rule
+desc: 现象：第1轮所有配置在 2018、2022 的下跌里都在无条件买便宜，越买越亏；但指数跌破年线之后的恐慌段恰恰是估值分位压缩到极端的时点，第1轮没有一份配置把熊市当成建仓条件(这是显式反向假设)。为什么在 A 股该有超额：沪深300 跌破 120 日均线时风险偏好已在低位，此时「当日换手 <1% 的无量便宜股」是没有卖盘的极限折价，赔率最高；等指数重回年线、修复兑现再离场，正好把熊市末段的估值压缩变成收益。怎么进出：指数在 120 日均线下方且当日换手 <1% 时买入，按自身 250 日 PS 分位升序取 10 只，指数重回 120 日均线上方(修复周期结束)或满 40 日离场，止损 10%、同行业最多 5 只。改了什么：与第 8 份的正向开关互为对照——本份刻意取 below 0.5 的补集，检验第1轮「无条件买便宜」到底该不该在熊市里保留。
+buy:
+- {op: etf_above_ma_n, n: 120, dir: below, threshold: 0.5}
+- {op: turn, dir: below, threshold: 1}
+sell:
+- {op: etf_above_ma_n, n: 120, dir: above, threshold: 0.5}
+rank: {op: ts_pct, n: 250, of: {op: ps_ttm}, order: asc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

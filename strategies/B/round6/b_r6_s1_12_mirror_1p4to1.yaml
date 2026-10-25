@@ -1,0 +1,19 @@
+name: b_r6_s1_12_mirror_1p4to1
+type: score
+desc: "镜像 1.4:1（250 日 -0.525 / 120 日 -0.375）：长窗 25.6% 越过估值腿，短窗降到 18.3%。假设长窗更像“风格暴露”（低换手行业如公用事业、银行天然换手低，行业中性化只能压掉一部分），短窗更像“事件暴露”；若长窗加码后组合的行业分散度变差，说明这部分权重实际上在买行业而不是买个股，行业中性化挡不住窗口内部的相关性。这一档是长窗首次成为第二大权重的读点。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 18.3% / turn_ma_n(250) 25.6%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.375
+- op: turn_ma_n
+  n: 250
+  weight: -0.525
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

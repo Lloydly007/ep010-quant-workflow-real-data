@@ -1,0 +1,19 @@
+name: b_r6_s1_10_split_3to1
+type: score
+desc: "梯度上界：比值 3:1（120 日 -0.675 / 250 日 -0.225），短窗 32.9% 成为第一权重，长窗 11.0% 已接近“装饰性锚”。这是“近半年冷清单独定价”的极端形态，也是整条轴的风险端：120 日窗口的容量与稳定性都比 250 日差，若极端档仍与 2:1 持平，说明分割在 3 倍处已饱和、没有任何理由再往上走；若极端档显著变差，则给出“短窗过拟合”的直接证据，反向支持母本 1:1 的稳健性。两头都构成可用结论，因此必须跑满。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 32.9% / turn_ma_n(250) 11.0%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.675
+- op: turn_ma_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

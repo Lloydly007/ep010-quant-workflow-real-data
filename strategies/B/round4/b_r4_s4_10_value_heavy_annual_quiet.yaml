@@ -1,0 +1,16 @@
+name: b_r4_s4_10_value_heavy_annual_quiet
+type: score
+desc: "把两条价值腿同时放大到 0.75（pe_ttm +0.75 / pb −0.75），换手拉到 120 日、只给 −0.75，等于让估值对冲与慢换手同权。假设是：换手窗口越长，估值信号的信噪比越高，因此不需要靠加大换手权重来提升质量；与 b_r4_s4_06 相比唯一变化是价值腿从 0.6 提到 0.75，用来分离‘权重’和‘窗口’各自的贡献。"
+factors:
+- op: pe_ttm
+  weight: 0.75
+- op: pb
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

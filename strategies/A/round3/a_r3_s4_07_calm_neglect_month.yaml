@@ -1,0 +1,17 @@
+name: a_r3_s4_07_calm_neglect_month
+type: score
+desc: 选月级换手低、季窗波动低的小盘股；换手率是本池唯一 100% 非空的关注度真值，低换手叠加低波等于没人讨论也没人抢筹，被忽视的定价错误修得更慢也更确定。
+factors:
+- op: size_ln
+  weight: -1.3
+- op: vol_n
+  n: 60
+  weight: -0.6
+- op: turn_ma_n
+  n: 20
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r4_s2_09_turn60_pblight_sizeweak
+type: score
+desc: 换手窗口取一季（60 日）、pb -0.40、规模 -0.30：季度平均换手能抹掉单月的事件性放量，更接近真实交易习惯；假设季度冷清本身即含信息，故压低规模项让 60 日窗口独立说话。
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

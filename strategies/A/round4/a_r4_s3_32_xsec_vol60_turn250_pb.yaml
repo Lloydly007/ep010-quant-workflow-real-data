@@ -1,0 +1,19 @@
+name: a_r4_s3_32_xsec_vol60_turn250_pb
+type: score
+desc: "把“稳”放在第一位：vol(60) 的截面分位 -0.85 主导，年度换手 -0.65 作次级，低 PB -0.3 作第三腿；检验波动主导时安静腿是否仍提供增量。"
+factors:
+- op: xsec_pct
+  of:
+    op: vol_n
+    n: 60
+  weight: -0.85
+- op: turn_ma_n
+  n: 250
+  weight: -0.65
+- op: pb
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,21 @@
+name: a_r6_s1_07_ratio_1to1p15_pb_lean__f3n_u
+type: score
+desc: 在均分两侧各取最小可感偏移的第一格（ps 47% / pb 53%，实际 1:1.13）：本轮最想标定的刻度就在 parity 附近，3 个百分点就是「资产略重」的最小一格。假设母本
+  1:1 的分数面是平的，这点再分配不会改变前 30 只的健康度，但会改变尾部的边际换手——这正是终轮冻结前需要确认的「平不平」。归一化权重：size_ln 36.4%
+  / turn_ma_n(120) 27.3% / pb 19.3% / ps_ttm 17.1%（ps:pb=0.47:0.53=1:1.13，总 |w|=2.75，估值块
+  36.4%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.47
+- op: pb
+  weight: -0.53
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

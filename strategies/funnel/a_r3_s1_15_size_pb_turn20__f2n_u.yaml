@@ -1,0 +1,16 @@
+name: a_r3_s1_15_size_pb_turn20__f2n_u
+type: score
+desc: 小市值叠低PB与20日低换手，选便宜的冷门小盘，低PB提供安全边际，低换手保证折价还没被套利资金消掉，小市值提供弹性，是原项目007骨架的加重版。
+factors:
+- op: size_ln
+  weight: -1.65
+- op: pb
+  weight: -0.35
+- op: turn_ma_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

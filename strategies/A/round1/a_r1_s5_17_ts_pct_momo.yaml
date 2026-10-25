@@ -1,0 +1,12 @@
+name: a_r1_s5_17_ts_pct_momo
+type: rule
+desc: 20日涨幅超5%的个股里优先选自身20日动量在过去120日中时序分位最高者，动量处于自身历史高位说明当前是上涨加速段而非尾声，故按自身时序分位排序买入、动量直接转负（20日跌超5%）就离场而不等均线破位
+buy:
+- {op: ret_n, n: 20, dir: above, threshold: 5}
+sell:
+- {op: ret_n, n: 20, dir: below, threshold: -5}
+rank: {op: ts_pct, n: 120, of: {op: ret_n, n: 20}, order: desc}
+max_hold_days: 10
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

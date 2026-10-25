@@ -1,0 +1,26 @@
+name: b_r2_s3_04_ind_discount_gate
+type: rule
+desc: 现象：绝对PB最低的10只在1545只池里长期由银行、地产、钢铁包揽，这是行业属性造成的结构性折价，均值回归极慢——round1的绝对低PB配置（s3_14）9年超额-2.1%、自回撤-53%。为什么该有超额：只有同门类内更便宜才是同类资产的定价错误、才会被资金修复；跨行业比PB比的是行业属性而不是定价错误。怎么进出：300ETF站上120日线才建仓，取vol_n(60)<2的股票、按所属门类内PB分位升序取10只、同门类最多3只；20日均换手升破5%（折价被拥挤资金修复完）即卖，持有40日，8%止损。相对第1轮：把"便宜"从绝对PB改成行业相对PB，并首次叠加中期趋势闸。
+buy:
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 2
+- op: etf_above_ma_n
+  n: 120
+  dir: above
+  threshold: 0.5
+rank:
+  op: ind_rank
+  of:
+    op: pb
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 40
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

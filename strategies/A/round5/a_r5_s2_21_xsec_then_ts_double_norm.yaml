@@ -1,0 +1,18 @@
+name: a_r5_s2_21_xsec_then_ts_double_norm
+type: score
+desc: "两层包装：先算当日截面 PB 分位，再取该分位过去 250 日的时序分位并给 -0.5，含义是'我今天的相对便宜程度比自己过去两年更极端'，顺带消掉全市场估值中枢漂移。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: xsec_pct
+    of:
+      op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

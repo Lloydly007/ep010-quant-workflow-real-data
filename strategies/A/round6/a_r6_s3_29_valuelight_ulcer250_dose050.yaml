@@ -1,0 +1,19 @@
+name: a_r6_s3_29_valuelight_ulcer250_dose050
+type: score
+desc: "pb 压到 -0.30（size -1.00、turn_ma_n(120) -0.60、ulcer_n(250) -0.50）：把估值腿让位给回撤腿，问「抗跌能否替代便宜」——若本份不弱于 07，说明估值腿在低频打分里并非必需。归一化权重：size_ln 41.7% / pb 12.5% / turn_ma_n(120) 25.0% / ulcer_n(250) 20.8%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pb
+  weight: -0.30
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+- op: ulcer_n
+  n: 250
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

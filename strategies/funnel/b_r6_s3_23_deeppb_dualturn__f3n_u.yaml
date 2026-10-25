@@ -1,0 +1,23 @@
+name: b_r6_s3_23_deeppb_dualturn__f3n_u
+type: score
+desc: 19 号的双窗版：18% 的换手权重拆成 120 日 -0.25 与 250 日 -0.20，其余不动。假设深价值里换手的角色是排除性而非选择性，两条窗各
+  8%~10% 的轻权已经够用——真正的排序权仍在 pb 上，双窗只是把“放量下跌”与“长期无人问津”两类噪声一起压住。归一化权重：pb 34.0% / ps_ttm
+  18.0% / size_ln 30.0% / turn_ma_n(120) 10.0% + turn_ma_n(250) 8.0%。
+factors:
+- op: pb
+  weight: -0.85
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.25
+- op: turn_ma_n
+  n: 250
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

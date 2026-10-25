@@ -1,0 +1,17 @@
+name: a_r3_s4_06_calm_quiet_week
+type: score
+desc: 在 60 日低波的小盘股里再要求最近一周换手也低；周级换手能识别出安静只是因为停牌或事件前真空的假安静，规避这类标的，只保留真正无人交易的冷门小盘。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: vol_n
+  n: 60
+  weight: -0.55
+- op: turn_ma_n
+  n: 5
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

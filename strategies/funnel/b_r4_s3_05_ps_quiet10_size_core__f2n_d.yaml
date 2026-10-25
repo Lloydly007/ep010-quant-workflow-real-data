@@ -1,0 +1,16 @@
+name: b_r4_s3_05_ps_quiet10_size_core__f2n_d
+type: score
+desc: ps 口径的双周窗口档：换手 n=10，是 ps 臂里最短的一档。假设营收倍数低估的修复滞后很短，两周热度已经足以区分被遗忘与被重新发现；这是 ps 臂对窗口轴最敏感的一端，用来界定窗口继续缩短时信号是衰减还是反转。
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 5
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

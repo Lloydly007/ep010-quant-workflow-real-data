@@ -1,0 +1,13 @@
+name: b_r1_s1_03_turn_sweet_spot
+type: rule
+desc: 换手率与后续收益呈倒U型，2%~5%的温和换手区流动性充足却尚未被投机资金挤占、价格发现效率最高，故只在该区间买入并按PS升序挑便宜者，换手冲上10%视为拥挤派发即离场
+buy:
+- {op: turn, dir: above, threshold: 2}
+- {op: turn, dir: below, threshold: 5}
+sell:
+- {op: turn, dir: above, threshold: 10}
+rank: {op: ps_ttm, order: asc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

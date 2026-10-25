@@ -1,0 +1,17 @@
+name: b_r5_s2_14_short_turn_1to4__f2n_u
+type: score
+desc: 20 日窗口上的 1:4（pb -0.60 / size_ln -2.40）：短窗口轴上最偏小盘的一格，与 09 只差换手窗口。若 14 与 09 差距明显，说明端点处的结论主要由换手窗口决定，而不是比值大小，端点的可用性判断必须按窗口分别下。归一化权重：pb
+  16.0% / size_ln 64.0% / turn_ma_n(20) 20.0%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -2.4
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

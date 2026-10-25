@@ -1,0 +1,23 @@
+name: a_r6_s4_14_dual_turn_ps_mild__f2n_d
+type: score
+desc: 换手拆成两个尺度各半（120 + 250），把第 4 轮那条双窗入围思路搬到本组的规模/换手轴：激进档总换手权重 −1.0 摊到两个窗口，温和档只有 −0.3。问的是双窗平均能否让「激进」不再依赖单一窗口的极端读数，以及温和化之后双窗是否仍然优于单窗（对比
+  01/02 的 120 日单窗与 05/06 的 250 日单窗）。本份为第 7 对的温和档：size_ln −0.80、turn_ma_n(120) −0.15
+  + turn_ma_n(250) −0.15（合计 −0.30）。按 |w| 归一：size_ln 53.3% / turn_ma_n(120) 10.0% /
+  turn_ma_n(250) 10.0% / ps_ttm 26.7%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓
+  30、每周首个交易日调仓、按行业内秩中性化。
+factors:
+- op: size_ln
+  weight: -0.8
+- op: turn_ma_n
+  n: 120
+  weight: -0.15
+- op: turn_ma_n
+  n: 120
+  weight: -0.15
+- op: ps_ttm
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

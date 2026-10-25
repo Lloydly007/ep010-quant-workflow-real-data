@@ -1,0 +1,19 @@
+name: a_r5_s2_32_own_pb_trend_confirm
+type: score
+desc: "唯一正权腿：close_over_ma_n(250) +0.25，要求价格在年线上方。估值便宜且趋势未破才当错价，趋势破位更可能是基本面问题，这是对价值陷阱的正向过滤，用来给前 31 份做反证。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: close_over_ma_n
+  n: 250
+  weight: 0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

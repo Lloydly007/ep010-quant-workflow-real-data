@@ -1,0 +1,22 @@
+name: b_r2_s3_20_dual_low_ulcer_cap
+type: score
+desc: 现象：用波动率度量"跌不动"会漏掉"平时很平静、但一年里急跌过两次"的股票，而这类恰恰是低波筛选的主要污染源。为什么该有超额：溃疡指数是路径指标，直接刻画持有体验，A股真正被资金长期拿住的便宜股都有一年回撤不深的记录；叠加行业内低PB与小市值倾斜，得到便宜加抗跌加有弹性的组合，并用行业上限3把单一门类赌注压到最低。怎么进出：120日溃疡行业内秩负权0.4、PB行业内秩负权0.4、流通市值截面分位负权0.2，行业上限3，月度调仓持30只。相对第1轮：打分配置从未用过溃疡这类路径指标，这是全组最防守的一份，用来检验防守本身能不能过L3的超额回撤腿。
+factors:
+- op: ind_rank
+  of:
+    op: ulcer_n
+    n: 120
+  weight: -0.4
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.4
+- op: xsec_pct
+  of:
+    op: size_ln
+  weight: -0.2
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: false
+neut_size: false
+industry_cap: 3

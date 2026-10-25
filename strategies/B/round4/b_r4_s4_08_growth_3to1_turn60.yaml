@@ -1,0 +1,16 @@
+name: b_r4_s4_08_growth_3to1_turn60
+type: score
+desc: "权重比轴：成长腿对价值腿 3:1（pe_ttm +0.90 / pb −0.30），换手固定在 60 日、−0.75。高 PE 成长在这个组合里主导排序，PB 只起‘不要买资产端离谱贵的票’的护栏作用，组合实质偏向高估值叙事股。与 1:1 中枢（b_r4_s4_05）对比，可读出成长暴露被放大三倍后超额与波动的方向性变化。"
+factors:
+- op: pe_ttm
+  weight: 0.9
+- op: pb
+  weight: -0.3
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

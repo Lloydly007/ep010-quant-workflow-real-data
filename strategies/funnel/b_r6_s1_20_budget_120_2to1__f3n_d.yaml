@@ -1,0 +1,22 @@
+name: b_r6_s1_20_budget_120_2to1__f3n_d
+type: score
+desc: 预算轴中档：分割 2:1，换手总预算抬到 1.20（120 日 -0.80 / 250 日 -0.40），换手在归一化里占 51.0%，超过 pb 与
+  size_ln 之和。假说：换手是 B 路里唯一高频、且与“被忽视程度”直接相关的零件，若它单独就能撑起超额，那么抬预算应继续改善；但权重过高会把组合推向极端冷门，与低
+  PB、小市值形成三重叠加，名单集中于“小而冷且便宜”的尾部，行业中性化只能部分对冲。这一档就是检查“换手主导”是否在某个预算点开始反噬。归一化权重：pb 21.3%
+  / size_ln 27.7% / turn_ma_n(120) 34.0% / turn_ma_n(250) 17.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.8
+- op: turn_ma_n
+  n: 120
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

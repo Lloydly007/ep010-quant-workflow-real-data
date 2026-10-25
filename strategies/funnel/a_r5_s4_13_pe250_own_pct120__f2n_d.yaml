@@ -1,0 +1,20 @@
+name: a_r5_s4_13_pe250_own_pct120__f2n_d
+type: score
+desc: 自身历史分位缩到 120 日（半年）：ts_pct(pe_ttm, n=120) -0.75，配 size_ln -1.00、turn_ma_n(250)
+  -0.75。分位窗口越短越贴近“近期杀估值”；若 120 日明显强于 250 日，说明低估值溢价来自近端情绪而不是长期中枢下移。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 120
+  of:
+    op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

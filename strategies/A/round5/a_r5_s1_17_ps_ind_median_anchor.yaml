@@ -1,0 +1,18 @@
+name: a_r5_s1_17_ps_ind_median_anchor
+type: score
+desc: "ps 原值（−0.40）叠加行业 ps 中位数锚（ind_median_ps −0.40）：既买绝对营收便宜，也买「所处行业整体便宜」。假设行业级营收估值中枢本身有均值回归，行业锚提供的是独立于个股的 beta 型便宜，而不是把个股 ps 再排名一遍。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.40
+- op: ind_median_ps
+  weight: -0.40
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

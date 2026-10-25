@@ -1,0 +1,12 @@
+name: b_r5_s4_34_dual_vol_measure60
+type: score
+desc: "60 日收盘波动 0.3 与 60 日 ATR 振幅 0.3 两种口径同时低、PB 0.4：收盘价波动可能被少数大单稀释，日内真实振幅低才说明没有资金在抢跑。两条都低时「跌不动」的证据最完整，也是本组唯一同时使用收益波动与日内振幅的构造。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 60, weight: -0.3}
+- {op: atr_close_n, n: 60, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

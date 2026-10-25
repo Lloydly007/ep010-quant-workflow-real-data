@@ -1,0 +1,21 @@
+name: b_r3_s1_10_own_ps_trough
+type: score
+desc: 自身 PS 的 120 日时序分位处于低位者优先，营收估值比利润更稳定，半年窗口既不过度平滑也不会错过拐点，PB 与 PE 作旁证、60 日低波过滤营收仍在恶化的样本，超额来自销售端估值折价的自发修复。
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: ps_ttm
+  weight: -0.40
+- op: pb
+  weight: -0.30
+- op: pe_ttm
+  weight: -0.15
+- op: vol_n
+  n: 60
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

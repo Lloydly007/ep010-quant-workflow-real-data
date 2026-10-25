@@ -1,0 +1,17 @@
+name: a_r3_s4_08_calm_neglect_quarter__f2n_d
+type: score
+desc: 把换手窗口拉长到 120 日并与季窗低波配对，选近期与中期都无人问津的小盘股；季级换手刻画的是中期筹码沉淀，比短期清淡更接近真冷门，注意力溢价通常按季度而非按周计量。
+factors:
+- op: size_ln
+  weight: -1.35
+- op: vol_n
+  n: 120
+  weight: -0.65
+- op: turn_ma_n
+  n: 60
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

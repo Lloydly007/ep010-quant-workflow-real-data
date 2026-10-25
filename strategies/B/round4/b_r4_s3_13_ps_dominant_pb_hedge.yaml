@@ -1,0 +1,18 @@
+name: b_r4_s3_13_ps_dominant_pb_hedge
+type: score
+desc: "ps 主导、pb 只做轻对冲：ps −0.60 / pb −0.25 / size −0.50 / turn 120 −0.75。假设营收口径是小盘上更有效的低估读数，账面口径的唯一价值是拦掉少数'营收便宜但资产已经烂掉'的名字，所以只给 −0.25 的否决权。若本份优于 11（等权），说明 ps 才是主信号、pb 是尾部风险过滤器。"
+factors:
+- op: ps_ttm
+  weight: -0.6
+- op: pb
+  weight: -0.25
+- op: size_ln
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,24 @@
+name: b_r6_s2_04_half_ulcer_vol_20__f2n_d
+type: score
+desc: 最短窗口：20 日路径 vs 20 日波动，几乎等同于「最近一个月是否剧烈波动」，是本组共线的极端格。它的作用不是争名次，而是给出「两腿完全同义」时名单会长什么样：若
+  04 与 01 的名单差异居然不小，说明即便在最短窗上 ulcer 仍在惩罚 vol 看不见的下行偏斜；若几乎相同，则路径质量与波动率在短窗上可互换，替代关系只可能在长窗上才成立。归一化权重：pb
+  20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(20) 7.5% / vol_n(20) 7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 20
+  weight: -0.225
+- op: vol_n
+  n: 20
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

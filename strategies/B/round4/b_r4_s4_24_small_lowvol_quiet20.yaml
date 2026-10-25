@@ -1,0 +1,21 @@
+name: b_r4_s4_24_small_lowvol_quiet20
+type: score
+desc: "五腿：pe_ttm +0.60 / pb −0.60 / size_ln −0.35 / vol_n(60) −0.50 / turn_ma_n(20) −0.50。低波腿与低换手腿在个股层面相关但不同源（一个看价格波动、一个看成交活跃），组合把三条防御腿叠在小市值 + 成长-价值对冲之上，检验‘多防御腿叠加是否线性增益’还是仅仅重复暴露。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -0.35
+- op: vol_n
+  n: 60
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

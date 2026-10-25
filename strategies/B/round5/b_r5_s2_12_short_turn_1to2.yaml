@@ -1,0 +1,16 @@
+name: b_r5_s2_12_short_turn_1to2
+type: score
+desc: "20 日窗口上的 1:2（pb -0.60 / size_ln -1.20）：与 05、17 构成同比值、三窗口的三点组，是判断“窗口长度 versus 比值”哪个维度更重要的关键格。短窗口下名单滚动更快、交易成本更高，若此格明显弱于 05，说明周度调仓里短窗口换手信号的噪声成本高于信息量。归一化权重：pb 23.5% / size_ln 47.1% / turn_ma_n(20) 29.4%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

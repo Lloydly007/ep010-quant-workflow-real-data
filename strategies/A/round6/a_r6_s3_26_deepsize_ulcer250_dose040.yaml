@@ -1,0 +1,19 @@
+name: a_r6_s3_26_deepsize_ulcer250_dose040
+type: score
+desc: "把小市值腿压到 -1.25（pb 降到 -0.30、turn_ma_n(250) -0.60、ulcer_n(250) -0.40）：在保持回撤中剂量的同时把组合推回强小市值风格，检验路径质量腿能否为深度小市值提供必要的风险补偿。归一化权重：size_ln 49.0% / pb 11.8% / turn_ma_n(250) 23.5% / ulcer_n(250) 15.7%。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: pb
+  weight: -0.30
+- op: turn_ma_n
+  n: 250
+  weight: -0.60
+- op: ulcer_n
+  n: 250
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

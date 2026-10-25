@@ -1,0 +1,20 @@
+name: b_r1_s4_20_nested_val_pct
+type: rule
+desc: 长期窄幅（60日ATR低于3%）的票没有投机资金博弈、价格主要由估值中枢决定，而绝对PB会被行业中枢带偏、时序PB分位会被个股自身中枢带偏，对自身PB分位再做一次截面分位可同时剥离两个中枢，剩下的才是被双重错价的票→买入这类标的，持有40日、亏10%离场，同行业最多5只。
+buy:
+- op: atr_close_n
+  n: 60
+  dir: below
+  threshold: 3.0
+rank:
+  op: xsec_pct
+  of:
+    op: ts_pct
+    n: 250
+    of:
+      op: pb
+  order: asc
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

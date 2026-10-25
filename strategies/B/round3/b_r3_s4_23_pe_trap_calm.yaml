@@ -1,0 +1,12 @@
+name: b_r3_s4_23_pe_trap_calm
+type: score
+desc: "试探性放入PE（权重仅0.2）、PB0.3、60日低波0.5，周度调仓：负PE的亏损股会落到最便宜端被负权加满，是已知失真，此份用于检验高权重的低波约束能否抵消亏损股污染，能过门槛就说明估值腿可以再放宽。"
+factors:
+- {op: pe_ttm, weight: -0.2}
+- {op: pb, weight: -0.3}
+- {op: vol_n, n: 60, weight: -0.5}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

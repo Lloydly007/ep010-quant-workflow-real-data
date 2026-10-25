@@ -1,0 +1,18 @@
+name: b_r5_s1_01_triple_equal_turn120__f3n_u
+type: score
+desc: 三估值口径等权 1:1:1（pb/ps_ttm/pe_ttm 各 -0.40），配 120 日平均换手负权。假设每个会计口径都带自身噪声——资产口径漏掉轻资产与商誉、收入口径漏掉成本结构、盈利口径带负值污染，等权叠加让三种噪声互相抵消；半年换手再把高换手的题材股剔掉。这是本轮估值轴的对照锚，后面所有配比都跟它比。
+factors:
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.4
+- op: pe_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

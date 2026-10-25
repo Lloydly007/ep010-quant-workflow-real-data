@@ -1,0 +1,12 @@
+name: b_r1_s1_09_low_ulcer_defensive
+type: rule
+desc: 60日溃疡指数低于3%的股票回撤浅且修复快，路径平滑意味着筹码承接稳定，这种防御属性在震荡市里提供超额，故买入回撤最浅者、20日溃疡升破8%判定抗跌失效离场，行业最多3只迫使持仓跨行业分散
+buy:
+- {op: ulcer_n, n: 60, dir: below, threshold: 3}
+sell:
+- {op: ulcer_n, n: 20, dir: above, threshold: 8}
+rank: {op: ulcer_n, n: 60, order: asc}
+max_hold_days: 60
+stop_loss: null
+max_positions: 10
+industry_cap: 3

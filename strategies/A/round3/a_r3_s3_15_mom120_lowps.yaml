@@ -1,0 +1,16 @@
+name: a_r3_s3_15_mom120_lowps
+type: score
+desc: 120日动量正权配PS负权：收入端便宜的小盘，其半年动量更可能来自订单与收入扩张而非资金炒作，PS全正且无PE负值陷阱，适合做估值门。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ret_n
+  n: 120
+  weight: 1.0
+- op: ps_ttm
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

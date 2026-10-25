@@ -1,0 +1,24 @@
+name: b_r3_s1_13_triple_xsec_rank
+type: score
+desc: 三个估值镜全部先做当日截面分位再等权合成，PB、PS、PE 的量纲与分布差异被完全消除、极端值不再主导打分，同时做市值分档中性剥离规模倾斜，本份检验的是纯净的估值排序在无小市值暴露时是否仍有超额。
+factors:
+- op: xsec_pct
+  of:
+    op: pb
+  weight: -0.40
+- op: xsec_pct
+  of:
+    op: ps_ttm
+  weight: -0.35
+- op: xsec_pct
+  of:
+    op: pe_ttm
+  weight: -0.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

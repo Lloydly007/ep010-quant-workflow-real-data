@@ -1,0 +1,14 @@
+name: a_r2_s5_12_pool_rs_laggard
+type: rule
+desc: 现象：市场整体上行（300ETF 站上 60 日线）时，20 日跌幅超 5% 但仍在年线上方的股票，多半是资金暂时离开而非逻辑破坏；普涨行情里全池相对强度普遍虚高，追最强的反而接在拥挤端。为什么在 A 股该有超额：牛市里的资金轮动有明确的补涨路径，落后股在大盘向上时存在向池内均值回归的压力，而年线之上的约束保证它不是趋势性下跌；这是对第 1 轮普涨期追强的镜像修正。怎么进出：300ETF 站上 60 日线、个股站上 250 日线且 20 日跌幅超 5% 者，按 20 日涨幅的全池截面分位升序取最落后的 10 只；跌破 250 日线（长期趋势破坏）才离场，补涨窗口以 20 日上限计，8% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮 A 路的相对强度假设全部指向买最强；本配置在普涨状态里反向买相对最弱但长期趋势未破的股票，用市场状态区分赔率来源。
+buy:
+- {op: etf_above_ma_n, n: 60, dir: above, threshold: 0.5}
+- {op: close_over_ma_n, n: 250, dir: above, threshold: 1.0}
+- {op: ret_n, n: 20, dir: below, threshold: -5}
+rank: {op: xsec_pct, of: {op: ret_n, n: 20}, order: asc}
+sell:
+- {op: close_over_ma_n, n: 250, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

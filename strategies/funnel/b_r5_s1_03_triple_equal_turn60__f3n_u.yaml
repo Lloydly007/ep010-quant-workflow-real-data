@@ -1,0 +1,19 @@
+name: b_r5_s1_03_triple_equal_turn60__f3n_u
+type: score
+desc: 同 1:1:1 等权，换手取 60 日（季度）、载体权重 -0.55。20 日太噪、250 日太钝，季度换手是“一个季度的关注度”的自然刻度，权重居中；与
+  02、04 号构成窗口三档，用来判断注意力假设对窗口是否单调敏感（三档的载体权重随窗口长度递增，是本节的定价规则而非事后调参）。
+factors:
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.4
+- op: pe_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,22 @@
+name: b_r6_s2_32_ind_cap5
+type: score
+desc: "对半结构不变，加 industry_cap: 5（同一门类最多持有 5 只，只是持仓数量约束，不做行业中性化）。防御腿容易把名单往低波行业（公用事业、银行、交运）挤，这一份检验「配比结论」会不会被行业集中度伪装：若 32 与 01 同档，说明行业拥挤不是问题；若 32 更好，说明 01 的低波名单确实过度集中在少数门类，终轮应在结构里加行业数量约束而不是继续调防御配比。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 7.5% / vol_n(250) 7.5%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 5

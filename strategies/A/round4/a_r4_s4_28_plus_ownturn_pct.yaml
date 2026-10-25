@@ -1,0 +1,23 @@
+name: a_r4_s4_28_plus_ownturn_pct
+type: score
+desc: "换手双口径：turn_ma_n(60) -0.50 叠加 ts_pct 以 250 日窗包 turn_ma_n(120) 的 -0.55，配 ret_n(20) +0.75、size_ln -1.25：检验被忽视是横截面现象还是自身历史现象。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.5
+- op: ret_n
+  n: 20
+  weight: 0.75
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

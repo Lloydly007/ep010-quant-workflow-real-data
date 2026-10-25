@@ -1,0 +1,19 @@
+name: b_r5_s1_17_pb1_ps2_pe1__f3n_u
+type: score
+desc: 配比 pb:ps:pe = 1:2:1（-0.30/-0.60/-0.30）：ps 主导。假设收入端的便宜更接近“生意被低估”，尤其在盈利被一次性项目压低、pb
+  被历史成本资产拖住的年份；ps 全正，没有 pe 的负值问题。
+factors:
+- op: pb
+  weight: -0.3
+- op: ps_ttm
+  weight: -0.6
+- op: pe_ttm
+  weight: -0.3
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

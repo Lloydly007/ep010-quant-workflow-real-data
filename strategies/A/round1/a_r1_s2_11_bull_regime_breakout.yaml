@@ -1,0 +1,25 @@
+name: a_r1_s2_11_bull_regime_breakout
+type: rule
+desc: 只在300ETF站上60日线的强势环境里买入创60日新高的股票，因为突破信号的假突破率在系统性下跌期极高、只有市场β向上时才有正期望；按120日动量取前10，跌破20日线或20日期满离场，-8%止损、行业最多5只。
+buy:
+- op: etf_above_ma_n
+  n: 60
+  dir: above
+  threshold: 0.5
+- op: break_high_n
+  n: 60
+  dir: above
+  threshold: 0.5
+rank:
+  op: ret_n
+  n: 120
+  order: desc
+sell:
+- op: close_over_ma_n
+  n: 20
+  dir: below
+  threshold: 1.0
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

@@ -1,0 +1,13 @@
+name: a_r1_s4_06_deepdd_strong
+type: rule
+desc: 距60日高点回撤超15%的深跌股，若当日收盘落回日内区间上半区（0.8以上），说明恐慌抛售被承接盘接走，超卖修复往往从这根强势阳线开始——故买深跌后的首根强势收盘，次日日内结构转弱（0.5以下）即判定承接消失离场，5日为限、8%止损。
+buy:
+  - {op: dist_high_n, n: 60, dir: below, threshold: -15}
+  - {op: close_pos_range, dir: above, threshold: 0.8}
+sell:
+  - {op: close_pos_range, dir: below, threshold: 0.5}
+rank: {op: ret_n, n: 3, order: desc}
+max_hold_days: 5
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

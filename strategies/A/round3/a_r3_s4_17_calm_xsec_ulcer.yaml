@@ -1,0 +1,18 @@
+name: a_r3_s4_17_calm_xsec_ulcer
+type: score
+desc: 用溃疡指数的截面分位标准化后再取低值，配小市值与低 PB，月度调仓；分位口径把回撤深度随年份整体放大或收窄的量纲漂移消掉，让同一个权重在不同市场环境下含义一致。
+factors:
+- op: size_ln
+  weight: -1.55
+- op: xsec_pct
+  of:
+    op: ulcer_n
+    n: 60
+  weight: -0.8
+- op: pb
+  weight: -0.3
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r3_s2_20_quiet250_smallcap__f2n_d
+type: score
+desc: 选小市值、近 250 日换手低、PB 不高的股票并按周调仓，理由是小市值溢价需要长期冷清作质量约束，否则容易买进已被市场彻底抛弃的壳资源。
+factors:
+- op: size_ln
+  weight: -0.95
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

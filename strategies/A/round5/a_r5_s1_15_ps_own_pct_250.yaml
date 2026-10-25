@@ -1,0 +1,19 @@
+name: a_r5_s1_15_ps_own_pct_250
+type: score
+desc: "自身分位窗口拉到 250 日（年度）：要求营收倍数在一年维度处于自身低位，容忍估值中枢的缓慢漂移，筛的是被长期遗忘而不是当天被错杀的名字。与第 14 份只差分位窗口，直接读窗口长度对名单稳定性的影响。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: ps_ttm
+  weight: -0.70
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

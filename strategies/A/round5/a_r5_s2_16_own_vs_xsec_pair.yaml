@@ -1,0 +1,20 @@
+name: a_r5_s2_16_own_vs_xsec_pair
+type: score
+desc: "ts_pct(pb,250) 与 xsec_pct(pb) 各 -0.4 并列：一个问'比我自己的历史便宜吗'，一个问'比同一天的其他股票便宜吗'，两腿同权让两种便宜口径互相验证，若同源则应退化成一个。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.4
+- op: xsec_pct
+  of:
+    op: pb
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

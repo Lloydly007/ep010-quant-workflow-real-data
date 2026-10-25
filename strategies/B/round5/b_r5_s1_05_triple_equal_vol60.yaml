@@ -1,0 +1,18 @@
+name: b_r5_s1_05_triple_equal_vol60
+type: score
+desc: 同 1:1:1 等权，把换手换成 60 日波动率负权（-0.60）。假设便宜股真正的风险不是“没人交易”而是“价格不稳”：低波筛掉正在爆雷或题材化的标的，让估值折价对应真实现金流而不是崩塌中的价格。
+factors:
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.4
+- op: pe_ttm
+  weight: -0.4
+- op: vol_n
+  n: 60
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

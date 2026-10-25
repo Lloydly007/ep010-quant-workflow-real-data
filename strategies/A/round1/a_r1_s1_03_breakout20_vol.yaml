@@ -1,0 +1,14 @@
+name: a_r1_s1_03_breakout20_vol
+type: rule
+desc: 突破20日高点且5日量比放大到1.5倍以上、当日收在振幅上沿，说明突破由真实增量资金推动而非尾盘偷袭，上方套牢盘已被消化，趋势启动的持续性更强｜按量比降序取资金最活跃者，跌破10日线或满10日离场，8%止损应对假突破。
+buy:
+- {op: break_high_n, n: 20, dir: above, threshold: 0.5}
+- {op: vol_ratio_n, n: 5, dir: above, threshold: 1.5}
+- {op: close_pos_range, dir: above, threshold: 0.8}
+rank: {op: vol_ratio_n, n: 5, order: desc}
+sell:
+- {op: close_over_ma_n, n: 10, dir: below, threshold: 1.0}
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

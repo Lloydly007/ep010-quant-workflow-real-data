@@ -1,0 +1,16 @@
+name: a_r5_s4_33_pe250_size_muted
+type: score
+desc: "规模几乎关掉：size_ln 只留 -0.30（仅作防全是大票的微调），pe_ttm -0.75、turn_ma_n(250) -0.75。若本份仍明显跑赢等权基准，说明超额真正来自低估值低换手而不是小盘 beta；这是本轮对“规模依赖”最直接的否证实验。"
+factors:
+- op: size_ln
+  weight: -0.30
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

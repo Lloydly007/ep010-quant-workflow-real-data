@@ -1,0 +1,16 @@
+name: a_r3_s3_07_indrel_mom60
+type: score
+desc: 用行业内60日动量分位替代全池动量：跨行业比动量会把整段周期股排前，行业内相对强势才反映个股自身资金流，故规模负权配行业内动量正权。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ind_rank
+  of:
+    op: ret_n
+    n: 60
+  weight: 1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

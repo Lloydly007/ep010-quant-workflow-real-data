@@ -1,0 +1,19 @@
+name: a_r3_s4_10_calm_cold_vs_steady__f2n_d
+type: score
+desc: 把长得冷（250 日低换手）与走得稳（20 日低波）拆成两个独立权重，再轻配低 PB；如果冷门与低波是两个不同收益源，分开加权应比混成一个合成因子更有效。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.95
+- op: size_ln
+  weight: -1.2
+- op: vol_n
+  n: 10
+  weight: -0.4
+- op: pb
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

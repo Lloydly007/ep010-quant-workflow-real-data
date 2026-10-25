@@ -1,0 +1,17 @@
+name: a_r3_s3_18_mom60_turnhot
+type: score
+desc: 上面低换手假设的反向对照：60日动量正权配20日均换手正权，检验被资金关注的强势小盘是继续走强（拥挤即确认）还是见顶，同一动量核上换符号验证。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ret_n
+  n: 60
+  weight: 0.75
+- op: turn_ma_n
+  n: 20
+  weight: 0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

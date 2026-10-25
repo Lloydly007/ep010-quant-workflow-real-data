@@ -1,0 +1,20 @@
+name: b_r1_s3_13_largecap_defense
+type: rule
+desc: 60日真实振幅低于3%叠加流通市值最大，是典型的防御性资产，风险偏好下行时避险需求会集中涌入这类标的、其"低振幅+大市值"的属性被反复定价；在低振幅集合内按流通市值降序取最大的10只、持有40日，60日波动升破5%（防御属性消失）离场，止损5%（低波股跌5%已是异常）。
+buy:
+- op: atr_close_n
+  n: 60
+  dir: below
+  threshold: 3.0
+rank:
+  op: size_ln
+  order: desc
+sell:
+- op: vol_n
+  n: 60
+  dir: above
+  threshold: 5.0
+max_hold_days: 40
+stop_loss: 5
+max_positions: 10
+industry_cap: 3

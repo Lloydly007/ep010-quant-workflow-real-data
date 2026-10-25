@@ -1,0 +1,21 @@
+name: a_r6_s2_06_turn120_250_light_legs__f2n_d
+type: score
+desc: 双窗换手腿整体放轻（各 -0.30，两腿合计不到三成票数），规模与估值加重到 -1.10 / -0.55。这是本组的「换手暴露剥离」对照：若双窗平滑的价值只是换手因子本身的暴露，把双窗票数砍到
+  01 的六成后年化应同步走弱；若年化保留大半甚至更好，说明两窗平均带来的排序稳定性（更少的窗口末端偶然）本身有价值，而不是靠加大清淡度押注换来的。归一化权重：size_ln
+  48.9% / ps_ttm 24.4% / turn_ma_n(120) 13.3% / turn_ma_n(250) 13.3%。
+factors:
+- op: size_ln
+  weight: -1.1
+- op: ps_ttm
+  weight: -0.55
+- op: turn_ma_n
+  n: 60
+  weight: -0.3
+- op: turn_ma_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

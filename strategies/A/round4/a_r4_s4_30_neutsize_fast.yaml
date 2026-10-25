@@ -1,0 +1,17 @@
+name: a_r4_s4_30_neutsize_fast
+type: score
+desc: "短窗格（turn_ma_n(60) -0.75、ret_n(20) +0.75、size_ln -1.25）同样打开 neut_size：在同等市值档内比较月内动量与季度换手，检验短周期动量是否只是规模的替身。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

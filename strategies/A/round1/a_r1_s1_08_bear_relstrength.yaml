@@ -1,0 +1,14 @@
+name: a_r1_s1_08_bear_relstrength
+type: rule
+desc: 300ETF跌到250日线下方（系统性风险主导）时仍能贴近自身52周高点、同时站稳60日线的个股，是被资金主动增持的稀缺资产，弱市抗跌且反弹弹性更大（反向假设：弱市只做相对强度、不抄指数底）｜跌破120日线或满40日离场，8%止损。
+buy:
+- {op: etf_above_ma_n, n: 250, dir: below, threshold: 0.5}
+- {op: dist_high_n, n: 250, dir: above, threshold: -8.0}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: dist_high_n, n: 250, order: desc}
+sell:
+- {op: close_over_ma_n, n: 120, dir: below, threshold: 1.0}
+max_hold_days: 40
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

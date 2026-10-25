@@ -1,0 +1,18 @@
+name: b_r4_s4_23_largecap_value_quiet120
+type: score
+desc: "小市值腿反向：size_ln 给 +0.40（偏大市值），pb −0.90 主导、pe_ttm +0.50 作成长/亏损筛，换手 120 日 −0.75。大市值 + 低 PB + 低换手是典型的‘稳健价值’画像，与 b_r4_s4_22 的大方向相反；本份用来确认第 3 轮的小市值倾斜是不是团队成绩的主要来源，还是说去掉它混合形态仍站得住。"
+factors:
+- op: pe_ttm
+  weight: 0.5
+- op: pb
+  weight: -0.9
+- op: size_ln
+  weight: 0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

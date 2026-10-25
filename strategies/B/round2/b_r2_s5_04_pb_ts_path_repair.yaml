@@ -1,0 +1,13 @@
+name: b_r2_s5_04_pb_ts_path_repair
+type: rule
+desc: 现象：第1轮 s2_06/s5_20 把「回撤浅」当成质量代理，买的是没跌过的票，本质仍是低估值加低波，依旧跑不赢等权全池；真正有修复空间的是跌过、且已经不再创新低的票。为什么在 A 股该有超额：120 日溃疡 >8% 说明估值被系统性打压、筹码深度换手，近月回撤收敛到 2% 以下说明下跌路径走完、抛压出清，此时进场赔率高于「还没跌」的防御股。怎么进出：120 日溃疡 >8% 且 20 日溃疡 <2% 时买入，按自身 250 日 PB 分位升序取 10 只，20 日溃疡重新破 10%(修复中断)或满 40 日离场，止损 10%、同行业最多 5 只。改了什么：把第1轮的「浅回撤等质量」反过来用成「深回撤已修复等赔率」，并叠加估值分位约束，避免买入跌不停的价值陷阱。
+buy:
+- {op: ulcer_n, n: 120, dir: above, threshold: 8}
+- {op: ulcer_n, n: 20, dir: below, threshold: 2}
+sell:
+- {op: ulcer_n, n: 20, dir: above, threshold: 10}
+rank: {op: ts_pct, n: 250, of: {op: pb}, order: asc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

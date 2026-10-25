@@ -1,0 +1,16 @@
+name: b_r4_s4_07_pg_turn250_equal
+type: score
+desc: "换手窗口轴最长端（250 日 / 一年）：年度平均换手是全轴最慢的流动性读数，等价于‘过去一年这只票被交易了多少’，几乎不受任何单次事件影响，名单只在年度层面换血。低换手在年度尺度上是价值-成长的共同底座。本份是窗口轴的另一极，与 3 日档一起界定‘快慢’对收益的全部影响区间。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,24 @@
+name: a_r5_s3_29_xseclayer_dominant
+type: score
+desc: "把预算重点放到全市场截面分位：xsec_pct(pb) -0.45 为主，绝对 pb -0.5、行业内分位只 -0.3，size_ln -0.6、120 日换手 -0.4，neut_industry 仍开。这是第三条参照系，测在全池里便宜与在本行业里便宜哪个更能解释 A 股折价修复；三处都留着但明显偏向截面口径，中性化保持开启以便与前几份直接比较。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: xsec_pct
+  of:
+    op: pb
+  weight: -0.45
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.3
+- op: turn_ma_n
+  n: 120
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

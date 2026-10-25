@@ -1,0 +1,19 @@
+name: b_r4_s3_14_pb_dominant_ps_hedge__f3n_u
+type: score
+desc: 把 13 的主次反过来：pb −0.60 主导、ps −0.20 只做轻对冲，规模与换手完全不动。这是本组的口径裁决份——若 14 与 13 超额接近，说明两种口径在小盘上高度同源，ps
+  的'优势'只是权重摆法的产物；若 14 明显落后，才支持营收口径优先。反向主次也让'权重不对称'这个自由度不被单边利用。
+factors:
+- op: pb
+  weight: -0.6
+- op: ps_ttm
+  weight: -0.2
+- op: size_ln
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

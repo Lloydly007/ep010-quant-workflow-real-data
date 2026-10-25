@@ -1,0 +1,19 @@
+name: b_r3_s3_17_trend_gate_size_lean
+type: score
+desc: "在便宜小盘底盘上给 250 日均线上方正权，做估值加趋势确认的混合：低估值给赔率，站上长期均线说明基本面预期已在价格上转正，趋势腿专门过滤仍处下跌通道的价值陷阱，周度调仓跟随均线状态切换。"
+factors:
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: close_over_ma_n
+  n: 250
+  weight: 0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

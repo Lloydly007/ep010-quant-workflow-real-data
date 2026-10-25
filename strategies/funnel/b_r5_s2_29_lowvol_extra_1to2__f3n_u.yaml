@@ -1,0 +1,21 @@
+name: b_r5_s2_29_lowvol_extra_1to2__f3n_u
+type: score
+desc: 在 05 基准（1:2）上加第四条腿 vol_n(60) -0.45（低波）：假设小盘低估组合的主要回撤来自波动放大，压低 60 日波动可以在不动比值的前提下削减名单的极端风险。若
+  29 与 05 差距很小，说明波动信息已被规模腿吸收；若明显更好，则防御腿应进入下一轮的主结构。归一化权重：pb 20.0% / size_ln 40.0% /
+  turn_ma_n(120) 25.0% / vol_n(60) 15.0%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: vol_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

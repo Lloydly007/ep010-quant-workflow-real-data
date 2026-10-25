@@ -1,0 +1,13 @@
+name: a_r1_s3_08_high250_run
+type: rule
+desc: 创250日新高的股票（52周高动量效应）意味着过去一年买入者全部浮盈、上方套牢盘最少，动量溢价在这个尺度上最稳健；只要收盘不跌破60日线就一直持有，靠均线破位而不是固定止损离场，最长持有60日。
+buy:
+  - {op: break_high_n, n: 250, dir: above, threshold: 0.5}
+  - {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+sell:
+  - {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+rank: {op: ret_n, n: 250, order: desc}
+max_hold_days: 60
+stop_loss: none
+max_positions: 10
+industry_cap: 0

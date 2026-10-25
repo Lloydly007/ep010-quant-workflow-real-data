@@ -1,0 +1,18 @@
+name: b_r2_s3_15_dual_low_neutral_ind
+type: score
+desc: 现象：把波动率分位与PB分位直接相加打分，在1545只池里会被行业结构吃掉——银行的波动与PB天生最低，组合变成一次银行地产的赌注，超额回撤由行业beta主导。为什么该有超额：双低是A股最稳的两个防御维度，做行业内秩后能在每个门类里各自选出同赛道最平静最便宜的票，把行业偏离这块最大的跟踪误差压平；L3恰好是IR>0.4且超额回撤<30%，而round1唯一一份行业中性打分配置的超额回撤只有-19.7%（它输在因子没信息、IR约等于0，不是输在回撤）。怎么进出：波动率截面分位负权0.5、PB截面分位负权0.5，每月首个交易日调仓，持30只，行业内中性。相对第1轮：round1只有两份打分配置且自定位为风格倾斜诊断，本轮把打分型当主线——它是唯一能同时压跟踪误差（30只）和行业偏离（中性化）的工具。
+factors:
+- op: xsec_pct
+  of:
+    op: vol_n
+    n: 60
+  weight: -0.5
+- op: xsec_pct
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

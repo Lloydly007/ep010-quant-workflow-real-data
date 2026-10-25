@@ -1,0 +1,13 @@
+name: b_r1_s5_05_volume_stall
+type: rule
+desc: "此前活跃（60日均换手高于3%）的股票单日缩量到2%以下，多是恐慌抛售尾声而非无人问津，缩量止跌后5日内反弹概率高；优先取60日回撤最浅者，量能恢复（单日换手回到5%以上）或持有5日、止损5%离场。"
+buy:
+- {op: turn, dir: below, threshold: 2.0}
+- {op: turn_ma_n, n: 60, dir: above, threshold: 3.0}
+sell:
+- {op: turn, dir: above, threshold: 5.0}
+rank: {op: ulcer_n, n: 60, order: asc}
+max_hold_days: 5
+stop_loss: 5
+max_positions: 10
+industry_cap: 5

@@ -1,0 +1,12 @@
+name: b_r3_s4_25_large_calm_value
+type: score
+desc: "把市值腿反号：大盘0.3、120日低波0.3、PB0.4，周度调仓：机构防御需求集中在大盘低波价值股上，这是检验低波×估值溢价究竟来自防御属性还是小盘风格的对照组。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 120, weight: -0.3}
+- {op: size_ln, weight: 0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

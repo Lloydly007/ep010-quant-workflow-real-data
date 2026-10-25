@@ -1,0 +1,19 @@
+name: a_r5_s2_24_own_pb_turn120_guard
+type: score
+desc: "换手窗口拉到 120 日、权重 -0.4：假设一个季度的清淡才代表持股结构稳定，20 日窗容易被单日放量污染，与 23 构成换手窗对照。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,12 @@
+name: b_r1_s5_18_ind_ps_rank
+type: rule
+desc: "证监会门类内相对PS最低的股票在行业景气回升时最先修复，配20日均换手低于1%可排除行业内已被炒热的标的；20日均换手升破3%（炒作化）或持有20日、止损8%离场。"
+buy:
+- {op: turn_ma_n, n: 20, dir: below, threshold: 1.0}
+sell:
+- {op: turn_ma_n, n: 20, dir: above, threshold: 3.0}
+rank: {op: ind_rank, of: {op: ps_ttm}, order: asc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

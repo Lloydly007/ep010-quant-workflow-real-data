@@ -1,0 +1,16 @@
+name: b_r5_s2_17_annual_turn_1to2
+type: score
+desc: "年度窗口上的 1:2（pb -0.60 / size_ln -1.20）：与 05、12 同比值、不同窗口。年度低换手的股票换手率分布更窄，作为控制项的信息量可能被压缩，因此这一格回答的是比值轴在“换手信号最弱”的窗口下是否仍成立。归一化权重：pb 23.5% / size_ln 47.1% / turn_ma_n(250) 29.4%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

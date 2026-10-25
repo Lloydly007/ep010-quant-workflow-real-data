@@ -1,0 +1,19 @@
+name: a_r5_s1_14_ps_own_pct_120
+type: score
+desc: "用 ps_ttm 的自身 120 日时序分位（ts_pct n=120，−0.70）：把「比自己过去贱」与「比别人贱」彻底分开。假设营收倍数的时间维度更接近真实的估值修复窗口——公司营收在变，倍数中枢会漂移，和自己比才可比。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 120
+  of:
+    op: ps_ttm
+  weight: -0.70
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

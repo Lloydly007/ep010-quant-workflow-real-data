@@ -1,0 +1,13 @@
+name: b_r2_s1_09_close_weak_revert
+type: rule
+desc: 现象是换手极低（20日均换手低于2%）的冷门股当日收在振幅下半区（收盘位置低于0.5），这多是尾盘流动性折价或指数调仓砸盘，而不是基本面变化。A股尾盘集合竞价的抛压通常在1至5个交易日内被修正，低PS冷门股因为缺少做市与套利资金，折价回补的幅度大于热门股。进出为低换手与弱收盘两条件同时成立才买，5日涨幅超过3%即兑现，持仓上限5日、止损5%。相对第1轮失败模式的改动：第1轮所有配置的最短持有期都在10日以上，把微观结构信号当趋势信号用，等不到修复窗口；本版是唯一把持有期压到5日的假设，专吃隔日到一周的折价回补，估值排序只用来挑折价后有修复空间的标的。
+buy:
+- {op: close_pos_range, dir: below, threshold: 0.5}
+- {op: turn_ma_n, n: 20, dir: below, threshold: 2}
+sell:
+- {op: ret_n, n: 5, dir: above, threshold: 3}
+rank: {op: ps_ttm, order: asc}
+max_hold_days: 5
+stop_loss: 5
+max_positions: 10
+industry_cap: 5

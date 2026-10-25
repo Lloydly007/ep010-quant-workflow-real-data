@@ -1,0 +1,21 @@
+name: b_r1_s3_07_vol_shock_rev
+type: rule
+desc: 20日波动升破5%通常是恐慌性抛售留下的痕迹，波动本身会均值回归、抛压出清后5个交易日内出现修复的概率上升；按20日真实振幅降序挑盘中冲击最剧烈（最可能是流动性抛售）的10只，5日强制离场（反转窗口很短），20日振幅再破8%（恐慌未止）提前退出，止损10%。
+buy:
+- op: vol_n
+  n: 20
+  dir: above
+  threshold: 5.0
+rank:
+  op: atr_close_n
+  n: 20
+  order: desc
+sell:
+- op: atr_close_n
+  n: 20
+  dir: above
+  threshold: 8.0
+max_hold_days: 5
+stop_loss: 10
+max_positions: 10
+industry_cap: 0

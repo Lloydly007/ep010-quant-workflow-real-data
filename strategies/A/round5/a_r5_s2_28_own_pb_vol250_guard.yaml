@@ -1,0 +1,19 @@
+name: a_r5_s2_28_own_pb_vol250_guard
+type: score
+desc: "vol_n(250) -0.4 年度波动：慢变量更稳定，与 27 的短窗形成窗口对照，测长期低波是否才是估值分位的正确搭档。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: vol_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

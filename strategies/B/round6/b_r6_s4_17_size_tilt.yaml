@@ -1,0 +1,23 @@
+name: b_r6_s4_17_size_tilt
+type: score
+desc: 半半轴心 + 小市值 20%（size_ln 负权）：检验估值轴是否只是小盘风格的代理。若加入小市值后显著变好，说明前几轮估值收益里混了规模暴露；若变差，则估值轴独立。归一化权重：pb 40.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 20.0% / size_ln 20.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+- op: size_ln
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

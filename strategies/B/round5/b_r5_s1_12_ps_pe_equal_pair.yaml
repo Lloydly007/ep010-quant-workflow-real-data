@@ -1,0 +1,16 @@
+name: b_r5_s1_12_ps_pe_equal_pair
+type: score
+desc: ps:pe = 1:1（各 -0.50），不含资产口径。假设轻资产/高周转公司的便宜只能从收入与盈利两端看出来，pb 对它们反而是噪声（商誉与无形资产把净资产摊薄得没有经济含义）。
+factors:
+- op: ps_ttm
+  weight: -0.5
+- op: pe_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

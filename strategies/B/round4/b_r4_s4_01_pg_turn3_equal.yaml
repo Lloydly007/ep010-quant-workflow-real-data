@@ -1,0 +1,16 @@
+name: b_r4_s4_01_pg_turn3_equal
+type: score
+desc: "换手窗口轴最短端：3 日换手与周度调仓同一时间尺度，等于只在每个调仓点上回避最近三天被交易拥挤的名字，几乎不触碰中长期流动性结构。pe_ttm 给正权（高 PE 成长腿，且负 PE 亏损股被正权压到最低秩，天然做了亏损筛除，与第 3 轮负权 PE 买进亏损股是相反假设），pb 给等量负权（低 PB 价值腿），检验‘成长偏好 + 资产底价’的对冲在极短换手窗下是否仍能跑赢单一价值。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 3
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

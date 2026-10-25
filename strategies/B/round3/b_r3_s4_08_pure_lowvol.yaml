@@ -1,0 +1,11 @@
+name: b_r3_s4_08_pure_lowvol
+type: score
+desc: "近乎纯低波（vol_n 120 权重0.85，PB只剩0.15）：单独检验跌不动能否不靠估值产生超额，若它最好说明前几份的超额其实都来自低波，若落后则低波必须靠便宜锚定赔率。"
+factors:
+- {op: pb, weight: -0.15}
+- {op: vol_n, n: 120, weight: -0.85}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

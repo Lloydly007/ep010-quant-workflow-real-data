@@ -1,0 +1,22 @@
+name: b_r5_s3_15_dual_ts_250_60
+type: score
+desc: "一年分位 + 季度分位叠加，配季度换手：慢窗确认长期估值位置、快窗确认边际压缩方向，两窗同时为低才算“正在变便宜”；与上一份的区别是快窗更短，更偏向刚启动的估值下修。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.7
+- op: ts_pct
+  n: 60
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 60
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

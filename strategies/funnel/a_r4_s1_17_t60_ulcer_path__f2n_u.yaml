@@ -1,0 +1,19 @@
+name: a_r4_s1_17_t60_ulcer_path__f2n_u
+type: score
+desc: 60 日换手 -0.75 加 120 日 ulcer -0.45：季窗清淡负责选冷门、半年路径伤害负责排除已经跌烂的票，两条腿一起把便宜和没人要区分开。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

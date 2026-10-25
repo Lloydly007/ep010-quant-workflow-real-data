@@ -1,0 +1,13 @@
+name: b_r2_s5_17_pb_ts_offbottom_mid
+type: rule
+desc: 现象：第1轮要么买跌得最深(低 PB 加深回撤)，要么买涨得最猛(高换手追涨)，从没有「价格已从底部上来一截、但估值分位仍然便宜」这个中间态。为什么在 A 股该有超额：净资产在盈利留存下持续增厚，会让 PB 分位在价格上涨的同时继续走低——离 250 日低点已 15% 以上证明修复已经开始，离 250 日高点 15% 以内且 PB 分位仍在底部说明安全垫还在，这是最健康的估值修复形态而不是纯情绪反弹。怎么进出：距 250 日低点 >15% 且距 250 日高点 <15% 时买入，按自身 250 日 PB 分位升序取 10 只，20 日均换手破 8%(接力盘拥挤)或满 40 日离场，止损 8%、同行业最多 3 只。改了什么：第1轮把跌深与涨猛当两个独立信号，本份要求二者同时成立而估值分位仍在底部，从而同时避开追高与接刀两种失败。
+buy:
+- {op: dist_low_n, n: 250, dir: above, threshold: 15}
+- {op: dist_high_n, n: 250, dir: above, threshold: -15}
+sell:
+- {op: turn_ma_n, n: 20, dir: above, threshold: 8}
+rank: {op: ts_pct, n: 250, of: {op: pb}, order: asc}
+max_hold_days: 40
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

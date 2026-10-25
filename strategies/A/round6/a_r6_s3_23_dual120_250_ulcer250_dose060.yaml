@@ -1,0 +1,22 @@
+name: a_r6_s3_23_dual120_250_ulcer250_dose060
+type: score
+desc: "双换手（-0.35/-0.35）+ 满剂量 ulcer_n(250) -0.60，size -0.85、pb -0.40 退居配角：本组最重防御，直接回答「防御腿叠满会不会把选股 alpha 压没」。归一化权重：size_ln 33.3% / pb 15.7% / turn_ma_n(120) 13.7% / turn_ma_n(250) 13.7% / ulcer_n(250) 23.5%。"
+factors:
+- op: size_ln
+  weight: -0.85
+- op: pb
+  weight: -0.40
+- op: turn_ma_n
+  n: 120
+  weight: -0.35
+- op: turn_ma_n
+  n: 250
+  weight: -0.35
+- op: ulcer_n
+  n: 250
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

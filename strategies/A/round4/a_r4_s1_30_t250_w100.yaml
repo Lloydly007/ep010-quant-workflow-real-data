@@ -1,0 +1,16 @@
+name: a_r4_s1_30_t250_w100
+type: score
+desc: "250 日换手压到 -1.00 与规模等量：长窗加满的上界测试，年窗换手与市值高度相关，若此档优于 120 日 -1.00，说明拥挤度信号靠的是长周期筹码沉淀。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

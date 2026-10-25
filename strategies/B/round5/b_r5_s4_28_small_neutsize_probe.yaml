@@ -1,0 +1,12 @@
+name: b_r5_s4_28_small_neutsize_probe
+type: score
+desc: "小市值 0.4、PB 0.4、60 日低波 0.2 并打开 neut_size：当日流通市值五档内重排后，小市值腿只剩档内相对排序，绝对规模水平被中性化扣掉。这是专门设计的探针，用来分辨小盘抗跌是真实的规模溢价，还是波动腿在低市值段的代理。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: size_ln, weight: -0.4}
+- {op: vol_n, n: 60, weight: -0.2}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,18 @@
+name: b_r6_s3_19_deeppb_120
+type: score
+desc: "PB 深价值档：pb -0.85 独占 34%，ps_ttm 只留 -0.45 作辅证，规模 -0.75、换手 -0.45。假设账面价值是最难被会计口径操纵的锚，营收倍数在轻资产行业噪声太大，因此把权重压回 pb 主轴、ps 只保留否决权；与 24 号（ps 主导）构成“资产锚对营收锚”的正面对照。归一化权重：pb 34.0% / ps_ttm 18.0% / size_ln 30.0% / turn_ma_n(120) 18.0%。"
+factors:
+- op: pb
+  weight: -0.85
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

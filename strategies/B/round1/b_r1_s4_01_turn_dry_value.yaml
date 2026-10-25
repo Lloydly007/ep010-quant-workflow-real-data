@@ -1,0 +1,14 @@
+name: b_r1_s4_01_turn_dry_value
+type: rule
+desc: 单日换手跌破1%说明这只票已被资金遗忘、流动性折价被过度定价，而低PB说明账面安全边际仍在，折价会随关注度回归而收敛→买入换手枯竭的低PB股，40日内按PB升序取前10，同行业最多5只，单票亏8%离场。
+buy:
+- op: turn
+  dir: below
+  threshold: 1.0
+rank:
+  op: pb
+  order: asc
+max_hold_days: 40
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

@@ -1,0 +1,17 @@
+name: a_r4_s4_17_size_muted
+type: score
+desc: "规模摊薄到 -0.45（turn_ma_n(60) -0.75、ret_n(20) +0.75）：小市值只做轻微倾斜，让低换手与月内动量主导选股，检验超额是否本来就依赖规模暴露。"
+factors:
+- op: size_ln
+  weight: -0.45
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

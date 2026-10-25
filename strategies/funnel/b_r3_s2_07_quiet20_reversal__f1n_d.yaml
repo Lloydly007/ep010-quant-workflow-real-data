@@ -1,0 +1,17 @@
+name: b_r3_s2_07_quiet20_reversal__f1n_d
+type: score
+desc: 选低 PB、近 20 日缩量且近一月下跌的股票，理由是缩量阴跌把估值压到低位而成交没有放大，说明抛压来自情绪退潮而非基本面兑现。
+factors:
+- op: pb
+  weight: -0.9
+- op: turn_ma_n
+  n: 10
+  weight: -0.85
+- op: ret_n
+  n: 20
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

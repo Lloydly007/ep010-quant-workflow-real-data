@@ -1,0 +1,11 @@
+name: b_r3_s4_04_value_first_120d
+type: score
+desc: "反向配置，PB权重0.75是低波的3倍，低波只作质地过滤：用半年波动剔除便宜是因为快倒闭的困境股，留下便宜但不急跌的价值股，月度换手匹配估值修复的季度节奏。"
+factors:
+- {op: pb, weight: -0.75}
+- {op: vol_n, n: 120, weight: -0.25}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

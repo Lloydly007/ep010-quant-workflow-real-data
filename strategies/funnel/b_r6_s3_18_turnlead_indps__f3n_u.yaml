@@ -1,0 +1,22 @@
+name: b_r6_s3_18_turnlead_indps__f3n_u
+type: score
+desc: 13 号的估值口径替换：ps 改用 ind_rank(ps_ttm) 行业内分位，其余不动。假设在换手主导的配方里，估值端的唯一职责是“别买到同行业最贵的那只”，行业内相对排名恰好把这个职责做到最小充分，绝对
+  ps 反而会把整个低价行业一起放进来。归一化权重：pb 16.0% / ind_rank(ps_ttm) 16.0% / size_ln 26.0% / turn_ma_n(120)
+  42.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -1.05
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

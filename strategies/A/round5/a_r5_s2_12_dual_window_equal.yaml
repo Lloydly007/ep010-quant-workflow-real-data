@@ -1,0 +1,21 @@
+name: a_r5_s2_12_dual_window_equal
+type: score
+desc: "250 与 120 两个时序窗各 -0.35 等权：假设两年与半年的'自身便宜'是两条不完全相关的信号，等权合成可降单窗择时噪声，测双窗平均能否优于任一单窗。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.35
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

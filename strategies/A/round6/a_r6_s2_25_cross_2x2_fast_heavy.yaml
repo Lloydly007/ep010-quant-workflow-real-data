@@ -1,0 +1,27 @@
+name: a_r6_s2_25_cross_2x2_fast_heavy
+type: score
+desc: "24 的镜像、并且把两轴的短端选得更短：估值用 120/60 双窗（-0.50 / -0.25），换手用 120/20 双窗（-0.55 / -0.30）。整张单的信息半衰期压到半年以内，检验 A 路在打分形态里是否仍保有「近期信息优势」——打分型每五个交易日重排一次，若信号本身是年度慢变量，周度重排就是空转；若 25 强于 24，说明周度频率与短尺度信号才是匹配的，长窗平滑会把这个频率优势浪费掉。归一化权重：size_ln 38.5% / ts_pct(120, pb) 19.2% / ts_pct(60, pb) 9.6% / turn_ma_n(120) 21.2% / turn_ma_n(20) 11.5%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.50
+- op: ts_pct
+  n: 60
+  of:
+    op: pb
+  weight: -0.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+- op: turn_ma_n
+  n: 20
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

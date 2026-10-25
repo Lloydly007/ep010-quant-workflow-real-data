@@ -1,0 +1,17 @@
+name: a_r5_s1_20_turn120_heavy__f2n_u
+type: score
+desc: 把季度换手权重抬到 −1.20（压过 size）：极端低换手优先，检验「无人问津」是否才是营收便宜被兑现的真触发器。与第 19 份构成 −0.30 /
+  −0.75 / −1.20 的换手权重三档，用来画换手腿的响应曲线。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -1.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

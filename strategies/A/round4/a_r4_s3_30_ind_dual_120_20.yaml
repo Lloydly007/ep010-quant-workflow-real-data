@@ -1,0 +1,19 @@
+name: a_r4_s3_30_ind_dual_120_20
+type: score
+desc: "双低都在行业内排名后再加权（ind_rank turn120 / vol20 各 -0.75）：换手与波动的行业基准差别很大（金融与科技的自然换手差数倍），先行业中性化再比较，剥离行业风格暴露。"
+factors:
+- op: ind_rank
+  of:
+    op: turn_ma_n
+    n: 120
+  weight: -0.75
+- op: ind_rank
+  of:
+    op: vol_n
+    n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

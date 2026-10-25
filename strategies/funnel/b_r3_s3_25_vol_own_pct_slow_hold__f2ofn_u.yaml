@@ -1,0 +1,22 @@
+name: b_r3_s3_25_vol_own_pct_slow_hold__f2ofn_u
+type: score
+desc: 用 60 日波动率的 250 日时序分位代替绝对波动水平、衡量最近的平静相对自己是否异常，再与 120 日低换手、1:1.5 的规模偏向合成：自身波动压到两年低位常出现在重大变化前夜，低换手确认筹码未动，适合月度低频持有。
+factors:
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: ts_pct
+  n: 250
+  of:
+    op: vol_n
+    n: 120
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

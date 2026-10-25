@@ -1,0 +1,14 @@
+name: a_r2_s5_01_pool_rs60_leader
+type: rule
+desc: 现象：多数 A 路配置把“60 日涨超某个百分比”当买入条件，可全市场普涨时这条阈值对所有股票同时成立，买入集合等于市场 β，扣费后剩下的就是指数收益减成本；真正有信息的不是涨了多少，而是同一天里相对涨幅排在第几位。为什么在 A 股该有超额：散户占比高、信息扩散慢，资金向少数强者集中的正反馈能维持一到两个季度，而用当日截面分位选人等于把“大家一起涨”这个共同项从信号里扣掉，普涨期也不会满仓买 β。怎么进出：同时站上 250、120、60 日线的股票里，按 60 日涨幅的全池截面分位降序取前 10，三条均线中最近的一条被跌破才离场，40 日上限、10% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮 A 路用绝对涨幅阈值加绝对涨幅排序，普涨期信号泛滥、系统性买在情绪高点；本配置删掉绝对涨幅阈值，换成当日全池相对强度排名。
+buy:
+- {op: close_over_ma_n, n: 250, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: xsec_pct, of: {op: ret_n, n: 60}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 5

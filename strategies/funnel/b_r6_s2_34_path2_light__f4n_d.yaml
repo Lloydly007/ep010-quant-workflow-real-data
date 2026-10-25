@@ -1,0 +1,24 @@
+name: b_r6_s2_34_path2_light__f4n_d
+type: score
+desc: 比值与预算的交互格：2:1 的路径倾斜（ulcer −0.20 / vol −0.10），但总预算只有 0.30。05 是「满预算 2:1」、15 是「半预算对半」，本份补上「半预算
+  2:1」这个格子。若 34 与 05 同档而优于 15，说明起决定作用的是内部比值而不是预算剂量，终轮可以把防御预算压小、把比值做实；若 34 与 15 同档，说明剂量才是主导，比值在低预算下没有分辨力。归一化权重：pb
+  21.1% / size_ln 42.1% / turn_ma_n(120) 26.3% / ulcer_n(250) 7.0% / vol_n(250) 3.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.2
+- op: vol_n
+  n: 120
+  weight: -0.1
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: b_r4_s1_13_ratio_167
+type: score
+desc: 估值 5:3 领先、换手退到 0.45：pb -0.75 / turn_ma_n(120) -0.45（1.667:1，PB 63%），假设换手在 0.9~1.0 的极端端捕捉的是停牌/流动性枯竭噪声，0.45 才是“不拥挤”的干净表达，而估值主导需要 0.75 档配合。
+factors:
+- op: pb
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,21 @@
+name: b_r3_s3_23_turn_xsec_vol_size_heavy
+type: score
+desc: "用 20 日均换手的截面分位而非原值、再加 120 日波动合成第三第四腿，配 3:1 的规模主导：换手分位消除了不同市值股票的换手基准差异、让小盘与大盘在冷门程度上可比，低波再过滤掉高换手的题材票。"
+factors:
+- op: pb
+  weight: -0.3
+- op: size_ln
+  weight: -0.9
+- op: xsec_pct
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.3
+- op: vol_n
+  n: 120
+  weight: -0.35
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

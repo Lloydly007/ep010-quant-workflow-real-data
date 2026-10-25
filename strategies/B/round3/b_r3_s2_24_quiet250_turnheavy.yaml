@@ -1,0 +1,14 @@
+name: b_r3_s2_24_quiet250_turnheavy
+type: score
+desc: 选近 250 日换手极低、PB 只需不贵的股票，理由是年度级别几乎不换手的公司几乎没有投机性需求，折价不会因交易拥挤而消失，PB 仅作不买贵的下限。
+factors:
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -1.45
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,18 @@
+name: a_r4_s3_29_own_vol_pct_plus_turn120
+type: score
+desc: "与 28 号相反：波动取自身半年时序分位（ts_pct 120 of vol60），换手用原始半年均值。检验两条腿里哪一条更适合“跟自己比”，避免把个股波动水平的差异误当成风格暴露。"
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: vol_n
+    n: 60
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

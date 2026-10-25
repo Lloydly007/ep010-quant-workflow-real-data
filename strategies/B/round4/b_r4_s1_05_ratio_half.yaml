@@ -1,0 +1,14 @@
+name: b_r4_s1_05_ratio_half
+type: score
+desc: 换手恰好两倍于估值：pb -0.30 / turn_ma_n(120) -0.60（0.50:1，换手 67%、估值 33%），假设低换手负责圈定候选池、PB 在池内做二次排序更有效，比极端换手端有更好的行业间可比性，是冷门度主导但已让出三分之一权重的折中点。
+factors:
+- op: pb
+  weight: -0.30
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

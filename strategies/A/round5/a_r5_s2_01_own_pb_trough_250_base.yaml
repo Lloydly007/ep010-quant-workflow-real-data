@@ -1,0 +1,16 @@
+name: a_r5_s2_01_own_pb_trough_250_base
+type: score
+desc: "本组基准：size_ln -1.0 打底，把 PB 换成过去 250 个交易日的自身时序分位并给 -0.5，选相对自己两年历史最便宜的小盘。时序分位抹平了行业与个股 PB 水平不可比的问题，超额只押'比自己的过去更便宜'这一条预期差，其余 33 份都以它为参照。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

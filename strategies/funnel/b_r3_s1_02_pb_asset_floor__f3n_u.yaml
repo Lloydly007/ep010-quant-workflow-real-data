@@ -1,0 +1,19 @@
+name: b_r3_s1_02_pb_asset_floor__f3n_u
+type: score
+desc: 以 PB 为主的资产清算视角给满权重，净资产是 A 股下行周期里最硬的估值锚（破净天然对应举牌、回购与资产重估压力），PS 与 PE 只作辅助以防营收或盈利端塌陷，再用
+  120 日低换手筛掉被资金反复交易的拥挤标的，超额来自资产底与冷清度叠加的双重折价。
+factors:
+- op: pb
+  weight: -0.6
+- op: ps_ttm
+  weight: -0.25
+- op: pe_ttm
+  weight: -0.15
+- op: turn_ma_n
+  n: 250
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

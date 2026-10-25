@@ -1,0 +1,21 @@
+name: b_r4_s4_25_large_lowvol_annual
+type: score
+desc: "把‘大市值 + 年频低换手 + 年频低波’三条慢腿叠起来：size_ln +0.30、turn_ma_n(250) −0.70、vol_n(250) −0.35，PE/PB 各 0.55。三条腿都在 250 日尺度上，构成全组最慢的配置，名单几乎一年才换血一次；与 b_r4_s4_24（全快腿）成对，用来分离‘慢’本身的价值与‘防御因子数量’的价值。"
+factors:
+- op: pe_ttm
+  weight: 0.55
+- op: pb
+  weight: -0.55
+- op: size_ln
+  weight: 0.3
+- op: turn_ma_n
+  n: 250
+  weight: -0.7
+- op: vol_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r3_s3_18_value_dominant_control
+type: score
+desc: "把权重比反转到 pb 1.5 倍于 size 的估值主导并作对照，检验规模腿是否是不可缺的成分：若估值主导的这份不弱于 1:4 规模主导的 06 与 07，说明 B 路搜索期的超额主要来自低 PB 而不是小市值，后续组应把权重让给估值。"
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

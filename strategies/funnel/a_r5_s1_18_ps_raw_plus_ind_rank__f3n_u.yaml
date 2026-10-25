@@ -1,0 +1,21 @@
+name: a_r5_s1_18_ps_raw_plus_ind_rank__f3n_u
+type: score
+desc: ps 原值与行业内排名各半（−0.45 / −0.45）：绝对口径保证「真便宜」，行业口径保证「不是买在全行业都贵的赛道里」。假设两者叠加能同时压掉行业
+  beta 与极端尾部，是组 III 里唯一双口径同源的配置。
+factors:
+- op: size_ln
+  weight: -0.9
+- op: ps_ttm
+  weight: -0.45
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

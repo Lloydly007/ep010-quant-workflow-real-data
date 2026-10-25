@@ -1,0 +1,16 @@
+name: b_r4_s2_21_turn120_pbheavy_sizeweak
+type: score
+desc: 120 日冷清 + pb -0.80 + 规模 -0.30：半年无人交易叠加账面便宜，两个中期信号并列为选股主依据，规模只用于排除微盘；假设中期冷清与低估值共同指向被遗忘但并未坏掉的公司。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

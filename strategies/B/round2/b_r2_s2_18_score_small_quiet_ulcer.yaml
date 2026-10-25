@@ -1,0 +1,21 @@
+name: b_r2_s2_18_score_small_quiet_ulcer
+type: score
+desc: "现象：小市值 + 冷门 + 路径平滑（60 日 ulcer 低）的票，回撤是“阴跌型”而非“踩踏型”。为什么在 A 股该有超额：踩踏型下跌往往伴随流动性冲击与强制平仓，之后需要很长时间修复；阴跌型小票的卖压分散且已释放，资金回来时修复更顺；把回撤路径形状当因子，等于在“被忽视”之上再加一层“没有踩踏史”，这是第 1 轮只用波动率（幅度）而没用路径（形状）时丢掉的信息。怎么进出：月度首个交易日按 score = -0.4×市值截面分位 -0.3×20 日均换手截面分位 -0.3×60 日 ulcer 排序取前 30，industry_cap=5；持有到下次调仓。相对第 1 轮失败模式改了什么：第 1 轮 ulcer 主要作硬条件（26 份买入条件含 ulcer_n）或直接作排序键（6 份），从未作为与其他分位因子竞争的连续权重；硬条件（如低于 5 才买）会把候选集压到极小、抽样噪声大，本组改成连续倾斜并配 30 只分散组合。"
+factors:
+- op: xsec_pct
+  of:
+    op: size_ln
+  weight: -0.4
+- op: xsec_pct
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.3
+- op: ulcer_n
+  n: 60
+  weight: -0.3
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: false
+neut_size: false
+industry_cap: 5

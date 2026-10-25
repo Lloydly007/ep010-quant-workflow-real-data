@@ -1,0 +1,19 @@
+name: a_r6_s3_33_neutsize_fast_dose030
+type: score
+desc: "neut_size: true + ulcer_n(60) -0.30、size -0.90、pb -0.55、turn_ma_n(60) -0.65：短窗回撤 + 短换手 + 市值中性，本组最轻的防御组合，用来把「中性化」与「窗口长度」两个因素分开。归一化权重：size_ln 37.5% / pb 22.9% / turn_ma_n(60) 27.1% / ulcer_n(60) 12.5%。"
+factors:
+- op: size_ln
+  weight: -0.90
+- op: pb
+  weight: -0.55
+- op: turn_ma_n
+  n: 60
+  weight: -0.65
+- op: ulcer_n
+  n: 60
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

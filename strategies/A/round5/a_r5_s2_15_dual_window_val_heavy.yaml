@@ -1,0 +1,21 @@
+name: a_r5_s2_15_dual_window_val_heavy
+type: score
+desc: "双窗各 -0.5、规模降到 -0.75，估值预算 1.0 对规模 0.75：本组第一个估值预算压过规模的配置，测纯度更高的'自身历史便宜'合成。"
+factors:
+- op: size_ln
+  weight: -0.75
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

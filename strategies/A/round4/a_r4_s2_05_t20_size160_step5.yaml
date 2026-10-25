@@ -1,0 +1,14 @@
+name: a_r4_s2_05_t20_size160_step5
+type: score
+desc: "规模 -1.60（占 68.1%），20 日窗口第 5 档：规模已是换手的两倍，检验名额是否大面积落到冷门高风险小盘、从而以回撤换取收益。"
+factors:
+- op: size_ln
+  weight: -1.6
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

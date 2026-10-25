@@ -1,0 +1,19 @@
+name: a_r6_s2_04_turn120_250_short_2to1
+type: score
+desc: "把向内倾斜推到 2:1（120 日 -0.70 / 250 日 -0.35），比 02 更激进，接近「只要近一季安静就算冷门」的极端。这一份用来定位短窗边际信息的耗尽点：若 02→04 继续改善，说明年度窗在这个池子里几乎只是拖累；若 04 掉头，说明 3:2 附近就是尺度权重的最优点，再往前就把临时安静当成了结构性冷门。年度窗的 0.35 只保留为方向确认，不再承担主排序。归一化权重：size_ln 41.2% / pb 17.6% / turn_ma_n(120) 27.5% / turn_ma_n(250) 13.7%。"
+factors:
+- op: size_ln
+  weight: -1.05
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.70
+- op: turn_ma_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

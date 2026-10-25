@@ -1,0 +1,22 @@
+name: b_r6_s3_11_size45_dualturn__f3n_d
+type: score
+desc: 07 号的双窗版：换手总权 25% 拆成 120 日 -0.40 与 250 日 -0.35，其余不动。假设在重规模配方下，两条换手腿实际在给“小”这件事做质地筛选——小且持续冷清的小盘才不是价值陷阱，双窗比单窗更不容易把刚上市的次新股当冷门票。归一化权重：pb
+  15.0% / ps_ttm 15.0% / size_ln 45.0% / turn_ma_n(120) 13.3% + turn_ma_n(250) 11.7%。
+factors:
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -1.35
+- op: turn_ma_n
+  n: 60
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

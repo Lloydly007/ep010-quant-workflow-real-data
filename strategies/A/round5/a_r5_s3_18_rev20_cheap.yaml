@@ -1,0 +1,23 @@
+name: a_r5_s3_18_rev20_cheap
+type: score
+desc: "便宜加一个月反转：ret_n 20 日 -0.35，pb -0.5、行业内分位 -0.5、size_ln -0.6，配 120 日换手 -0.4。与 16、17 方向相反：假设短期超跌是折价入场的时点信号，在一个月尺度上专买刚被砸下来的便宜股，年窗换手确保买的是长期冷落而不是长期阴跌。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: ret_n
+  n: 20
+  weight: -0.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,20 @@
+name: b_r2_s3_19_dual_low_own_hist
+type: score
+desc: 现象：截面双低每天选出的是同一批天生低波低PB的股票，等于长期持有一个静态风格，风格逆风期必然连续跑输。为什么该有超额：A股风格三年一轮，真正可赚的是错杀修复——某只股票相对自己过去一年变得异常平静且异常便宜，多半是刚被无差别抛售，这类状态的均值回归尺度是季度级。怎么进出：vol_n(250)自身时序分位负权0.5、PB自身250日时序分位负权0.5，市值5档内中性，月度调仓持30只。相对第1轮：round1的ts_pct只包单一因子，而且都是规则型10只集中持有，从未做过"自身历史双低"的复合。
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: vol_n
+    n: 250
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: false
+neut_size: true
+industry_cap: 0

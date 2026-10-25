@@ -1,0 +1,19 @@
+name: a_r5_s4_12_pe250_own_pct250
+type: score
+desc: "把绝对 PE 换成五年自身历史分位：ts_pct(pe_ttm, n=250) 负权 -0.75，配 size_ln -1.00、turn_ma_n(250) -0.75。跨行业绝对 PE 不可比（银行天然低、科技天然高），“比自己过去五年便宜”才是同一把尺子；注意刚从盈利转亏损的名字在自身分位里也排最低，本份就是要把这个陷阱的代价量出来。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

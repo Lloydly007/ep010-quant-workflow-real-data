@@ -1,0 +1,16 @@
+name: b_r4_s2_29_turn250_pbheavy_sizeweak
+type: score
+desc: 250 日冷清 + pb -0.80 + 规模 -0.30：年度无人交易与低 PB 并列为两把主尺，规模只承担剔除微盘的角色；假设一年都没人交易的便宜股更可能是被结构性忽略而不是基本面恶化。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

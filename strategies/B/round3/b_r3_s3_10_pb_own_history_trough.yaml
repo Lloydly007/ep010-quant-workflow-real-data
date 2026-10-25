@@ -1,0 +1,21 @@
+name: b_r3_s3_10_pb_own_history_trough
+type: score
+desc: "把 PB 拆成截面便宜与自身 250 日历史分位便宜两种口径，再配 20 日均换手负权，选相对自己过去两年最便宜的小盘冷门股：时序估值分位消除了行业间 PB 水平不可比的问题，超额只来自比我自己的历史更便宜这一纯预期差。"
+factors:
+- op: pb
+  weight: -0.35
+- op: size_ln
+  weight: -0.6
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 20
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,18 @@
+name: a_r5_s2_22_ind_then_ts_double_norm
+type: score
+desc: "先取行业内 PB 排名、再对其做 250 日时序分位：问'我在行业内的便宜程度是否站上自己历史最极端的位置'，同时中性化行业与市场两层估值中枢。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: ind_rank
+    of:
+      op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

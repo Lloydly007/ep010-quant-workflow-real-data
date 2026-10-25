@@ -1,0 +1,23 @@
+name: a_r5_s3_19_abovema120
+type: score
+desc: "便宜且趋势止跌：close_over_ma_n 120 日 +0.3，pb -0.5、行业内分位 -0.5、size_ln -0.6，配 60 日换手 -0.4。假设便宜的修复需要最便宜的一条止跌证据，站上半年线就够，均线位置比动量更能压住左侧买入的持有成本。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: close_over_ma_n
+  n: 120
+  weight: 0.3
+- op: turn_ma_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

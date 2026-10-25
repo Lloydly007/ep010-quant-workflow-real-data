@@ -1,0 +1,20 @@
+name: b_r1_s2_08_small_neglect
+type: rule
+desc: 小市值本身有规模溢价，但只有20日均换手低于1%的小盘才代表机构确实没有覆盖、不存在拥挤交易，故在冷门股里按流通市值升序取最小的10只，持有20日或20日均换手回到3%以上（资金涌入）兑现，10%止损。
+buy:
+- op: turn_ma_n
+  n: 20
+  dir: below
+  threshold: 1
+rank:
+  op: size_ln
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 3
+max_hold_days: 20
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

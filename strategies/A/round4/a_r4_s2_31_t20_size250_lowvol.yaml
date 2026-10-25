@@ -1,0 +1,17 @@
+name: a_r4_s2_31_t20_size250_lowvol
+type: score
+desc: "20 日单换手窗口、规模 -2.50 配 60 日低波 -0.45：检验极端小盘的超额是否只是低波异象的小盘版本，加上低波约束后规模边际是否消失。"
+factors:
+- op: size_ln
+  weight: -2.5
+- op: vol_n
+  n: 60
+  weight: -0.45
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

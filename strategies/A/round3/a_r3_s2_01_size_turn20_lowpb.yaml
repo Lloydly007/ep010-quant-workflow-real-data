@@ -1,0 +1,16 @@
+name: a_r3_s2_01_size_turn20_lowpb
+type: score
+desc: 复刻原项目007的三低骨架：小市值负权、20日低换手负权、低PB负权，专挑关注度刚冷下来的小盘，超额来自流动性折价与关注度缺失的补偿，周度换手让新冷门及时进池。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 20
+  weight: -0.3
+- op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

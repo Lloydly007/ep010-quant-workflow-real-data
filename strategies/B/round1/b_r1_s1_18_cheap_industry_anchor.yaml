@@ -1,0 +1,12 @@
+name: b_r1_s1_18_cheap_industry_anchor
+type: rule
+desc: 行业PB中位数处于低位的板块存在行业层面估值均值回归、轮动资金会回流便宜行业，但只在该股自身60日回撤不深（溃疡低于8%）时入场以免接落刀，故按行业PB锚升序买入、5日均换手过8%离场
+buy:
+- {op: ulcer_n, n: 60, dir: below, threshold: 8}
+sell:
+- {op: turn_ma_n, n: 5, dir: above, threshold: 8}
+rank: {op: ind_median_pb, order: asc}
+max_hold_days: 40
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

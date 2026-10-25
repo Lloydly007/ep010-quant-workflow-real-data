@@ -1,0 +1,24 @@
+name: a_r6_s2_16_tsdual_val_cross_lens
+type: score
+desc: "估值轴跨口径双窗：长窗用营收 ps 的 250 日自身分位（-0.35）、短窗用账面 pb 的 120 日分位（-0.45），换手留 120 日单窗 -0.50。假设不同估值口径的更新节奏不同——ps 更贴经营、变化慢，适合长窗建基线；pb 更贴资产端、对减值与重估敏感，适合短窗抓新近折价。若这份优于 15（同口径 pb 双窗），说明估值多尺度该按口径分工而不是同口径重采样；若劣于 15，说明跨口径混用把两条腿的经济含义搅混了。归一化权重：size_ln 43.5% / ts_pct(250, ps_ttm) 15.2% / ts_pct(120, pb) 19.6% / turn_ma_n(120) 21.7%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: ps_ttm
+  weight: -0.35
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

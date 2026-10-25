@@ -1,0 +1,17 @@
+name: a_r3_s3_05_ts_mom60_pct
+type: score
+desc: 用个股自身过去120日的60日涨幅时序分位替代绝对涨幅：同样涨得多，处在自己历史高位与刚脱离底部在截面上含义不同，时序分位可滤掉长期阴跌中的反弹假象。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 120
+  of:
+    op: ret_n
+    n: 60
+  weight: 1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

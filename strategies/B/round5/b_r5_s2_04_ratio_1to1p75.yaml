@@ -1,0 +1,16 @@
+name: b_r5_s2_04_ratio_1to1p75
+type: score
+desc: "比值 1:1.75（pb -0.60 / size_ln -1.05）：1:2 之前的半步。假设估值腿的边际贡献在 1:1.5 之后迅速衰减，这一档就是找斜率变化的位置——若 04 与 05 的差距明显大于 03 与 04 的差距，说明拐点落在 1:1.75 附近，行业内中性已挡不住小盘溢价的进入。归一化权重：pb 25.0% / size_ln 43.8% / turn_ma_n(120) 31.2%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.05
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

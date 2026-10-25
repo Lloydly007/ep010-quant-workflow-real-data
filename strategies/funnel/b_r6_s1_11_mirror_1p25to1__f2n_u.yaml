@@ -1,0 +1,22 @@
+name: b_r6_s1_11_mirror_1p25to1__f2n_u
+type: score
+desc: 镜像轴起点：把主导权交给 250 日（250 日 -0.50 / 120 日 -0.40，250:120 = 1.25:1），预算仍是 0.90，估值与规模不动。假说与
+  03 恰好相反——如果“常年冷清”才是结构性的低估来源（持股分散、无人覆盖、被动资金不进），那么长窗占优应优于短窗占优；短窗更容易被一次性事件（解禁、调仓、公告）污染，把权重压在短窗上等于把噪声请进来。11→18
+  与 01→10 构成一对符号相反的同预算梯度，是把“方向”与“幅度”分开读的唯一办法。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120)
+  19.5% / turn_ma_n(250) 24.4%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

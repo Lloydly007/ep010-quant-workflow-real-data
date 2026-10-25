@@ -1,0 +1,19 @@
+name: b_r4_s3_27_ps_quiet250_lowvol60__f2n_d
+type: score
+desc: ps 便宜 + 年度冷清 + 季度低波双击：ps −0.45 / size −0.55 / turn 250 −0.60 / vol 60 −0.45。假设低换手与低波不是同一个信号——换手衡量'有没有人交易'，波动衡量'价格跳不跳'，便宜小盘只有在两者都低时才是可持有的，否则只是流动性差的赌注；本份把换手窗口放到年度、波动放到季度，故意错开两个时间尺度。
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+- op: vol_n
+  n: 60
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

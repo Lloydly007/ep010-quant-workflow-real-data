@@ -1,0 +1,15 @@
+name: a_r4_s3_01_pure_dual_20_20
+type: score
+desc: "纯双低的最短窗：20 日平均换手与 20 日收益波动各 -0.75 等权，只采信最近一个月的安静证据——既没人炒也没大起大落；短窗最贴近当下交易状态，作为整组窗口轴的短端基准。"
+factors:
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: vol_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

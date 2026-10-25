@@ -1,0 +1,17 @@
+name: a_r5_s1_19_turn120_light__f2n_u
+type: score
+desc: 把季度换手权重压到 −0.30（其余同基准）：先问换手腿在当前 120 日窗口下到底贡献多少。若名单几乎不变，说明「低换手」与「营收便宜 + 小市值」在池里高度共线，第
+  3 轮 turn 权重的边际作用被高估了。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

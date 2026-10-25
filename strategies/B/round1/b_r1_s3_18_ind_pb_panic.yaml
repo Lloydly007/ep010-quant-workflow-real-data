@@ -1,0 +1,20 @@
+name: b_r1_s3_18_ind_pb_panic
+type: rule
+desc: 行业中位PB低意味着整个行业的资产端被折价，若个股20日真实振幅同时高于3%（盘中恐慌抛售的痕迹），就是"行业便宜+个股被砸"的双重错杀；按行业中位PB升序取10只、持有20日等修复，20日振幅仍破5%（恐慌未止）离场，止损8%。
+buy:
+- op: atr_close_n
+  n: 20
+  dir: above
+  threshold: 3.0
+rank:
+  op: ind_median_pb
+  order: asc
+sell:
+- op: atr_close_n
+  n: 20
+  dir: above
+  threshold: 5.0
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

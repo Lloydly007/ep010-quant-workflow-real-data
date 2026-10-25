@@ -1,0 +1,16 @@
+name: b_r4_s3_04_ps_quiet20_size_core
+type: score
+desc: "ps 口径的月度窗口档：换手 n=20，只看近一个月的交易热度。假设小盘上的营收低估主要靠短期无人问津来维持，月度换手是这条链路最短的代理；若 20 日档明显弱于 120/250 档，说明 ps 的便宜需要长期冷落才兑现，短期清淡只是噪声。"
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

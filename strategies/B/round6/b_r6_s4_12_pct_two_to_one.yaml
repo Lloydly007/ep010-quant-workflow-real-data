@@ -1,0 +1,16 @@
+name: b_r6_s4_12_pct_two_to_one
+type: score
+desc: 1:2 的分位占优（pb 33.3% / 一年分位 66.7%）：与 11 对称的左侧极端，检验分位腿单独当主轴能走多远（33 是它的纯分位对照）。若 12 与 33 接近，说明绝对 PB 只剩边际作用。归一化权重：pb 33.3% / ts_pct(pb,250) 66.7%。
+factors:
+- op: pb
+  weight: -0.3
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

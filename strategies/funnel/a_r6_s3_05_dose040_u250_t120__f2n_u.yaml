@@ -1,0 +1,20 @@
+name: a_r6_s3_05_dose040_u250_t120__f2n_u
+type: score
+desc: ulcer_n(250) -0.40，接近 pb 腿八成：直接问「把估值腿的注意力分一部分给路径质量，会不会选出更抗打的组合」，伴腿不动以便与相邻剂量构成可比曲线。归一化权重：size_ln
+  37.7% / pb 18.9% / turn_ma_n(120) 28.3% / ulcer_n(250) 15.1%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

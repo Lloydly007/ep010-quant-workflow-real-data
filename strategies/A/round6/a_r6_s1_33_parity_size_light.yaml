@@ -1,0 +1,18 @@
+name: a_r6_s1_33_parity_size_light
+type: score
+desc: "均分配轻规模（size_ln −0.75）：规模腿降到 30%，与换手腿同档、低于两条估值腿合计的 40%，小盘倾斜不再是分数的主要来源。假设母本的 −1.00 已经足够压住小盘，减到 −0.75 后估值的选择性才真正显现；这一格检验母本的均分结论是否被小市值效应稀释。归一化权重：size_ln 30.0% / turn_ma_n(120) 30.0% / ps_ttm 20.0% / pb 20.0%（ps:pb=0.50:0.50=1.00:1，总 |w|=2.50，估值块 40.0%）。"
+factors:
+- op: size_ln
+  weight: -0.75
+- op: ps_ttm
+  weight: -0.50
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

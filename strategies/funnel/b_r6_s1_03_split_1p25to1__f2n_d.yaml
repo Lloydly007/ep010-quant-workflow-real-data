@@ -1,0 +1,20 @@
+name: b_r6_s1_03_split_1p25to1__f2n_d
+type: score
+desc: 比值 1.25:1（120 日 -0.50 / 250 日 -0.40），短窗归一化权重 24.4%，恰好与 pb 腿等重。假说：行业中性化之后，真正的错价窗口是“最近半年没人问”而不是“常年没人问”——半年冷清还能被事件驱动修复，常年冷清更可能是价值陷阱的入口。这一档把状态腿抬到与估值腿平权，是整条梯度里第一个“短窗为主”的读点。归一化权重：pb
+  24.4% / size_ln 31.7% / turn_ma_n(120) 24.4% / turn_ma_n(250) 19.5%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 60
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

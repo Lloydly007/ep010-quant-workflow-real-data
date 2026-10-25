@@ -1,0 +1,13 @@
+name: a_r1_s5_15_base_breakout
+type: rule
+desc: 股价仍在250日低点上方15%以内的底部区域却创出20日新高，底部抬高的第一波突破往往对应资金态度由卖转买，反转初段的赔率最高，故底部突破当日买入、反弹到距250日低点15%以上即兑现
+buy:
+- {op: dist_low_n, n: 250, dir: below, threshold: 15}
+- {op: break_high_n, n: 20, dir: above, threshold: 0.5}
+sell:
+- {op: dist_low_n, n: 250, dir: above, threshold: 15}
+rank: {op: ret_n, n: 20, order: desc}
+max_hold_days: 60
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

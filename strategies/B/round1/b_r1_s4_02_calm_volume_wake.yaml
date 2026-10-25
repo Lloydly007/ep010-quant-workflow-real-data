@@ -1,0 +1,19 @@
+name: b_r1_s4_02_calm_volume_wake
+type: rule
+desc: 60日ATR低于3%的“沉稳股”平时由低波资金持有、筹码稳定，一旦单日换手升到5%以上说明有新增买家开始收集，低波属性使建仓冲击更小、估值修复也更持久→买入这类被量能唤醒的低波股（按近5日换手强度择优），持有20日、亏8%离场，同行业最多3只。
+buy:
+- op: turn
+  dir: above
+  threshold: 5.0
+- op: atr_close_n
+  n: 60
+  dir: below
+  threshold: 3.0
+rank:
+  op: turn_ma_n
+  n: 5
+  order: desc
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

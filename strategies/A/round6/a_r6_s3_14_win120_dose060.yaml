@@ -1,0 +1,19 @@
+name: a_r6_s3_14_win120_dose060
+type: score
+desc: "ulcer_n(120) -0.60 满剂量 + 半年窗：与 11（短窗满剂量）、08（长窗满剂量）三点定曲线，若中窗最优则说明近端记忆比长记忆更值钱。归一化权重：size_ln 35.1% / pb 17.5% / turn_ma_n(120) 26.3% / ulcer_n(120) 21.1%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

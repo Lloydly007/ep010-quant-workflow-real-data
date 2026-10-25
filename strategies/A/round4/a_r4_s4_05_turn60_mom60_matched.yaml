@@ -1,0 +1,17 @@
+name: a_r4_s4_05_turn60_mom60_matched
+type: score
+desc: "换手与动量同取 60 日（-0.75 / +0.75）、size_ln -1.25：季度缩量与季度上涨互为印证，作为“窗口匹配”的对照格，用来判断窗口错配是否真有必要。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: b_r3_s3_22_quarter_pb_momentum_four_legs
+type: score
+desc: "在 1:4 的极端规模主导下加入 60 日动量正权与 60 日低换手，形成极小市值、低估值、中等周期动量、冷门四腿组合：动量腿把已经启动的小盘从长期阴跌的样本里挑出来，低换手保证上涨不是靠游资对倒。"
+factors:
+- op: pb
+  weight: -0.25
+- op: size_ln
+  weight: -1.0
+- op: ret_n
+  n: 60
+  weight: 0.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

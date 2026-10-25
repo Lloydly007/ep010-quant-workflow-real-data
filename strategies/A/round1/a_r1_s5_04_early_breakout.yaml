@@ -1,0 +1,13 @@
+name: a_r1_s5_04_early_breakout
+type: rule
+desc: 创出20日新高但收盘仍低于60日高点10%以上，属突破初段而非创新高末段，上方套牢盘与获利盘都少、上涨阻力小，故创新高当日买入、距60日高点回落超过15%离场，并按离60日高点最近的优先排序
+buy:
+- {op: break_high_n, n: 20, dir: above, threshold: 0.5}
+- {op: dist_high_n, n: 60, dir: below, threshold: -10}
+sell:
+- {op: dist_high_n, n: 60, dir: below, threshold: -15}
+rank: {op: dist_high_n, n: 60, order: desc}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

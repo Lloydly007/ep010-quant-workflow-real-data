@@ -1,0 +1,19 @@
+name: b_r6_s1_27_lightsize_1to2
+type: score
+desc: "镜像侧的第三条腿扰动：分割 1:2（长窗主导），size_ln 砍到 -0.30（250 日 -0.60 / 120 日 -0.30），估值 29.4%、长窗 35.3%。与 25 镜像，用途是把“规模腿与换手腿的共线性”在长窗方向上再验一次——若长窗主导档在轻规模下同样不弱，说明长窗信号不是小盘代理，而是“长期低关注度”本身；若轻规模下长窗优势消失，那么 11→18 的镜像结论就要打折，因为那些档位的表现可能只是规模暴露的结果。归一化权重：pb 29.4% / size_ln 17.6% / turn_ma_n(120) 17.6% / turn_ma_n(250) 35.3%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.30
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+- op: turn_ma_n
+  n: 250
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

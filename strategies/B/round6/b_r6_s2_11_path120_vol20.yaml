@@ -1,0 +1,22 @@
+name: b_r6_s2_11_path120_vol20
+type: score
+desc: "把路径腿也缩到半年、短腿仍是一个月：半年路径 + 一月波动，检验 09 的优势是否依赖「一年」这个长度。若 11 与 09 接近，说明路径记忆半年就够，250 日窗在 1,545 只池里更多是缺值成本；若 11 明显掉档，说明「一年没挖坑」的记忆长度本身就是信号的一部分，不能压缩。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(120) 7.5% / vol_n(20) 7.5%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.225
+- op: vol_n
+  n: 20
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

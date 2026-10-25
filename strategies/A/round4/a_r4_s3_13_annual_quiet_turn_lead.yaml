@@ -1,0 +1,15 @@
+name: a_r4_s3_13_annual_quiet_turn_lead
+type: score
+desc: "年度换手重仓 -1.25 对季度波动 -0.5（2.5:1）：把结构性忽视推到最大，波动权重被压到只够排除极端波动股，用来分离“长换手窗的贡献”与“低波的贡献”。"
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -1.25
+- op: vol_n
+  n: 60
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

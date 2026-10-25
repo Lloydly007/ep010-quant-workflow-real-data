@@ -1,0 +1,13 @@
+name: a_r1_s5_19_etf_exit_momo
+type: rule
+desc: 20日涨幅超8%且站上60日均线的高动量股，在沪深300ETF失守60日均线（大盘转弱）时最容易集体反转，故把ETF破位当作组合级清仓开关而不是等个股逐一破位，持有20日、以市场状态而非个股信号决定离场时点
+buy:
+- {op: ret_n, n: 20, dir: above, threshold: 8}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+sell:
+- {op: etf_above_ma_n, n: 60, dir: below, threshold: 0.5}
+rank: {op: ret_n, n: 20, order: desc}
+max_hold_days: 20
+stop_loss: 10%
+max_positions: 10
+industry_cap: 3

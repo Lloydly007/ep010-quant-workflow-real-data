@@ -1,0 +1,20 @@
+name: a_r5_s3_03_balanced_triad
+type: score
+desc: "三腿近均权：size_ln -0.7、pb -0.6、行业内 PB 分位 -0.6，再加 60 日低波 -0.4 作尾部保险。假设便宜、小、行业相对便宜在 A 股是三个彼此独立的折价来源，买同一只票要三个来源同时成立，均权分散单一风格在 2015、2018 这类年份的回撤，低波只压住最左尾。"
+factors:
+- op: size_ln
+  weight: -0.7
+- op: pb
+  weight: -0.6
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.6
+- op: vol_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

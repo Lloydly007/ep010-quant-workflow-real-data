@@ -1,0 +1,14 @@
+name: a_r1_s5_10_vol_stall_absorb
+type: rule
+desc: 5日量比放大到2倍以上而3日累计涨跌幅仍落在±2%的窄区间内（放量滞跌），说明有资金在不断吸纳却刻意不拉高、换手完成后更易向上突破，故在震荡吸纳期买入、10日跌超8%则判定吸纳失败离场
+buy:
+- {op: vol_ratio_n, n: 5, dir: above, threshold: 2.0}
+- {op: ret_n, n: 3, dir: above, threshold: -2}
+- {op: ret_n, n: 3, dir: below, threshold: 2}
+sell:
+- {op: ret_n, n: 10, dir: below, threshold: -8}
+rank: {op: vol_ratio_n, n: 20, order: desc}
+max_hold_days: 5
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

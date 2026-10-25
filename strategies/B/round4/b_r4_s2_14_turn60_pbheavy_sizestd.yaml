@@ -1,0 +1,16 @@
+name: b_r4_s2_14_turn60_pbheavy_sizestd
+type: score
+desc: 60 日换手 -0.75 与 pb -0.80、规模 -0.65：季度冷清 + 低估值 + 常规小盘的中性组合，用来确认 pb 从下限升为共决信号后，60 日窗口的边际贡献是否被估值项吸收。
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

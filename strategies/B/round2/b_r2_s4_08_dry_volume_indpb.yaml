@@ -1,0 +1,13 @@
+name: b_r2_s4_08_dry_volume_indpb
+type: rule
+desc: 现象是成交额萎缩到20日均量的80%以下说明卖压枯竭、没人愿在这个价位继续割，若这只票还是同业PB最便宜的一端，折价就缺一个买方出现的触发；A股价格弹性对边际买盘极敏感，缩量到极致后的第一次放量往往一段就把折价抹平，买在枯竭、卖在放量是把低估值转成已实现收益的最短路径。做法是20日量比低于0.8、60日均换手低于3%触发买入，按行业内PB分位升序取10只，5日量比回到1.5以上（有人接力）或持满40日、亏10%离场，同行业最多3只。相对第1轮改动：第1轮B路从未使用vol_ratio_n这个量能触发零件，全部靠换手水平做静态筛选，缺少折价何时开始收敛的时点。
+buy:
+- {op: vol_ratio_n, n: 20, dir: below, threshold: 0.8}
+- {op: turn_ma_n, n: 60, dir: below, threshold: 3}
+rank: {op: ind_rank, of: {op: pb}, order: asc}
+sell:
+- {op: vol_ratio_n, n: 5, dir: above, threshold: 1.5}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 3

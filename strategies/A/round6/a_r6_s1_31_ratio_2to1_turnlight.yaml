@@ -1,0 +1,18 @@
+name: a_r6_s1_31_ratio_2to1_turnlight
+type: score
+desc: "2:1 配轻换手：营收主导、清淡只做裁决。Block 4 的第三格，本身没有独立假设，价值在于与 27、29 一起把「比例 × 换手强度」这个两维面填满，使 29 的结论不落在无对照的真空中。归一化权重：size_ln 41.7% / ps_ttm 27.9% / turn_ma_n(120) 16.7% / pb 13.8%（ps:pb=0.67:0.33=2.03:1，总 |w|=2.40，估值块 41.7%）。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.67
+- op: pb
+  weight: -0.33
+- op: turn_ma_n
+  n: 120
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

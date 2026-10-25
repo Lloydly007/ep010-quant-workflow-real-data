@@ -1,0 +1,21 @@
+name: a_r6_s2_10_turn20_120_fast_lean__f2n_d
+type: score
+desc: 短中轴向内倾斜（20 日 -0.65 / 120 日 -0.35）：押「最近一个月成交塌陷」是可交易事件，季度窗只作背景确认。这类名字常见于业绩空窗期、机构调研后无人接力、或刚刚被指数权重下调，信息到达得很快，年度尺度反而钝化。与
+  09 的差只在这一组票数，故两者之差直接衡量月内窗的边际信息是否值得被放大；若 10 走弱，说明月内窗主要是噪声放大器，短中轴该回到等权甚至反向倾斜。归一化权重：size_ln
+  40.0% / ps_ttm 20.0% / turn_ma_n(20) 26.0% / turn_ma_n(120) 14.0%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 10
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

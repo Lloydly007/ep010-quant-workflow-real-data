@@ -1,0 +1,23 @@
+name: a_r5_s3_17_mom250_slow
+type: score
+desc: "便宜加年度动量确认：ret_n 250 日 +0.3 配 vol_n 120 日 -0.3，便宜两腿各 -0.5、size_ln -0.6。与 16 同轴把确认窗口拉到一年：假设要的是年度趋势没走坏而不是季度强势，低波腿防止在趋势末端（高波冲顶）买入，本份测慢确认能否减少左侧持仓时间。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: ret_n
+  n: 250
+  weight: 0.3
+- op: vol_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,13 @@
+name: a_r2_s5_20_pool_rs_regime_exit
+type: rule
+desc: 现象：相对强度组合的回撤主要来自市场级反转——个股的相对强度排名还很高，市场整体转入下跌后强者补跌比弱者更急；第 1 轮所有卖出条件都挂在个股价格上，等个股破位时组合已回撤大半。为什么在 A 股该有超额：同涨同跌特征强，用 300ETF 跌破 60 日线做组合级退出，可以在个股信号仍完好时先把 β 敞口关掉；重新站上 60 日线才恢复开仓，避免在下跌中反复试错。怎么进出：300ETF 站上 60 日线、个股站上 120 日线者，按“收盘对 120 日线偏离度”的全池截面分位降序取前 10（趋势陡度即相对强度，不会被前期涨幅基数扭曲）；300ETF 跌破 60 日线即全部离场，40 日上限、10% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮的卖出全部是个股条件，市场级风险只能通过个股破位间接体现；本配置把市场状态放进 sell 端做组合级风险开关。
+buy:
+- {op: etf_above_ma_n, n: 60, dir: above, threshold: 0.5}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+rank: {op: xsec_pct, of: {op: close_over_ma_n, n: 120}, order: desc}
+sell:
+- {op: etf_above_ma_n, n: 60, dir: below, threshold: 0.5}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 5

@@ -1,0 +1,14 @@
+name: a_r1_s1_04_pullback_shrinkvol
+type: rule
+desc: 站上60日线的股票缩量回落到20日区间下沿，是抛压枯竭的健康调整而非趋势破坏，随后沿原趋势继续上行的概率高｜买在缩量低位、涨回20日高点2%以内即止盈，20日上限与8%止损兜底。
+buy:
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: dist_low_n, n: 20, dir: below, threshold: 5.0}
+- {op: vol_ratio_n, n: 5, dir: below, threshold: 0.8}
+rank: {op: ret_n, n: 60, order: desc}
+sell:
+- {op: dist_high_n, n: 20, dir: above, threshold: -2.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

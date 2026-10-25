@@ -1,0 +1,16 @@
+name: b_r4_s4_05_pg_turn60_equal
+type: score
+desc: "换手窗口轴 60 日（季度）档：季频换手刻画的是‘这一季有没有被资金反复买卖’，与公告密集期的调仓节奏对齐，比月频更能识别被叙事驱动的持续性拥挤。成长腿（pe_ttm 正权）与价值腿（pb 负权）等权对冲，检验中期流动性结构而非短期冲击是否才是低换手溢价真正的来源。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

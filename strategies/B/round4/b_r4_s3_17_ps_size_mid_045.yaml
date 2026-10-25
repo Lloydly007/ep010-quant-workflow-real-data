@@ -1,0 +1,16 @@
+name: b_r4_s3_17_ps_size_mid_045
+type: score
+desc: "规模倾斜中轻档：size −0.45，其余不动。假设小盘暴露要到中等强度才开始贡献，因为 1,545 只池里真正被忽略的营收便宜名字集中在市值后半段，但过重会把名单锁死在微盘、丢掉同风格的中小盘修复。介于 16 的'几乎不要小盘'与 18 的'小盘很重要'之间，是这个连续切片的拐点读数。"
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: size_ln
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

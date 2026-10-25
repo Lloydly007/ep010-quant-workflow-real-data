@@ -1,0 +1,21 @@
+name: a_r6_s1_23_parity_mass09_turn20__f3n_u
+type: score
+desc: 均分配近月清淡（turn 20）、估值块压到 0.90：本组 parity 窗口梯子的快端（17 是 120 日节点、24 是 250 日节点）。假设
+  parity 之所以稳，部分来自 120 日窗与季度尺度估值在节奏上的匹配；换成 20 日窗后若名单显著偏离同为 120 日窗的 17，说明「1:1」这个结论里藏着一个没被写出来的换手窗参数。之所以不用估值块
+  1.00，是因为母本 1:1 的 250 日窗在台账里已由邻域探针覆盖，这一格换成 0.90 才不会与之同构。归一化权重：size_ln 37.7% / turn_ma_n(20)
+  28.3% / ps_ttm 17.0% / pb 17.0%（ps:pb=0.45:0.45=1.00:1，总 |w|=2.65，估值块 34.0%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.45
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

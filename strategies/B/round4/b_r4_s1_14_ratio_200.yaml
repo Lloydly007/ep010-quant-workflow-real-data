@@ -1,0 +1,14 @@
+name: b_r4_s1_14_ratio_200
+type: score
+desc: 估值两倍于换手：pb -0.90 / turn_ma_n(120) -0.45（2:1，PB 67%），这是“估值主导、换手仅作辅助”的典型形态，假设超额主要来自 PB 折价修复，换手只负责把已被爆炒标的踢出候选；若换手再降一档则退化为准纯 PB 策略。
+factors:
+- op: pb
+  weight: -0.90
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

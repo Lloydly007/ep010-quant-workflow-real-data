@@ -1,0 +1,14 @@
+name: a_r2_s2_19_gate_ulcer_smooth
+type: rule
+desc: 现象：第1轮只看趋势的幅度与均线位置，不看形成趋势的路径，结果买入的多是急涨急跌型，浮亏回撤大。为何A股有超额：60日回撤平方均值低于5%说明上行路径平滑、筹码没有大幅换手，这类股票在指数上行期的持有体验与再投资效率都更高，路径平滑本身就是后续超额的低风险代理。进出：ETF120日线上方、站上60日线、60日回撤平方均值低于5%时买入，按该值由低到高优先；跌破60日线离场，最长60日、8%止损、同行业最多10只。相对第1轮改动：新增“回撤路径”维度，把第1轮的幅度型动量换成路径平滑型动量。
+buy:
+- {op: etf_above_ma_n, n: 120, dir: above, threshold: 0.5}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: ulcer_n, n: 60, dir: below, threshold: 5}
+rank: {op: ulcer_n, n: 60, order: asc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 60
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

@@ -1,0 +1,24 @@
+name: b_r2_s3_03_panic_accum_pb
+type: rule
+desc: 现象：A股急跌多由流动性和情绪驱动，指数跌破20日线时"跌不动又便宜"的股票会被无差别抛售，随后在一次政策或情绪修复中领涨。为什么该有超额：这等于在每个小恐慌里买最不该跌的那批便宜货，买入成本天然压在恐慌价，既回避追涨买在高点，也回避牛市末期满仓。怎么进出：300ETF在20日线下方时买vol_n(60)<2的股票、按PB升序取10只；300ETF重回20日线上方即全部卖出（修复完成不再恋战），持有40日兜底，10%止损。相对第1轮：round1所有配置都默认任何时点都可买，从未把市场状态当作逆向建仓的触发器；这也是B路从未做过的"反向ETF假设"。
+buy:
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 2
+- op: etf_above_ma_n
+  n: 20
+  dir: below
+  threshold: 0.5
+rank:
+  op: pb
+  order: asc
+sell:
+- op: etf_above_ma_n
+  n: 20
+  dir: above
+  threshold: 0.5
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 3

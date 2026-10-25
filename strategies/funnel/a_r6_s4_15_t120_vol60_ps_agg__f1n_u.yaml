@@ -1,0 +1,22 @@
+name: a_r6_s4_15_t120_vol60_ps_agg__f1n_u
+type: score
+desc: 在换手之外再挂 60 日波动（低波）腿 −0.5：换手与波动同为「安静」的两个侧面。激进档把规模与换手顶到极限后低波腿只是陪衬；温和档里低波与估值合计接近一半（约
+  48%），检验把「安静」的定义从成交换成波动后温和档是否还能维持第 5 轮的水平。两档差距若缩小，说明此池换手与波动高度共线。本份为第 8 对的激进档：size_ln
+  −2.50、turn_ma_n(120) −1.00。按 |w| 归一：size_ln 55.6% / turn_ma_n(120) 22.2% / vol_n(60)
+  11.1% / ps_ttm 11.1%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。
+factors:
+- op: size_ln
+  weight: -2.5
+- op: turn_ma_n
+  n: 250
+  weight: -1.0
+- op: vol_n
+  n: 60
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

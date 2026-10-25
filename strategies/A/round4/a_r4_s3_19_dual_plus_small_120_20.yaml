@@ -1,0 +1,17 @@
+name: a_r4_s3_19_dual_plus_small_120_20
+type: score
+desc: "双低为主体（-0.9/-0.75 合计 1.65），只加 0.45 的小市值轻倾斜：假设安静+稳在小盘端超额更强，但刻意不让规模腿主导，以区别于纯小市值策略。"
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.9
+- op: vol_n
+  n: 20
+  weight: -0.75
+- op: size_ln
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: a_r3_s2_16_own_hist_turn250
+type: score
+desc: 换手改用自身一年时序分位：在个股自己过去一年最冷的时点买入，自动适应不同股票换手基准的差异，比绝对换手更公平。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 250
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

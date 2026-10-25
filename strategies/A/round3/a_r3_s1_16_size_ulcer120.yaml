@@ -1,0 +1,14 @@
+name: a_r3_s1_16_size_ulcer120
+type: score
+desc: 小市值叠120日ulcer，用半年窗口的回撤路径挑跌得有秩序的小盘，长窗口路径平滑意味着下跌来自持续卖压而非单日崩塌，后续修复的确定性更高。
+factors:
+- op: size_ln
+  weight: -1.7
+- op: ulcer_n
+  n: 120
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

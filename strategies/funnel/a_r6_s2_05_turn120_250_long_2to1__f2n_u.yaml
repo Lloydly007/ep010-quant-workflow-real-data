@@ -1,0 +1,21 @@
+name: a_r6_s2_05_turn120_250_long_2to1__f2n_u
+type: score
+desc: 03 的极端版（年度 -0.70 / 季度 -0.35），与 04 构成对称的耗尽点测试，只是方向相反：把「常年没人交易」当成唯一主轴，季度窗仅作不违背的方向确认。若
+  04 与 05 都明显弱于 01，说明两窗的信息量相近、等权才是正解；若 05 更强，则 A 路在这池里的清淡溢价本质是慢变量，打分周期虽为周度，但信号该以年为单位度量。归一化权重：size_ln
+  41.2% / pb 17.6% / turn_ma_n(120) 13.7% / turn_ma_n(250) 27.5%。
+factors:
+- op: size_ln
+  weight: -1.05
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.35
+- op: turn_ma_n
+  n: 250
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,24 @@
+name: a_r1_s2_04_oversold_strongclose
+type: rule
+desc: 20日累计跌超10%后当日收盘仍位于日内振幅上方80%，说明恐慌抛售在日内被承接、卖压衰竭，短线均值回复概率高于继续杀跌；按跌幅最深排序取前10，持有5日或以5日反弹超5%离场，-8%止损。
+buy:
+- op: ret_n
+  n: 20
+  dir: below
+  threshold: -10
+- op: close_pos_range
+  dir: above
+  threshold: 0.8
+rank:
+  op: ret_n
+  n: 20
+  order: asc
+sell:
+- op: ret_n
+  n: 5
+  dir: above
+  threshold: 5
+max_hold_days: 5
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

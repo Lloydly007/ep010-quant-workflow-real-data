@@ -1,0 +1,18 @@
+name: b_r6_s3_10_size45_turn250
+type: score
+desc: "07 号的长窗（250 日）版本：只压常年冷清的名字，忽略近半年的放量。假设在重规模配方里，短中窗的换手多半是小盘股自身的噪声，一年平均才代表“这家公司长期有没有人管”，也更接近流动性折价的定价；代价是拐点反应慢。归一化权重：pb 15.0% / ps_ttm 15.0% / size_ln 45.0% / turn_ma_n(250) 25.0%。"
+factors:
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -1.35
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

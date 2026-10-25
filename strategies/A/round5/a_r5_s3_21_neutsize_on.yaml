@@ -1,0 +1,20 @@
+name: a_r5_s3_21_neutsize_on
+type: score
+desc: "叠加市值分档中性化：size_ln -0.6、pb -0.55、行业内分位 -0.55、120 日换手 -0.45，打开 neut_size。假设行业内中性化之后规模腿仍在吃大小盘轮动的 beta，市值 5 档内再排秩可以把纯风格暴露剥掉，本份测估值腿剩下的是不是真实的便宜信号。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.55
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

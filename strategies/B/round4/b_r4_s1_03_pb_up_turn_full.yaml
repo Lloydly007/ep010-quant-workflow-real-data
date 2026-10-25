@@ -1,0 +1,14 @@
+name: b_r4_s1_03_pb_up_turn_full
+type: score
+desc: PB 抬一档、换手保持满档：pb -0.40 / turn_ma_n(120) -1.00（0.40:1，换手 71%），假设资产折价在低换手筛过之后仍有独立增量，方向是把 01 的估值分量加倍而换手不动，检验低换手子样本里 PB 的边际定价能力是否随权重线性上升、而非被换手掩盖。
+factors:
+- op: pb
+  weight: -0.40
+- op: turn_ma_n
+  n: 120
+  weight: -1.00
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

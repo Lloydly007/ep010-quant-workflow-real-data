@@ -1,0 +1,23 @@
+name: b_r1_s2_05_panic_atr_lowpb
+type: rule
+desc: 20日ATR占收盘超5%说明日内仍在剧烈摇摆，而当日换手已缩到3%以下意味着恐慌盘出清、抛压枯竭，这种宽幅缩量的错杀股修复弹性最大，故买其中PB最低的10只，振幅回落到2%以下（波动平息）或20日到期离场，10%止损且同行业最多3只。
+buy:
+- op: atr_close_n
+  n: 20
+  dir: above
+  threshold: 5
+- op: turn
+  dir: below
+  threshold: 3
+rank:
+  op: pb
+  order: asc
+sell:
+- op: atr_close_n
+  n: 20
+  dir: below
+  threshold: 2
+max_hold_days: 20
+stop_loss: 10%
+max_positions: 10
+industry_cap: 3

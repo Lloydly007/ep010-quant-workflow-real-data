@@ -1,0 +1,15 @@
+name: a_r4_s3_10_pure_dual_250_120
+type: score
+desc: "年度换手 × 半年波动，双长窗各 -0.75：把“安静”理解为长期状态而非短期状态，换手只在年度尺度上判断被忽视程度，波动用半年确认没有结构性风险。"
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: vol_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

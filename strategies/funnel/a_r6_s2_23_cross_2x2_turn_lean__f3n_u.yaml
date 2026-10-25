@@ -1,0 +1,30 @@
+name: a_r6_s2_23_cross_2x2_turn_lean__f3n_u
+type: score
+desc: 22 的镜像：换手双窗各 -0.55、估值双窗各 -0.25。押注轴不对称的另一种方向——估值折价在本池里早已被反复搜过、边际信息弱，而换手双窗捕捉的是「关注度」这条尚未被榨干的轴，所以票数应该给换手。若
+  23 优于 22，说明本轮真正的新增量在换手的多尺度而非估值的多尺度；若两份都弱于 21，说明对称等权才是稳健解，任何单侧加码都只是换了一个风格的暴露。归一化权重：size_ln
+  38.5% / ts_pct(250, pb) 9.6% / ts_pct(120, pb) 9.6% / turn_ma_n(120) 21.2% / turn_ma_n(250)
+  21.2%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.25
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.25
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

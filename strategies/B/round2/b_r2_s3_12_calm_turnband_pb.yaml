@@ -1,0 +1,24 @@
+name: b_r2_s3_12_calm_turnband_pb
+type: rule
+desc: 现象：低PB陷阱几乎都发生在拥挤标的上——便宜但天天有人抢，说明有资金在持续派发；而换手低于1%的又修复不了折价。为什么该有超额：1%到3%的换手区间是A股"有真实交易但没人追"的甜蜜带，配合低波与低PB，等于买被安静持有的便宜货，踩陷阱的概率最低。怎么进出：买20日均换手高于1%且vol_n(60)<2的股票、按PB升序取10只；20日均换手升破5%即卖，持有60日，不设止损（在这个低波集合里价格止损会高频误杀）。相对第1轮：round1的turn_ma_n below 3没有下限（s3_14因此自回撤-53%、超额-2.1%），这里补上流动性下限，并取消止损、把风险交给换手信号。
+buy:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 1
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 2
+rank:
+  op: pb
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 60
+stop_loss: null
+max_positions: 10
+industry_cap: 3

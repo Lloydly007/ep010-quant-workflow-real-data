@@ -1,0 +1,19 @@
+name: b_r6_s2_21_turn_dropped
+type: score
+desc: "彻底删掉换手腿，只留 pb / size_ln / ulcer_n(250) / vol_n(250)——账面从五腿变四腿，两条防御腿相对权重自动放大。这是本组唯一的「减法」测试：如果安静这条轴只需防抖动的两条腿，换手就是多余的一层；若 21 明显弱于 01，说明换手是不可替代的第三类证据（交易行为而不是价格行为），五腿结构应当保留。归一化权重：pb 26.7% / size_ln 53.3% / ulcer_n(250) 10.0% / vol_n(250) 10.0%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

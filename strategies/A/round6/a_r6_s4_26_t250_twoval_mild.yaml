@@ -1,0 +1,18 @@
+name: a_r6_s4_26_t250_twoval_mild
+type: score
+desc: "双估值 + 年度换手：把 23/24 的骨架换手窗拉到 250 日，检验长窗冷门与双估值是否互相强化。激进档仍是四腿里规模绝对主导，温和档估值占近半；两档之差就是「年度冷门 + 双估值」在规模退潮后还剩下多少，同时观察 250 日窗的次新缺值在双估值下是否被进一步放大。本份为第 13 对的温和档：size_ln −0.80、turn_ma_n(250) −0.30。按 |w| 归一：size_ln 38.1% / turn_ma_n(250) 14.3% / ps_ttm 23.8% / pb 23.8%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。"
+factors:
+- op: size_ln
+  weight: -0.80
+- op: turn_ma_n
+  n: 250
+  weight: -0.30
+- op: ps_ttm
+  weight: -0.50
+- op: pb
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

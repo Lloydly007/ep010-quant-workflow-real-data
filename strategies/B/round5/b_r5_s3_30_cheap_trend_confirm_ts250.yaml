@@ -1,0 +1,20 @@
+name: b_r5_s3_30_cheap_trend_confirm_ts250
+type: score
+desc: "估值分位 -0.8 + 一年换手 -0.6，加一条正向趋势确认 close_over_ma_n(250) +0.3：假设“估值谷底 + 无人问津”必须叠加上市价站上一年均线，才排除仍在下跌通道的价值陷阱；这条正权是唯一的多头方向腿。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.8
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+- op: close_over_ma_n
+  n: 250
+  weight: 0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

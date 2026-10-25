@@ -1,0 +1,12 @@
+name: b_r5_s4_15_owncalm60_dual
+type: score
+desc: "自身 60 日分位（0.35）与绝对 60 日波动（0.25）双口径、PB 0.4：自身分位回答「比过去安静了吗」，绝对水平回答「够不够安静」。两条都过才买，防止在整体高波的行业里挑到相对最安静但仍然很吵的名字，与 14 的单口径版本构成差分假设。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: ts_pct, n: 60, of: {op: vol_n, n: 60}, weight: -0.35}
+- {op: vol_n, n: 60, weight: -0.25}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

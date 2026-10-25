@@ -1,0 +1,25 @@
+name: a_r5_s3_09_own_pb_quarter
+type: score
+desc: "与 08 同轴换短窗：ts_pct 60 日套 pb -0.5，pb -0.4、行业内分位 -0.4、size_ln -0.5，配 20 日换手 -0.4。假设季度级别的自身 PB 低位更贴近催化剂时点，短窗比年窗更接近事件驱动，代价是换手与噪音更高，本份测这个代价换不换得回超额。"
+factors:
+- op: size_ln
+  weight: -0.5
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 60
+  of:
+    op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.4
+- op: turn_ma_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

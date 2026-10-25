@@ -1,0 +1,16 @@
+name: b_r3_s3_03_annual_quiet_size_lean
+type: score
+desc: "把换手窗口拉到 250 日、规模权重提到 pb 的 1.5 倍，选一年内成交最清淡的便宜小盘：年度换手低意味着持股结构稳定、抛压小，错误定价更难被套利抹平，周度名单滚动只是替换掉重新活跃的名字。"
+factors:
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,20 @@
+name: a_r6_s1_14_ratio_3to1_pbfade__f3n_d
+type: score
+desc: '区间的 ps 极端端（3 : 1）：账面只留四分之一。假设 1,545 只的池子里营收倍数是最难被操纵的便宜定义，pb 的残余作用仅是给「营收便宜但净资产被高估到离谱」的标的扣分。这一档检验母本的
+  ps 腿是否本来就该更重——若它明显更好，说明母本 1:1 是被账面腿拖住了。归一化权重：size_ln 36.4% / turn_ma_n(120) 27.3%
+  / ps_ttm 27.3% / pb 9.1%（ps:pb=0.75:0.25=3.00:1，总 |w|=2.75，估值块 36.4%）。'
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.75
+- op: pb
+  weight: -0.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

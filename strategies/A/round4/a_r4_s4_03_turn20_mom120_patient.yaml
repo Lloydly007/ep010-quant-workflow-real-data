@@ -1,0 +1,17 @@
+name: a_r4_s4_03_turn20_mom120_patient
+type: score
+desc: "换手仍 20 日 -0.75、动量拉到 120 日 +0.75，size_ln -1.25：只看当下地量，方向上要求半年已积累正收益，避免把“长期阴跌后的短期地量”误当入场信号。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: ret_n
+  n: 120
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

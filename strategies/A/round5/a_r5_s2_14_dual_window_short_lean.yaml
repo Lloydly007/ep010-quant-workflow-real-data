@@ -1,0 +1,21 @@
+name: a_r5_s2_14_dual_window_short_lean
+type: score
+desc: "短窗 -0.5 / 长窗 -0.25 的反向假设：认为半年内的估值回落更容易在数周内修复，周度再平衡正好承接这类短期错价，与 13 构成窗口主导权的对照。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.25
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

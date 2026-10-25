@@ -1,0 +1,16 @@
+name: b_r4_s1_22_pb_cap_size_check
+type: score
+desc: PB 打满 + 小市值 + 换手贴地：pb -1.20 / size_ln -0.90 / turn_ma_n(120) -0.30（归一化 50%/38%/13%），假设深度折价在中小盘更常见、PB 与市值高度相关，加入 size_ln 等于排掉“低 PB 的大市值”，检验 19 的 PB 主导是否只是市值代理。
+factors:
+- op: pb
+  weight: -1.20
+- op: size_ln
+  weight: -0.90
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

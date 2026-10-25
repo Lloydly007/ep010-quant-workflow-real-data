@@ -1,0 +1,18 @@
+name: b_r6_s3_01_halves_size34_turn120
+type: score
+desc: "四腿精修的主基准：pb -0.50 与 ps_ttm -0.50 两条估值腿等权，size_ln -0.85 略重于任一估值腿，turn_ma_n(120) -0.65 管关注度。假设资产端与营收端互为补丁而不是冗余——只压 pb 会漏掉轻资产、高营收倍数的票，只压 ps 会漏掉重资产、低账面倍数的票；四条腿里只有换手是“状态”，其余三条近似“结构”。归一化权重：pb 20.0% / ps_ttm 20.0% / size_ln 34.0% / turn_ma_n(120) 26.0%。"
+factors:
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+- op: size_ln
+  weight: -0.85
+- op: turn_ma_n
+  n: 120
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

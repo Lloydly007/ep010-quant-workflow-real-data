@@ -1,0 +1,14 @@
+name: b_r3_s2_09_lowpb_quiet120_core
+type: score
+desc: 选 PB 最低且近 120 日平均换手率最低的股票，理由是半年换手率衡量筹码周转速度，周转慢代表持有人结构稳定、边际卖压小，估值折价更容易修复。
+factors:
+- op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 120
+  weight: -1.0
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

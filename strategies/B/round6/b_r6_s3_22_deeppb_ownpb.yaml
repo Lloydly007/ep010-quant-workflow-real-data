@@ -1,0 +1,21 @@
+name: b_r6_s3_22_deeppb_ownpb
+type: score
+desc: "19 号的 pb 口径替换：把 34% 的 pb 权重换成 ts_pct(pb,250)（自身一年历史分位），其余不动。假设深价值配方最大的风险是整段押在长期低估的行业上，用自身历史分位可以要求“这家公司现在比它自己过去一年都便宜”，从而把行业性折价与公司自身折价分开计价。归一化权重：ts_pct(pb,250) 34.0% / ps_ttm 18.0% / size_ln 30.0% / turn_ma_n(120) 18.0%。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.85
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

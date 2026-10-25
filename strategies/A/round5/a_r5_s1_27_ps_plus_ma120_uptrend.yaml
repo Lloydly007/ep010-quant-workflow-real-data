@@ -1,0 +1,19 @@
+name: a_r5_s1_27_ps_plus_ma120_uptrend
+type: score
+desc: "加 120 日 close_over_ma_n 正权（+0.40）：营收便宜并且价格已在半年线上方。这是 A 路趋势口径第一次正式进本组，检验「估值 + 趋势同向」的共振是否比纯便宜的左侧埋伏更早兑现，方向与组内所有反转类配置相反。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+- op: close_over_ma_n
+  n: 120
+  weight: 0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

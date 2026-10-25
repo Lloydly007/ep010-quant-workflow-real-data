@@ -1,0 +1,16 @@
+name: a_r5_s1_32_ps_neutsize_on
+type: score
+desc: "与第 1 份基准相比只打开 neut_size：当日流通市值五档内秩会削弱 size_ln 打底的小市值倾斜，用来量化「规模中性化」与「规模因子」互相抵消的幅度——本组唯一变量是这一个布尔开关，是本轮最干净的 A/B 探针。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

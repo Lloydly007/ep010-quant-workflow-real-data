@@ -1,0 +1,18 @@
+name: a_r3_s2_13_ind_rank_pb_turn60
+type: score
+desc: 便宜度改用行业内PB分位：银行电力天然低PB，行业内排名防止组合被少数门类霸榜，季度低换手则保证买入的是被本行业冷落的小盘。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

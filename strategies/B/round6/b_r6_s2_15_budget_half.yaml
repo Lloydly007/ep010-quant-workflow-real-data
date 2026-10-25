@@ -1,0 +1,22 @@
+name: b_r6_s2_15_budget_half
+type: score
+desc: "对半结构不变，把总防御预算从 0.45 砍到 0.30（各 −0.15）：检验「答案」是否依赖预算大小。若 15 与 01 几乎同档，说明 15% 的预算已经过剩，防御腿在更小剂量下就够，下一轮可以把省下的权重挪给估值或换手；若 15 明显掉档，说明防御信息在大权重下才显现，配比问题实质上是剂量问题。归一化权重：pb 21.1% / size_ln 42.1% / turn_ma_n(120) 26.3% / ulcer_n(250) 5.3% / vol_n(250) 5.3%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.15
+- op: vol_n
+  n: 250
+  weight: -0.15
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

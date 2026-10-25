@@ -1,0 +1,12 @@
+name: b_r1_s1_04_largecap_liquidity_discount
+type: rule
+desc: 大市值股换手跌到2%以下时流动性折价被放大，长期资金恰好能在低成本区间吸筹、折价随成交回暖而收敛，故在低换手大盘股里按市值降序买入、换手回到5%以上（折价收敛完成）即退出
+buy:
+- {op: turn, dir: below, threshold: 2}
+sell:
+- {op: turn, dir: above, threshold: 5}
+rank: {op: size_ln, order: desc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 0

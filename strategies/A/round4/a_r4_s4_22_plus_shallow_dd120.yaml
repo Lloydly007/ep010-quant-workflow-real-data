@@ -1,0 +1,20 @@
+name: a_r4_s4_22_plus_shallow_dd120
+type: score
+desc: "短窗格（turn_ma_n(60) -0.75、ret_n(20) +0.75、size_ln -1.25）上补 120 日浅回撤负权 -0.50：强势票再要求路径平稳，剔除涨幅靠单日跳空撑起、回撤深的名字。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: 0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,20 @@
+name: b_r6_s3_25_pslead_turn20__f3n_d
+type: score
+desc: 24 号的短窗版：换手压到 20 日，其余不动。假设营收便宜加上“最近被砸过”是最快的定价修正组合——ps 已经代表基本面的便宜，短窗负责抓情绪面的错杀；风险是低
+  ps 里混着景气度下行的票，短窗反而会放大这类陷阱。归一化权重：pb 14.0% / ps_ttm 34.0% / size_ln 30.0% / turn_ma_n(20)
+  22.0%。
+factors:
+- op: pb
+  weight: -0.35
+- op: ps_ttm
+  weight: -0.85
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 10
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

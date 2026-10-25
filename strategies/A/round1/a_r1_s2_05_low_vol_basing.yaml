@@ -1,0 +1,25 @@
+name: a_r1_s2_05_low_vol_basing
+type: rule
+desc: 收盘距120日低点不足2%且量比低于0.8（缩量），是低位筑底、卖盘枯竭的形态，一旦有资金试探即易出现弹性反弹；按贴近低点程度取前10，20日期满或10日反弹超8%止盈，-10%止损。
+buy:
+- op: dist_low_n
+  n: 120
+  dir: below
+  threshold: 2
+- op: vol_ratio_n
+  n: 20
+  dir: below
+  threshold: 0.8
+rank:
+  op: dist_low_n
+  n: 120
+  order: asc
+sell:
+- op: ret_n
+  n: 10
+  dir: above
+  threshold: 8
+max_hold_days: 20
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

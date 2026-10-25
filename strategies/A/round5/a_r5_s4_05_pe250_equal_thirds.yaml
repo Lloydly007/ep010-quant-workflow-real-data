@@ -1,0 +1,16 @@
+name: a_r5_s4_05_pe250_equal_thirds
+type: score
+desc: "三等权对照：size_ln、pe_ttm、turn_ma_n(250) 各 -0.75，没有主腿。检验“低估值 + 低换手 + 小盘”三条件等权是否最稳，也给后面单腿加重的每一格一个统一基准。"
+factors:
+- op: size_ln
+  weight: -0.75
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

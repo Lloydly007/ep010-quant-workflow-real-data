@@ -1,0 +1,20 @@
+name: b_r5_s3_26_turn_own_pct120_pb_ts120
+type: score
+desc: "同上但两窗同步压到半年：PB 半年分位 -0.8 + 60 日均换手的半年分位 -0.6。假设换手中枢本身在漂移，用更短的参照窗更贴合当期市场活跃度；代价是分位估计样本更少，名单换手率上升。"
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.8
+- op: ts_pct
+  n: 120
+  of:
+    op: turn_ma_n
+    n: 60
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

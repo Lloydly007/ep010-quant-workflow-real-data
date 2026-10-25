@@ -1,0 +1,24 @@
+name: b_r6_s2_16_budget_double__f4n_d
+type: score
+desc: 预算翻倍：两条腿各 −0.30（合计 0.60，账面总权重 3.60）。假设「跌不动」这条轴在本池被系统性低估，给足剂量才能压住小盘低估组合的尾部。若
+  16 优于 01，说明防御是当前最值得加权重的一条轴；若反而变差，说明过度防御把名单挤进低波银行/公用事业这类「便宜但不动」的角落，牺牲了收益端。归一化权重：pb
+  19.0% / size_ln 38.1% / turn_ma_n(120) 23.8% / ulcer_n(250) 9.5% / vol_n(250) 9.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.3
+- op: vol_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

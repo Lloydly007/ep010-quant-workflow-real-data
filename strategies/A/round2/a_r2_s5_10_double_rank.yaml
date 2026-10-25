@@ -1,0 +1,13 @@
+name: a_r2_s5_10_double_rank
+type: rule
+desc: 现象：只做自身历史分位会丢掉横截面信息（每只股票都可以比自己强），只做截面分位又会被波动率扭曲；先算自身 250 日时序分位、再对该分位做全池排名，才同时修掉两个偏差。为什么在 A 股该有超额：双重归一后的排序近似“相对自身强度里的相对最强”，对应资金在同类股票中反复选择同一批标的的行为；这也是对第 1 轮把不同波动水平的股票直接放在一张榜上比较的正面修正。怎么进出：站上 120 日线与 60 日线者，按“20 日动量的 250 日时序分位”再取全池截面分位、降序取前 10；跌破 60 日线离场，20 日上限、8% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮的相对强度只有单层归一（要么时序、要么截面）；本配置显式做两层，把归一写进配置而不是事后处理。
+buy:
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: xsec_pct, of: {op: ts_pct, n: 250, of: {op: ret_n, n: 20}}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

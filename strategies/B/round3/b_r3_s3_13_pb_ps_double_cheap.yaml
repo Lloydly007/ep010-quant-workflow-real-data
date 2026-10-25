@@ -1,0 +1,18 @@
+name: b_r3_s3_13_pb_ps_double_cheap
+type: score
+desc: "让 PB 与 PS 两个口径同时便宜、再加 20 日低波过滤，选资产端与收入端都被打折的小盘：只看 PB 会漏掉轻资产公司、只看 PS 会漏掉重资产公司，双口径交集通常是深度价值，短窗口低波则避开正在爆雷的标的。"
+factors:
+- op: pb
+  weight: -0.3
+- op: size_ln
+  weight: -0.75
+- op: ps_ttm
+  weight: -0.4
+- op: vol_n
+  n: 20
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

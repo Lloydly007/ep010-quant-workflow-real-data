@@ -1,0 +1,17 @@
+name: b_r3_s2_21_quiet250_lowvol
+type: score
+desc: 选低 PB、近 250 日换手低且年化波动低的股票，理由是低估值与低风险异象在长期冷清股上重合，波动过滤可剔除便宜但剧烈的周期股。
+factors:
+- op: pb
+  weight: -0.85
+- op: turn_ma_n
+  n: 250
+  weight: -0.5
+- op: vol_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

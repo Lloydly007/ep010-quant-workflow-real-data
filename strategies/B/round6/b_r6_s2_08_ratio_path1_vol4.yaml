@@ -1,0 +1,22 @@
+name: b_r6_s2_08_ratio_path1_vol4
+type: score
+desc: "4:1 的镜像（vol −0.36 / ulcer −0.09）：以波动率为主、路径只作尾部的修正。若 08 在四档比值里最强，说明回撤深度只是波动率的一种含噪实现，母本用 ulcer 独腿等于用了个更慢的波动率代理；若 08 明显弱于 05 与 01，则「只罚下行」这件事本身有独立价值，路径质量不能被波动率替代。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 3.0% / vol_n(250) 12.0%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.09
+- op: vol_n
+  n: 250
+  weight: -0.36
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

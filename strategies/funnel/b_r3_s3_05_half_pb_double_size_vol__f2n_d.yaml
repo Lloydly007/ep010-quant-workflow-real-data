@@ -1,0 +1,16 @@
+name: b_r3_s3_05_half_pb_double_size_vol__f2n_d
+type: score
+desc: 把规模权重提到 pb 的两倍并用 250 日年化波动做第三腿，检验小市值溢价在长窗口低波过滤下是否仍独立于估值：一年波动率低的小盘股通常缺故事、缺交易热度，定价错误来自信息扩散慢而非情绪，适合低频持有等修复。
+factors:
+- op: pb
+  weight: -0.35
+- op: size_ln
+  weight: -0.7
+- op: vol_n
+  n: 120
+  weight: -0.6
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: b_r4_s1_26_lowvol_60_balance
+type: score
+desc: 低波 60 日 + 换手主导：turn_ma_n(120) -0.90 / pb -0.40 / vol_n(60) -0.50（归一化 50%/22%/28%），假设 120 日换手与 60 日波动描述同一“不被交易”状态，本份要问的是低波能否在换手之外提供独立信息，波动窗口取 60 对应季度尺度。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.90
+- op: pb
+  weight: -0.40
+- op: vol_n
+  n: 60
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

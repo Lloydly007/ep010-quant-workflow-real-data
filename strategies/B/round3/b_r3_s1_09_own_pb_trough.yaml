@@ -1,0 +1,21 @@
+name: b_r3_s1_09_own_pb_trough
+type: score
+desc: 自身 PB 的 250 日时序分位压到低位者优先，衡量的是相对自己过去一年便宜而不是跨行业绝对便宜，再以 PS 与 PE 的绝对水平作旁证、120 日低换手作冷清确认，超额来自个股层面的估值均值回归，同时天然避开银行等重资产行业永远排最前的行业排序偏差。
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.40
+- op: ps_ttm
+  weight: -0.30
+- op: pe_ttm
+  weight: -0.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

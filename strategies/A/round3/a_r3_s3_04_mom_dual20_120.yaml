@@ -1,0 +1,17 @@
+name: a_r3_s3_04_mom_dual20_120
+type: score
+desc: 20日与120日动量同向才算快慢共振，规模负权居中：短期强势若同时得到半年趋势确认，属趋势延续而非超跌反弹，双窗同时正权可剔除单窗噪声造成的假动量。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: ret_n
+  n: 20
+  weight: 0.5
+- op: ret_n
+  n: 120
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

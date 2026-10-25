@@ -1,0 +1,17 @@
+name: a_r3_s1_18_size_turn_dual
+type: score
+desc: 小市值加20日与250日双周期换手同向压制，要求短窗长窗都冷，两窗同时低说明不是某次事件造成的临时缩量而是持续缺乏关注，这类折价最不容易被快速抹平。
+factors:
+- op: size_ln
+  weight: -1.8
+- op: turn_ma_n
+  n: 20
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

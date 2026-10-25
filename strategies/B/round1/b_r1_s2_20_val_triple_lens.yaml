@@ -1,0 +1,22 @@
+name: b_r1_s2_20_val_triple_lens
+type: score
+desc: 跨行业比PB会把银行永久排最前、比PS又把重资产行业排最后，把行业内PB分位、截面PS分位与自身PS时序分位三种口径标准化后组合，可同时拿到行业与历史两个维度都便宜的估值组合，故按周度首日调仓持有全池并做市值中性（仅作估值倾斜诊断，不做选股能力声明）。
+factors:
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: xsec_pct
+  of:
+    op: ps_ttm
+  weight: -0.3
+- op: ts_pct
+  n: 120
+  of:
+    op: ps_ttm
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: false
+neut_size: true
+industry_cap: 0

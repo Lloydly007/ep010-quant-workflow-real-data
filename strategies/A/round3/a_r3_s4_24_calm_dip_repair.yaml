@@ -1,0 +1,17 @@
+name: a_r3_s4_24_calm_dip_repair
+type: score
+desc: 半年低波加 20 日超跌反转；在小盘端做安静地跌了一小段的修复，低波条件筛掉了暴跌型标的，剩下的回落更可能只是流动性冲击而非基本面恶化。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: vol_n
+  n: 120
+  weight: -0.65
+- op: ret_n
+  n: 20
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

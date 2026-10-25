@@ -1,0 +1,22 @@
+name: a_r4_s1_08_t20_own_turn_pct
+type: score
+desc: "20 日换手 -0.75 再叠它自身 250 日历史分位 -0.45：要求这只票相对自己的过去也是最冷的，时序分位去掉股本结构造成的换手基准差异，比绝对换手更纯粹地度量关注度异常低。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

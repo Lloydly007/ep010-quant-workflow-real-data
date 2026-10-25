@@ -1,0 +1,16 @@
+name: a_r4_s1_12_t60_w075
+type: score
+desc: "60 日换手 -0.75，把季度清淡当主要拥挤度信号：假设抢跑资金以季度为周期，季窗低换手既能避开刚被炒过的票，又不至于像年窗那样把票选成僵尸股。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

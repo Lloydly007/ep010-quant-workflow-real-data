@@ -1,0 +1,19 @@
+name: b_r5_s3_20_ps_level_plus_ts250
+type: score
+desc: "把截面估值腿换成 PS（营业收入口径）绝对水平 -0.5，叠 250 日 PB 自身分位 -0.7 与 120 日换手 -0.6：收入口径比资产口径更少受商誉与重估影响，用“收入便宜 + 资产估值压缩 + 关注度冷却”三向交叉降低单一估值口径的行业偏斜。"
+factors:
+- op: ps_ttm
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.7
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

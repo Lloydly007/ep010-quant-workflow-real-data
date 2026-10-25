@@ -1,0 +1,27 @@
+name: a_r1_s2_08_streak_up_inertia
+type: rule
+desc: 连涨3天以上且守在10日线上方、20日涨幅仍未超8%，是资金连续小额流入而尚未进入情绪加速段的状态，短期惯性仍有空间；只持有3日吃脉冲，跌破10日线离场，-5%止损。
+buy:
+- op: streak_up
+  dir: above
+  threshold: 3
+- op: close_over_ma_n
+  n: 10
+  dir: above
+  threshold: 1.0
+- op: ret_n
+  n: 20
+  dir: below
+  threshold: 8
+rank:
+  op: streak_up
+  order: desc
+sell:
+- op: close_over_ma_n
+  n: 10
+  dir: below
+  threshold: 1.0
+max_hold_days: 3
+stop_loss: 5%
+max_positions: 10
+industry_cap: 0

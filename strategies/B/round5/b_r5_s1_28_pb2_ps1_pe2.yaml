@@ -1,0 +1,18 @@
+name: b_r5_s1_28_pb2_ps1_pe2
+type: score
+desc: 配比 pb:ps:pe = 2:1:2（-0.40/-0.20/-0.40）：资产与盈利对称、收入减半。检验“账面与盈利互相校验”是否比收入端更有效；ps 减半的理由是它最容易被行业收入结构带偏。
+factors:
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.2
+- op: pe_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

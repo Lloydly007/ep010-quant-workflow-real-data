@@ -1,0 +1,14 @@
+name: a_r4_s2_10_t120_size080_anchor
+type: score
+desc: "换手窗口拉到 120 日、规模只给 -0.80（占 51.6% 的最低倾斜），假设半年低换手本身就是强信号、规模仅作辅助；与 20 日同档对照可分离窗口长度效应。"
+factors:
+- op: size_ln
+  weight: -0.8
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

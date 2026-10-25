@@ -1,0 +1,14 @@
+name: b_r4_s1_06_ratio_two_thirds
+type: score
+desc: 换手占优但绝对权重降到中档：pb -0.30 / turn_ma_n(120) -0.45（0.667:1，换手 60%），假设两因子量纲差异会让大权重因子过度支配截面秩，把两者都收敛到 0.3~0.5 区间可削弱单因子极值对排序的支配，属于换手主导端的中庸表达，与 05 只差一档换手。
+factors:
+- op: pb
+  weight: -0.30
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

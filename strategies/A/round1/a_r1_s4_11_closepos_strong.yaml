@@ -1,0 +1,13 @@
+name: a_r1_s4_11_closepos_strong
+type: rule
+desc: 收盘价落在当日振幅上半区（0.8以上）说明尾盘有主动买盘承接，这种日内强度对次日存在惯性，与5日动量为正叠加时信号最干净——故买强势收盘并按当日收盘位置排序，次日日内结构转弱（0.5以下）即离场，最多持3日、5%止损。
+buy:
+  - {op: close_pos_range, dir: above, threshold: 0.8}
+  - {op: ret_n, n: 5, dir: above, threshold: 3}
+sell:
+  - {op: close_pos_range, dir: below, threshold: 0.5}
+rank: {op: close_pos_range, order: desc}
+max_hold_days: 3
+stop_loss: 5
+max_positions: 10
+industry_cap: 0

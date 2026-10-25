@@ -1,0 +1,12 @@
+name: b_r3_s4_16_resilient_ma250
+type: score
+desc: "年线位置正权0.3、60日低波0.3、PB0.4：仍站在250日均线上方说明长期趋势没破，正权过滤掉便宜但在持续下跌的价值陷阱，月度换手匹配年线级别的状态切换。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 60, weight: -0.3}
+- {op: close_over_ma_n, n: 250, weight: 0.3}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

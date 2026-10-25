@@ -1,0 +1,13 @@
+name: a_r1_s1_07_high250_anchor
+type: rule
+desc: 距52周高点15%以内且站上半年线的股票，锚定效应下解套区抛压被推迟、信息扩散仍在继续，接近前高的个股收益高于深度回撤股｜按距前高远近取最贴近者，位阶下移到距高点15%之外或满40日离场，10%止损。
+buy:
+- {op: dist_high_n, n: 250, dir: above, threshold: -15.0}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+rank: {op: dist_high_n, n: 250, order: desc}
+sell:
+- {op: dist_high_n, n: 250, dir: below, threshold: -15.0}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

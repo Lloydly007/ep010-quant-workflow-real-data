@@ -1,0 +1,13 @@
+name: a_r1_s1_06_capitulation_low
+type: rule
+desc: 连续4日下跌且收盘落在250日低点8%以内，是典型的投降式抛售（情绪与杠杆资金出清），此后反弹概率高于继续下跌｜低位止损等于卖在情绪底部故不设止损，按贴近年内低点程度取最惨者，持有至收盘重回20日线上方或满20日。
+buy:
+- {op: streak_down, dir: above, threshold: 3}
+- {op: dist_low_n, n: 250, dir: below, threshold: 8.0}
+rank: {op: dist_low_n, n: 250, order: asc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 无
+max_positions: 10
+industry_cap: 5

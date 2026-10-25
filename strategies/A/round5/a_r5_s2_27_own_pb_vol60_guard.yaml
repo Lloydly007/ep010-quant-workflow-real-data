@@ -1,0 +1,19 @@
+name: a_r5_s2_27_own_pb_vol60_guard
+type: score
+desc: "加 vol_n(60) -0.35：短期波动是估值错价的对手方风险，低波 + 自身便宜 = 便宜且不慌，测波动腿能否削掉下跌趋势里的便宜名字。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: vol_n
+  n: 60
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

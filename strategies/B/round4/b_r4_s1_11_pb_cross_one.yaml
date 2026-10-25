@@ -1,0 +1,14 @@
+name: b_r4_s1_11_pb_cross_one
+type: score
+desc: PB 跨过 1.0 档：pb -1.05 / turn_ma_n(120) -0.75（1.40:1，PB 58%），假设资产折价要到 1.0 以上权重才成为主导信号，换手固定 0.75 以隔离 PB 单独抬升的边际贡献，用于定位 PB 权重是否存在 1.0 拐点。
+factors:
+- op: pb
+  weight: -1.05
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

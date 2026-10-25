@@ -1,0 +1,19 @@
+name: b_r4_s1_31_own_pb_pct_120
+type: score
+desc: 短窗自身分位 + 轻换手：ts_pct(pb, n=120) -0.45 / pb -0.50 / turn_ma_n(120) -0.30（归一化 36%/40%/24%），假设 120 日 PB 分位捕捉的是季度级估值均值回复而非长期中枢，窗口缩短后仍保留绝对 PB，防止“从低位反弹但绝对仍贵”的标的入选。
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.45
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

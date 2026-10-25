@@ -1,0 +1,19 @@
+name: b_r4_s3_28_ps_quiet120_ulcer250
+type: score
+desc: "ps 便宜 + 半年冷清 + 年度路径平滑：ps −0.45 / size −0.55 / turn 120 −0.60 / ulcer 250 −0.45。假设 ulcer 比 vol 更贴近'持有体感'——它按回撤深度平方加权，惩罚的是长期阴跌而不是单日跳空，所以配一年窗口能筛出'没人交易但也没在慢慢放血'的营收便宜小盘；与 27 的差别是用路径而不是波动率度量风险。"
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+- op: ulcer_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

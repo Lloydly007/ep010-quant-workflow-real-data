@@ -1,0 +1,24 @@
+name: b_r6_s2_19_turn_annual__f3n_d
+type: score
+desc: 换手腿换成 250 日窗（与两条防御腿同窗）：三者同窗时，检验「安静」这条轴是否被同一段历史重复计价三次。若 19 与 01 几乎相同，说明窗口对齐不改变结论，换手腿的作用与它对窗口的选择无关；若
+  19 明显偏离，说明同窗会让三条腿高度共线、把名单推向同一角落，防御腿的窗口应当刻意与换手错开。归一化权重：pb 20.0% / size_ln 40.0% /
+  turn_ma_n(250) 25.0% / ulcer_n(250) 7.5% / vol_n(250) 7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

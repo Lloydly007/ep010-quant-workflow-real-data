@@ -1,0 +1,23 @@
+name: b_r6_s3_04_halves_size34_dualturn__f3n_u
+type: score
+desc: 把 26% 的换手权重拆到两段时间尺度：turn_ma_n(120) -0.35 与 turn_ma_n(250) -0.30，总权与 01 相同。假设“半年转冷”是状态、“一年冷清”是结构，两者不是同一件事；双窗叠加既能筛出持续无人问津的票，又保留半年尺度对拐点的敏感度。与
+  01、03 构成单窗对双窗的三人对照。归一化权重：pb 20.0% / ps_ttm 20.0% / size_ln 34.0% / turn_ma_n(120)
+  14.0% + turn_ma_n(250) 12.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+- op: size_ln
+  weight: -0.85
+- op: turn_ma_n
+  n: 250
+  weight: -0.35
+- op: turn_ma_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

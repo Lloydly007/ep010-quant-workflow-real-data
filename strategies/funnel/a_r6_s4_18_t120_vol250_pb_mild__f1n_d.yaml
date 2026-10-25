@@ -1,0 +1,22 @@
+name: a_r6_s4_18_t120_vol250_pb_mild__f1n_d
+type: score
+desc: 年度波动（250 日）作防御腿配 pb −0.4：长窗波动更接近「长期风险画像」，与 250 日换手不同窗口也不同源。激进档把规模 −2.5 顶满，等于「最小市值
+  + 最低长期波动」的组合；温和档把重量交给波动与 pb。检验极端规模暴露是否需要长期低波来对冲尾部，还是低波只是又一个规模代理。本份为第 9 对的温和档：size_ln
+  −0.80、turn_ma_n(120) −0.30。按 |w| 归一：size_ln 40.0% / turn_ma_n(120) 15.0% / vol_n(250)
+  25.0% / pb 20.0%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。
+factors:
+- op: size_ln
+  weight: -0.8
+- op: turn_ma_n
+  n: 60
+  weight: -0.3
+- op: vol_n
+  n: 250
+  weight: -0.5
+- op: pb
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

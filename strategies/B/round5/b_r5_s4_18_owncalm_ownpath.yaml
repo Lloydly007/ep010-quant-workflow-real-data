@@ -1,0 +1,12 @@
+name: b_r5_s4_18_owncalm_ownpath
+type: score
+desc: "20 日波动的 250 日分位（0.3）与 250 日溃疡的自身分位（0.3）并列、PB 0.4：两条都只看自己跟自己比，等于把行业与规模带来的波动水平差整体扣掉。若抗跌性只是行业属性的代理，这套纯自身基准的构造应当明显弱于绝对低波版本。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: ts_pct, n: 250, of: {op: vol_n, n: 20}, weight: -0.3}
+- {op: ts_pct, n: 250, of: {op: ulcer_n, n: 250}, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

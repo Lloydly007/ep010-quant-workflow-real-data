@@ -1,0 +1,22 @@
+name: b_r6_s2_07_ratio_path4_vol1
+type: score
+desc: "把比值推到 4:1（ulcer −0.36 / vol −0.09）：接近母本的单腿形态，但保留一条极小的波动腿作对冲，避免「单一口径独大」的过拟合。若 07 与 05（2:1）几乎等价，说明波动腿在 15% 预算内的边际贡献已经很薄，母本的单腿选择在结构上是对的；若 07 反而不如 05，说明那条小波动腿在做实质工作——它抑制了「长期回撤浅但近期在放大波动」的名字。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 12.0% / vol_n(250) 3.0%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.36
+- op: vol_n
+  n: 250
+  weight: -0.09
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

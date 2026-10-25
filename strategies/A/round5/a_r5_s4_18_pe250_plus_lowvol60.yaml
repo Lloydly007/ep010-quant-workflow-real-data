@@ -1,0 +1,19 @@
+name: a_r5_s4_18_pe250_plus_lowvol60
+type: score
+desc: "低波窗口换成近端 60 日：vol_n(60) -0.60，配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。与 17 的 250 日构成长短对照——近端低波更贴近“当下没在动”，若它更强，说明低估值溢价吃的是短期安静而非长期低风险。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

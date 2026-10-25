@@ -1,0 +1,17 @@
+name: a_r3_s3_24_tiny_mom_dual
+type: score
+desc: 照原项目骨架把规模压到-2.00的极端小盘，同时给20日与120日动量各+0.75、按月换手：规模主导下用双窗动量做二次筛选，检验极限小盘倾斜是否仍能被动量加分。
+factors:
+- op: size_ln
+  weight: -2.0
+- op: ret_n
+  n: 20
+  weight: 0.75
+- op: ret_n
+  n: 120
+  weight: 0.75
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

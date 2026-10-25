@@ -1,0 +1,16 @@
+name: b_r4_s2_04_turn20_pblight_sizedom__f0n_d
+type: score
+desc: 20 日换手只作微调、规模 -2.00 直接主导、pb -0.40：用来分离规模与冷清这两个信号——若本档与同组其他三档差别极小，说明 20 日窗口的低换手在本池上基本是小市值的别名。
+factors:
+- op: turn_ma_n
+  n: 10
+  weight: -0.75
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -2.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

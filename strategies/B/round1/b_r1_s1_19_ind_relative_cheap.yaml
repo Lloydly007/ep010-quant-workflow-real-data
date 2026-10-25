@@ -1,0 +1,12 @@
+name: b_r1_s1_19_ind_relative_cheap
+type: rule
+desc: 直接用绝对PB会把整个低估值行业一次性买满，用行业内PB分位则只买各行业里相对最便宜的个股、且只在该股5日均换手低于1%的无人问津时入场，行业中性后的价值溢价更稳定，20日溃疡破8%离场
+buy:
+- {op: turn_ma_n, n: 5, dir: below, threshold: 1}
+sell:
+- {op: ulcer_n, n: 20, dir: above, threshold: 8}
+rank: {op: ind_rank, of: {op: pb}, order: asc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 3

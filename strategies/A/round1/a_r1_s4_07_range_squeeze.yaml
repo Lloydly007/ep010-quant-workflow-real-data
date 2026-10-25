@@ -1,0 +1,13 @@
+name: a_r1_s4_07_range_squeeze
+type: rule
+desc: 收盘距250日高点不足10%同时距120日低点不足8%，说明股价被压缩在一年内约20%的窄幅区间里、各周期持仓成本高度重叠，振幅收敛后向上释放的弹性远大于区间内来回震荡——故买收敛区间且距年高最近者优先，不设固定止损以免被区间内噪音打掉，只在跌破120日线（区间下沿破坏）时离场，40日为限，行业上限5只。
+buy:
+  - {op: dist_high_n, n: 250, dir: above, threshold: -10}
+  - {op: dist_low_n, n: 120, dir: below, threshold: 8}
+sell:
+  - {op: close_over_ma_n, n: 120, dir: below, threshold: 1.0}
+rank: {op: dist_high_n, n: 250, order: desc}
+max_hold_days: 40
+stop_loss: none
+max_positions: 10
+industry_cap: 5

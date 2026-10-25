@@ -1,0 +1,22 @@
+name: b_r5_s3_14_dual_ts_250_120
+type: score
+desc: "估值分位双窗叠加（250 日 -0.7 + 120 日 -0.45）+ 半年换手负权：要求 PB 同时处于“一年低位”和“半年低位”，即压缩是持续的而非单日跳变；双窗一致的名字估值折价更可能是真实预期下修所致。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.7
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: a_r3_s2_09_dual_window_20_250
+type: score
+desc: 短端20日与长端250日换手同时取负权，要求近期与全年都冷：既排除事件性缩量，也排除长期无人问津的僵尸票，双层过滤后才给规模负权加分。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 20
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

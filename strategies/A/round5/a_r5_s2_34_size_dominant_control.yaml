@@ -1,0 +1,16 @@
+name: a_r5_s2_34_size_dominant_control
+type: score
+desc: "规模 -2.5、估值只剩 -0.35 的对照下界：几乎退化成纯小市值，用来给整组提供一个'估值腿贡献≈0'的参照点，便于把其余 33 份的超额归因到估值。"
+factors:
+- op: size_ln
+  weight: -2.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,25 @@
+name: a_r1_s2_03_pullback_ma60
+type: rule
+desc: 收盘仍在60日均线上方（中期趋势未破）而近5日跌超3%，是上升趋势中的技术性回调，此刻买入的风险收益比优于追高，赚的是趋势内回撤的修复；按60日动量选强者，5日反弹超5%或10日期满离场，-8%止损。
+buy:
+- op: close_over_ma_n
+  n: 60
+  dir: above
+  threshold: 1.0
+- op: ret_n
+  n: 5
+  dir: below
+  threshold: -3
+rank:
+  op: ret_n
+  n: 60
+  order: desc
+sell:
+- op: ret_n
+  n: 5
+  dir: above
+  threshold: 5
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

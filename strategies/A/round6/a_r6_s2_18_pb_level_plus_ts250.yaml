@@ -1,0 +1,21 @@
+name: a_r6_s2_18_pb_level_plus_ts250
+type: score
+desc: "不做双窗，而是让估值腿分工：绝对 pb 水平 -0.45（横向便宜）+ pb 的 250 日自身分位 -0.35（纵向便宜），换手 120 日 -0.50。这是对「多尺度」的另一种解读——尺度不必都在时间轴上，也可以是「截面水平」与「自历史相对」两个坐标系。两者的失效模式不同：水平腿在估值中枢整体下移的年份会买进全市场都便宜的名字，分位腿在个股长期折价时会给满票；若两条腿互相抵消，本份会明显弱于 15。归一化权重：size_ln 43.5% / pb 19.6% / ts_pct(250, pb) 15.2% / turn_ma_n(120) 21.7%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pb
+  weight: -0.45
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: a_r5_s1_22_turn_dual_120_20__f2n_d
+type: score
+desc: 季度与月内双窗（120 −0.50 与 20 −0.35）：近期成交萎缩叠季度清淡，偏向「正在被遗忘但尚未彻底冻结」的名字。与第 27 份（120+250）方向相反——一个偏近期增量清淡，一个偏长期存量清淡。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r3_s1_04_size_rev5
+type: score
+desc: 小市值叠5日反转，专挑小盘里刚被砸出来的票，A股小盘短期收益的负自相关最强，超跌后次周的均值回复是扣掉换手成本后少数仍成立的短周期异象。
+factors:
+- op: size_ln
+  weight: -1.2
+- op: ret_n
+  n: 5
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

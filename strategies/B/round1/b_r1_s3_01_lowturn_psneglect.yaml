@@ -1,0 +1,20 @@
+name: b_r1_s3_01_lowturn_psneglect
+type: rule
+desc: 60日均换手率低于1%的股票已被机构与散户同时遗忘，信息扩散慢使价格对新消息反应滞后、被忽视股的定价折价终会修复；在低关注集合内按市销率升序取收入端最便宜的10只、持有40日，20日均换手升破5%说明关注度已回补、超额兑现即离场，止损10%。
+buy:
+- op: turn_ma_n
+  n: 60
+  dir: below
+  threshold: 1.0
+rank:
+  op: ps_ttm
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 5.0
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 0

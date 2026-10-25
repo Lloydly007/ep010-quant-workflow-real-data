@@ -1,0 +1,21 @@
+name: a_r4_s3_33_dual_own_pct
+type: score
+desc: "两腿都取“相对自己”的历史分位、窗口一短一长：vol(20) 的 60 日时序分位 -0.7 与 turn(120) 的 250 日时序分位 -0.7。假设安静+稳是相对自身状态而非相对同一时点其他股票。"
+factors:
+- op: ts_pct
+  n: 60
+  of:
+    op: vol_n
+    n: 20
+  weight: -0.7
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 120
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

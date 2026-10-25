@@ -1,0 +1,17 @@
+name: a_r3_s4_09_calm_neglect_year__f1n_u
+type: score
+desc: 用年度换手最冷的小盘股叠半年低波，月度调仓；一年没人炒的标的几乎没有情绪溢价可挤，安全边际来自被彻底遗忘，超额更依赖时间而非交易频率。
+factors:
+- op: size_ln
+  weight: -1.45
+- op: vol_n
+  n: 250
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.85
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

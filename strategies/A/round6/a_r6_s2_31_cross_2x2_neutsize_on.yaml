@@ -1,0 +1,27 @@
+name: a_r6_s2_31_cross_2x2_neutsize_on
+type: score
+desc: "21 的完全复制，只把 neut_size 改为 true：规模腿 -1.00 变成在当日流通市值 5 档内做秩，跨档的市值差距被抹掉，只剩同档内的相对大小。这是整组多尺度结论的安慰剂检验——若 21 相对随机基线的超额在 31 上明显消失，说明「双轴双窗」赚的其实是纯小市值暴露，平滑只是包装；若保留大半，说明多尺度合成的排序在控制规模后仍有内容，冻结时才可以把它当作独立于风格的选股逻辑。归一化权重：size_ln 38.5% / ts_pct(250, pb) 13.5% / ts_pct(120, pb) 13.5% / turn_ma_n(120) 17.3% / turn_ma_n(250) 17.3%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.35
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

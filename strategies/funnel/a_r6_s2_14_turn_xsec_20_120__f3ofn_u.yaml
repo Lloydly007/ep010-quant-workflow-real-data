@@ -1,0 +1,25 @@
+name: a_r6_s2_14_turn_xsec_20_120__f3ofn_u
+type: score
+desc: 把两个换手窗各自换成「当日截面分位」再平滑（xsec_pct of turn_ma_n 20 与 120，各 -0.40）：绝对换手水平在这池里跨年份漂移很大（牛熊成交中枢差数倍），直接加权等于让不同年份的清淡标准不一致；截面分位只问「今天在同池里算不算冷」，天然免疫中枢漂移。本份检验尺度平滑的收益是否有一部分其实来自去量纲——若
+  14 与 09 接近，说明中枢漂移不是问题；若 14 明显更好，后续应把所有换手腿都包成截面分位。归一化权重：size_ln 43.5% / pb 21.7%
+  / xsec_pct(turn_ma_n 20) 17.4% / xsec_pct(turn_ma_n 120) 17.4%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: xsec_pct
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.4
+- op: xsec_pct
+  of:
+    op: turn_ma_n
+    n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

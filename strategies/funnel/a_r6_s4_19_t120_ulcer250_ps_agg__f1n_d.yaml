@@ -1,0 +1,22 @@
+name: a_r6_s4_19_t120_ulcer250_ps_agg__f1n_d
+type: score
+desc: 用 ulcer_n(250) 路径质量（一年回撤深度均值）替掉波动腿配 ps −0.5：回撤深度比标准差更贴持有体验，也与换手不同源。激进档是「最小 +
+  最冷 + 回撤最浅 + 营收最便宜」的四重叠加；温和档检验回撤路径质量能否在规模退潮后独立贡献，还是只有当规模把票锁进同一小片区域时才有效。本份为第 10 对的激进档：size_ln
+  −2.50、turn_ma_n(120) −1.00。按 |w| 归一：size_ln 56.2% / turn_ma_n(120) 22.5% / ulcer_n(250)
+  10.1% / ps_ttm 11.2%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。
+factors:
+- op: size_ln
+  weight: -2.5
+- op: turn_ma_n
+  n: 60
+  weight: -1.0
+- op: ulcer_n
+  n: 250
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

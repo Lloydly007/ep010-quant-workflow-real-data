@@ -1,0 +1,16 @@
+name: b_r4_s2_05_turn20_pbheavy_sizeweak
+type: score
+desc: 20 日冷清与低 PB 并列为两个主信号（pb -0.80）、规模压到 -0.30：假定短期无人交易的股票必须先足够便宜才值得买，估值从下限升级为共决条件，规模项只用来剔除微盘噪声。
+factors:
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

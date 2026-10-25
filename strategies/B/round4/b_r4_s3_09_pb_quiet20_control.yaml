@@ -1,0 +1,16 @@
+name: b_r4_s3_09_pb_quiet20_control
+type: score
+desc: "pb 对照臂的月度窗口档：与 04 对齐。第 3 轮里 20 日档的 pb 候选超额偏低而 IR 中等，本份在同一权重骨架下重测，用来判断那个结果是窗口造成的还是 pb 口径造成的；若 09 依旧弱于 04，则 ps 与换手短窗口的配合是口径带来的增量，而非窗口本身。"
+factors:
+- op: pb
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: a_r3_s3_10_mom20_lowvol
+type: score
+desc: 小盘加20日动量同时压低20日波动率：动量策略最怕高波动小盘的反转，低波过滤剔掉靠消息暴涨暴跌的票，留下温和上行、回撤更浅的强势股。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ret_n
+  n: 20
+  weight: 0.75
+- op: vol_n
+  n: 20
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

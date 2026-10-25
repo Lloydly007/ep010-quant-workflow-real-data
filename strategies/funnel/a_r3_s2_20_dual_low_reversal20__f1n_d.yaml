@@ -1,0 +1,17 @@
+name: a_r3_s2_20_dual_low_reversal20__f1n_d
+type: score
+desc: 反向假设：长期冷门的小盘短期跌多了更容易均值回归，给20日动量负权做超跌加分，月度调仓给修复留出时间。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

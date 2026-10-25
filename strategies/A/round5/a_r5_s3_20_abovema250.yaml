@@ -1,0 +1,23 @@
+name: a_r5_s3_20_abovema250
+type: score
+desc: "便宜且站上年线：close_over_ma_n 250 日 +0.3 配 vol_n 60 日 -0.35，便宜两腿各 -0.5、size_ln -0.6。年线是最慢的趋势确认，本份测最严格的止跌条件能否把便宜组里仍在长期下跌通道的样本剔干净，代价是入选变少、组合更集中。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: close_over_ma_n
+  n: 250
+  weight: 0.3
+- op: vol_n
+  n: 60
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

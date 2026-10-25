@@ -1,0 +1,19 @@
+name: b_r3_s2_08_quiet20_own_pb_pct
+type: score
+desc: 选自身一年 PB 分位与绝对 PB 都低、近 20 日换手冷清的股票，理由是相对自己历史便宜能剔除行业估值中枢漂移，行业中性后再比可避免银行地产长期霸榜。
+factors:
+- op: pb
+  weight: -0.55
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.75
+- op: turn_ma_n
+  n: 20
+  weight: -0.7
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r4_s1_11_t60_w050
+type: score
+desc: "60 日换手 -0.50：季度窗口过滤掉单周缩量的偶然性，与 20 日 -0.50 构成同权重不同窗的对照，看拥挤度的记忆长度该按周算还是按季度算。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

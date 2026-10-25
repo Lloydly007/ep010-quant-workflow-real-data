@@ -1,0 +1,17 @@
+name: b_r5_s3_09_pb_ts60_turn20
+type: score
+desc: "最快的一对窗口：季度估值分位 + 月度换手。假设估值下修与缩量往往同月发生，这类标的最容易被周度打分在冷启动阶段选中；缺点是对单周成交异常敏感，需要宁多勿少地让名单滚动。"
+factors:
+- op: ts_pct
+  n: 60
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,13 @@
+name: a_r1_s3_19_ind_rel_strength
+type: rule
+desc: 候选池先放宽到“站上20日线且5日涨幅超过2%”的所有股票，再用行业内排名对“收盘距60日均线的偏离度”排序，挑出本行业内趋势走得最远的那一只——这样衡量的是行业内相对趋势强度而不是绝对涨幅，能避免高波动行业整体占优、把板块beta当成选股能力；跌破20日线离场，40日持有、8%止损。
+buy:
+  - {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+  - {op: ret_n, n: 5, dir: above, threshold: 2}
+sell:
+  - {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+rank: {op: ind_rank, of: {op: close_over_ma_n, n: 60}, order: desc}
+max_hold_days: 40
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

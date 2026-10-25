@@ -1,0 +1,16 @@
+name: a_r6_s4_06_t250_ps_mild
+type: score
+desc: "换手窗口拉到 250 日年度档（连续一年被市场冷落）配 ps −0.5。年度冷门与规模高度共线，激进档等于「最没人要的最小票 + 最便宜的营收」双重押注；温和档检验年度冷门是否独立于市值起作用——若温和档仍有超额，被忽视效应就不只是规模代理，如果温和档明显退化则反之。本份为第 3 对的温和档：size_ln −0.80、turn_ma_n(250) −0.30。按 |w| 归一：size_ln 50.0% / turn_ma_n(250) 18.8% / ps_ttm 31.2%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。"
+factors:
+- op: size_ln
+  weight: -0.80
+- op: turn_ma_n
+  n: 250
+  weight: -0.30
+- op: ps_ttm
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

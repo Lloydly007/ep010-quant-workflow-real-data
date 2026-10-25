@@ -1,0 +1,15 @@
+name: a_r2_s3_04_dryvol_newhigh
+type: rule
+desc: "现象：第1轮几乎所有突破配置都要求放量确认，方向可能写反了——A股放量突破常是最后一棒，缩量新高才是筹码锁定。为什么该有超额：缩量创新高意味着上方无套牢盘、持有者惜售，抛压真空下小资金即可推动价格，配合换手<3%排除情绪票，这类突破的回撤明显更浅。怎么进出：20日新高且5日量比<0.8（缩量）、换手<3%、站在20日线上方才买；跌破10日线离场、持满20日、-8%止损；候选按20日均换手升序取最安静的10只。相对第1轮：把量能确认的方向反过来写，直接检验第1轮默认的放量等于真突破假设，也把第1轮买在情绪高潮的入场时点换掉。"
+buy:
+- {op: break_high_n, n: 20, dir: above, threshold: 0.5}
+- {op: vol_ratio_n, n: 5, dir: below, threshold: 0.8}
+- {op: turn, dir: below, threshold: 3}
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+rank: {op: turn_ma_n, n: 20, order: asc}
+sell:
+- {op: close_over_ma_n, n: 10, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

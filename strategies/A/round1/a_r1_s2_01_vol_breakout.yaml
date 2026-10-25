@@ -1,0 +1,25 @@
+name: a_r1_s2_01_vol_breakout
+type: rule
+desc: 当日最高价创20日新高且量比放大至1.5倍以上，说明突破是新资金进场而非缩量假突破，突破后短期动量更易延续；按量比降序取前10只，持有10日，跌破10日均线或-5%止损离场。
+buy:
+- op: break_high_n
+  n: 20
+  dir: above
+  threshold: 0.5
+- op: vol_ratio_n
+  n: 20
+  dir: above
+  threshold: 1.5
+rank:
+  op: vol_ratio_n
+  n: 20
+  order: desc
+sell:
+- op: close_over_ma_n
+  n: 10
+  dir: below
+  threshold: 1.0
+max_hold_days: 10
+stop_loss: 5%
+max_positions: 10
+industry_cap: 0

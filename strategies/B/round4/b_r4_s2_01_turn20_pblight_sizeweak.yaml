@@ -1,0 +1,16 @@
+name: b_r4_s2_01_turn20_pblight_sizeweak
+type: score
+desc: 换手窗口压到 20 日、pb 仅给 -0.40 的下限、规模降到 -0.30：假设一个月内成交最冷清的股票存在短期关注度缺口，而这个缺口与市值大小无关，因此故意削弱规模项，让 20 日换手独自承担选股；周度调仓大致与这一信号的半衰期同频。
+factors:
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

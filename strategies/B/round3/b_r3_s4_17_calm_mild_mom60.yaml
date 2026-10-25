@@ -1,0 +1,12 @@
+name: b_r3_s4_17_calm_mild_mom60
+type: score
+desc: "PB0.4、120日低波0.3、60日收益正权0.3并在市值档内中性化：低波过滤掉靠单日暴涨堆出来的动量，正权中期动量说明折价正在被修复而非继续下跌，市值中性化避免变成小盘动量的复制品。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 120, weight: -0.3}
+- {op: ret_n, n: 60, weight: 0.3}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

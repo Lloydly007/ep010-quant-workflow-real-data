@@ -1,0 +1,16 @@
+name: b_r4_s2_24_turn120_pbheavy_sizedom
+type: score
+desc: 120 日窗口下规模 -2.00 主导、pb -0.80 共决：作为 120 日组的边界档，观察强规模倾斜下把窗口从 60 拉到 120 是否还能改变名单，从而判断窗口长度与规模倾斜是否存在替代关系。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -2.00
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

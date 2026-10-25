@@ -1,0 +1,16 @@
+name: b_r4_s3_11_ps_pb_equal_turn120
+type: score
+desc: "ps 与 pb 等权双臂（各 −0.45）+ 120 日换手 −0.75，去掉规模腿：假设两种估值口径的误差不相关——pb 的误差来自资产结构（商誉、在建、金融资产），ps 的误差来自收入确认与毛利差异，两条腿等权能互相抵消，比单口径更接近'真便宜'。与 01-05 的差别是估值拆成两腿且没有规模倾斜。"
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

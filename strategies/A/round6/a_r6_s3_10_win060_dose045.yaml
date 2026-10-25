@@ -1,0 +1,19 @@
+name: a_r6_s3_10_win060_dose045
+type: score
+desc: "ulcer_n(60) -0.45：短窗 + 中高剂量，检验近端路径在给足权重时是否比长窗更锐利；短窗在小市值上新股期缺失更少，样本覆盖也更完整。归一化权重：size_ln 37.0% / pb 18.5% / turn_ma_n(120) 27.8% / ulcer_n(60) 16.7%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 60
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

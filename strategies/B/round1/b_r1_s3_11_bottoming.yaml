@@ -1,0 +1,25 @@
+name: b_r1_s3_11_bottoming
+type: rule
+desc: 120日溃疡高于15%（半年深跌）但20日溃疡已压到3%以下（近期回撤收敛），说明下跌动能耗尽、底部结构正在形成，此时买入的赔率高于趋势确认之后；按20日溃疡升序取收敛最彻底的10只、持有40日等趋势确认，不设止损以免在最后一跌被洗出，20日溃疡回升破8%（结构再破）离场。
+buy:
+- op: ulcer_n
+  n: 120
+  dir: above
+  threshold: 15.0
+- op: ulcer_n
+  n: 20
+  dir: below
+  threshold: 3.0
+rank:
+  op: ulcer_n
+  n: 20
+  order: asc
+sell:
+- op: ulcer_n
+  n: 20
+  dir: above
+  threshold: 8.0
+max_hold_days: 40
+stop_loss: null
+max_positions: 10
+industry_cap: 3

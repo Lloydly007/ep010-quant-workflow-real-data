@@ -1,0 +1,21 @@
+name: b_r5_s1_04_annual_quiet_smooth
+type: score
+desc: 同 1:1:1 等权，年度尺度双载体：250 日换手 -0.85 与 250 日回撤面积 -0.30。假设估值折价的持续性要用年度尺度的“既没人交易、路径也平”来刻画——长窗换手最稳因此给最高载体权重，回撤面积负责把一年里靠暴跌砸出来的便宜剔掉；短窗的换手噪声在这里被完全放弃。
+factors:
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.4
+- op: pe_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.85
+- op: ulcer_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

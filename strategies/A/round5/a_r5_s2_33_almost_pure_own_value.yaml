@@ -1,0 +1,21 @@
+name: a_r5_s2_33_almost_pure_own_value
+type: score
+desc: "估值腿压到 -1.5（长窗 -1.2 + 短窗 -0.3）、规模只剩 -0.35：本组纯度上限。若超额在规模几乎退出后仍成立，说明'自身历史便宜'是独立 alpha。"
+factors:
+- op: size_ln
+  weight: -0.35
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -1.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

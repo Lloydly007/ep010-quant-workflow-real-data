@@ -1,0 +1,23 @@
+name: b_r1_s3_20_ts_pb_trough
+type: rule
+desc: 自身PB处于250日时序分位底部说明相对自己的历史估值在极低位，而120日溃疡低于15%说明这不是长期下跌途中的便宜，是估值底而非衰退底；按PB时序分位升序取10只、持有60日等估值均值回归，20日均换手升破5%（关注度回流完成）离场，止损10%。
+buy:
+- op: ulcer_n
+  n: 120
+  dir: below
+  threshold: 15.0
+rank:
+  op: ts_pct
+  n: 250
+  of:
+    op: pb
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 5.0
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 0

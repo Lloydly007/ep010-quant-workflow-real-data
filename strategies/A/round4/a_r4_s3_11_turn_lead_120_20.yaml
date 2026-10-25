@@ -1,0 +1,15 @@
+name: a_r4_s3_11_turn_lead_120_20
+type: score
+desc: "换手主导、波动辅助：turn(120) 权重 -1.1 对 vol(20) 的 -0.4，约 2.75:1。把“没人交易”当主信号，低波只作轻微加分，防止低波腿把整片低波行业直接抬上来。"
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -1.1
+- op: vol_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

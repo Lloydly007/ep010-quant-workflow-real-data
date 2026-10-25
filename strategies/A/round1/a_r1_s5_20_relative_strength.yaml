@@ -1,0 +1,13 @@
+name: a_r1_s5_20_relative_strength
+type: rule
+desc: 沪深300ETF跌破60日均线的市场走弱阶段里仍保持20日涨幅超5%的个股，属于资金逆势抱团的相对强势品种，弱势中稀缺的确定性会把存量资金继续挤向它们，故只在市场走弱期间买入、个股5日跌超5%即离场
+buy:
+- {op: etf_above_ma_n, n: 60, dir: below, threshold: 0.5}
+- {op: ret_n, n: 20, dir: above, threshold: 5}
+sell:
+- {op: ret_n, n: 5, dir: below, threshold: -5}
+rank: {op: ret_n, n: 20, order: desc}
+max_hold_days: 20
+stop_loss: 10%
+max_positions: 10
+industry_cap: 5

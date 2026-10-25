@@ -1,0 +1,15 @@
+name: a_r2_s2_08_gate_slow_mom_longhold
+type: rule
+desc: 现象：第1轮的持有期集中在5到10日并配5%到8%紧止损，交易成本与噪声止损把趋势收益磨掉大半。为何A股有超额：在300ETF年线上方的慢牛阶段，60日温和上涨（3%到10%）的股票趋势最平滑，只有把持有期拉长到60日、把退出交给年线这类慢变量，才拿得住完整的趋势段。进出：ETF250日线上方、个股站上120日线、60日涨幅在3%到10%之间时买入，按60日涨幅最温和者优先；个股跌破250日线才离场，不设固定止损，最长60日、同行业最多10只。相对第1轮改动：把“短持有加紧止损”改成“长持有加慢退出”，针对第1轮换手过高与噪声止损的问题。
+buy:
+- {op: etf_above_ma_n, n: 250, dir: above, threshold: 0.5}
+- {op: ret_n, n: 60, dir: above, threshold: 3}
+- {op: ret_n, n: 60, dir: below, threshold: 10}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+rank: {op: ret_n, n: 60, order: asc}
+sell:
+- {op: close_over_ma_n, n: 250, dir: below, threshold: 1.0}
+max_hold_days: 60
+stop_loss: none
+max_positions: 10
+industry_cap: 10

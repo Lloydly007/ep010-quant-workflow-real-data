@@ -1,0 +1,14 @@
+name: a_r4_s2_26_t60_size140
+type: score
+desc: "60 日季度窗口、规模 -1.40（占 65.1%），阶梯第 2 档：与 20 日窗口同强度档（同样 -1.40）配对，看季度窗口是否把超额集中到换手更慢的那部分小盘。"
+factors:
+- op: size_ln
+  weight: -1.4
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

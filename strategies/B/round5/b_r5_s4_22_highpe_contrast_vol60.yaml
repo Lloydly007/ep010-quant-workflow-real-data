@@ -1,0 +1,12 @@
+name: b_r5_s4_22_highpe_contrast_vol60
+type: score
+desc: "反向对照：PE 正权 0.3（偏好市场愿意给溢价的名字）+ PB 负权 0.4 + 60 日低波 0.3。用来检验贵的便宜股是否仍含质量信息，以及纯价值腿的超额是否只是估值单腿驱动——全组唯一与 20/21 符号相反的假设。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: pe_ttm, weight: 0.3}
+- {op: vol_n, n: 60, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

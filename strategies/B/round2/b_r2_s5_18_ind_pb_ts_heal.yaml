@@ -1,0 +1,13 @@
+name: b_r2_s5_18_ind_pb_ts_heal
+type: rule
+desc: 现象：跨行业比较自身估值分位仍会被行业整体杀估值带偏(银行、地产长期待在自身分位底部)；第1轮 s3_19/s4_08 用行业内绝对 PB 排名控制了行业中枢，但绝对 PB 会把长期低估的公司和暂时被错杀的公司混在一起。为什么在 A 股该有超额：在同一证监会门类内比较谁相对自己的历史最便宜，只留下同业内真正的错杀；再要求近月几乎无回撤(20 日溃疡 <3%)说明已经止血、5 日均换手回到 1% 以上说明关注度开始回流。怎么进出：20 日溃疡 <3% 且 5 日均换手 >1% 时买入，按「自身 250 日 PB 分位在门类内的分位」升序取 10 只，20 日溃疡破 8% 或满 40 日离场，止损 8%、同行业最多 5 只。改了什么：把第1轮行业内绝对 PB 排名换成行业内自身历史分位排名，并补上止血与关注度回流的双确认，把行业中性化从静态比价做到时序错杀。
+buy:
+- {op: ulcer_n, n: 20, dir: below, threshold: 3}
+- {op: turn_ma_n, n: 5, dir: above, threshold: 1}
+sell:
+- {op: ulcer_n, n: 20, dir: above, threshold: 8}
+rank: {op: ind_rank, of: {op: ts_pct, n: 250, of: {op: pb}}, order: asc}
+max_hold_days: 40
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

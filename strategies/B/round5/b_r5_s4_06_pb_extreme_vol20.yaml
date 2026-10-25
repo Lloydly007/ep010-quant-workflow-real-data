@@ -1,0 +1,11 @@
+name: b_r5_s4_06_pb_extreme_vol20
+type: score
+desc: "PB 压到 0.85、20 日低波只留 0.15，是本轮的价值端控制组：低波几乎只用于同分并列时的次序。若低波异象能独立贡献，这样压缩它应当明显削弱抗跌性；若不削弱，说明抗跌主要来自折价本身而不是波动，与 07 构成同窗口的对称极端。"
+factors:
+- {op: pb, weight: -0.85}
+- {op: vol_n, n: 20, weight: -0.15}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

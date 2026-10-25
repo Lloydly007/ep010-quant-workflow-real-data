@@ -1,0 +1,13 @@
+name: a_r1_s4_19_xsec_volrank
+type: rule
+desc: 突破20日新高的候选往往同时有数只，用当日量比在30只池中的截面分位排序，等于买资金最集中追捧的那一只——量能的截面相对位置比绝对量比更能区分资金首选，故按截面量能分位取前10，跌破20日线离场，10日为限、8%止损。
+buy:
+  - {op: break_high_n, n: 20, dir: above, threshold: 0.5}
+  - {op: vol_ratio_n, n: 5, dir: above, threshold: 1.0}
+sell:
+  - {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+rank: {op: xsec_pct, of: {op: vol_ratio_n, n: 5}, order: desc}
+max_hold_days: 10
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

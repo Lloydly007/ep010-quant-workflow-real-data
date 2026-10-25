@@ -1,0 +1,19 @@
+name: b_r4_s4_19_dual_turn20_250
+type: score
+desc: "双窗换手（一快一慢）：20 日 −0.60 与 250 日 −0.60 同时进因子，PE/PB 各 0.6。短窗抓‘这个月是否被拥挤’，长窗抓‘这一年是否被遗忘’，两条腿合并等于要求标的同时满足近期不热、长期也不热，比单一窗口更严。检验换手信号的信息是否在窗口维度上可加而非重复。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 20
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

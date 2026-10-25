@@ -1,0 +1,21 @@
+name: a_r6_s3_01_dose020_u250_t120__f2n_u
+type: score
+desc: 把 ulcer_n(250) 以 -0.20 的轻量塞进 size_ln/pb/turn_ma_n(120) 三腿基准：判据是「几乎不改三腿结构时，路径质量腿还剩多少边际信息」。若
+  0.20 与纯三腿几乎无差别，说明一年回撤信息已被低换手与低估值代理掉，继续加码没有意义。归一化权重：size_ln 40.8% / pb 20.4% / turn_ma_n(120)
+  30.6% / ulcer_n(250) 8.2%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

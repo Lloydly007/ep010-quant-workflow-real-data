@@ -1,0 +1,24 @@
+name: b_r6_s2_13_path60_vol250__f4n_d
+type: score
+desc: 10 的镜像：一季路径 + 一年波动。与 12 一起构成「快路径 / 慢波动」的三格梯度（20/60/120 对 250），用来判断短路径腿是否存在一个最优观察期：若
+  13 优于 12 与 14，说明一个季度的坑比一个月的坑更能代表「正在变坏」，一个月的坑更像单次事件。归一化权重：pb 20.0% / size_ln 40.0%
+  / turn_ma_n(120) 25.0% / ulcer_n(60) 7.5% / vol_n(250) 7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 60
+  weight: -0.225
+- op: vol_n
+  n: 120
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

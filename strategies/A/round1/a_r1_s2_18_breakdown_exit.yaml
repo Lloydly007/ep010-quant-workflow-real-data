@@ -1,0 +1,25 @@
+name: a_r1_s2_18_breakdown_exit
+type: rule
+desc: 以"站上20日线且20日涨超5%"确认趋势与动量同向，但离场不用均线而用"收盘跌进20日最低点2%以内"的破位确认，避免均线附近反复穿越造成无谓换手；60日长持有、-10%止损，赚的是省下交易成本后的趋势段。
+buy:
+- op: close_over_ma_n
+  n: 20
+  dir: above
+  threshold: 1.0
+- op: ret_n
+  n: 20
+  dir: above
+  threshold: 5
+rank:
+  op: ret_n
+  n: 60
+  order: desc
+sell:
+- op: dist_low_n
+  n: 20
+  dir: below
+  threshold: 2
+max_hold_days: 60
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

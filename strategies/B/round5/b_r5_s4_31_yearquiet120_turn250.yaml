@@ -1,0 +1,12 @@
+name: b_r5_s4_31_yearquiet120_turn250
+type: score
+desc: "250 日低换手主导（0.4）、120 日低波 0.25、PB 0.35：年度换手低意味着股东结构稳定、抛压小，是「跌不动」的结构性解释。波动腿只做辅助确认；与 19 是同一假设的绝对换手版本，两条一起才能判断关注度该用绝对水平还是自身历史来度量。"
+factors:
+- {op: pb, weight: -0.35}
+- {op: vol_n, n: 120, weight: -0.25}
+- {op: turn_ma_n, n: 250, weight: -0.4}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

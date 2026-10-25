@@ -1,0 +1,16 @@
+name: a_r3_s4_01_small_calm_vol20
+type: score
+desc: 选对数市值最小、20 日收益标准差最低、同时低 PB 的股票；小盘端的低波异象最强，短期波动低说明近月没有资金炒作与拥挤交易，回归基本面定价的空间更大。
+factors:
+- op: size_ln
+  weight: -1.6
+- op: vol_n
+  n: 20
+  weight: -0.55
+- op: pb
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

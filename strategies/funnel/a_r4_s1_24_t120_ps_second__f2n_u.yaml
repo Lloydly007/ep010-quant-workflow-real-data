@@ -1,0 +1,18 @@
+name: a_r4_s1_24_t120_ps_second__f2n_u
+type: score
+desc: 120 日换手 -0.50 与 ps_ttm -0.50 并重：半年清淡配收入端便宜，检验压低换手权重、把预算让给估值时，组合会不会从冷门股漂移成单纯的便宜股。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

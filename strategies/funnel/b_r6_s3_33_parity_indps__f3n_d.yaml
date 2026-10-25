@@ -1,0 +1,22 @@
+name: b_r6_s3_33_parity_indps__f3n_d
+type: score
+desc: 29 号的 ps 口径替换：ps 改用 ind_rank(ps_ttm) 行业内分位，权重仍 -0.65，其余不动。假设平价结构里四条腿各管一个维度，ps
+  这一维应当量“同行业内相对贵不贵”，而不是跨行业的绝对倍数；替换后四条腿分别对应资产端、营收端（行业内）、规模、换手，维度划分更干净。归一化权重：pb 25.0%
+  / ind_rank(ps_ttm) 25.0% / size_ln 25.0% / turn_ma_n(120) 25.0%。
+factors:
+- op: pb
+  weight: -0.65
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.65
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 60
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

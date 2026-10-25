@@ -1,0 +1,19 @@
+name: b_r4_s3_30_ps_quiet120_trend250
+type: score
+desc: "ps 便宜 + 半年冷清 + 年度均线确认（正权）：ps −0.45 / size −0.55 / turn 120 −0.60 / close_over_ma 250 +0.45。假设'便宜且冷清'里混着大量长期下跌的价值陷阱，用价格站上一年均线做确认能把'便宜但趋势还在'的名字排前；与 29 的反转方向相反，本份显式检验抄底与顺势哪一边更适合 ps 口径的小盘。"
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+- op: close_over_ma_n
+  n: 250
+  weight: 0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

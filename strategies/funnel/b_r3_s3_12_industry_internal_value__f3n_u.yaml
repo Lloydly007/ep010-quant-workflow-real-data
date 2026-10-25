@@ -1,0 +1,21 @@
+name: b_r3_s3_12_industry_internal_value__f3n_u
+type: score
+desc: 在证监会门类内比较 PB（行业内的秩）而不是全池比 PB，再叠 120 日低换手与 2:1 的规模偏向，选同行里最便宜的小票：银行、地产这类天然低 PB
+  行业不再霸榜，超额来自行业内的相对错价而非行业赌注。
+factors:
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.8
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

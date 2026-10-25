@@ -1,0 +1,16 @@
+name: b_r5_s2_16_annual_turn_1to1p5
+type: score
+desc: "年度窗口上的 1:1.5（pb -0.60 / size_ln -0.90）：与第 3 轮 B 组的年度 1:1.5 点（pb 0.40 : size 0.60）同轴，两条腿各加粗 50%。换手仍是 -0.75，因此换手占比由 43% 降到 33%、估值-规模占比升到 67%：检验占比结构变化（而非比值）在年度窗口上带来多少差异。归一化权重：pb 26.7% / size_ln 40.0% / turn_ma_n(250) 33.3%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -0.90
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

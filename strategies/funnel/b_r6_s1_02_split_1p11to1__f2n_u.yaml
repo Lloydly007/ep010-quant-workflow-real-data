@@ -1,0 +1,21 @@
+name: b_r6_s1_02_split_1p11to1__f2n_u
+type: score
+desc: 分档第一步：120 日换手 -0.475、250 日 -0.425（比值 1.11:1），仍是 0.90 总预算。这一步的用意不是找收益，而是测灵敏度——两个窗口高度相关（250
+  日窗口的大部分样本就是 120 日窗口的超集），若名单在 1:1→1.11:1 之间就发生可观漂移，说明“分割”这个自由度在噪声尺度上也有效，后续每一档都必须当作真实变化读；若几乎不动，则说明两窗口信息重叠，比值轴的意义要打折。归一化权重：pb
+  24.4% / size_ln 31.7% / turn_ma_n(120) 23.2% / turn_ma_n(250) 20.7%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.475
+- op: turn_ma_n
+  n: 250
+  weight: -0.425
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r3_s3_21_sizepct_neut_mom60
+type: score
+desc: 先把规模做成截面分位再加负权并开启市值中性：等价于在市值五档内部比较，规模暴露被压平后剩余差异由60日动量解释，检验动量是否独立于规模。
+factors:
+- op: xsec_pct
+  of:
+    op: size_ln
+  weight: -1.0
+- op: ret_n
+  n: 60
+  weight: 1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,24 @@
+name: b_r6_s4_20_ma120_confirm
+type: score
+desc: 半半轴心 + 120 日均线上方正权 20%：用价格站上半年线作趋势确认，比 18 的 60 日收益更平滑、更少被单日跳空影响。检验「便宜 + 趋势没坏」是否优于单纯便宜。归一化权重：pb 40.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 20.0% / close_over_ma_n(120)，正权 +20.0% 20.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+- op: close_over_ma_n
+  n: 120
+  weight: 0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,12 @@
+name: a_r2_s5_07_ind_rs60_leader
+type: rule
+desc: 现象：同行业股票共享需求周期、政策与成本，行业内部的涨幅差异更像个股层面的资金偏好；全池排名会把行业 β 误当成选股能力，第 1 轮尤其容易整组押在一个板块上、回撤同步。为什么在 A 股该有超额：剔除行业共同项之后剩下的行业内相对强度，对应机构在同一赛道里向龙头集中这一可重复行为；行业上限 3 只强制分散，避免组合回撤由单一行业决定。怎么进出：在证监会门类内，从站上 120 日线的股票中按 60 日涨幅的行业内排名降序取前 10；跌破 120 日线（相对强度的趋势基础消失）离场，40 日上限、10% 止损、同行业最多 3 只。相对第 1 轮的改动：第 1 轮 A 路多数配置用全池绝对涨幅排序，行业 β 混进 alpha；本配置把排序键换成行业内排名并加行业上限。
+buy:
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+rank: {op: ind_rank, of: {op: ret_n, n: 60}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 120, dir: below, threshold: 1.0}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 3

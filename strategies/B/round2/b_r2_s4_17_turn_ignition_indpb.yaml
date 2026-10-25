@@ -1,0 +1,12 @@
+name: b_r2_s4_17_turn_ignition_indpb
+type: rule
+desc: 现象是一只同业最便宜的股票单日换手突然破8%，是异常资金介入的可观测痕迹，A股题材轮动经常从低位冷门股的一根放量长阳开始；第1轮用了同一个高换手条件，但排序买全市场PB最低、只持5日博反转，方向与持有期都不对。底部放量说明有资金愿意在折价区接手，这是折价开始收敛的最早证据、比任何估值分位都及时，把高换手限定在同业最便宜端就把“投机”换成了“重估启动”。做法是当日换手高于8%触发买入，按行业内PB分位升序取10只，当日换手回落到2%以下（资金退潮）或持满20日、亏8%离场，同行业最多3只。相对第1轮改动：同样零件、相反经济含义，第1轮当反转信号、这份当重估启动信号，并延长持有期让折价收敛走完。
+buy:
+- {op: turn, dir: above, threshold: 8}
+rank: {op: ind_rank, of: {op: pb}, order: asc}
+sell:
+- {op: turn, dir: below, threshold: 2}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

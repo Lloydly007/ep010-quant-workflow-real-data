@@ -1,0 +1,19 @@
+name: b_r5_s3_23_pe_token_antitrap_ts250
+type: score
+desc: "只给 PE 极小权重（-0.25）作陪衬，主导权仍在 250 日 PB 分位 -0.9 与 120 日换手 -0.65：本池 pe_ttm 约一成是负值（真实亏损），低 PE 排序会把亏损股排到前面，故 PE 只作弱口径分散，不作主排序键；这条假设本身就要在报告里标注口径缺陷。"
+factors:
+- op: pe_ttm
+  weight: -0.25
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.9
+- op: turn_ma_n
+  n: 120
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,13 @@
+name: a_r1_s5_03_quiet_near_high
+type: rule
+desc: 股价仍在120日高点10%以内但5日量比萎缩到0.8以下，缩量整理代表筹码锁定而非放量派发，抛压耗尽后向上突破的概率高于继续下杀，故缩量时买入、距120日高点回落超过15%离场
+buy:
+- {op: dist_high_n, n: 120, dir: above, threshold: -10}
+- {op: vol_ratio_n, n: 5, dir: below, threshold: 0.8}
+sell:
+- {op: dist_high_n, n: 120, dir: below, threshold: -15}
+rank: {op: ret_n, n: 60, order: desc}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

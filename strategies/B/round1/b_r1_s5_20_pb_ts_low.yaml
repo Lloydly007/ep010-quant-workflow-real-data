@@ -1,0 +1,12 @@
+name: b_r1_s5_20_pb_ts_low
+type: rule
+desc: "绝对PB便宜可能永远便宜，真正可交易的是自身PB跌到一年内最低分位的错杀，配合120日溃疡高于10%说明预期已充分下调；60日溃疡收敛到3%以下或持有40日、止损10%离场。"
+buy:
+- {op: ulcer_n, n: 120, dir: above, threshold: 10.0}
+sell:
+- {op: ulcer_n, n: 60, dir: below, threshold: 3.0}
+rank: {op: ts_pct, n: 250, of: {op: pb}, order: asc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 0

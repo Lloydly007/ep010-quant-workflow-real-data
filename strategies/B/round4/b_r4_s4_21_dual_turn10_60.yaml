@@ -1,0 +1,19 @@
+name: b_r4_s4_21_dual_turn10_60
+type: score
+desc: "双窗换手的相邻档组合：10 日 −0.70 与 60 日 −0.70，两窗只差 6 倍、相关性高，PE/PB 各压到 0.5。若高度相关的双窗与单窗（b_r4_s4_03/b_r4_s4_05）表现接近，说明换手腿在相邻窗口上信息重复，双窗只增加参数而不增加 alpha；本份就是这条‘冗余额度’的检验。"
+factors:
+- op: pe_ttm
+  weight: 0.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 10
+  weight: -0.7
+- op: turn_ma_n
+  n: 60
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

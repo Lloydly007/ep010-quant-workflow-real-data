@@ -1,0 +1,16 @@
+name: a_r3_s3_06_xsec_mom60_pct
+type: score
+desc: 把60日动量先做当日全池截面分位再加正权：原始涨幅被少数暴涨股主导，截面分位化让权重对极值不敏感，小盘倾斜下选出的是相对强而非绝对暴涨。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: xsec_pct
+  of:
+    op: ret_n
+    n: 60
+  weight: 1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r4_s2_15_t120_size250_top
+type: score
+desc: "120 日窗口、规模 -2.50（占 76.9%），阶梯上端：与 20 日上端配对，判断规模倾斜的饱和点是否随换手窗口延长而抬高。"
+factors:
+- op: size_ln
+  weight: -2.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

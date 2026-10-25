@@ -1,0 +1,14 @@
+name: a_r1_s1_20_pullback_depth
+type: rule
+desc: 距60日高点5%至15%的适度回撤代表趋势进入休整而非反转（只有深跌才破坏趋势），买在休整中段能拿到比追新高更好的成本与更近的止损位｜按回撤最充分者优先，回撤超15%或跌破60日线即认错，40日上限、10%止损。
+buy:
+- {op: dist_high_n, n: 60, dir: above, threshold: -15.0}
+- {op: dist_high_n, n: 60, dir: below, threshold: -5.0}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: dist_high_n, n: 60, order: asc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 10

@@ -1,0 +1,13 @@
+name: b_r2_s1_01_dryvol_reclaim
+type: rule
+desc: 现象是低估值股长期换手枯竭后价格重新站上20日线，这是筹码换手完成、卖压耗尽的第一道确认。A股散户与游资主导，下跌途中不断有人抢反弹把阴跌拖长，真正的底部总是先缩量再收复短均线，此时买入的成本区远离上方套牢盘、反弹弹性最大。进出为20日均换手低于1%且收盘站上20日线才买，跌破20日线立即走，持仓上限40日、止损10%。相对第1轮失败模式的改动：第1轮同类「冷清度+估值排序」只按冷清度买、从不确认价格止跌，等于接飞刀，且卖点挂在换手放大上，跌势里永远等不到；本版把进出全部交给价格结构，估值只决定在合格集里选哪只。
+buy:
+- {op: turn_ma_n, n: 20, dir: below, threshold: 1}
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+rank: {op: pb, order: asc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

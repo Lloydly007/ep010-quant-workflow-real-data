@@ -1,0 +1,13 @@
+name: a_r1_s1_16_newhigh250_break
+type: rule
+desc: 创出250日新高（上方无历史套牢盘、全部持有人浮盈）且站在年线上方，抛压最小、趋势最强，新高动量在中期更可能延续｜按250日涨幅取最强突破者，60日线破位或满60日离场，10%止损。
+buy:
+- {op: break_high_n, n: 250, dir: above, threshold: 0.5}
+- {op: close_over_ma_n, n: 250, dir: above, threshold: 1.0}
+rank: {op: ret_n, n: 250, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 60
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

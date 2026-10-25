@@ -1,0 +1,14 @@
+name: a_r4_s2_20_t250_size250_top
+type: score
+desc: "250 日年度窗口、规模 -2.50（占 76.9%），上端饱和档：若超额在此仍不回落，说明规模倾斜在慢换手语境里几乎无上限，饱和假设被否。"
+factors:
+- op: size_ln
+  weight: -2.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

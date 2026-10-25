@@ -1,0 +1,12 @@
+name: a_r1_s4_14_streakdown_exh
+type: rule
+desc: 连续下跌超过5个交易日之后，边际卖压已被多日集中释放、抛盘接近枯竭，此时反弹的赔率优于继续下行；这是与连阳追涨方向相反的一类假设——故买连跌衰竭并用5日跌幅最深者优先，5日反弹满3%即走，最多持5日、5%止损，行业上限3只。
+buy:
+  - {op: streak_down, dir: above, threshold: 5}
+sell:
+  - {op: ret_n, n: 5, dir: above, threshold: 3}
+rank: {op: ret_n, n: 5, order: asc}
+max_hold_days: 5
+stop_loss: 5
+max_positions: 10
+industry_cap: 3

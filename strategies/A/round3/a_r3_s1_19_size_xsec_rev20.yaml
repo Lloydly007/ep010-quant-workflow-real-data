@@ -1,0 +1,16 @@
+name: a_r3_s1_19_size_xsec_rev20
+type: score
+desc: 小市值叠20日收益的截面分位并取负权，买全池里相对最弱的那批小盘，截面口径直接对齐输家组合的定义，比绝对跌幅更能剔除市场整体涨跌的干扰。
+factors:
+- op: size_ln
+  weight: -1.85
+- op: xsec_pct
+  of:
+    op: ret_n
+    n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

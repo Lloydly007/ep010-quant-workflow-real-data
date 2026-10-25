@@ -1,0 +1,16 @@
+name: b_r4_s2_34_turn250_turn2x__f0n_d
+type: score
+desc: 与 250 日基准的唯一差别是把 turn_ma_n(250) 权重从 -0.75 翻倍到 -1.50（pb -0.40、规模 -0.65 不变）：把窗口长度与信号权重两个维度分开，若翻倍仍不改善，说明年内冷清的信息已被规模与估值吸收，问题不在权重。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -1.5
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

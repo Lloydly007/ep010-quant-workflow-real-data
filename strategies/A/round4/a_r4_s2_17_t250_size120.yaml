@@ -1,0 +1,14 @@
+name: a_r4_s2_17_t250_size120
+type: score
+desc: "250 日年度窗口、规模 -1.20（占 61.5%），阶梯第 2 档：检验年度窗口下规模权重每加一档的边际是否比季度、半年窗口更陡。"
+factors:
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

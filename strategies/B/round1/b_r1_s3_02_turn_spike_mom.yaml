@@ -1,0 +1,22 @@
+name: b_r1_s3_02_turn_spike_mom
+type: rule
+desc: 单日换手率升破5%代表增量资金在一日内集中进场，关注度驱动的买盘通常还有约三个交易日的惯性延续；用近5日换手时序分位把"新增冲击"与"存量高位"分开、只买真正的新增冲击，3日强制离场，单日换手再破8%视为情绪极端提前止盈，止损8%。
+buy:
+- op: turn
+  dir: above
+  threshold: 5.0
+rank:
+  op: ts_pct
+  n: 5
+  of:
+    op: turn_ma_n
+    n: 5
+  order: desc
+sell:
+- op: turn
+  dir: above
+  threshold: 8.0
+max_hold_days: 3
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

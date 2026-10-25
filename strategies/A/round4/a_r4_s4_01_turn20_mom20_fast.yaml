@@ -1,0 +1,17 @@
+name: a_r4_s4_01_turn20_mom20_fast
+type: score
+desc: "换手与动量都取最短档 20 日（turn_ma_n(20) -0.75、ret_n(20) +0.75）、size_ln -1.25：两个快变量在周度调仓下同频滚动，检验小盘里“近期缩量+近月强势”这一最贴短周期的形态能否成立。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

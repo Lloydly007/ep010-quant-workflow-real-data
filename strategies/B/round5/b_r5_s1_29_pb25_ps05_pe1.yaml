@@ -1,0 +1,18 @@
+name: b_r5_s1_29_pb25_ps05_pe1
+type: score
+desc: 配比 pb:ps:pe = 2.5:0.5:1（-0.50/-0.10/-0.20）：pb 独占 5/8，ps 只留象征性的 0.10。这是 ps 的冗余度测试——若 29 与 16 号名单几乎同分布，说明 ps 在本池不提供独立信息，后面的轮次可以省掉它。
+factors:
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.1
+- op: pe_ttm
+  weight: -0.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

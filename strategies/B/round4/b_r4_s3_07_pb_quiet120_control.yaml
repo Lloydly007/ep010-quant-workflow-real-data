@@ -1,0 +1,16 @@
+name: b_r4_s3_07_pb_quiet120_control
+type: score
+desc: "pb 对照臂的半年窗口档：与 02 逐项对齐，只把 ps_ttm 换成 pb。若 07 与 02 的超额差在 120 日窗口上比 250 日更大，说明营收口径的优势依赖于换手确认的速度，而不是无条件成立；这是本组测'口径 × 窗口'交互作用的第二个点。"
+factors:
+- op: pb
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

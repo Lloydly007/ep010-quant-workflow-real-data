@@ -1,0 +1,16 @@
+name: b_r6_s4_01_pb_half_ts250_half
+type: score
+desc: 半半轴心（绝对 PB 50% / 自身一年分位 50%）：一半权重给跨股票可比的绝对便宜，一半给纵向压缩，检验两种「便宜」是互补还是冗余。本份是第 4 组 34 份的基型，其余复合都以它为参照；若它已跑赢所有复合，说明第三条腿都只是噪音。窗口档位最高到 250 日，故「长窗」只能取 250。归一化权重：pb 50.0% / ts_pct(pb,250) 50.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

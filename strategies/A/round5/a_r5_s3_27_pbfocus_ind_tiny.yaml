@@ -1,0 +1,20 @@
+name: a_r5_s3_27_pbfocus_ind_tiny
+type: score
+desc: "几乎不做行业调整：pb -0.9、行业内 PB 分位只 -0.3，size_ln -0.6、250 日换手 -0.4。与 02 构成配比对照，假设本池的行业属性差异没有想象中大、绝对 PB 才是主信号，行业分位只作轻微校准，测行业相对这条腿的作用会不会被高估。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.9
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.3
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

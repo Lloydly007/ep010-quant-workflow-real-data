@@ -1,0 +1,15 @@
+name: a_r4_s3_04_pure_dual_250_20
+type: score
+desc: "年度换手最低 + 月低波：一年几乎没人交易是结构性忽视的极端口径，代价是可能选到流动性枯竭的名字，因此保留 20 日波动作为“仍在被定价”的确认。"
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: vol_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

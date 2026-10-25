@@ -1,0 +1,15 @@
+name: a_r4_s3_14_long_vol_lead_short_turn
+type: score
+desc: "长期低波主导 -1.25 对近月换手 -0.55（约 2.3:1）：年度波动刻画股票本身的性格，20 日换手只当作入场时点；把时间尺度上的不对称直接写进权重。"
+factors:
+- op: turn_ma_n
+  n: 20
+  weight: -0.55
+- op: vol_n
+  n: 250
+  weight: -1.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

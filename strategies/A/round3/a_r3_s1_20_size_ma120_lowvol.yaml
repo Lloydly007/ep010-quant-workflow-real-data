@@ -1,0 +1,17 @@
+name: a_r3_s1_20_size_ma120_lowvol
+type: score
+desc: 小市值加120日均线位置正权与60日低波，选站在长期均线上方且波动低的小盘，长期均线上方是趋势存活的最低确认，低波保证趋势不是靠单日暴涨撑起来的。
+factors:
+- op: size_ln
+  weight: -1.9
+- op: close_over_ma_n
+  n: 120
+  weight: 0.4
+- op: vol_n
+  n: 60
+  weight: -0.35
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

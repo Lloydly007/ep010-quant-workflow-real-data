@@ -1,0 +1,27 @@
+name: b_r5_s1_32_own_trough_triple120
+type: score
+desc: 三口径全部换成 120 日时序分位等权（各 -0.30）+ 120 日换手。短窗纵向分位让名单在半年内滚动更快，检验纵向透镜对窗口的敏感性；把 pe 放进时序分位后，负值只表现为一个相对位置，不再自动等于“最便宜”。
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.3
+- op: ts_pct
+  n: 120
+  of:
+    op: ps_ttm
+  weight: -0.3
+- op: ts_pct
+  n: 120
+  of:
+    op: pe_ttm
+  weight: -0.3
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: b_r5_s3_21_size_tilt_ts250_turn120
+type: score
+desc: "在一年估值分位 -0.9 与半年换手 -0.7 之上加一条温和小市值腿 size_ln -0.5：假设估值+关注度双低的名单天然偏小盘，显式给规模负权可把这种隐含暴露变成可解释的暴露，便于与 r3 组的 size 主导基线对照。"
+factors:
+- op: size_ln
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.9
+- op: turn_ma_n
+  n: 120
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

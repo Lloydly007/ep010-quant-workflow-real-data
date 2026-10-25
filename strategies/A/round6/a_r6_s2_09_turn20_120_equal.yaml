@@ -1,0 +1,19 @@
+name: a_r6_s2_09_turn20_120_equal
+type: score
+desc: "换到短中轴：月内与季度两个换手窗各 -0.45 等权，规模 -1.00、pb -0.50。与 01 的年度轴不同，这条轴度量的是「最近一个月是否突然没人交易」与「一季以来是否持续冷清」之间的关系：月内窗对停牌、财报静默期、大股东解禁前后的成交塌陷非常敏感，季度窗负责确认这不是一次性噪声。若短中轴的双窗平滑本身就够用，说明 A 路的清淡溢价主要来自月级状态而非年级结构。归一化权重：size_ln 41.7% / pb 20.8% / turn_ma_n(20) 18.8% / turn_ma_n(120) 18.8%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 20
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

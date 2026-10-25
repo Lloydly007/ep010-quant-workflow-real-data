@@ -1,0 +1,16 @@
+name: b_r3_s2_19_quiet250_ps_lens
+type: score
+desc: 选 PB 与 PS 都低、近 250 日换手极低的股票，理由是长期无人交易的便宜资产折价最顽固，双估值口径可避免单一账面口径的行业偏斜。
+factors:
+- op: pb
+  weight: -0.55
+- op: ps_ttm
+  weight: -0.55
+- op: turn_ma_n
+  n: 250
+  weight: -0.9
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

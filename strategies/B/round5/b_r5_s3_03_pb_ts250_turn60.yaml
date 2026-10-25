@@ -1,0 +1,17 @@
+name: b_r5_s3_03_pb_ts250_turn60
+type: score
+desc: "一年估值分位负权 + 季度（60 日）换手负权：估值谷底是慢变量，关注度是快变量，用季度换手确认“谷底没人抢”，比年度换手更贴近周度调仓时点，假设估值折价只有在近期成交冷却时才与后续修复相关。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

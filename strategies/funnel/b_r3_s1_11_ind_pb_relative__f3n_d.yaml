@@ -1,0 +1,20 @@
+name: b_r3_s1_11_ind_pb_relative__f3n_d
+type: score
+desc: 行业内 PB 分位最低者优先，同行业比 PB 才剔除了重资产与轻资产的估值口径差，再叠 PS 与 PE 的截面绝对低值作双旁证、20 日低换手剔除拥挤，超额来自行业内部相对便宜的标的向行业中位回归。
+factors:
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.3
+- op: pe_ttm
+  weight: -0.2
+- op: turn_ma_n
+  n: 10
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

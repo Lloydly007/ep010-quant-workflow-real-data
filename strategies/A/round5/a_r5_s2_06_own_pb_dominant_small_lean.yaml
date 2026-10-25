@@ -1,0 +1,16 @@
+name: a_r5_s2_06_own_pb_dominant_small_lean
+type: score
+desc: "size 降到 -0.55、ts_pct(pb,250) 升到 -1.0，估值腿首次压过规模腿：假设本组超额主要来自'相对自身历史便宜'而不是小市值本身，测估值主导时符号是否仍为正。"
+factors:
+- op: size_ln
+  weight: -0.55
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

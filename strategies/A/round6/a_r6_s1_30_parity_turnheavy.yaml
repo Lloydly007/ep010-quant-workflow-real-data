@@ -1,0 +1,18 @@
+name: a_r6_s1_30_parity_turnheavy
+type: score
+desc: "均分配重换手：估值块被压成少数派，检验母本比例在最不利权重结构下是否仍成立。这是终轮关键的稳健性反证——只在特定权重重分配下才有效的比例，不该被冻结进名单。归一化权重：turn_ma_n(120) 35.5% / size_ln 32.3% / ps_ttm 16.1% / pb 16.1%（ps:pb=0.50:0.50=1.00:1，总 |w|=3.10，估值块 32.3%）。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.50
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -1.10
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

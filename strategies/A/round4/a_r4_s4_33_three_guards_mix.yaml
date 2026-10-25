@@ -1,0 +1,22 @@
+name: a_r4_s4_33_three_guards_mix
+type: score
+desc: "基准格上动量减到 +0.50，同时补 pb -0.40 与 vol_n(60) -0.40（turn_ma_n(120) -0.75、size_ln -1.25）：动量、便宜、低波三条弱腿并联，检验多约束并联能否替代单腿重仓。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.5
+- op: pb
+  weight: -0.4
+- op: vol_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

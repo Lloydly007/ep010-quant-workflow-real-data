@@ -1,0 +1,20 @@
+name: a_r5_s3_26_three_heavy_guard_light
+type: score
+desc: "三腿重仓、护栏只留一点：size_ln -1.0、pb -0.8、行业内分位 -0.7，ulcer_n 120 日只 -0.3。把预算几乎全给三个折价来源，测少加佐证、多押主假设是否比均权（03）更有效；回撤护栏在这里只作最后一道，不参与选股主判断。"
+factors:
+- op: size_ln
+  weight: -1
+- op: pb
+  weight: -0.8
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.7
+- op: ulcer_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

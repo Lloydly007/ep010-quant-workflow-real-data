@@ -1,0 +1,20 @@
+name: b_r1_s3_15_ps_cheap_shallowdd
+type: rule
+desc: PS低意味着市场为每元营业收入支付的价格低，在毛利率改善的周期里这类公司的盈利弹性最大，但必须排除正在恶化的公司；要求20日溃疡低于5%（近期回撤浅）确认没有基本面崩坏，按PS升序取10只、持有20日，20日溃疡回升破10%（便宜变成变坏）离场，止损8%。
+buy:
+- op: ulcer_n
+  n: 20
+  dir: below
+  threshold: 5.0
+rank:
+  op: ps_ttm
+  order: asc
+sell:
+- op: ulcer_n
+  n: 20
+  dir: above
+  threshold: 10.0
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

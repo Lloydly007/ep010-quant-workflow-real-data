@@ -1,0 +1,19 @@
+name: a_r5_s4_24_pe250_plus_ret60_rev
+type: score
+desc: "季度反转：ret_n(60) -0.50，配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。比 23 慢一档以避开纯噪声，检验低估值小盘的反转弹性到底在月度还是季度尺度上更真实。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,11 @@
+name: b_r5_s4_03_parity_vol120
+type: score
+desc: "PB 与 120 日低波 1:1 平价、半年窗口：半年波动低意味着股价长期由缓慢的基本面预期而非题材脉冲驱动，与折价叠加时赔率与胜率同时对齐。与 01/02 同权重、只换窗口，构成一条纯粹的「什么期限的安静才算抗跌」的窗口曲线。"
+factors:
+- {op: pb, weight: -0.5}
+- {op: vol_n, n: 120, weight: -0.5}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

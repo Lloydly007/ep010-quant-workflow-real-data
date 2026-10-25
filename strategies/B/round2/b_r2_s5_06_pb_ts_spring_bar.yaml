@@ -1,0 +1,13 @@
+name: b_r2_s5_06_pb_ts_spring_bar
+type: rule
+desc: 现象：第1轮没有任何一份配置区分「还在创新低」与「刚离开底部」，低估值股的买入时点在时间上完全随机，这是 B 路超额中位 -5.8% 的直接原因之一。为什么在 A 股该有超额：赔率最高的买点是离 60 日低点 2% 以内、但当日收盘已回到当日振幅上半区——价格还在底部区域说明没人抢，当天却能收在高位，是止跌的第一根阳线；A 股小盘股的这类止跌通常有 1 到 2 周的修复。怎么进出：距 60 日低点 2% 以内且收盘位置 >0.5 时买入，按自身 250 日 PB 分位升序取 10 只，单日换手破 8%(转为博弈)或满 10 日离场，止损 8%、同行业最多 3 只。改了什么：第1轮只有估值排序，本份补上「低位 + 当日承接」的形态判别，把买入时点从随机变成止跌确认。
+buy:
+- {op: dist_low_n, n: 60, dir: below, threshold: 2}
+- {op: close_pos_range, dir: above, threshold: 0.5}
+sell:
+- {op: turn, dir: above, threshold: 8}
+rank: {op: ts_pct, n: 250, of: {op: pb}, order: asc}
+max_hold_days: 10
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

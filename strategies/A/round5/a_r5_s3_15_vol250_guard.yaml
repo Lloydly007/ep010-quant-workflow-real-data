@@ -1,0 +1,23 @@
+name: a_r5_s3_15_vol250_guard
+type: score
+desc: "长期低波作护栏：vol_n 250 日 -0.45 配 120 日换手 -0.35，便宜两腿各 -0.5、size_ln -0.6。与 11 同轴但换维度：长期低波说的是价格、长期清淡说的是成交，本份测年窗波动能否替代年窗换手给便宜腿加分。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: vol_n
+  n: 250
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

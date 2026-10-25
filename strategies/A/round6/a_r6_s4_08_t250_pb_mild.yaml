@@ -1,0 +1,16 @@
+name: a_r6_s4_08_t250_pb_mild
+type: score
+desc: "年度冷门 + pb 半权，与 05/06 构成估值腿对照。250 日窗在 1,545 只池里对次新股覆盖差（不足 250 根为 NaN，截面秩落 0.5），激进档会把这种缺值集中压到上市一年内的新股上；本对用来观察「窗口缺值 + 极端规模权重」是否让名单悄悄偏向次新，以及温和档能否把这种偏差摊薄。本份为第 4 对的温和档：size_ln −0.80、turn_ma_n(250) −0.30。按 |w| 归一：size_ln 50.0% / turn_ma_n(250) 18.8% / pb 31.2%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。"
+factors:
+- op: size_ln
+  weight: -0.80
+- op: turn_ma_n
+  n: 250
+  weight: -0.30
+- op: pb
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

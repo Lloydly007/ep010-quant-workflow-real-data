@@ -1,0 +1,17 @@
+name: b_r5_s3_12_pb_ts250_turn250_turn_heavy
+type: score
+desc: "反向配比（-0.4 / -1.5）：假设真正带来超额的是“无人问津”（流动性折价与后续关注度回补），估值分位只是防止买到贵的，主导权交给一年换手最低。与上一份互为对照，可直接读出两条腿谁是主因。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -1.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

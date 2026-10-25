@@ -1,0 +1,21 @@
+name: a_r6_s1_06_ratio_1to1p25__f3n_d
+type: score
+desc: 'pb 约 1.27 : ps 1（0.56 : 0.44），只比均分偏一点资产端，作用是 parity 的左侧护栏。若母本 1:1 的分数面确实主要由
+  ps 腿驱动，把 ps 压到 44% 应立刻看到名单向资产端偏移；若几乎无变化，则说明两条估值腿在均分附近高度冗余，权重比这一轴接近中性。归一化权重：size_ln
+  36.4% / turn_ma_n(120) 27.3% / pb 20.4% / ps_ttm 16.0%（ps:pb=0.44:0.56=1:1.27，总
+  |w|=2.75，估值块 36.4%）。'
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.44
+- op: pb
+  weight: -0.56
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

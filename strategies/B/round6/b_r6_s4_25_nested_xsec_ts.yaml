@@ -1,0 +1,28 @@
+name: b_r6_s4_25_nested_xsec_ts
+type: score
+desc: 半半轴心 + 手工双层嵌套 20%（ts_pct 套 xsec_pct(pb)，250 日）：先取当日截面 PB 分位、再看该分位自身的一年历史位置，衡量「相对便宜程度是否处于自身谷底」。funnel 生成器只包一层，本份嵌套属手工构造，需自行确认 NaN 传播与窗口语义，故权重压到 20%。归一化权重：pb 40.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 20.0% / ts_pct(xsec_pct(pb),250) 20.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 250
+  of:
+    op: xsec_pct
+    of:
+      op: pb
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

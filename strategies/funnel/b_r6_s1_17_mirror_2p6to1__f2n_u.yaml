@@ -1,0 +1,21 @@
+name: b_r6_s1_17_mirror_2p6to1__f2n_u
+type: score
+desc: 镜像 2.6:1（250 日 -0.65 / 120 日 -0.25）：长窗 31.7% 与规模腿平权，短窗只剩 12.2%。此档检验“长窗几乎单独决定换手项”时组合的稳定性——250
+  日窗口每年只更新一次慢变量，名单的年度惯性会明显变大，周度调仓的边际信息主要来自 pb 与 size 的日频变动；若 17 的换手率显著低于 15，说明实际有效调仓频率被权重结构压低了，需要在报告里注明“名义周度、实质年度化”。归一化权重：pb
+  24.4% / size_ln 31.7% / turn_ma_n(120) 12.2% / turn_ma_n(250) 31.7%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.25
+- op: turn_ma_n
+  n: 250
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

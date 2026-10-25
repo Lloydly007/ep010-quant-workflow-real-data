@@ -1,0 +1,13 @@
+name: a_r1_s3_18_xsec_mom
+type: rule
+desc: 60日新高突破、且已脱离60日低点10%以上的股票，用当日池内的动量截面分位排序，等价于在突破股里只挑“全市场相对最强”的那一只——动量溢价的来源是横截面赢家组合的持续性，而不是突破事件本身；跌破20日线离场，40日持有、10%止损。
+buy:
+  - {op: break_high_n, n: 60, dir: above, threshold: 0.5}
+  - {op: dist_low_n, n: 60, dir: above, threshold: 10}
+sell:
+  - {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+rank: {op: xsec_pct, of: {op: ret_n, n: 60}, order: desc}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 5

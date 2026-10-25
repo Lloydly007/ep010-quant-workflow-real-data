@@ -1,0 +1,19 @@
+name: b_r4_s4_20_dual_turn5_120
+type: score
+desc: "双窗换手的极端跨度组合：5 日 −0.50 与 120 日 −0.75，窗口相差 24 倍，PE/PB 各 0.6。短腿负责剔除本周正在被炒的名字，长腿负责把池子拉向半年内无人问津的标的，两条时间尺度几乎不重叠。与 b_r4_s4_19 相比短腿更快、长腿更短，用来判断最优双窗配置是‘贴着两端’还是‘取中段’。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 5
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r3_s2_07_size_dom_60_monthly__f1n_u
+type: score
+desc: 规模负权占八成、季度换手只作剔除项：不押换手，纯做小盘下沉，检验控制换手后小市值溢价是否仍独立成立，月度调仓降低小盘股的交易摩擦。
+factors:
+- op: size_ln
+  weight: -2.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

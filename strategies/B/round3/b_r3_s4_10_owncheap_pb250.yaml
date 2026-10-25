@@ -1,0 +1,14 @@
+name: b_r3_s4_10_owncheap_pb250
+type: score
+desc: "估值腿改成PB的自身250日时序分位（相对自己便宜）、低波权重升到0.6：跨行业PB绝对值不可比，自身分位把估值还原成个股错价，半年尺度的低波提供质地约束。"
+factors:
+- op: ts_pct
+  n: 250
+  of: {op: pb}
+  weight: -0.4
+- {op: vol_n, n: 60, weight: -0.6}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

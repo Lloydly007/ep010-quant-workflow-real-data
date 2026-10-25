@@ -1,0 +1,18 @@
+name: a_r5_s2_18_raw_pb_plus_own_history
+type: score
+desc: "原始 pb -0.4 与 ts_pct(pb,250) -0.4 并列：保留绝对低 PB 的直觉，同时叠加自身历史分位，测估值水平与时序分位是互补还是互相稀释。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

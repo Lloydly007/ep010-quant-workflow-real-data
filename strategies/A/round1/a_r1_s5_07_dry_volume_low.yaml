@@ -1,0 +1,13 @@
+name: a_r1_s5_07_dry_volume_low
+type: rule
+desc: 股价贴近20日低点且5日量比萎缩到0.5以下，地量代表抛压枯竭、浮筹沉淀，此时很小的买盘就能推动价格反弹，故地量日买入、5日反弹超8%即离场，并在60日跌幅最深者中优先
+buy:
+- {op: vol_ratio_n, n: 5, dir: below, threshold: 0.5}
+- {op: dist_low_n, n: 20, dir: below, threshold: 3}
+sell:
+- {op: ret_n, n: 5, dir: above, threshold: 8}
+rank: {op: xsec_pct, of: {op: ret_n, n: 60}, order: asc}
+max_hold_days: 10
+stop_loss: 5%
+max_positions: 10
+industry_cap: 0

@@ -1,0 +1,12 @@
+name: b_r2_s5_08_pb_ts_market_gate
+type: rule
+desc: 现象：第1轮 B 路 100 份配置没有一份使用市场状态开关(引擎允许 etf_above_ma_n 作条件，但一轮零使用)，所以每一份都在 2018 年 -29%、2022 年 -11% 的行情里满仓硬扛低估值，过 L2 的 29 份到 L3 全灭。为什么在 A 股该有超额：估值分位修复的收益是风险偏好的函数——沪深300 在 60 日均线上方时资金愿意为便宜付钱，跌破时低估值只会被继续压低。怎么进出：只在沪深300 站上 60 日均线时买入自身 250 日 PB 分位最低的 10 只，指数跌破 60 日均线即整体清仓，最长持有 40 日、止损 10%、同行业最多 5 只。改了什么：这是对第1轮失败模式的单变量修正——选股口径(自身 PB 分位最低)不变，只加一个市场开关，用来隔离「熊市里无条件买便宜」这一项损耗。
+buy:
+- {op: etf_above_ma_n, n: 60, dir: above, threshold: 0.5}
+sell:
+- {op: etf_above_ma_n, n: 60, dir: below, threshold: 0.5}
+rank: {op: ts_pct, n: 250, of: {op: pb}, order: asc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

@@ -1,0 +1,13 @@
+name: a_r1_s1_02_reversal5_strength
+type: rule
+desc: 5日跌超10%属显著过度反应（散户恐慌抛售叠加流动性临时折价），当日收盘仍守在振幅上沿说明抛压已衰竭，次日更易均值回归｜按超跌幅度取最深者，收盘重回5日线上方或满5日离场，10%止损防止在单边下跌中接飞刀。
+buy:
+- {op: ret_n, n: 5, dir: below, threshold: -10.0}
+- {op: close_pos_range, dir: above, threshold: 0.8}
+rank: {op: ret_n, n: 5, order: asc}
+sell:
+- {op: close_over_ma_n, n: 5, dir: above, threshold: 1.0}
+max_hold_days: 5
+stop_loss: 10%
+max_positions: 10
+industry_cap: 5

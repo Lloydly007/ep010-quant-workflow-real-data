@@ -1,0 +1,11 @@
+name: b_r5_s4_02_parity_vol60
+type: score
+desc: "PB 与 60 日低波 1:1 平价：一个季度内日收益标准差低，说明没有资金在持续出货，与账面折价同时出现时更像被忽视而不是被抛弃。同一格在第 2 轮是以关闭行业中性化的口径跑的，本轮强制行业内秩，两格差在「行业中性化」这一个开关上，可把窗口效应与中性化效应分开。"
+factors:
+- {op: pb, weight: -0.5}
+- {op: vol_n, n: 60, weight: -0.5}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

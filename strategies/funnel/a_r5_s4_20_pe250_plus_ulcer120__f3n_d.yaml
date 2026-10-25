@@ -1,0 +1,20 @@
+name: a_r5_s4_20_pe250_plus_ulcer120__f3n_d
+type: score
+desc: 回撤路径缩到 120 日、权重 -0.50：ulcer_n(120) -0.50，配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250)
+  -0.75。只要求近半年没有深坑，给更早的深跌留修复空间；与 19 对照，分辨路径平滑起作用的是长记忆还是短记忆。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ulcer_n
+  n: 60
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

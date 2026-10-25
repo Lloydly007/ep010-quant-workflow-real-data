@@ -1,0 +1,26 @@
+name: b_r2_s2_07_quiet_contrarian_bear
+type: rule
+desc: "现象（反向假设）：小盘冷门的相对占优期常出现在大盘长期弱势之后——资金在蓝筹上没有赚钱效应时下沉到无人问津的小票，2014 下半年与 2021 都有这种风格下沉。为什么在 A 股该有超额：沪深300 处于 120 日均线下方时市场对大盘的预期已被打到极低，此时买行业内最小的冷门票，等于用极低价格买一张“风格轮动期权”；这是与 06 相反的市场状态假设，用来检验超额究竟来自选股还是来自 beta。怎么进出：60 日均换手 <2% 且 300ETF 在 120 日均线下方才买，按行业内市值分位升序取前 10，industry_cap=3；ETF 回到 20 日均线上方（大盘修复、小盘相对优势结束）卖出；最长 40 日，10% 止损（档位内最宽档）。相对第 1 轮失败模式改了什么：第 1 轮所有配置要么无市场状态、要么隐含“趋势向上才买”，本组是全组唯一允许在指数破位时建仓的配置，并用 10% 止损 + 40 日上限承认买点本身位于下跌趋势——把“什么时候该在场”从隐含假设变成显式可证伪的假设。"
+buy:
+- op: turn_ma_n
+  n: 60
+  dir: below
+  threshold: 2
+- op: etf_above_ma_n
+  n: 120
+  dir: below
+  threshold: 0.5
+rank:
+  op: ind_rank
+  of:
+    op: size_ln
+  order: asc
+sell:
+- op: etf_above_ma_n
+  n: 20
+  dir: above
+  threshold: 0.5
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 3

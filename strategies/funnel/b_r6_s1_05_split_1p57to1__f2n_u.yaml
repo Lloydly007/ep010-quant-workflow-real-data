@@ -1,0 +1,21 @@
+name: b_r6_s1_05_split_1p57to1__f2n_u
+type: score
+desc: 比值 1.57:1（120 日 -0.55 / 250 日 -0.35）：短窗拿 55% 的换手预算，长窗退到 17.1%，低于估值腿。假设长窗的作用从“独立信号”降级为“背景去噪”——只要
+  250 日不极端冷清就不否决，主判据交给近半年。这一档是“长窗仅作门槛”的最轻形态，若与 07 结果接近，说明长窗在 1.5 倍以上已无增量信息；若明显变差，则长窗仍是必要的结构约束。归一化权重：pb
+  24.4% / size_ln 31.7% / turn_ma_n(120) 26.8% / turn_ma_n(250) 17.1%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+- op: turn_ma_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,18 @@
+name: b_r2_s4_05_pb_ratio_score__f3n_u
+type: score
+desc: 现象是“同业相对折价”本质是一个比值（个股PB除以行业中位PB），而规则型的rank只能挂一个排序键，第1轮只能在绝对PB与行业中位PB之间二选一、都表达不了比值；A股的折价修复由行业内的比价资金完成（机构在同一门类里做相对配置），个股的便宜是比出来的而不是绝对值，折价修复要求个股便宜且同业不便宜，前者给赔率、后者给同业内比价空间与资金关注，若行业整体也便宜则个股折价只是行业beta的复制品，这正是L3超额回撤的来源。做法是打分型，PB负权1.0、行业内PB中位数正权0.7、20日均换手负权0.3（长期冷清）、20日量比正权0.2（当日有买盘试盘），开启行业内截面秩中性化，月度首日调仓持30只。相对第1轮改动：用加权打分把分子分母同时入模，替代第1轮单键rank无法表达的比值，并首次对打分型打开neut_industry。
+factors:
+- op: pb
+  weight: -1.0
+- op: ind_median_pb
+  weight: 0.7
+- op: turn_ma_n
+  n: 20
+  weight: -0.3
+- op: vol_ratio_n
+  n: 60
+  weight: 0.2
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false

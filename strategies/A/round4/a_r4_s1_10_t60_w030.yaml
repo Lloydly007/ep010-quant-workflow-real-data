@@ -1,0 +1,16 @@
+name: a_r4_s1_10_t60_w030
+type: score
+desc: "换手窗口拉到 60 日、权重只 -0.30：一个季度的清淡被当作慢变量，轻权重下几乎只是一层剔除，用来确认 20 日窗的贡献是否主要来自短窗噪声。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

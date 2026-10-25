@@ -1,0 +1,14 @@
+name: a_r3_s3_03_size_mom120_core
+type: score
+desc: 用120日半年动量配合更强的小盘倾斜并按月换手：半年动量刻画产业与订单层面的中期趋势，信号频率与持有期匹配后能少付交易成本。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: ret_n
+  n: 120
+  weight: 1.0
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

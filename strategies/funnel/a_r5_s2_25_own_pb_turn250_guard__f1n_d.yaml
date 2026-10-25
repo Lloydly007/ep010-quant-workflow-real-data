@@ -1,0 +1,19 @@
+name: a_r5_s2_25_own_pb_turn250_guard__f1n_d
+type: score
+desc: 年度换手 -0.4：最慢的清淡口径，与估值长窗同频，测'一年没人要 + 比自己两年便宜'这类深度冷门组合。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

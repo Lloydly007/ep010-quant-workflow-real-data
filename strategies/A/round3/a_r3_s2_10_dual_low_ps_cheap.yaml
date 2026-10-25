@@ -1,0 +1,16 @@
+name: a_r3_s2_10_dual_low_ps_cheap
+type: score
+desc: 用轻资产小盘更可比的PS替代PB做便宜度，规避商誉与重资产结构对账面价值的扭曲，选半年低换手且收入端便宜的小盘。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ps_ttm
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

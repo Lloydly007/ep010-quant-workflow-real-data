@@ -1,0 +1,22 @@
+name: b_r1_s2_11_ind_relative_value
+type: rule
+desc: 跨行业直接比PB会把银行永远排在最前、把轻资产行业永远排最后，行业内PB分位剔除了行业估值中枢差异、只留下同业内相对便宜，故在60日ATR占比低于3%（日内振幅温和）的票里买行业内部最便宜的10只，持有40日或ATR升破5%离场，10%止损且同行业最多3只。
+buy:
+- op: atr_close_n
+  n: 60
+  dir: below
+  threshold: 3
+rank:
+  op: ind_rank
+  of:
+    op: pb
+  order: asc
+sell:
+- op: atr_close_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 3

@@ -1,0 +1,24 @@
+name: a_r6_s2_15_tsdual_val_single_turn
+type: score
+desc: "第一次把平滑对象从换手搬到估值：pb 的 250 日与 120 日自身时序分位各 -0.40，换手只留 120 日单窗 -0.55。这是「双换手 × 双估值」完整交叉（21）的单轴消融——只让估值轴享受多尺度平滑，换手仍是单尺度，因此 15 与 21 的差可以干净地归给「换手是否也需要平滑」。假设估值折价是慢变量，两窗平均能压掉盈利季节性与一次性减值造成的分位抖动，而对换手做同样处理未必有同样收益。归一化权重：size_ln 42.6% / ts_pct(250, pb) 17.0% / ts_pct(120, pb) 17.0% / turn_ma_n(120) 23.4%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.40
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.40
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

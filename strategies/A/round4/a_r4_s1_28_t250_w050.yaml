@@ -1,0 +1,16 @@
+name: a_r4_s1_28_t250_w050
+type: score
+desc: "250 日换手 -0.50：年度清淡是结构性被遗忘的代理，与 120 日 -0.50 对照，看把窗口再拉长一倍后信号是更稳还是更钝。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

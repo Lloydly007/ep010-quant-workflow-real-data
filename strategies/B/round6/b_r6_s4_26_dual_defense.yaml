@@ -1,0 +1,27 @@
+name: b_r6_s4_26_dual_defense
+type: score
+desc: 半半轴心 + 双防御腿各 10%（120 日换手 + 60 日波动）：两条腿都只给 10%，检验「薄薄两层过滤」是否比单条 20% 更稳。这是权重分散而非信息新增的对照，若与 13 或 15 打平，说明防御腿的具体成分不重要、只要够薄。归一化权重：pb 40.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 20.0% / turn_ma_n(120) 10.0% / vol_n(60) 10.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.1
+- op: vol_n
+  n: 60
+  weight: -0.1
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

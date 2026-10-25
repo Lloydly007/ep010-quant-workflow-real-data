@@ -1,0 +1,21 @@
+name: a_r5_s3_01_pb_abs_core__f3n_u
+type: score
+desc: 绝对便宜优先：pb 拿最大预算 -0.7，size_ln -0.55，行业内 PB 分位只留 -0.35 作同门类校准，配 120 日清淡换手。假设在本池里跨门类的绝对低估（资源、地产、电力）本身是主要折价来源，行业相对便宜只负责防止前
+  30 名被同一两个门类占满，超额来自市场对资产负债表定价过低。
+factors:
+- op: size_ln
+  weight: -0.55
+- op: pb
+  weight: -0.7
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.35
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

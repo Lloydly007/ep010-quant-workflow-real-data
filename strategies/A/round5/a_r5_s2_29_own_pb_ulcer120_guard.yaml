@@ -1,0 +1,19 @@
+name: a_r5_s2_29_own_pb_ulcer120_guard
+type: score
+desc: "ulcer_n(120) -0.35 用回撤路径深度替代波动率：同样便宜的两个名字，回撤更浅的那个更可能只是被错价而非基本面恶化。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: ulcer_n
+  n: 120
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

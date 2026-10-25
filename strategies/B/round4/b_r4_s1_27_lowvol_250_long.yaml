@@ -1,0 +1,17 @@
+name: b_r4_s1_27_lowvol_250_long
+type: score
+desc: 长窗低波与估值等权：pb -0.75 / vol_n(250) -0.75 / turn_ma_n(120) -0.60（归一化 36%/36%/29%），假设 250 日波动刻画年度级风险偏好而非短期拥挤、与 120 日换手重叠较低，可在估值主导下额外压低组合回撤，与 26 构成 60/250 的波动窗口对照。
+factors:
+- op: pb
+  weight: -0.75
+- op: vol_n
+  n: 250
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

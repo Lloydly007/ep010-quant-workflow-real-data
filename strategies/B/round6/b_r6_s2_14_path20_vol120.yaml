@@ -1,0 +1,22 @@
+name: b_r6_s2_14_path20_vol120
+type: score
+desc: "11 的镜像：一月路径 + 半年波动。至此错配的三对镜像（09/12、10/13、11/14）齐备：每一对只交换两条腿的窗口，因此「窗口错配是否优于同窗对半」可以在三对里各自独立读出，避免只靠单一一对的偶然结论。若三对都优于各自同窗版本，错配就是稳定结构，下一轮应把长短搭配写进主结构。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(20) 7.5% / vol_n(120) 7.5%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 20
+  weight: -0.225
+- op: vol_n
+  n: 120
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

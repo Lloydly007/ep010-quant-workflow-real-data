@@ -1,0 +1,18 @@
+name: a_r6_s4_23_t120_twoval_agg
+type: score
+desc: "双估值腿（ps −0.5 与 pb −0.5）叠在规模/换手轴上，是第 5 轮入围席的直接加压版：激进档 size −2.5/turn −1.0 让两条估值腿合计只占 22%，温和档 size −0.8/turn −0.3 让估值合计升到近半。同一副因子在两档下的权重结构几乎互换，是全组「估值主导 vs 规模主导」最干净的一组对照。本份为第 12 对的激进档：size_ln −2.50、turn_ma_n(120) −1.00。按 |w| 归一：size_ln 55.6% / turn_ma_n(120) 22.2% / ps_ttm 11.1% / pb 11.1%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。"
+factors:
+- op: size_ln
+  weight: -2.50
+- op: turn_ma_n
+  n: 120
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.50
+- op: pb
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

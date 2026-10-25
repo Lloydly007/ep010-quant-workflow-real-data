@@ -1,0 +1,18 @@
+name: b_r5_s1_25_pb1_ps4_pe1
+type: score
+desc: 配比 pb:ps:pe = 1:4:1（-0.20/-0.80/-0.20）：ps 占 2/3，接近纯 ps。检验 14 号纯 ps 锚的结论在混入少量 pb/pe 后是否稳定；若稳定，说明 ps 的信号不是靠“独占名单”得来的。
+factors:
+- op: pb
+  weight: -0.2
+- op: ps_ttm
+  weight: -0.8
+- op: pe_ttm
+  weight: -0.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: b_r5_s3_08_pb_ts60_turn60_quarter
+type: score
+desc: "季度双窗：只看最近一个季度内 PB 相对自身是否压缩、成交是否同步冷却。假设本轮定价错误的生命周期短于一年，用季度分位能过滤掉“长期低估值陷阱”（多年不动、估值分位一直低），只取刚发生的估值+关注度双降。"
+factors:
+- op: ts_pct
+  n: 60
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

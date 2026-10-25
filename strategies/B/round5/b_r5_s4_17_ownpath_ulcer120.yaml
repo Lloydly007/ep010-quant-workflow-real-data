@@ -1,0 +1,12 @@
+name: b_r5_s4_17_ownpath_ulcer120
+type: score
+desc: "把自身历史分位用在 120 日溃疡上（0.4），再配 60 日绝对低波 0.25 与 PB 0.35：溃疡处在自身低位意味着下行路径比这只股票平时更短。它与绝对低波互补，专门区分「一直很稳」和「最近才稳」，是把 14-16 的自身基准思路从波动推广到路径。"
+factors:
+- {op: pb, weight: -0.35}
+- {op: ts_pct, n: 250, of: {op: ulcer_n, n: 120}, weight: -0.4}
+- {op: vol_n, n: 60, weight: -0.25}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

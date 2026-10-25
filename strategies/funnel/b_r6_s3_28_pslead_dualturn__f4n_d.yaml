@@ -1,0 +1,22 @@
+name: b_r6_s3_28_pslead_dualturn__f4n_d
+type: score
+desc: 24 号的双窗版：22% 的换手权重拆成 120 日 -0.30 与 250 日 -0.25，其余不动。假设营收便宜的名字最容易出现“长期冷清 + 近期突然放量”的混合形态，双窗能同时识别两类——近期放量提示风险，长期冷清提示机会；单窗只能看到其中一面。归一化权重：pb
+  14.0% / ps_ttm 34.0% / size_ln 30.0% / turn_ma_n(120) 12.0% + turn_ma_n(250) 10.0%。
+factors:
+- op: pb
+  weight: -0.35
+- op: ps_ttm
+  weight: -0.85
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.3
+- op: turn_ma_n
+  n: 120
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

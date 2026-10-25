@@ -1,0 +1,13 @@
+name: b_r2_s5_13_pb_ts_vol_expansion
+type: rule
+desc: 现象：第1轮 s3_06/s1_06 把「波动压缩」本身当买点，只测压缩水平不测方向，等于买在继续横盘甚至阴跌的低估值票上。为什么在 A 股该有超额：20 日波动压缩到 2% 以下说明分歧收敛、筹码沉淀，随后 5 日波动升破 2% 是方向已经选出的可观测证据；把方向约束交给自身 PB 分位极低，就得到「便宜 + 分歧重新定价向上」。怎么进出：20 日波动 <2% 且 5 日波动 >2% 时买入，按自身 250 日 PB 分位升序取 10 只，20 日 ATR 占收盘破 8%(转为投机博弈)或满 20 日离场，止损 8%、同行业最多 3 只。改了什么：第1轮只测压缩这一静态状态，本份加上「压缩之后的释放」这一时序条件，把沉默期变成启动确认。
+buy:
+- {op: vol_n, n: 20, dir: below, threshold: 2}
+- {op: vol_n, n: 5, dir: above, threshold: 2}
+sell:
+- {op: atr_close_n, n: 20, dir: above, threshold: 8}
+rank: {op: ts_pct, n: 250, of: {op: pb}, order: asc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

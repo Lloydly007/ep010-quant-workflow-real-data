@@ -1,0 +1,12 @@
+name: b_r1_s1_15_lowpb_no_trap
+type: rule
+desc: 低PB提供安全边际，但深跌中的便宜往往就是价值陷阱，故要求20日溃疡低于5%（尚未破位）才买、按PB升序挑最便宜者，溃疡升破8%说明便宜已变成下跌趋势即离场
+buy:
+- {op: ulcer_n, n: 20, dir: below, threshold: 5}
+sell:
+- {op: ulcer_n, n: 20, dir: above, threshold: 8}
+rank: {op: pb, order: asc}
+max_hold_days: 60
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

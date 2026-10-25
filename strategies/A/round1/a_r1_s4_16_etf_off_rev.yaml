@@ -1,0 +1,13 @@
+name: a_r1_s4_16_etf_off_rev
+type: rule
+desc: 反向假设：300ETF跌破60日线时全市场处于流动性收缩的抛售窗口，个股的短期急跌更容易被过度定价，超跌反抽的赔率反而高于牛市里追涨——故在市场下行状态下买5日跌超8%且跌得最深者优先，3日反抽满5%即走，最多持3日、5%止损。
+buy:
+  - {op: etf_above_ma_n, n: 60, dir: below, threshold: 0.5}
+  - {op: ret_n, n: 5, dir: below, threshold: -8}
+sell:
+  - {op: ret_n, n: 3, dir: above, threshold: 5}
+rank: {op: ret_n, n: 5, order: asc}
+max_hold_days: 3
+stop_loss: 5
+max_positions: 10
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: b_r4_s1_17_pb_triple_turn_floor
+type: score
+desc: 估值三倍于换手：pb -0.90 / turn_ma_n(120) -0.30（3:1，PB 75%），假设低换手信息的边际贡献在 0.30 权重处已基本饱和，组合更接近“低 PB + 行业中性”策略，换手仅用于避免买入换手爆表的题材股。
+factors:
+- op: pb
+  weight: -0.90
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

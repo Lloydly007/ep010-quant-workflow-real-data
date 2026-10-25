@@ -1,0 +1,24 @@
+name: a_r6_s2_19_tsdual_val_slow_only
+type: score
+desc: "全慢速版：估值双窗 250 重（-0.55）+ 120 轻（-0.30），换手换成 250 日单窗 -0.50。三个带窗腿全部落在年级尺度上，等于把整张打分单的「时间分辨率」整体调粗，检验在本池里慢变量是否本来就压过快变量。这也可以看作对 A 路常见直觉的直接反证：若 19 不输给以 20/60/120 为主的配置，说明打分型形态下赢的是耐心而不是反应速度；若明显落后，说明年度尺度的平滑把可交易的信息都磨掉了。归一化权重：size_ln 42.6% / ts_pct(250, pb) 23.4% / ts_pct(120, pb) 12.8% / turn_ma_n(250) 21.3%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.55
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.30
+- op: turn_ma_n
+  n: 250
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

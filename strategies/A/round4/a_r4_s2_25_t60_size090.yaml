@@ -1,0 +1,14 @@
+name: a_r4_s2_25_t60_size090
+type: score
+desc: "换手窗口取 60 日季度档、规模 -0.90（占 54.5%），季度活跃度是最常规的冷门代理，本档给出窗口轴中段的最低规模倾斜基线。"
+factors:
+- op: size_ln
+  weight: -0.9
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

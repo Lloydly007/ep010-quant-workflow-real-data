@@ -1,0 +1,16 @@
+name: b_r6_s4_11_abs_two_to_one
+type: score
+desc: 2:1 的绝对占优（pb 66.7% / 一年分位 33.3%）：比 09 更极端，用来看半半点右侧的边际收益是否单调。11 与 09 的差值是「比例曲线斜率」的证据，不是新的假设方向。归一化权重：pb 66.7% / ts_pct(pb,250) 33.3%。
+factors:
+- op: pb
+  weight: -0.6
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: a_r3_s3_09_mom60_turncalm
+type: score
+desc: 规模负权加重到-1.50、60日动量正权+1.00，再叠60日均换手负权：季度级别走强但交易依旧清淡的小盘，属基本面被缓慢定价，拥挤度低使超额更可持续。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: ret_n
+  n: 60
+  weight: 1.0
+- op: turn_ma_n
+  n: 60
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

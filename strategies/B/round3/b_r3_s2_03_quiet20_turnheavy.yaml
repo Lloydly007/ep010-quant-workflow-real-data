@@ -1,0 +1,14 @@
+name: b_r3_s2_03_quiet20_turnheavy
+type: score
+desc: 选近 20 日换手极低、PB 只需不贵的股票，理由是短期没人交易本身就是最强的错价信号，估值在此只作不买贵的下限约束。
+factors:
+- op: pb
+  weight: -0.55
+- op: turn_ma_n
+  n: 20
+  weight: -1.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r3_s2_12_ind_rank_turn_rel
+type: score
+desc: 换手改成行业内排名：高换手行业里2%换手本就偏冷，行业内比换手才能公平识别被本行业忽视的小盘，避免组合整组押到单一低换手行业。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: ind_rank
+  of:
+    op: turn_ma_n
+    n: 120
+  weight: -1.0
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: b_r5_s3_10_pb_ts250_turn250_parity
+type: score
+desc: "两条腿等权（-1.0 / -1.0）的基准对照：在一年窗口下让“估值处于自身低位”和“成交处于自身低位”各占一半话语权，用来检验前几份里 4:3 权重比是否只是权重巧合，而非两个信号真的可以互相替代。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 250
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: a_r3_s1_14_size_turn250_ma20
+type: score
+desc: 深度小市值配250日低换手并要求站上20日均线，选长期无人问津但趋势刚转的小盘，长期冷门保证估值便宜，短均线确认保证不在下跌趋势里继续加仓。
+factors:
+- op: size_ln
+  weight: -1.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+- op: close_over_ma_n
+  n: 20
+  weight: 0.3
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

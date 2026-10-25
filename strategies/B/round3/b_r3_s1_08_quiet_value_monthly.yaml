@@ -1,0 +1,18 @@
+name: b_r3_s1_08_quiet_value_monthly
+type: score
+desc: 三镜低估值叠加 60 日低换手，并做市值分档中性化到 5 档内以剥离小市值倾斜，月度调仓既给估值修复留出时间也压低换手成本，本份要回答的是估值超额会不会只是小市值的替身，若剥离规模后仍有超额则三镜假设成立。
+factors:
+- op: pb
+  weight: -0.40
+- op: ps_ttm
+  weight: -0.35
+- op: pe_ttm
+  weight: -0.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.60
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

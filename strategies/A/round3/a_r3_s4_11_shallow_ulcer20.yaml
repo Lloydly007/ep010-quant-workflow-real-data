@@ -1,0 +1,16 @@
+name: a_r3_s4_11_shallow_ulcer20
+type: score
+desc: 用近 20 日溃疡指数最低的小盘低 PB 股；溃疡指数只累计向下的回撤深度，比标准差更贴近持有人真实痛感，浅回撤的小盘股下行保护更实在。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: ulcer_n
+  n: 20
+  weight: -0.55
+- op: pb
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

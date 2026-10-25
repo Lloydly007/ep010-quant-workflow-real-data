@@ -1,0 +1,22 @@
+name: a_r5_s2_26_own_pb_own_turn_pct
+type: score
+desc: "把换手也换成时序分位：ts_pct(turn_ma_n(60), 250) -0.3，即'比我自己的常态更冷清'，与绝对换手口径形成对照，去掉个股流动性水平的量纲差异，并让换手窗与分位窗同时成为邻域轴。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 60
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

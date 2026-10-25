@@ -1,0 +1,16 @@
+name: a_r4_s1_27_t250_w030
+type: score
+desc: "年窗 250 日换手 -0.30：一年没人炒只作为极轻的剔除项，检验长窗信息是否几乎全部被规模腿吸收、年窗在轻权重下还剩多少独立解释。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

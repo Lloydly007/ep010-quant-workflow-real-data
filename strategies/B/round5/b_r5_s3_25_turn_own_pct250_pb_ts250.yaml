@@ -1,0 +1,20 @@
+name: b_r5_s3_25_turn_own_pct250_pb_ts250
+type: score
+desc: "两条腿都用自身分位：PB 一年分位 -0.8 + 20 日均换手的一年分位 -0.6。换手改成“相对自己过去一年”而非绝对水平，等于剔除了股票间换手中枢差异（大盘股天然低换手），只比较“自己是否比平时更冷”，避免名单被低换手的大票垄断。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.8
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

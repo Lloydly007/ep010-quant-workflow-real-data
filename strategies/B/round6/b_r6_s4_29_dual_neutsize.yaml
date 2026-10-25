@@ -1,0 +1,21 @@
+name: b_r6_s4_29_dual_neutsize
+type: score
+desc: 双窗半半 + 开启 neut_size：把 04 的双尺度分位放进市值分档内比较，检验双窗的收益是否也依赖规模。与 28 一起构成「中性化 × 单窗/双窗」的 2×2：若 29 相对 04 的衰减小于 28 相对 01 的衰减，说明双窗本身比单窗更抗规模暴露。归一化权重：pb 50.0% / ts_pct(pb,250) 25.0% / ts_pct(pb,120) 25.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.25
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

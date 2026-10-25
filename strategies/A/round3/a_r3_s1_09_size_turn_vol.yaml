@@ -1,0 +1,17 @@
+name: a_r3_s1_09_size_turn_vol
+type: score
+desc: 小市值加低换手与低波两条腿，同时约束没人买与没人砸两种下跌来源，小盘股的下行风险主要来自这两处，同时压住能提高夏普而不只是提高均值。
+factors:
+- op: size_ln
+  weight: -1.4
+- op: turn_ma_n
+  n: 20
+  weight: -0.35
+- op: vol_n
+  n: 60
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

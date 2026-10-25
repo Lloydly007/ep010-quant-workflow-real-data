@@ -1,0 +1,14 @@
+name: a_r4_s2_02_t20_size100_step2
+type: score
+desc: "规模升到 -1.00（占 57.1%）、20 日低换手权重不变，阶梯第 2 档：测第一次把天平推向小盘时超额是否阶跃式出现，判断溢价是门槛型还是连续型。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

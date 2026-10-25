@@ -1,0 +1,21 @@
+name: b_r1_s3_10_deep_dd_rev
+type: rule
+desc: 120日溃疡指数高于15%说明半年内回撤深且反复，这类股票会被止损盘与赎回强制卖出而超跌，过度反应会在10个交易日内部分修正；按120日溃疡降序取跌得最深的10只，不设止损（止损正好会在错杀最低点机械卖出），持有10日届满，60日溃疡再破15%（下跌不是情绪）提前离场。
+buy:
+- op: ulcer_n
+  n: 120
+  dir: above
+  threshold: 15.0
+rank:
+  op: ulcer_n
+  n: 120
+  order: desc
+sell:
+- op: ulcer_n
+  n: 60
+  dir: above
+  threshold: 15.0
+max_hold_days: 10
+stop_loss: null
+max_positions: 10
+industry_cap: 0

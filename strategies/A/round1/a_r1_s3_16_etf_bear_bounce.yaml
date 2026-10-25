@@ -1,0 +1,14 @@
+name: a_r1_s3_16_etf_bear_bounce
+type: rule
+desc: 反向假设——300ETF在250日线下方（长期熊市状态）时，个股的连续下跌更容易催生超跌反弹，因为弱市里的政策与情绪脉冲更频繁、下跌更快也反弹更急；只在ETF位于250日线下方时做这类反弹，以当日收在日内上半区作为止跌确认，5日涨幅达5%即离场，10日持有、5%止损。
+buy:
+  - {op: etf_above_ma_n, n: 250, dir: below, threshold: 0.5}
+  - {op: streak_down, dir: above, threshold: 3}
+  - {op: close_pos_range, dir: above, threshold: 0.5}
+sell:
+  - {op: ret_n, n: 5, dir: above, threshold: 5}
+rank: {op: ret_n, n: 20, order: asc}
+max_hold_days: 10
+stop_loss: 5%
+max_positions: 10
+industry_cap: 5

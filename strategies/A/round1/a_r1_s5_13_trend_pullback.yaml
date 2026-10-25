@@ -1,0 +1,14 @@
+name: a_r1_s5_13_trend_pullback
+type: rule
+desc: 收盘价高出60日均线20%以上、距20日高点已回落5%以上但当日又收在振幅上沿，属强趋势中的健康回撤结束，回撤末端买入的成本显著低于追高，故回撤末进场、跌破60日均线才认定趋势终结离场
+buy:
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.2}
+- {op: dist_high_n, n: 20, dir: below, threshold: -5}
+- {op: close_pos_range, dir: above, threshold: 0.8}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+rank: {op: ret_n, n: 120, order: desc}
+max_hold_days: 40
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

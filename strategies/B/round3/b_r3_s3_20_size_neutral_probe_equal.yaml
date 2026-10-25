@@ -1,0 +1,16 @@
+name: b_r3_s3_20_size_neutral_probe_equal
+type: score
+desc: "在 1:1 底盘上打开 neut_size、即当日流通市值五档内做秩，把绝对小市值这一维在中性化里扣掉，只保留同一市值档里更便宜的选股：若这份仍有超额，说明 pb 提供的是真选股 alpha；若归零，则前面几份的超额全部来自市值暴露。"
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

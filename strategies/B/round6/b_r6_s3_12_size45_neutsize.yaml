@@ -1,0 +1,18 @@
+name: b_r6_s3_12_size45_neutsize
+type: score
+desc: "07 号的机制探针：权重一字不动，只把 neut_size 打开（当日流通市值截面 5 档内再排名）。假设规模腿的收益若真来自“小盘溢价”，那么在市值分档内做中性化会把这条腿的信息几乎抽干，配置应显著变差；若仍然好用，说明 -1.35 的规模腿在赚的不是市值本身，而是同档内的相对大小与流动性错杀。这一档用来判断规模腿是真信号还是纯风格暴露。归一化权重：pb 15.0% / ps_ttm 15.0% / size_ln 45.0% / turn_ma_n(120) 25.0%。"
+factors:
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -1.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

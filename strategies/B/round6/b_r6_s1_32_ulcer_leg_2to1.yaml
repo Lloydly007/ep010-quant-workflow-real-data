@@ -1,0 +1,22 @@
+name: b_r6_s1_32_ulcer_leg_2to1
+type: score
+desc: "第三腿检验（回撤路径）：在 07（分割 2:1）上追加 ulcer_n(250) -0.35，回撤路径质量占 14.6%。与 31 的低波口径正面对照——波动率只看波动幅度，ulcer 看“跌下去有多深、持续多久”，更接近持有人的真实痛感。若 32 优于 31，说明在低换手冷门股里，回撤形状比波动幅度更能区分“便宜的好票”与“便宜的坑”；若 31 优于 32，则幅度口径已足够，路径指标的长窗口缺失（小盘上市不足一年）反而在拖后腿。归一化权重：pb 20.8% / size_ln 27.1% / turn_ma_n(120) 25.0% / turn_ma_n(250) 12.5% / ulcer_n(250) 14.6%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+- op: turn_ma_n
+  n: 250
+  weight: -0.30
+- op: ulcer_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r5_s4_01_pe250_base_three__f2n_d
+type: score
+desc: 基准格：size_ln -1.25、pe_ttm -0.75、turn_ma_n(250) -0.75。把第 3 轮最好的账面口径（pb）换成盈利口径（pe），检验“便宜”到底是资产便宜还是利润便宜更管用；换手取满一年，等于要求标的整年都没被交易拥挤过。后续所有变量格都以本份为锚。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

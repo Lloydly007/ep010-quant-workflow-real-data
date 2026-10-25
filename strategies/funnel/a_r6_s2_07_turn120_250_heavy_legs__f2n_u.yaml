@@ -1,0 +1,20 @@
+name: a_r6_s2_07_turn120_250_heavy_legs__f2n_u
+type: score
+desc: 06 的反面：双窗换手腿各加到 -0.75（两腿合计过半票数），规模退到 -0.85、估值退到 -0.45，让「被忽视」成为主轴而非修正项。A 路的量价传统里，换手是唯一能自证的流动性维度；本份检验双窗平滑后的清淡度能否独立承担选股，而不是永远挂在小市值和低估值后面当配角。风险是把「流动性差」直接买进来——这类名字在冲击成本上不友好，打分形态本身不建模成本，报告需注明。归一化权重：size_ln
+  30.4% / pb 16.1% / turn_ma_n(120) 26.8% / turn_ma_n(250) 26.8%。
+factors:
+- op: size_ln
+  weight: -0.85
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

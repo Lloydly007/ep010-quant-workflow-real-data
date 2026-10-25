@@ -1,0 +1,12 @@
+name: b_r5_s4_11_ulcer_dominant120
+type: score
+desc: "溃疡 120 日权重 0.6 独大、60 日低波与 PB 各 0.2：假设抗跌性主要由下行路径的长度与深度决定，日频标准差只是次要证据。这是本组最极端的「路径优先」假设，用来判断 ulcer 是否比 vol_n 更接近投资者真实的痛感。"
+factors:
+- {op: pb, weight: -0.2}
+- {op: vol_n, n: 60, weight: -0.2}
+- {op: ulcer_n, n: 120, weight: -0.6}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

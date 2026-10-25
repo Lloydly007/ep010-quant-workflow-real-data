@@ -1,0 +1,17 @@
+name: b_r4_s3_16_ps_size_light_020__f1n_d
+type: score
+desc: 规模倾斜最轻档：size −0.20，ps −0.40 与 turn 120 −0.75 固定。假设 ps 的低估本身是主信号，小盘只是顺带的暴露，所以只给
+  0.20 的轻微倾斜；这一档几乎等于纯营收便宜 + 冷清，是本组唯一能回答'去掉小盘后 ps 还剩多少'的配置。与 18/19 一起构成规模权重的连续切片。
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: size_ln
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,18 @@
+name: a_r6_s1_16_mass18_ratio_1to2
+type: score
+desc: "估值块总权抬到 1.80，比例不变：估值与规模加换手几乎五五开，是本组估值话语权最大的一侧。这一格检验反向可能——比例结论只在估值是少数派时成立；一旦估值成为主导，1:2 里 ps 的那 33% 会放大成对名单的实质改写。归一化权重：pb 33.8% / size_ln 28.2% / turn_ma_n(120) 21.1% / ps_ttm 16.9%（ps:pb=0.60:1.20=1:2.00，总 |w|=3.55，估值块 50.7%）。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.60
+- op: pb
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

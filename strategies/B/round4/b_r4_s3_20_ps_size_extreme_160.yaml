@@ -1,0 +1,16 @@
+name: b_r4_s3_20_ps_size_extreme_160
+type: score
+desc: "规模极端档：size −1.60，是第 3 轮 b_r3_s2_03 那类'规模压过一切'摆法的 ps 版本，其余两腿不动。假设边界情形下整个打分退化为微盘组合，ps 与换手只决定在同一天里优先挑谁；本份是规模轴的终点探针，用来确认连续切片在高权重端没有出现单调性断裂。"
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: size_ln
+  weight: -1.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

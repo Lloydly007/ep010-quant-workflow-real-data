@@ -1,0 +1,26 @@
+name: b_r6_s2_29_dual_value__f5n_d
+type: score
+desc: 估值腿用 pb −0.60 与 ps_ttm −0.45 双锚（账面六腿，总权重 3.45），防御腿对半 0.225/0.225。双估值会显著改变候选池的估值结构，是对「防御腿配比是否只在单一估值口径下成立」的更硬的检验；同时六腿意味着每条腿的边际影响都被稀释，若
+  29 与 01 差异很小，说明本组的替代关系是稳健的（换账面也不动），这类稳健性对终轮冻结很关键。归一化权重：pb 17.4% / ps_ttm 13.0% /
+  size_ln 34.8% / turn_ma_n(120) 21.7% / ulcer_n(250) 6.5% / vol_n(250) 6.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 120
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r4_s4_03_pg_turn10_equal
+type: score
+desc: "换手窗口轴 10 日（两周）档：两周平均换手把日级冲击与单周事件冲击都磨平，是短窗里最抗噪的一档。假设拥挤度效应在两周尺度才开始反映真实的持仓换手而不是交易噪声，因此比 3/5 日档更适合配周度调仓。成长（pe_ttm 正权）与价值（pb 负权）权重相等，用于检验短窗换手过滤的边际贡献是否随窗口拉长而单调上升。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 10
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

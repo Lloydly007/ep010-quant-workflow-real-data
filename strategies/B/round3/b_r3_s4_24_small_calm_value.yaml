@@ -1,0 +1,12 @@
+name: b_r3_s4_24_small_calm_value
+type: score
+desc: "PB0.4、120日低波0.3、小市值倾斜0.3，月度调仓：小盘股波动天然高，低波约束把小而安静的少数票挑出来，让规模溢价与低波异象在同一子集上叠加而非互相抵消（本轮无ROE，是原项目007的可复现骨架）。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 120, weight: -0.3}
+- {op: size_ln, weight: -0.3}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

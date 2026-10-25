@@ -1,0 +1,17 @@
+name: a_r4_s4_29_neutsize_base
+type: score
+desc: "与基准格（turn_ma_n(120) -0.75、ret_n(60) +0.75、size_ln -1.25）同因子同权重，但打开 neut_size：规模倾斜被剥掉后，检验动量与低换手是否仍独立有效，分辨超额来自规模还是另两腿。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

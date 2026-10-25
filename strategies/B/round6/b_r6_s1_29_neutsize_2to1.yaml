@@ -1,0 +1,19 @@
+name: b_r6_s1_29_neutsize_2to1
+type: score
+desc: "中性化口径切换：分割 2:1 不变，但把 neut_size 打开（规模在当日流通市值截面五档内取秩），四腿权重与 07 逐字相同。关键问题：换手短窗的信号是否只是“同一市值档里的换手差异”？打开档内秩后，因子变成“相对同规模同行的冷清程度”，规模腿的绝对水平被大幅削弱。若 29 与 07 相当甚至更好，说明换手双窗捕捉的是行业内、市值内的相对冷清，是真正的横截面信息；若明显变差，则信号依赖绝对市值分层。这一档同时是报告里“中性化口径”一节的直接证据。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 29.3% / turn_ma_n(250) 14.6%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+- op: turn_ma_n
+  n: 250
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

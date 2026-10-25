@@ -1,0 +1,12 @@
+name: b_r5_s4_24_ps_dual_vol60
+type: score
+desc: "PS 提到 0.4 主导、PB 0.25 辅助、60 日低波 0.35：用收入倍数做估值主轴、PB 只做交叉验证，中窗低波保证不是在下跌趋势里接飞刀。与 23 相比估值主轴换成收入端、波动窗口从中短拉长，检验哪条估值腿更适合与低波共振。"
+factors:
+- {op: pb, weight: -0.25}
+- {op: ps_ttm, weight: -0.4}
+- {op: vol_n, n: 60, weight: -0.35}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

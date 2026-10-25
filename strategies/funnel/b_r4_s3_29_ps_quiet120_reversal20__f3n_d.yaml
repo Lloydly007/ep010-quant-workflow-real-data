@@ -1,0 +1,20 @@
+name: b_r4_s3_29_ps_quiet120_reversal20__f3n_d
+type: score
+desc: ps 便宜 + 半年冷清 + 20 日反转（负权）：ps −0.45 / size −0.55 / turn 120 −0.60 / ret 20 −0.45。假设便宜小盘的收益主要来自超跌修复，20
+  日跌幅是最直接的入场时点信号；把反转压进 ps 与冷清之上，检验'估值选池 + 短期反转择时'是否比纯 ps 更早介入，也检验它会不会把名单带进正在崩坏的名字。
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+- op: ret_n
+  n: 10
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

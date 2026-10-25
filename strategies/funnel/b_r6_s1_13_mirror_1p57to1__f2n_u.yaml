@@ -1,0 +1,21 @@
+name: b_r6_s1_13_mirror_1p57to1__f2n_u
+type: score
+desc: 镜像 1.57:1（250 日 -0.55 / 120 日 -0.35）：长窗 26.8%，短窗 17.1% 退到与 05 里长窗相同的量级——这是一对参数镜像，只有方向相反。用于检验“换手信号是否对称”：若
+  13 与 05 表现相当，说明两个窗口携带的是同一种信息，只是尺度不同，比值轴左右移动等价；若 13 明显弱于 05，说明短窗（当下状态）才是有效的那个维度，长窗加码是在买入过多“历史上就没人交易”的股票。归一化权重：pb
+  24.4% / size_ln 31.7% / turn_ma_n(120) 17.1% / turn_ma_n(250) 26.8%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.35
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r3_s1_03_size_lowvol20
+type: score
+desc: 小市值叠20日低波，只买小盘里价格最稳的一批，小盘超额有相当部分来自风险补偿而非alpha，避开高波小盘的流动性踩踏能让回撤更浅、复利更高。
+factors:
+- op: size_ln
+  weight: -1.2
+- op: vol_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,26 @@
+name: a_r5_s3_31_pb_ps_ind_turn_mix
+type: score
+desc: "两套口径两个分母都做双层：pb -0.4、ps_ttm -0.35、行业内 PB 分位 -0.4、行业内 PS 分位 -0.3，size_ln -0.45、250 日换手 -0.45。假设只有绝对与行业相对、PB 与 PS 四条证据口径一致地便宜才安全，任何一条分母口径的孤证都可能是会计口径或行业属性造成的假便宜。"
+factors:
+- op: size_ln
+  weight: -0.45
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.35
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.4
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.3
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

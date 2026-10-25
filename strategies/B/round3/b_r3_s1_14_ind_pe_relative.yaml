@@ -1,0 +1,20 @@
+name: b_r3_s1_14_ind_pe_relative
+type: score
+desc: 行业内 PE 分位最低者优先，同行业比盈利收益率才把周期位置与商业模式对齐，PB 与 PS 保留绝对低值作双旁证、60 日低换手剔除拥挤交易，超额来自行业内部的盈利估值错配被同业比价修正。
+factors:
+- op: ind_rank
+  of:
+    op: pe_ttm
+  weight: -0.40
+- op: pb
+  weight: -0.30
+- op: ps_ttm
+  weight: -0.30
+- op: turn_ma_n
+  n: 60
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

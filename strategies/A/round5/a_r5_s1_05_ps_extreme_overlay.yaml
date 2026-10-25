@@ -1,0 +1,16 @@
+name: a_r5_s1_05_ps_extreme_overlay
+type: score
+desc: "ps 极端主导（−1.60 对 size −0.50）：几乎是「只买营收倍数最低的 30 只 + 一点小市值平手」，用来量出纯营收估值选股的上限与风格集中度。若它在周度换手下名单剧烈跳动，说明极端口径把估值噪音也一起放大了。"
+factors:
+- op: size_ln
+  weight: -0.50
+- op: ps_ttm
+  weight: -1.60
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

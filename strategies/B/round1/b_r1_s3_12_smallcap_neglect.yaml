@@ -1,0 +1,18 @@
+name: b_r1_s3_12_smallcap_neglect
+type: rule
+desc: 单日换手率低于1%说明当天几乎无人交易、流动性最冷，冷门小盘股的研究覆盖与买卖价差补偿要求最高、规模溢价恰在无人问津处最大；在当日冷门集合内按流通市值升序取最小的10只、持有60日，单日换手破5%（炒作资金进场、规模溢价被打断）离场，止损8%。
+buy:
+- op: turn
+  dir: below
+  threshold: 1.0
+rank:
+  op: size_ln
+  order: asc
+sell:
+- op: turn
+  dir: above
+  threshold: 5.0
+max_hold_days: 60
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r4_s4_12_growth_extreme_fast_quiet
+type: score
+desc: "成长腿拉到全组最高（pe_ttm +1.30），价值腿压到 0.35，同时换手窗口收到 20 日、只给 −0.40。这是‘高速成长 + 只做短期去拥挤’的激进假设：成长叙事在 20 日尺度上仍能兑现，而更慢的换手读数会把正在被重估的名字筛掉。代价是组合大概率落在高估值高波动区间，与 b_r4_s4_09 构成权重轴两端。"
+factors:
+- op: pe_ttm
+  weight: 1.3
+- op: pb
+  weight: -0.35
+- op: turn_ma_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r5_s2_05_own_pb_heavy_120
+type: score
+desc: "120 日窗配 -0.75 重权：追逐'刚跌进半年低估值区'的名字，与 04 的长窗重仓形成窗口×权重的交叉点，用来判断重权是否只在长窗下才安全。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

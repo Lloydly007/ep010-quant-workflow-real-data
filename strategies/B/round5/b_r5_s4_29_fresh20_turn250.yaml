@@ -1,0 +1,12 @@
+name: b_r5_s4_29_fresh20_turn250
+type: score
+desc: "20 日低波 0.3 + 250 日低换手 0.35 + PB 0.35：换手回答「有没有人讨论」，波动回答「有没有人恐慌」。一年清淡加一月安静说明定价权仍不在交易者手里，折价更难被套利抹平——这是「跌不动」的关注度解释，窗口刻意一长一短。"
+factors:
+- {op: pb, weight: -0.35}
+- {op: vol_n, n: 20, weight: -0.3}
+- {op: turn_ma_n, n: 250, weight: -0.35}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

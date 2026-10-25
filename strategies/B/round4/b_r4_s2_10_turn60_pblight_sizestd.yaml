@@ -1,0 +1,16 @@
+name: b_r4_s2_10_turn60_pblight_sizestd
+type: score
+desc: 60 日换手 × 轻 pb × -0.65 规模：以季度为单位的冷清作主信号、估值只设下限、规模取标准档，作为 60 日窗口的参照点，便于与 20、120、250 三档在相同规模权重下对比。
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

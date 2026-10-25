@@ -1,0 +1,18 @@
+name: b_r3_s1_19_cheap_short_momo
+type: score
+desc: 三镜低估但要求 20 日动量为正，只买刚开始被资金注意到的便宜股，用最短的月度动量作时点确认，超额来自折价存在并且正在被修正这一状态，而不是单纯的折价存在。
+factors:
+- op: pb
+  weight: -0.35
+- op: ps_ttm
+  weight: -0.35
+- op: pe_ttm
+  weight: -0.30
+- op: ret_n
+  n: 20
+  weight: 0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

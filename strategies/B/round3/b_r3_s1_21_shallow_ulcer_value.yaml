@@ -1,0 +1,21 @@
+name: b_r3_s1_21_shallow_ulcer_value
+type: score
+desc: 三镜低估叠加 120 日溃疡指数低与 60 日低换手，便宜且回撤路径平滑、换手冷静说明低估值不是由基本面恶化引起的持续下跌，超额来自剔除便宜但正在崩的样本之后剩下的价值折价，也就是把价值陷阱和真便宜分开。
+factors:
+- op: pb
+  weight: -0.35
+- op: ps_ttm
+  weight: -0.30
+- op: pe_ttm
+  weight: -0.30
+- op: ulcer_n
+  n: 120
+  weight: -0.60
+- op: turn_ma_n
+  n: 60
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

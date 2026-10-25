@@ -1,0 +1,17 @@
+name: a_r3_s2_25_long_loser_reversal
+type: score
+desc: 长冷小盘再叠年度输家反转：一年期跌幅大的冷门小盘更可能被过度抛弃，用250日动量负权捕捉年度级别的错杀。
+factors:
+- op: size_ln
+  weight: -1.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 250
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

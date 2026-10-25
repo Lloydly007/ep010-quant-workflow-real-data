@@ -1,0 +1,16 @@
+name: a_r5_s1_33_ps_dominant_neutsize
+type: score
+desc: "与第 3 份（ps 主导 −1.20）相比只打开 neut_size：在营收估值高度主导的组合里再做市值分档内中性，检验营收便宜的收益是否独立于规模分层。若两者表现趋同，说明 ps 的信息本来就分布在每个市值档内部。"
+factors:
+- op: size_ln
+  weight: -0.60
+- op: ps_ttm
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

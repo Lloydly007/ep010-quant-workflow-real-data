@@ -1,0 +1,27 @@
+name: a_r1_s2_15_xsec_loser_reversal
+type: rule
+desc: 在仍站上250日年线的长期多头中，按当日全池的20日跌幅截面分位挑最靠后（最弱）的10只，赌长期趋势未破的个股在同池短期超跌后向自身趋势回归，同时避开系统性下跌中的普遍接飞刀；10日或20日反弹超5%离场。
+buy:
+- op: close_over_ma_n
+  n: 250
+  dir: above
+  threshold: 1.0
+- op: ret_n
+  n: 20
+  dir: below
+  threshold: -5
+rank:
+  op: xsec_pct
+  of:
+    op: ret_n
+    n: 20
+  order: asc
+sell:
+- op: ret_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

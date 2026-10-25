@@ -1,0 +1,16 @@
+name: b_r4_s2_06_turn20_pbheavy_sizestd
+type: score
+desc: 20 日换手 -0.75 与 pb -0.80 双主信号、规模 -0.65：便宜的股票且近一月没人碰，作为 pb 权重加倍后的基准，检验两个短中期信号是相互确认还是彼此稀释。
+factors:
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

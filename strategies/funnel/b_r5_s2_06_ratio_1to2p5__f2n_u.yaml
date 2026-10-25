@@ -1,0 +1,17 @@
+name: b_r5_s2_06_ratio_1to2p5__f2n_u
+type: score
+desc: 比值 1:2.5（pb -0.60 / size_ln -1.50），规模腿占总权重过半。假设 size_ln 与 pb 的截面相关性有限，规模权重过半后组合会更像纯小盘、而不是“便宜的小盘”；这一档是两种解释的分水岭，同时保留
+  120 日换手作为拥挤度刹车。归一化权重：pb 21.1% / size_ln 52.6% / turn_ma_n(120) 26.3%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

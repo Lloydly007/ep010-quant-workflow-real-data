@@ -1,0 +1,27 @@
+name: a_r6_s2_28_cross_2x2_diag_neg
+type: score
+desc: "对角错配 A：两轴的尺度偏好相反——估值看新（120 重 -0.45、250 轻 -0.30），换手看旧（250 重 -0.55、20 轻 -0.35）。经济含义是估值折价需要新鲜度（修复往往在半年内完成），而清淡度需要长期确认（只安静一个月可能是假象），所以两条轴不该用同一张尺度权重表。这是对 21「所有信号同权同尺度」最直接的挑战：若 28 明显更优，说明多尺度平滑的正确做法是给每条轴单独定时间常数，而不是统一平均。归一化权重：size_ln 37.7% / ts_pct(250, pb) 11.3% / ts_pct(120, pb) 17.0% / turn_ma_n(20) 13.2% / turn_ma_n(250) 20.8%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.30
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 20
+  weight: -0.35
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

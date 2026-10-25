@@ -1,0 +1,18 @@
+name: b_r5_s2_01_ratio_1to1_base__f2n_d
+type: score
+desc: 本轮梯度轴的起点：pb 与 size_ln 各 1 份（负权比 1:1），叠加 120 日换手 -0.75，行业中性后周度取 30 只。假设低 PB 与小市值在行业中性化后是两个互不替代的效应，等权是既不偏向便宜也不偏向小的中性对照；后面每一档只放大
+  size_ln，把比值当作唯一移动的变量，用于读出比值本身的边际效应。归一化权重：pb 30.8% / size_ln 30.8% / turn_ma_n(120)
+  38.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

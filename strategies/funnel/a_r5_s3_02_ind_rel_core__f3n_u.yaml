@@ -1,0 +1,21 @@
+name: a_r5_s3_02_ind_rel_core__f3n_u
+type: score
+desc: 与 01 反向配比：行业内 PB 分位 -0.8 拿主预算、绝对 pb 降到 -0.3，其余不变。假设 PB 的绝对水平在本池更多是行业标签（银行电力天然低
+  PB、医药科技天然高 PB），真正的信息是同一门类内部最便宜的那只，本份测行业相对口径能单独贡献多少超额。
+factors:
+- op: size_ln
+  weight: -0.5
+- op: pb
+  weight: -0.3
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.8
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

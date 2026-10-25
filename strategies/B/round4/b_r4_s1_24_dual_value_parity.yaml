@@ -1,0 +1,16 @@
+name: b_r4_s1_24_dual_value_parity
+type: score
+desc: 双估值镜 + 等权换手：pb -0.60 / ps_ttm -0.40 / turn_ma_n(120) -0.60（归一化 38%/25%/38%），假设 PB 只看资产端会被重资产行业扭曲，补上 PS 的营收端视角后折价定义更完整，检验 08 的稳健性来自估值口径还是单一 PB。
+factors:
+- op: pb
+  weight: -0.60
+- op: ps_ttm
+  weight: -0.40
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

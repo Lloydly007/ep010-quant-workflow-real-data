@@ -1,0 +1,22 @@
+name: b_r2_s2_02_ind_smallest_quiet
+type: rule
+desc: "现象：一只票在自己行业（证监会门类，全池 78 组）内是市值最小的一档，同时 20 日均换手也落在最冷的一档——它在行业比价体系里被系统性忽略，但行业景气时会被动受益。为什么在 A 股该有超额：A 股行业内的资金先买龙头，最尾部小票在行业上行时弹性最大、下行时因无人关注跌幅受限，这是“行业内小盘溢价”；行业内分位剔除了行业自身的规模结构差异，比全池绝对市值干净。怎么进出：20 日均换手 <1% 过滤，按行业内市值分位（ind_rank of size_ln）升序取最小 10 只，industry_cap=3 强制分散到至少 4 个行业；20 日均换手回到 3% 以上（关注度回补到位）卖出；最长 40 日，8% 止损。相对第 1 轮失败模式改了什么：这是第 1 轮 s1_14（ind_rank(size_ln) + turn_ma_n <2% + 溃疡卖出 + cap 5）的收紧版——入场门槛从 2% 收到 1%、卖出从“路径破位”换成“关注度回补”、行业上限从 5 收到 3；第 1 轮 17 份规模类排序是绝对 size_ln、只有 1 份用行业内分位，样本不足以判定这条路径，本组补样本，并让 02/19 分别代表“按关注度卖”与“按路径卖”两个卖点假设。"
+buy:
+- op: turn_ma_n
+  n: 20
+  dir: below
+  threshold: 1
+rank:
+  op: ind_rank
+  of:
+    op: size_ln
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 3
+max_hold_days: 40
+stop_loss: 8%
+max_positions: 10
+industry_cap: 3

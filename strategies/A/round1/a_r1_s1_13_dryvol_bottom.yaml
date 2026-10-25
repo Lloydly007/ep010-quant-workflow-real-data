@@ -1,0 +1,14 @@
+name: a_r1_s1_13_dryvol_bottom
+type: rule
+desc: 股价贴近60日低点、5日量能萎缩到前5日均量一半以下且仍在阴跌，说明卖盘已基本出清，任何增量买盘都能撬动反弹｜按贴近60日低点程度取最地量者，10日反弹8%即止盈（地量反弹多为短线修复），10日上限、8%止损。
+buy:
+- {op: vol_ratio_n, n: 5, dir: below, threshold: 0.5}
+- {op: dist_low_n, n: 60, dir: below, threshold: 5.0}
+- {op: ret_n, n: 5, dir: below, threshold: -1.0}
+rank: {op: dist_low_n, n: 60, order: asc}
+sell:
+- {op: ret_n, n: 10, dir: above, threshold: 8.0}
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

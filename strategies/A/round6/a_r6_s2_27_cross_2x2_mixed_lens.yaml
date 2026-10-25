@@ -1,0 +1,27 @@
+name: a_r6_s2_27_cross_2x2_mixed_lens
+type: score
+desc: "2×2 的四腿同权（各 -0.40），但估值轴刻意混口径：长窗 250 用 pb、短窗 120 用 ps，与 26 的全 ps 版形成对照。假设长窗该追资产端的慢变量（pb 受资本结构与减值影响，年尺度才有意义），短窗该追经营端的快变量（ps 随收入与毛利波动，半年内就能反映定价变化）。若 27 优于 26 与 21，说明多尺度不仅是时间上的，也是口径上的分工；若劣于两者，说明混口径把两条腿的信号搅成了互相抵消的复合指标。归一化权重：size_ln 38.5% / ts_pct(250, pb) 15.4% / ts_pct(120, ps_ttm) 15.4% / turn_ma_n(120) 15.4% / turn_ma_n(250) 15.4%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.40
+- op: ts_pct
+  n: 120
+  of:
+    op: ps_ttm
+  weight: -0.40
+- op: turn_ma_n
+  n: 120
+  weight: -0.40
+- op: turn_ma_n
+  n: 250
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

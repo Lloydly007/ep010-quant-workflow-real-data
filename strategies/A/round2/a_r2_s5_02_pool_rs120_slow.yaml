@@ -1,0 +1,14 @@
+name: a_r2_s5_02_pool_rs120_slow
+type: rule
+desc: 现象：短周期动量在 A 股被高换手抹平得很快，而 120 日相对强度对应的持仓周期以季度计，恰好覆盖机构分批调仓的慢变量；但候选必须排除中期动量为负的股票，否则“相对最强”只是一群下跌股里跌得最少的那只。为什么在 A 股该有超额：慢动量的溢价来自基本面预期修正的滞后扩散，交易频率低、成本占比小，这正是第 1 轮 A 路年化中位 -17.9% 的直接病灶——一年内反复进出，扣费吃掉全部收益。怎么进出：站上 120 日线且 120 日涨幅为正者，按 120 日涨幅的全池截面分位降序取前 10；跌破 120 日线且 20 日跌幅超 10%（趋势破坏与急跌双确认，避免噪音误杀）才离场，60 日上限、10% 止损、同行业最多 10 只。相对第 1 轮的改动：第 1 轮持有期普遍 3 到 20 日、换手极高；本配置把持有期拉到 60 日、用截面排名替代逐日重排，把交易成本从假设里让出来。
+buy:
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: ret_n, n: 120, dir: above, threshold: 5}
+rank: {op: xsec_pct, of: {op: ret_n, n: 120}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 120, dir: below, threshold: 1.0}
+- {op: ret_n, n: 20, dir: below, threshold: -10}
+max_hold_days: 60
+stop_loss: 10%
+max_positions: 10
+industry_cap: 10

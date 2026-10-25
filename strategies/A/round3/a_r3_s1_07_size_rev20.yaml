@@ -1,0 +1,14 @@
+name: a_r3_s1_07_size_rev20
+type: score
+desc: 小市值叠20日反转，月内跌得最多的小盘优先，20日窗口覆盖一个完整情绪回摆周期，小盘输家在月度级别上的反弹幅度显著高于大盘输家。
+factors:
+- op: size_ln
+  weight: -1.3
+- op: ret_n
+  n: 20
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

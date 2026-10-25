@@ -1,0 +1,16 @@
+name: b_r5_s2_27_ps_lens_1to2
+type: score
+desc: "把估值腿整体换成 ps_ttm（-0.60）配 size_ln -1.20：营收口径不受一次性损益与负 PE 干扰，与 05 构成同规模腿、只换估值尺的对照（本格无 pb，比值由 ps_ttm : size_ln 承担，等价 1:2），检验比值轴的结论是否依赖 PB 这一把尺子；也顺带避开 pe_ttm 10.2% 负值带来的排序陷阱。归一化权重：ps_ttm 23.5% / size_ln 47.1% / turn_ma_n(120) 29.4%。"
+factors:
+- op: ps_ttm
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

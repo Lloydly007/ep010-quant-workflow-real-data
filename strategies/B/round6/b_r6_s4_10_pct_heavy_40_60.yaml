@@ -1,0 +1,16 @@
+name: b_r6_s4_10_pct_heavy_40_60
+type: score
+desc: 分位提到 60%、绝对 PB 降到 40%：与 09 镜像，检验纵向压缩是否更稀缺。分位是逐股归一，天然消掉行业估值中枢差异；这条若赢，等于说「银行与科技不可比」的问题比想象中严重。归一化权重：pb 40.0% / ts_pct(pb,250) 60.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

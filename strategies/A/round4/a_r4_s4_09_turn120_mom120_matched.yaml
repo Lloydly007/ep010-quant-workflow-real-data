@@ -1,0 +1,17 @@
+name: a_r4_s4_09_turn120_mom120_matched
+type: score
+desc: "换手与动量同取 120 日（-0.75 / +0.75）、size_ln -1.25：半年静默叠加半年上行，信号最平滑、名单最稳定，代价是对近期拐点反应慢。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 120
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

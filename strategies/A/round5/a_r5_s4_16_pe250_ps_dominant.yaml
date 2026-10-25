@@ -1,0 +1,18 @@
+name: a_r5_s4_16_pe250_ps_dominant
+type: score
+desc: "收入口径主导：ps_ttm -0.90 超过 pe_ttm 的 -0.50，配 size_ln -1.00、turn_ma_n(250) -0.75。对盈利口径不信任（负值、周期高点失真），改用“市值 / 营业收入”这条全程为正的尺子，检验低换手小盘里收入便宜是否比利润便宜更稳。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.50
+- op: ps_ttm
+  weight: -0.90
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

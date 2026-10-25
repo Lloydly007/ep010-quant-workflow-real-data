@@ -1,0 +1,22 @@
+name: b_r2_s3_11_neglect_calm_triple
+type: rule
+desc: 现象："冷门"和"平静"是两个不同频率的量：换手是日频关注度，波动是季频价格行为，round1分开测过，从没叠在同一个条件里。为什么该有超额：日换手低于2%说明公募买不进、卖方不覆盖、游资看不上；60日波动低于2%说明没有资金在偷偷出货。这种"冷而稳"正是A股低估的标准形态，一旦关注度回归往往就是一次重估。怎么进出：买turn<2且vol_n(60)<2的股票、按PB升序取10只；日换手升破8%（关注度回归）即卖，持有60日，10%止损。相对第1轮：出场用关注度爆发而不是估值或价格，且把两种频率的平静指标叠加成同一条件。
+buy:
+- op: turn
+  dir: below
+  threshold: 2
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 2
+rank:
+  op: pb
+  order: asc
+sell:
+- op: turn
+  dir: above
+  threshold: 8
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 3

@@ -1,0 +1,17 @@
+name: b_r5_s3_07_pb_ts120_turn20
+type: score
+desc: "半年估值分位 + 月度换手冰点：把两条腿都放在“事件窗口”尺度上，专挑刚被市场遗忘、但估值压缩幅度尚在半年区间内可比的标的；换手迅速回温的名字下周即被剔除，等于用调仓频率做止损。"
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: b_r5_s1_02_triple_equal_turn20__f3n_d
+type: score
+desc: 同 1:1:1 等权，换手窗口压到 20 日、载体权重同步降到 -0.40。假设估值折价能否兑现取决于最近一个月是否已被资金重新关注：20 日换手低 =
+  刚被市场忘掉、还没被定价；短窗信号自相关低、噪声大，因此给更低权重，不让它盖过估值本身。
+factors:
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.4
+- op: pe_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 10
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

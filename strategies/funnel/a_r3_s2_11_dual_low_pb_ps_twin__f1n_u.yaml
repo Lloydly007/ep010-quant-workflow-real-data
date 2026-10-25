@@ -1,0 +1,18 @@
+name: a_r3_s2_11_dual_low_pb_ps_twin__f1n_u
+type: score
+desc: 双低之上要求PB与PS两个口径同时便宜，压低单一估值口径的行业偏斜，月度调仓给估值错杀留出修复时间。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

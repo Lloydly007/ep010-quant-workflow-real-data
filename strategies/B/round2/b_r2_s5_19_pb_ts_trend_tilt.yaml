@@ -1,0 +1,12 @@
+name: b_r2_s5_19_pb_ts_trend_tilt
+type: score
+desc: 现象：第1轮只有 2 份打分型配置，且当时池子退化被判定为只能作风格倾斜诊断；在全池上打分型能真正选出 30 只，而规则型把便宜与回升都做成硬阈值，会把大量处于中间态的票直接丢掉。为什么在 A 股该有超额：估值分位与趋势确认本来都是连续变量——自身 PB 分位越低分越高、收盘相对 20 日均线越强分越高、中长期换手越冷分越高，复合后自然落在「便宜且刚开始转强」的那一段，比一次性阈值更不容易被单日噪声打偏。怎么进出：月度首个交易日调仓，持有打分前 30(holdings 固定 30)，对市值分档做中性化以剥离小盘倾斜，不设止损，靠调仓换手自然退出。改了什么：第1轮的打分型只做了低估值低波小市值的静态倾斜，本份给 close_over_ma_n 正权重，把「回升」写进因子而不是条件。
+factors:
+- {op: ts_pct, n: 250, of: {op: pb}, weight: -0.5}
+- {op: close_over_ma_n, n: 20, weight: 0.3}
+- {op: turn_ma_n, n: 20, weight: -0.2}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: false
+neut_size: true
+industry_cap: 0

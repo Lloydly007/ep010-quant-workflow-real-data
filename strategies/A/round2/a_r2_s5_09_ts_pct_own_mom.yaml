@@ -1,0 +1,13 @@
+name: a_r2_s5_09_ts_pct_own_mom
+type: rule
+desc: 现象：全池截面排名假设所有股票的动量可以直接比较，但高波动股天然占住两端；用每只股票自己过去 250 个交易日里 20 日动量的时序分位排序，等于先削掉个股尺度差异再比强弱。为什么在 A 股该有超额：同一只股票处在自身动量历史高位时，往往是资金完成从分歧到一致的切换，延续概率最高；这一步把第 1 轮绝对涨幅排序里被高波动小票挤占的名额还给真正进入加速段的股票。怎么进出：站上 250 日线与 60 日线者，按自身 250 日时序分位降序取前 10；跌破 60 日线离场，20 日上限、8% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮用绝对涨幅或单层全池分位排序，结果偏向高波动股；本配置改用自身历史分位，先做尺度归一。
+buy:
+- {op: close_over_ma_n, n: 250, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: ts_pct, n: 250, of: {op: ret_n, n: 20}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

@@ -1,0 +1,20 @@
+name: a_r6_s1_29_parity_turnlight__f3n_u
+type: score
+desc: 均分配轻换手：母本比例在估值主导打分下的复现。与 27 成对，用来判断 parity 的优势是否依赖换手腿强度——若轻换手时均分仍优于 1:2 与 2:1
+  两侧，则 1:1 是稳健结论而不是权重分配的巧合。归一化权重：size_ln 41.7% / ps_ttm 20.8% / pb 20.8% / turn_ma_n(120)
+  16.7%（ps:pb=0.50:0.50=1.00:1，总 |w|=2.40，估值块 41.7%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

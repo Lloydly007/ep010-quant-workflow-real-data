@@ -1,0 +1,17 @@
+name: a_r3_s1_13_size_vol_rev5
+type: score
+desc: 三腿组合市值、20日低波与5日反转，选刚被砸但历史波动不高的小盘，低波票的下跌更可能是情绪性错杀，短期反转的胜率因此高于在高波票里接刀。
+factors:
+- op: size_ln
+  weight: -1.55
+- op: vol_n
+  n: 20
+  weight: -0.35
+- op: ret_n
+  n: 5
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

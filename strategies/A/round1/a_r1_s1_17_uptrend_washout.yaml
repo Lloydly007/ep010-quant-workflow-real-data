@@ -1,0 +1,14 @@
+name: a_r1_s1_17_uptrend_washout
+type: rule
+desc: 半年线向上时出现的连续4日下跌且未放量（5日量比低于1），是趋势内洗盘而非趋势终结，浮筹离场后反弹概率高｜只做短线修复：按5日跌幅取最深者，收盘重回20日线上方或满5日即离场，10%止损防洗盘变趋势反转。
+buy:
+- {op: streak_down, dir: above, threshold: 3}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: vol_ratio_n, n: 5, dir: below, threshold: 1.0}
+rank: {op: ret_n, n: 5, order: asc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+max_hold_days: 5
+stop_loss: 10%
+max_positions: 10
+industry_cap: 10

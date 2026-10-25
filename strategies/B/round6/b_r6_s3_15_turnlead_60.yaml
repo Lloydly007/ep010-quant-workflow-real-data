@@ -1,0 +1,18 @@
+name: b_r6_s3_15_turnlead_60
+type: score
+desc: "13 号的中窗（60 日）版本：其余一无改动。假设在换手权重高达 42% 时，窗口的稳定性比敏感度更重要，一个季度平均能压掉单日放量的干扰，又不至于像一年那样把近期基本面变化抹平；用于定位 42% 权重下的最优窗口位置。归一化权重：pb 16.0% / ps_ttm 16.0% / size_ln 26.0% / turn_ma_n(60) 42.0%。"
+factors:
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 60
+  weight: -1.05
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

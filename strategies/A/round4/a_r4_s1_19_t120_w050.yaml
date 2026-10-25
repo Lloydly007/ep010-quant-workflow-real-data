@@ -1,0 +1,16 @@
+name: a_r4_s1_19_t120_w050
+type: score
+desc: "120 日换手 -0.50：半年清淡是中期筹码沉淀的代理，与 60 日 -0.50 同权重对照，看季窗到半年窗之间信号是增强还是衰减。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

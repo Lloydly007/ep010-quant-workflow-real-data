@@ -1,0 +1,20 @@
+name: a_r6_s1_13_ratio_2p5to1__f3n_u
+type: score
+desc: 'ps 约 2.45 : pb 1（0.71 : 0.29）：接近 ps 独裁，但仍保留 29% 的账面否决权，在区间两头与 02 严格对称。若 13
+  与 02 各自明显偏向其主导腿，说明权重轴是干净的线性刻度，1:1 至 1:2 这一段可以放心作为终轮冻结区间。归一化权重：size_ln 36.4% / turn_ma_n(120)
+  27.3% / ps_ttm 25.8% / pb 10.5%（ps:pb=0.71:0.29=2.45:1，总 |w|=2.75，估值块 36.4%）。'
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.71
+- op: pb
+  weight: -0.29
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

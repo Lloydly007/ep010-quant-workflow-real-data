@@ -1,0 +1,12 @@
+name: b_r3_s4_18_calm_oversold_20d
+type: score
+desc: "PB0.5、120日低波0.3、20日收益负权0.2，周度调仓：低波保证近20日的下跌是无恐慌的阴跌而非崩盘，这类温和超跌更容易在几周内均值回归，反转腿权重压低以免退化成短线策略。"
+factors:
+- {op: pb, weight: -0.5}
+- {op: vol_n, n: 120, weight: -0.3}
+- {op: ret_n, n: 20, weight: -0.2}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

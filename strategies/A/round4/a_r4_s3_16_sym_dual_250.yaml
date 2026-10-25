@@ -1,0 +1,15 @@
+name: a_r4_s3_16_sym_dual_250
+type: score
+desc: "同窗年度双低：turn(250) 与 vol(250) 各 -0.75，整组最慢的口径；用来检验安静溢价是否只在一年尺度上成立，还是长窗只是把样本变成低波动蓝筹。"
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: vol_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

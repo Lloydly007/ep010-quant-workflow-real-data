@@ -1,0 +1,16 @@
+name: b_r4_s2_25_turn250_pblight_sizeweak
+type: score
+desc: 一年换手（250 日）× pb -0.40 × 规模 -0.30：年度平均换手是最接近结构性冷门的度量，可剔除整年的题材轮动；规模压到最低，用来检验年度冷清能否独立于规模选股。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

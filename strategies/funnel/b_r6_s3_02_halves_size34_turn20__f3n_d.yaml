@@ -1,0 +1,20 @@
+name: b_r6_s3_02_halves_size34_turn20__f3n_d
+type: score
+desc: 01 号的单点对照：只把换手窗口从 120 压到 20，其余三条腿与权重一字不动，用来读出窗口本身的边际作用。假设起作用的不是“半年都没人看”，而是“最近一个月没人碰”的即时冷却；短窗对突发放量更敏感，代价是噪声与短线反转。若
+  02 明显弱于 01，说明该信号需要季度以上的窗口才稳。归一化权重：pb 20.0% / ps_ttm 20.0% / size_ln 34.0% / turn_ma_n(20)
+  26.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+- op: size_ln
+  weight: -0.85
+- op: turn_ma_n
+  n: 10
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

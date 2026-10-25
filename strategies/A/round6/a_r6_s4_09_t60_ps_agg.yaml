@@ -1,0 +1,16 @@
+name: a_r6_s4_09_t60_ps_agg
+type: score
+desc: "换手窗压到 60 日季度档，捕捉「最近一个季度转冷」的状态而不是长期结构。激进档是季度冷门 + 极小微盘 + 低营收倍数的三重叠加，短窗更灵敏、周度调仓下名单跳动更大；温和档检验季度冷门能否在规模退潮后独立供给超额，还是必须先有极端小市值打底。本份为第 5 对的激进档：size_ln −2.50、turn_ma_n(60) −1.00。按 |w| 归一：size_ln 62.5% / turn_ma_n(60) 25.0% / ps_ttm 12.5%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。"
+factors:
+- op: size_ln
+  weight: -2.50
+- op: turn_ma_n
+  n: 60
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

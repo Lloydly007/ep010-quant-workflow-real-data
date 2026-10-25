@@ -1,0 +1,12 @@
+name: b_r2_s5_03_ps_ts_vol_confirm
+type: rule
+desc: 现象：第1轮 s1_17 用「5 日均换手低于 2%」筛冷门来买自身 PS 分位低者，等于专挑无人问津的票；B 路的结果说明冷门并不等于低估，低估值只是少亏。为什么在 A 股该有超额：PS 全为正、不受亏损与减值污染，是「便宜」最干净的分母；自身 PS 处在 250 日低位说明相对自己一贯的定价被压缩，而当日成交量升到前 5 日均量的 1.5 倍，说明已经有人用真金白银确认这个便宜。怎么进出：量比 >1.5 当天买入，按自身 250 日 PS 分位升序取 10 只，单日换手破 10%(情绪透支)或满 20 日离场，止损 8%。改了什么：第1轮把「更冷」当买点，本份把「刚被资金确认的便宜」当买点，量能方向从萎缩反转成放大。
+buy:
+- {op: vol_ratio_n, n: 5, dir: above, threshold: 1.5}
+sell:
+- {op: turn, dir: above, threshold: 10}
+rank: {op: ts_pct, n: 250, of: {op: ps_ttm}, order: asc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

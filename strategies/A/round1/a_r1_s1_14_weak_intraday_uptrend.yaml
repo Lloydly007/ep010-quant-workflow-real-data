@@ -1,0 +1,13 @@
+name: a_r1_s1_14_weak_intraday_uptrend
+type: rule
+desc: 半年线向上的股票当日收在振幅下半区（日内被抛压压制）而中期趋势完好，属日内情绪冲击而非趋势反转，隔日往往出现修复性反弹｜日内反转效应衰减极快故只持3日，按收盘位置最低者优先，5%止损、跌破20日线离场。
+buy:
+- {op: close_pos_range, dir: below, threshold: 0.5}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+rank: {op: close_pos_range, order: asc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+max_hold_days: 3
+stop_loss: 5%
+max_positions: 10
+industry_cap: 0

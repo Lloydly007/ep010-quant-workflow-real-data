@@ -1,0 +1,16 @@
+name: b_r4_s2_27_turn250_pblight_sizelean
+type: score
+desc: 250 日冷清 + -1.20 小盘 + pb -0.40：假设年度级别的低换手与小盘的流动性折价同源，主动放大规模倾斜，检验两者叠加后是否仍能选出不同的名字，而不是把小盘名单原样搬过来。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -1.20
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

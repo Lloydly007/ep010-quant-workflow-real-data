@@ -1,0 +1,19 @@
+name: b_r6_s1_08_split_2p27to1
+type: score
+desc: "比值 2.27:1（120 日 -0.625 / 250 日 -0.275）：短窗 30.5% 已是全组合最大权重（压过 size_ln 31.7% 只在一步之外），长窗 13.4% 进入“弱提示”区间。这一档检验的是权重排序本身的影响：当换手短窗第一次成为名单的第一驱动、规模腿退居第二时，组合会向“近半年缩量”而不是“绝对小市值”偏移，选出来的可能是中小盘里被交易冷落的个股，而不是最小的一批。用于分离“换手冷清”与“市值下沉”两个高度相关但不同源的效应。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 30.5% / turn_ma_n(250) 13.4%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.625
+- op: turn_ma_n
+  n: 250
+  weight: -0.275
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

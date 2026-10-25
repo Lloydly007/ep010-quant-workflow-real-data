@@ -1,0 +1,18 @@
+name: b_r6_s3_26_pslead_turn250
+type: score
+desc: "24 号的长窗版：换手取一年平均，其余不动。假设 34% 的营收估值权重已经足够“挑便宜”，换手只需确认这只票长期没人关注，而不是捕捉近期波动；长窗与 ps 的慢节奏属性一致，也避免两条腿在不同尺度上互相抵消。归一化权重：pb 14.0% / ps_ttm 34.0% / size_ln 30.0% / turn_ma_n(250) 22.0%。"
+factors:
+- op: pb
+  weight: -0.35
+- op: ps_ttm
+  weight: -0.85
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

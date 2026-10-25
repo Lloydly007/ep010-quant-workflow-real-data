@@ -1,0 +1,16 @@
+name: b_r3_s3_04_lowvol_defense_lean
+type: score
+desc: "在偏低 PB、偏小市值（1:1.75）的基础上加 60 日已实现波动负权，构造便宜、小、且最近一个季度价格最安静的组合：A 股散户结构下彩票偏好会把低波股票系统性压低估值，月度调仓则避免把短窗口噪声当信号。"
+factors:
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.7
+- op: vol_n
+  n: 60
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

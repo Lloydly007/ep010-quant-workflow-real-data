@@ -1,0 +1,20 @@
+name: a_r5_s3_04_size_tilt_triad
+type: score
+desc: "市值腿主导：size_ln 权重翻倍到 -1.3，两条估值腿各只留 -0.45，配 20 日换手 -0.45。假设折价在小盘里才有重估弹性（大盘低 PB 常年一动不动），本份测市值腿充当主导筛子、绝对与行业两腿充当便宜度筛选时的配比，超额主要来自小市值段的估值修复。"
+factors:
+- op: size_ln
+  weight: -1.3
+- op: pb
+  weight: -0.45
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 20
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,20 @@
+name: a_r6_s1_20_mass18_ratio_2to1__f3n_d
+type: score
+desc: 2:1 配重估值块（1.80）：估值块与规模加换手平分秋色，且营收腿拿到最大绝对权重。风险明确——ps 的长尾（微利公司倍数极高）会被放大，名单集中度上升。这一档就是拿集中度代价去换营收口径的纯粹性，用来给终轮的权重上限划线。归一化权重：ps_ttm
+  33.8% / size_ln 28.2% / turn_ma_n(120) 21.1% / pb 16.9%（ps:pb=1.20:0.60=2.00:1，总
+  |w|=3.55，估值块 50.7%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -1.2
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

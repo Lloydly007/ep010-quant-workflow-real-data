@@ -1,0 +1,17 @@
+name: a_r3_s1_08_size_turn250_slow__f2n_u
+type: score
+desc: 市值负权加深到1.35，用250日均换手认定一年都没人炒，再叠60日低波，年度低换手是关注度缺失的代理，季度低波确认缺失不是由事件冲击造成而是真的没人交易。
+factors:
+- op: size_ln
+  weight: -1.35
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+- op: vol_n
+  n: 120
+  weight: -0.25
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

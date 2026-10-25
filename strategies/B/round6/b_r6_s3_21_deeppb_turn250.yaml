@@ -1,0 +1,18 @@
+name: b_r6_s3_21_deeppb_turn250
+type: score
+desc: "19 号的长窗版：换手取一年平均，其余不动。假设在深价值配方里，换手的作用是确认“便宜是长期的沉默而不是短期的恐慌”，一年窗口把恐慌型放量整段过滤掉，留下真正被遗忘的资产；代价是对转机反应慢。归一化权重：pb 34.0% / ps_ttm 18.0% / size_ln 30.0% / turn_ma_n(250) 18.0%。"
+factors:
+- op: pb
+  weight: -0.85
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: b_r6_s1_14_mirror_1p77to1
+type: score
+desc: "镜像 1.77:1（250 日 -0.575 / 120 日 -0.325）：长窗 28.0%，短窗 15.9%，短窗从“状态判据”降为“轻提示”。假说：短窗的高换手更可能来自短期炒作与事件，而低换手在短窗内也可能只是恰好处于静默期（例如除权后成交萎缩），所以短窗单独用会引入时点噪声；降低短窗权重相当于用长窗做平滑。这一档与 06 完全对称，是检验“平滑收益”是否真实存在的一组对照。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 15.9% / turn_ma_n(250) 28.0%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.325
+- op: turn_ma_n
+  n: 250
+  weight: -0.575
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: a_r5_s1_28_ps_plus_rev60__f2n_u
+type: score
+desc: 加 60 日动量负权（ret_n −0.40）：只买近一季跌下来的营收便宜货，是估值 × 短期反转的组合。赌的是超跌而非追涨，与第 28 份的动量正权方向互为正反两面的对照。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+- op: ret_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

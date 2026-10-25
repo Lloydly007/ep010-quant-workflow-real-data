@@ -1,0 +1,12 @@
+name: b_r5_s4_33_oversold20_vol60
+type: score
+desc: "20 日反转（负权 0.25）+ 60 日低波 0.3 + PB 0.4：先跌过一轮、再看是不是安静的下跌——跌而不惊往往是恐慌结束的标志。与 32 的站上均线是两种不同的止跌形态，一个看价格位置、一个看超跌幅度，用来分辨抗跌到底是形态给的还是估值给的。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 60, weight: -0.3}
+- {op: ret_n, n: 20, weight: -0.25}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

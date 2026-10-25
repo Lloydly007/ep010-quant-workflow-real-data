@@ -1,0 +1,27 @@
+name: a_r6_s2_26_cross_2x2_ps_unified
+type: score
+desc: "2×2 骨架不动，四个带窗腿的基零件全部统一成 ps_ttm：估值双窗 250/120 各 -0.35，换手双窗与 21 相同。口径统一在这里有实质含义——两条轴若一个用 pb 一个用 ps，多尺度平均之后很难判断差异来自窗口还是来自口径；全部用经营的 ps 可以让「估值轴平滑」与「换手轴平滑」的贡献各自可读。代价是放弃了 pb 对资产端重估的敏感性。归一化权重：size_ln 38.5% / ts_pct(250, ps_ttm) 13.5% / ts_pct(120, ps_ttm) 13.5% / turn_ma_n(120) 17.3% / turn_ma_n(250) 17.3%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: ps_ttm
+  weight: -0.35
+- op: ts_pct
+  n: 120
+  of:
+    op: ps_ttm
+  weight: -0.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

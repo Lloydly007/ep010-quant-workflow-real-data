@@ -1,0 +1,22 @@
+name: b_r6_s1_04_split_1p4to1__f2n_u
+type: score
+desc: 比值 1.4:1（120 日 -0.525 / 250 日 -0.375）：短窗越过估值腿成为第二大权重（25.6% vs 24.4%）。假设换手是 B
+  路里唯一“高频可更新”的零件，而 pb 是季度更新的慢变量，因此短窗加码等于把组合的更新频率向周度调仓靠拢——若短窗确实携带更快的信息，这一档应表现为名单内部“最近半年转冷”的股票占比上升，而不是简单的小市值下沉。与
+  03、05 构成 1.25/1.4/1.57 三点局部斜率。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 25.6%
+  / turn_ma_n(250) 18.3%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.525
+- op: turn_ma_n
+  n: 250
+  weight: -0.375
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

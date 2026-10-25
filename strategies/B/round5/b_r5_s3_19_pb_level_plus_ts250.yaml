@@ -1,0 +1,19 @@
+name: b_r5_s3_19_pb_level_plus_ts250
+type: score
+desc: "自身分位 + 截面绝对水平并用：PB 绝对水平 -0.4 提供跨股票的可比折价，250 日自身分位 -0.8 提供纵向压缩，一年换手 -0.6 做确认。假设两者信息不完全重合——绝对便宜防买贵，自身分位防买在行业整体高估期。"
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.8
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

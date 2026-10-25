@@ -1,0 +1,14 @@
+name: a_r3_s1_05_size_turn20_fade
+type: score
+desc: 把市值权重加到1.25并用20日均换手重压，月频选又小又冷的票，换手在这里是拥挤度指标，月频调仓给冷门小盘的修正留出时间而不被周度噪声打掉。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 20
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

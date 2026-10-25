@@ -1,0 +1,21 @@
+name: b_r6_s4_04_pb_half_dual_ts250_120
+type: score
+desc: 双尺度分位合计仍占一半（绝对 PB 50% / 一年分位 25% / 半年分位 25%）：本工程窗口档位最高只有 250（500 不在档位序列 3/5/10/20/60/120/250 内，写 500 会被 config 直接拒），故用 250 与 120 作为合法上限下的长短两窗近似。假设一年分位判断「贵不贵」、半年分位判断「是否还在变便宜」，两窗冲突的名字（长期低位但半年已回升）会被权重相互抵消——这正是精修想留下的过滤。归一化权重：pb 50.0% / ts_pct(pb,250) 25.0% / ts_pct(pb,120) 25.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.25
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

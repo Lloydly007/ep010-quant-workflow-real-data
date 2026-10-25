@@ -1,0 +1,14 @@
+name: a_r1_s5_08_panic_close_weak
+type: rule
+desc: 这是以沪深300ETF跌破60日均线为前提的防守型反向假设：弱势市场里个股5日跌超8%却收在当日振幅上沿80%以上，说明恐慌盘被承接、有人逆势吸纳，故只做3日短反弹、涨回5%立即兑现
+buy:
+- {op: etf_above_ma_n, n: 60, dir: below, threshold: 0.5}
+- {op: ret_n, n: 5, dir: below, threshold: -8}
+- {op: close_pos_range, dir: above, threshold: 0.8}
+sell:
+- {op: ret_n, n: 5, dir: above, threshold: 5}
+rank: {op: ret_n, n: 60, order: asc}
+max_hold_days: 3
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

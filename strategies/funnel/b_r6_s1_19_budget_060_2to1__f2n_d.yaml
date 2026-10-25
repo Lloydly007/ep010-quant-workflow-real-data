@@ -1,0 +1,23 @@
+name: b_r6_s1_19_budget_060_2to1__f2n_d
+type: score
+desc: 预算轴起点：分割固定在 2:1，但换手总预算从 0.90 压到 0.60（120 日 -0.40 / 250 日 -0.20），pb 与 size_ln
+  的归一化份额随之升到 28.6% / 37.1%。01→18 全程钉住预算 0.90，所以那些档位无法区分“分割效应”与“换手总量效应”；19→24 正是补这个缺口：在
+  2:1 与 1:2 两个方向上各取 0.60 / 1.20 / 1.50 三个预算，读出换手腿的相对强度是否才是真正的驱动。若预算 0.60 的 19 优于 07，说明前面看到的“2:1
+  更好”其实只是“换手别太重”。归一化权重：pb 28.6% / size_ln 37.1% / turn_ma_n(120) 22.9% / turn_ma_n(250)
+  11.4%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 60
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,12 @@
+name: b_r5_s4_10_long120_ulcer60
+type: score
+desc: "窗口互换：用 120 日低波看长期安静（0.35），用 60 日溃疡盯最近一个季度的回撤（0.35），PB 0.3。长期波动低但最近挖过坑的名字会被溃疡腿扣分，等于给「正在变坏」装提前警报，是 09 的镜像假设。"
+factors:
+- {op: pb, weight: -0.3}
+- {op: vol_n, n: 120, weight: -0.35}
+- {op: ulcer_n, n: 60, weight: -0.35}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

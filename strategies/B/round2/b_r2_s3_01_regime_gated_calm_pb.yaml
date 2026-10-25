@@ -1,0 +1,24 @@
+name: b_r2_s3_01_regime_gated_calm_pb
+type: rule
+desc: 现象：低波+低PB组合的自回撤确实比等权全池浅，但超额回撤仍在-40%以上，且集中在2015下半年、2018、2022三段系统性下跌（等权全池这三年分别-8%、-29%、-11%）。为什么该有超额：A股散户与杠杆盘主导，指数级下跌会把便宜且平静的股票一起砸穿，这段跌幅与个股基本面无关，只有在场才承担；而沪深300跌破250日线是这三段里唯一可事前观测的总开关。怎么进出：300ETF站上250日线才买vol_n(60)<2的股票、按PB升序取10只、持有60日、10%止损；跌破250日线无条件清仓转现金。相对第1轮：B路100份配置没有一份用过市场级条件，组合全天候在场，这是超额回撤压不进30%以内、卡死L3的结构性原因。
+buy:
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 2
+- op: etf_above_ma_n
+  n: 250
+  dir: above
+  threshold: 0.5
+rank:
+  op: pb
+  order: asc
+sell:
+- op: etf_above_ma_n
+  n: 250
+  dir: below
+  threshold: 0.5
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

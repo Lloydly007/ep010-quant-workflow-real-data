@@ -1,0 +1,13 @@
+name: b_r1_s1_07_highvol_thinvolume_rebound
+type: rule
+desc: 高波动（20日波动过3%）个股在换手极度萎缩（5日均换手低于2%）时抛压已耗尽、下跌更多来自流动性缺失而非基本面，短期存在均值回归，故逆向买入高波动无量股、5日持有并在换手放大过8%时兑现
+buy:
+- {op: vol_n, n: 20, dir: above, threshold: 3}
+- {op: turn_ma_n, n: 5, dir: below, threshold: 2}
+sell:
+- {op: turn, dir: above, threshold: 8}
+rank: {op: vol_n, n: 20, order: desc}
+max_hold_days: 5
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

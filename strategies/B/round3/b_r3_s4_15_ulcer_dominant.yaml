@@ -1,0 +1,12 @@
+name: b_r3_s4_15_ulcer_dominant
+type: score
+desc: "以下行路径为主（250日溃疡0.6）、短波动与估值各0.2，市值档内中性化：直接按历史上最深回撤有多浅选股最贴近跌不动本义，市值中性化确保选出的不是大盘股天然的低波。"
+factors:
+- {op: pb, weight: -0.2}
+- {op: vol_n, n: 20, weight: -0.2}
+- {op: ulcer_n, n: 250, weight: -0.6}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

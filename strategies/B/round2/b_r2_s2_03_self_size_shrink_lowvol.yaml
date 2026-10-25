@@ -1,0 +1,23 @@
+name: b_r2_s2_03_self_size_shrink_lowvol
+type: rule
+desc: "现象：流通市值处在自身近 250 个交易日最低分位的票，是“被卖掉”而不是“一直很小”的票——股价缩水把市值压到自己一年低位，同时 60 日收益率标准差 <2%（分布最安静的三成）说明卖压已释放完。为什么在 A 股该有超额：A 股每年都有成长股杀估值后无人问津的时段，随后的修复由“没有卖盘 + 一点点买盘”完成；这类修复的幅度大于永久性小盘（后者常伴随治理与退市风险）。怎么进出：60 日波动 <2% 过滤，按市值 250 日时序分位（ts_pct of size_ln）升序取前 10；20 日波动回到 5% 以上（重新开始定价）卖出；最长 60 日，10% 止损。相对第 1 轮失败模式改了什么：第 1 轮 100 份里规模维度要么是绝对 size_ln（17 份）、要么是行业内分位（1 份），没有任何一份用“市值相对自身历史的分位”——9 份 ts_pct 的基值全是 ps_ttm/pb/turn/turn_ma_n/vol_n/ulcer_n，没有 size_ln。本组第一次把规模暴露换成时间序列上的均值回复：只买“变小的”、不买“一直小的”，直接绕开第 1 轮被 2017 年后小盘持续折价拖死的永久性规模赌注。"
+buy:
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 2
+rank:
+  op: ts_pct
+  n: 250
+  of:
+    op: size_ln
+  order: asc
+sell:
+- op: vol_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 60
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r5_s1_01_ps_core_baseline
+type: score
+desc: "营收估值口径的基准骨架：size_ln −1.00 打底压住小市值主倾斜，ps_ttm −0.50（size 的一半）替代第 3 轮的 pb，季度换手 turn_ma_n(120) −0.75 收尾。假设营收倍数（PS）比账面倍数（PB）更能穿透减值、重资产与净资产波动带来的会计噪音，先看这套不加任何辅腿的原始形态能给出什么样的 30 只名单；本组其余 33 份都以它为对照原点。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

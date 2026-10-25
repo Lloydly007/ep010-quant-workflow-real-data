@@ -1,0 +1,16 @@
+name: b_r4_s2_13_turn60_pbheavy_sizeweak
+type: score
+desc: 60 日冷清 + pb -0.80 共决 + 规模 -0.30：季度内没人交易与低价同时要求，假设只有估值已经便宜的冷门股才是机会而非价值陷阱，规模项仅作微盘剔除。
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

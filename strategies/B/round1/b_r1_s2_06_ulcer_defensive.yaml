@@ -1,0 +1,20 @@
+name: b_r1_s2_06_ulcer_defensive
+type: rule
+desc: 250日溃疡指数低于5%意味着一整年的回撤深度都极小，这类股票的抗跌来自真实经营稳健或估值缓冲，叠加低PB后安全边际更厚，故买回撤最浅者中最便宜的10只，持有60日或120日溃疡指数恶化到10%以上离场，10%止损。
+buy:
+- op: ulcer_n
+  n: 250
+  dir: below
+  threshold: 5
+rank:
+  op: pb
+  order: asc
+sell:
+- op: ulcer_n
+  n: 120
+  dir: above
+  threshold: 10
+max_hold_days: 60
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

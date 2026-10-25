@@ -1,0 +1,17 @@
+name: a_r3_s4_05_calm_volterm_flat
+type: score
+desc: 用 20 日与 250 日波动等权，选长短窗都安静的小盘股；两窗同时低才排除刚暴跌完所以近期方差被动变低的假平稳，波动期限结构平坦本身就是一个独立信号。
+factors:
+- op: size_ln
+  weight: -1.55
+- op: vol_n
+  n: 20
+  weight: -0.45
+- op: vol_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

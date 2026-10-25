@@ -1,0 +1,11 @@
+name: b_r5_s4_07_defense_extreme_vol20
+type: score
+desc: "把 20 日低波放到 0.85、PB 只留 0.15，是防守端控制组：检验「跌不动」能否仅靠短窗安静拿到。PB 在这里只负责从同样安静的名字里挑更便宜的，避免组合退化成纯低波指数；与 06 一起把「价值 vs 防守」的归因夹在同一个窗口上。"
+factors:
+- {op: pb, weight: -0.15}
+- {op: vol_n, n: 20, weight: -0.85}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

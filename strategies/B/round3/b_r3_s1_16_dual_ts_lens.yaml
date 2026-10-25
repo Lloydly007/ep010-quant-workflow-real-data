@@ -1,0 +1,21 @@
+name: b_r3_s1_16_dual_ts_lens
+type: score
+desc: PB 与 PS 各自的 250 日时序分位双镜合成、PE 只保留绝对水平，月度调仓并做市值分档中性，检验的是相对自己的历史最便宜这一口径在剥离规模后是否还有超额，其抗行业估值中枢漂移的能力明显强于绝对水平比较。
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.35
+- op: ts_pct
+  n: 250
+  of:
+    op: ps_ttm
+  weight: -0.35
+- op: pe_ttm
+  weight: -0.30
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

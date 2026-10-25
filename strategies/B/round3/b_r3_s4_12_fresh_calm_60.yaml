@@ -1,0 +1,14 @@
+name: b_r3_s4_12_fresh_calm_60
+type: score
+desc: "波动取自身60日波动在250日内的时序分位（当下异常平静）与绝对PB各0.5，周度调仓：抓的是刚从波动里冷却下来的便宜股，冷却拐点比长期低波更接近修复起点，周度才能咬住这个时点。"
+factors:
+- {op: pb, weight: -0.5}
+- op: ts_pct
+  n: 250
+  of: {op: vol_n, n: 60}
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

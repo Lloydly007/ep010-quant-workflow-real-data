@@ -1,0 +1,18 @@
+name: a_r5_s4_11_pe250_dual_value_no_size
+type: score
+desc: "规模降级为普通腿：size_ln -0.75、pe_ttm -0.75、pb -0.75、turn_ma_n(250) -0.75。PE 与 PB 双 -0.75 构成双估值互证，规模不再主导；检验去掉小盘主倾斜后“便宜 + 清淡”是否仍有超额，即价值轴能否脱离规模轴单独成立。"
+factors:
+- op: size_ln
+  weight: -0.75
+- op: pe_ttm
+  weight: -0.75
+- op: pb
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

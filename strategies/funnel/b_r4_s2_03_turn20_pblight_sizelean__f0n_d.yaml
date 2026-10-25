@@ -1,0 +1,16 @@
+name: b_r4_s2_03_turn20_pblight_sizelean__f0n_d
+type: score
+desc: 20 日冷清叠加 -1.20 的规模倾斜、pb 保持 -0.40 下限：假设短期无人问津只有在中小盘里才构成错价（大盘股的低换手更多是流动性结构使然），因此把权重明确压向小盘，检验冷清与规模的交互是否为正。
+factors:
+- op: turn_ma_n
+  n: 10
+  weight: -0.75
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -1.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

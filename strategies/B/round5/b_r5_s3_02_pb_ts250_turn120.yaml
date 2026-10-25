@@ -1,0 +1,17 @@
+name: b_r5_s3_02_pb_ts250_turn120
+type: score
+desc: "估值仍按一年分位，但关注度只需半年（120 日）枯竭即可：年度换手会被一次并购或指数调入长期抬高，半年窗口对“最近真的没人理”更敏感，与一年估值谷底搭配可减少把结构性缩量当成低估的误判。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

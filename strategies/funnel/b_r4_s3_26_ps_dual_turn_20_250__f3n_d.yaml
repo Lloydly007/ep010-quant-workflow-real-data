@@ -1,0 +1,19 @@
+name: b_r4_s3_26_ps_dual_turn_20_250__f3n_d
+type: score
+desc: 双换手窗口并联：turn 20 −0.45 与 turn 250 −0.55 同时进 factors，ps −0.45、size −0.50。假设'当下没人看'与'一年没人看'是两件不同的事——前者是短期错杀的机会，后者是股东结构稳定、抛压小；要求两条同时成立，名单会在最近热度回升但年度依旧冷清的名字里，是本组对窗口轴唯一的多窗口检验。
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

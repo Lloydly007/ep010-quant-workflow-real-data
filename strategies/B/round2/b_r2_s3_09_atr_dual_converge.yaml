@@ -1,0 +1,24 @@
+name: b_r2_s3_09_atr_dual_converge
+type: rule
+desc: 现象：只看20日ATR收敛，多半抓到的是某次事件后的余波，价格其实还在慢慢往下走；只有20日与60日两个尺度同时收敛才是真正的缩量横盘。为什么该有超额：横盘是A股筹码换手完成的标志，横盘越干净、向上突破的成本越低，而低PB保证突破方向有基本面支撑；ATR用高低价差，不受涨跌停与停牌对收益率序列的截断失真。怎么进出：买atr_close_n(20)<2且atr_close_n(60)<3的股票、按PB升序取10只；20日ATR升破5%（横盘结束、波动释放）即卖，持有40日，8%止损。相对第1轮：round1的ATR条件全部只用单个窗口，双尺度同时收敛是新的"横盘质量"判据。
+buy:
+- op: atr_close_n
+  n: 20
+  dir: below
+  threshold: 2
+- op: atr_close_n
+  n: 60
+  dir: below
+  threshold: 3
+rank:
+  op: pb
+  order: asc
+sell:
+- op: atr_close_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 40
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

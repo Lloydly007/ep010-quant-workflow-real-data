@@ -1,0 +1,18 @@
+name: a_r6_s1_04_ratio_1to1p75
+type: score
+desc: "pb 约 1.78 : ps 1（0.64 : 0.36），逼近均分但资产仍重，与 03 只差 3 个百分点。这一格是敏感度探针：若 03 与 04 的名单几乎重合，说明该区间的比例刻度已经饱和，终轮不必再细分；若有实质差异，则说明中段的权重比仍有信息量。归一化权重：size_ln 36.4% / turn_ma_n(120) 27.3% / pb 23.3% / ps_ttm 13.1%（ps:pb=0.36:0.64=1:1.78，总 |w|=2.75，估值块 36.4%）。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.36
+- op: pb
+  weight: -0.64
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

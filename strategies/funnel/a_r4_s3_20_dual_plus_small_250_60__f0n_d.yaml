@@ -1,0 +1,17 @@
+name: a_r4_s3_20_dual_plus_small_250_60__f0n_d
+type: score
+desc: 年度清淡 + 季度低波 + 中等规模倾斜：size_ln -0.6 已与任一低腿同量级，直接检验“安静小盘”是否优于“安静大盘”，而非让规模悄悄变成主因子。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.75
+- op: size_ln
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

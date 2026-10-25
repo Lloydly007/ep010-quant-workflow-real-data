@@ -1,0 +1,23 @@
+name: a_r5_s3_13_ulcer250_guard
+type: score
+desc: "年度回撤路径作护栏：ulcer_n 250 日 -0.4 配 250 日换手 -0.35，便宜两腿各 -0.5、size_ln -0.6。与 12 同轴换年窗：假设真正要避开的是年度级别的持续回撤（基本面在撤离），季度波动只是噪音，年窗溃疡指数更接近这条判断。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: ulcer_n
+  n: 250
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

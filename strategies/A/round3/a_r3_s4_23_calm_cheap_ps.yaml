@@ -1,0 +1,16 @@
+name: a_r3_s4_23_calm_cheap_ps
+type: score
+desc: 低波叠低市销率，月度换手；小盘端走得稳与卖得便宜如果同源（都来自被冷落的低预期），两者叠加应显著强于单用任一个，且 PS 无负值比 PE 更可靠。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: vol_n
+  n: 120
+  weight: -0.7
+- op: ps_ttm
+  weight: -0.55
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: b_r5_s1_13_pb_only_anchor
+type: score
+desc: 纯 pb 单口径（-1.00）+ 120 日换手：资产端便宜的最朴素表达，本轮估值轴的单口径基线。它的已知偏斜是把高盈利的贵公司整批滤掉，而财务零件在本轮为空表，无法用质量维度补偿这个偏斜。
+factors:
+- op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

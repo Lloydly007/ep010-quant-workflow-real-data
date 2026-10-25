@@ -1,0 +1,22 @@
+name: b_r6_s1_09_split_2p6to1__f3n_d
+type: score
+desc: 比值 2.6:1（120 日 -0.65 / 250 日 -0.25）：短窗 31.7% 与规模腿完全平权，长窗只剩 12.2%，接近“单窗口 + 一点长期锚”。假说：250
+  日窗口在小盘股上缺失更多（上市不足一年、长期停牌），保留一个低权重的长窗反而会把名单往“有完整一年数据的老票”上拉，等于隐含了一个生存期筛选；这一档用来观察该隐性筛选的代价——若
+  09 与 10 明显弱于 07，说明长窗的价值不在于信号，而在于它无意中过滤掉了数据不全的样本。归一化权重：pb 24.4% / size_ln 31.7% /
+  turn_ma_n(120) 31.7% / turn_ma_n(250) 12.2%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

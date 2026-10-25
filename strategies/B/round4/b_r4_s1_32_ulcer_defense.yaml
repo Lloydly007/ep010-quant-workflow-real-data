@@ -1,0 +1,17 @@
+name: b_r4_s1_32_ulcer_defense
+type: score
+desc: 回撤防御 + 换手主导：turn_ma_n(120) -0.90 / pb -0.75 / ulcer_n(120) -0.50（归一化 42%/35%/23%），假设低换手个股的风险主要是慢跌而非拥挤反转，用 120 日溃疡指数直接压低组合的下行路径，与 26 的低波口径构成“风险度量”对照。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.90
+- op: pb
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

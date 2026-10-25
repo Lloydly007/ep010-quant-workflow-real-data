@@ -1,0 +1,11 @@
+name: b_r5_s4_05_value_lean_vol120
+type: score
+desc: "120 日低波 0.4 配 PB 0.6 的价值偏向：半年安静确认这不是一只正在被重新定价的股票，再把折价作为主要排序依据。这是价值腿与长期低波腿之间的过渡档，与 03 的 1:1 构成同窗倾斜对照，也补上长窗口一直缺的中等倾斜格。"
+factors:
+- {op: pb, weight: -0.6}
+- {op: vol_n, n: 120, weight: -0.4}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

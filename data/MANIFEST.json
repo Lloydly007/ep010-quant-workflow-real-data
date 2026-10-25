@@ -1,0 +1,171 @@
+{
+ "generator": "tools/fetch_baostock.py + tools/merge_shards.py",
+ "real": true,
+ "provider": "BaoStock（日线/估值/ST/停牌/成分/行业）+ 新浪（ETF）",
+ "split_date": "2024-12-31",
+ "research_cutoff": "2026-09-30",
+ "universe": "沪深300 ∪ 中证500 月末快照并集（2013-12~2024-12），中证1000 不纳入",
+ "shards": 10,
+ "tables": {
+  "raw/daily": {
+   "rows": 3763554,
+   "stocks": 1545
+  },
+  "raw/daily_basic": {
+   "rows": 3763554,
+   "stocks": 1545
+  },
+  "raw/adj_factor": {
+   "rows": 3763554,
+   "stocks": 1545
+  },
+  "raw/stk_limit": {
+   "rows": 3763554,
+   "stocks": 1545
+  },
+  "raw/stock_basic": {
+   "rows": 1545,
+   "stocks": 1545
+  },
+  "raw/trade_cal": {
+   "rows": 4749,
+   "stocks": 0
+  },
+  "raw/suspend_d": {
+   "rows": 128102,
+   "stocks": 1191
+  },
+  "raw/namechange": {
+   "rows": 260,
+   "stocks": 221
+  },
+  "raw/index_members": {
+   "rows": 106399,
+   "stocks": 0
+  },
+  "raw/index_member_all": {
+   "rows": 1544,
+   "stocks": 1544
+  },
+  "raw/fina_indicator": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "raw/forecast": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "raw/express": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "raw/top_list": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "raw/top_inst": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "raw/margin_detail": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "raw/hk_hold": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "raw/moneyflow_hsgt": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "raw/fund_daily": {
+   "rows": 11566,
+   "stocks": 4
+  },
+  "raw/fund_adj": {
+   "rows": 11566,
+   "stocks": 4
+  },
+  "sealed/daily": {
+   "rows": 616321,
+   "stocks": 1464
+  },
+  "sealed/daily_basic": {
+   "rows": 616321,
+   "stocks": 1464
+  },
+  "sealed/adj_factor": {
+   "rows": 616321,
+   "stocks": 1464
+  },
+  "sealed/stk_limit": {
+   "rows": 616321,
+   "stocks": 1464
+  },
+  "sealed/stock_basic": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/trade_cal": {
+   "rows": 730,
+   "stocks": 0
+  },
+  "sealed/suspend_d": {
+   "rows": 1141,
+   "stocks": 144
+  },
+  "sealed/namechange": {
+   "rows": 43,
+   "stocks": 43
+  },
+  "sealed/index_members": {
+   "rows": 16800,
+   "stocks": 0
+  },
+  "sealed/index_member_all": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/fina_indicator": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/forecast": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/express": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/top_list": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/top_inst": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/margin_detail": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/hk_hold": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/moneyflow_hsgt": {
+   "rows": 0,
+   "stocks": 0
+  },
+  "sealed/fund_daily": {
+   "rows": 1744,
+   "stocks": 4
+  },
+  "sealed/fund_adj": {
+   "rows": 1744,
+   "stocks": 4
+  }
+ }
+}

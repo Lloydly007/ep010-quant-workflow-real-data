@@ -1,0 +1,26 @@
+name: b_r2_s2_06_quiet_trend_gate
+type: rule
+desc: "现象：小盘冷门股的超额高度依赖流动性环境，2018 与 2022 的系统性下跌把等权小盘打到 -29% 与 -11%，只在个股层面做“少亏”筛选救不回来——第 1 轮 100 份配置没有一份带市场级开关。为什么在 A 股该有超额：沪深300 在其 60 日均线上方时风险偏好在扩张，小盘冷门的重估才有承接盘；均线下方空仓等，等于把选股 alpha 与系统性 beta 分开，把第 1 轮“低波少亏”的被动防御换成主动的空仓权。怎么进出：20 日均换手 <2% 且 300ETF 在 60 日均线上方才买，按市值截面分位升序取 10 只；ETF 跌破 60 日均线立即清仓；最长 60 日，10% 止损。相对第 1 轮失败模式改了什么：新增市场级条件（etf_above_ma_n 只出现在 buy/sell，绝不进 factors/rank），直接针对“回撤中位 -89.5%、L3 全灭”的系统性风险来源；同时把换手阈值放宽到 2% 让候选集足够宽，把选择权交给市值分位排序而不是硬阈值。"
+buy:
+- op: turn_ma_n
+  n: 20
+  dir: below
+  threshold: 2
+- op: etf_above_ma_n
+  n: 60
+  dir: above
+  threshold: 0.5
+rank:
+  op: xsec_pct
+  of:
+    op: size_ln
+  order: asc
+sell:
+- op: etf_above_ma_n
+  n: 60
+  dir: below
+  threshold: 0.5
+max_hold_days: 60
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

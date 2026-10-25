@@ -1,0 +1,20 @@
+name: a_r6_s3_09_win060_dose030__f2n_u
+type: score
+desc: 回撤窗口缩到一个季度（ulcer_n(60)）、权重 -0.30：假设最近三个月的坑比一整年更能预测近期风险；伴腿与 03 完全一致，因此与 03 的差别只来自窗口长短（60
+  对 250）。归一化权重：size_ln 39.2% / pb 19.6% / turn_ma_n(120) 29.4% / ulcer_n(60) 11.8%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ulcer_n
+  n: 60
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

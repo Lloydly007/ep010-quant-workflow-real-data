@@ -1,0 +1,15 @@
+name: a_r4_s3_07_pure_dual_120_60
+type: score
+desc: "半年清淡 + 季度稳，两腿等权：换手窗是波动窗的两倍，让“长期没人注意”优先于“短期不波动”，避免短窗低波把刚经历一次正常调整的票误杀。"
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r4_s2_14_t120_size220__f1n_d
+type: score
+desc: 120 日窗口、规模 -2.20（占 74.6%），阶梯第 5 档：慢窗口叠加极端规模倾斜是否出现双重拥挤，即持仓全部落在长期无人交易的最小盘。
+factors:
+- op: size_ln
+  weight: -2.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

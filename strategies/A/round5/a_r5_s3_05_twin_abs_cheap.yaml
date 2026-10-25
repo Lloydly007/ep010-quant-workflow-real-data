@@ -1,0 +1,22 @@
+name: a_r5_s3_05_twin_abs_cheap
+type: score
+desc: "资产端与营收端双绝对便宜：pb -0.5、ps_ttm -0.4，行业内 PB 分位 -0.45，size_ln -0.55，120 日低波 -0.3。假设单看 PB 会被商誉减值与资产重估口径污染，PS 提供一条不含杠杆与应计的便宜证据，两个分母口径都便宜时才排前，超额来自市场对轻资产的营收稳定段定价过低。"
+factors:
+- op: size_ln
+  weight: -0.55
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.4
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.45
+- op: vol_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

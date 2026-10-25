@@ -1,0 +1,19 @@
+name: a_r5_s1_26_ps_plus_ulcer120__f3n_d
+type: score
+desc: 加 120 日溃疡指数负权（ulcer_n −0.40）：要求四个月的路径回撤浅。假设「便宜」分两种——一路阴跌的错误定价与扛住下跌的价值底；溃疡指数把这两类分开，给营收便宜加一层路径质量约束。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+- op: ulcer_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

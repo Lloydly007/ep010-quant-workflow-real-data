@@ -1,0 +1,18 @@
+name: a_r4_s3_24_dual_plus_gentle_mom60
+type: score
+desc: "双低但给 60 日动量正权 0.45：只买“安静且没在下跌”的票，负权合计 1.2 仍明显大于动量，是安静假设与温和趋势假设的混合，专门检验低波腿在下跌股上是否失效。"
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.65
+- op: vol_n
+  n: 20
+  weight: -0.55
+- op: ret_n
+  n: 60
+  weight: 0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

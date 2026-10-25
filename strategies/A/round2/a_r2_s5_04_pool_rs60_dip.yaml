@@ -1,0 +1,14 @@
+name: a_r2_s5_04_pool_rs60_dip
+type: rule
+desc: 现象：60 日相对强度最高的股票会因短期获利回吐出现 5 日回落，此时它的相对强度排名仍在前列；第 1 轮的买入触发几乎全是“涨”（突破、连阳、新高、放量），等于把入场时点系统性地放在短期高点。为什么在 A 股该有超额：强者短期回落时的卖压来自交易性资金而非基本面，散户的处置效应让浮盈盘先跑，回落结束后原趋势延续的概率高于均值回归；买价更低、止损位更近，赔率优于追高。怎么进出：站上 120 日线与 60 日线、且 5 日跌幅超 2% 者，按 60 日涨幅的全池截面分位降序取前 10（长期相对强加短期相对弱）；跌破 60 日线离场，20 日上限、8% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮把回调当风险、把突破当买点；本配置反转入场时点，同一个假设换成买强者的回调日。
+buy:
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: ret_n, n: 5, dir: below, threshold: -2}
+rank: {op: xsec_pct, of: {op: ret_n, n: 60}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

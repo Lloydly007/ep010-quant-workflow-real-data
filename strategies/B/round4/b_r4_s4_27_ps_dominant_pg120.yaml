@@ -1,0 +1,18 @@
+name: b_r4_s4_27_ps_dominant_pg120
+type: score
+desc: "收入端估值主导：ps_ttm −0.90 为核心，pb −0.50 辅助、pe_ttm +0.50 保留成长与亏损筛，换手 120 日 −0.50。ps_ttm 全为正且不像 PE 那样有负值，在低换手的长窗里更稳定；本份检验成长-价值对冲里换成收入分母后结论是否漂移，也是对 b_r4_s4_09（价值主导）的分母替换对照。"
+factors:
+- op: pe_ttm
+  weight: 0.5
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.9
+- op: turn_ma_n
+  n: 120
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

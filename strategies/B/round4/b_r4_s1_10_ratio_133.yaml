@@ -1,0 +1,14 @@
+name: b_r4_s1_10_ratio_133
+type: score
+desc: 估值明显领先但绝对权重克制：pb -0.60 / turn_ma_n(120) -0.45（1.333:1，PB 57%），假设 PB 权重超过 0.6 会开始吃掉行业中性化留出的分散度，因此守住 0.60 而把换手降到 0.45，检验“估值领先”是靠压换手还是靠抬 PB 实现的。
+factors:
+- op: pb
+  weight: -0.60
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

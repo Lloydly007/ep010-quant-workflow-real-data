@@ -1,0 +1,19 @@
+name: b_r6_s3_30_parity_turn20__f3n_d
+type: score
+desc: 29 号的单点对照：四腿平价不变，只把换手窗口压到 20 日。假设平价结构下窗口的边际更干净——没有哪条腿被刻意放大，若短窗仍能胜出，说明换手信号本身对尺度不敏感；若短窗明显变差，则换手腿的价值高度依赖长窗口的稳定性。归一化权重：四条腿各
+  25.0%（turn_ma_n 取 20 日）。
+factors:
+- op: pb
+  weight: -0.65
+- op: ps_ttm
+  weight: -0.65
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 10
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

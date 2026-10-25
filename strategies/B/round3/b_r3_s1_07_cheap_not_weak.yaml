@@ -1,0 +1,18 @@
+name: b_r3_s1_07_cheap_not_weak
+type: score
+desc: 三个估值镜都便宜但要求 60 日动量为正，只买便宜且没在下跌的标的，用正动量剔除正在恶化的价值陷阱并把买点放到价格企稳之后，超额来自折价在价格不再走弱时的收敛，而不是单纯抄底。
+factors:
+- op: pb
+  weight: -0.30
+- op: ps_ttm
+  weight: -0.35
+- op: pe_ttm
+  weight: -0.25
+- op: ret_n
+  n: 60
+  weight: 0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

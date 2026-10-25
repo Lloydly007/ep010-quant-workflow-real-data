@@ -1,0 +1,19 @@
+name: a_r5_s1_16_ps_own_pct_20
+type: score
+desc: "自身分位缩到 20 日（月内）：只要求近期营收倍数脉冲式回落，是最快的估值择时版本。假设「便宜」的兑现窗口很短，周度换手正好追得上；代价是名单与换手成本都会被放大，与 14/15 份构成 20/120/250 的窗口三档。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 20
+  of:
+    op: ps_ttm
+  weight: -0.70
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

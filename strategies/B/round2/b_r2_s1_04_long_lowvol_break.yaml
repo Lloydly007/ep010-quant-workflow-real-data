@@ -1,0 +1,15 @@
+name: b_r2_s1_04_long_lowvol_break
+type: rule
+desc: 现象是250日波动率仍低于3%的长期低波股，5日波动率突然升破5%且当日强收，这是长期低波股票被资金重新定价的第一周。A股低波股平日无人问津，一旦波动放大往往对应风格切换（资金从题材撤向防御或从防御撤向弹性），而第一周的动量最干净，低PB提供下行保护。进出为长窗低波、短窗波动放大、当日强收三条件同时成立才买，跌破20日线或10日涨幅超过10%离场，持仓上限20日、止损8%。相对第1轮失败模式的改动：第1轮把低波本身当买入理由（波动低就买并长期持有），结果只能少亏、赚不到风格切换的钱；本版把低波当「压缩的弹簧」，只在压缩被打破且价格确认向上时进场，估值只用于在突破的样本里排序。
+buy:
+- {op: vol_n, n: 250, dir: below, threshold: 3}
+- {op: vol_n, n: 5, dir: above, threshold: 5}
+- {op: close_pos_range, dir: above, threshold: 0.8}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+- {op: ret_n, n: 10, dir: above, threshold: 10}
+rank: {op: pb, order: asc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

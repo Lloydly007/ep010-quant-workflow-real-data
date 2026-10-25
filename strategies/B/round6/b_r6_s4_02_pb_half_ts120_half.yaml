@@ -1,0 +1,16 @@
+name: b_r6_s4_02_pb_half_ts120_half
+type: score
+desc: 把分位腿从一年换到半年（绝对 PB 仍占一半）：假设估值压缩的信号半衰期不到一年，120 日分位对「刚开始变便宜」更敏感，代价是更容易被一次行业性反弹洗掉。与 01 只差分位窗口一个参数，用于单独隔离 horizon 效应。归一化权重：pb 50.0% / ts_pct(pb,120) 50.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

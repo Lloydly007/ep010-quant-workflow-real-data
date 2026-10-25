@@ -1,0 +1,12 @@
+name: b_r5_s4_09_balanced60_ulcer120
+type: score
+desc: "60 日低波 0.3 与 120 日溃疡 0.35 同量级、PB 0.35：把近期波动与历史下行深度当两个独立证据等权处理，溃疡略高。依据是深坑留下的套牢盘比短期噪声更难消化，抗跌性应当看路径而不只看标准差；与 10 的长短窗互换构成对照。"
+factors:
+- {op: pb, weight: -0.35}
+- {op: vol_n, n: 60, weight: -0.3}
+- {op: ulcer_n, n: 120, weight: -0.35}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,24 @@
+name: b_r6_s2_12_path20_vol250__f3n_d
+type: score
+desc: 09 的镜像：只看最近一月的坑（ulcer_n(20) −0.225），却用一年波动做背景（vol_n(250) −0.225）。假设是「长期震得凶是可容忍的，只要最近一个月没有正在挖坑」——即用慢变量定基线、用快变量触发。若
+  12 与 09 同档，说明窗口错配的方向不重要、重要的是错开；若 12 明显更差，说明「正在变坏」的短期信号在防御里不如「长期没坏」有效，与 A 路的破位逻辑相反。归一化权重：pb
+  20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(20) 7.5% / vol_n(250) 7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 10
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

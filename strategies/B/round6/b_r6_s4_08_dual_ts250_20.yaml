@@ -1,0 +1,21 @@
+name: b_r6_s4_08_dual_ts250_20
+type: score
+desc: 双窗 250/20（各 25%）：极端组合——一年底部确认 + 近一月是否刚从底部抬起。20 日分位几乎是噪音源，本份是刻意把短窗噪音放到 1/4 权重的压力测试，用来看 L2 对短窗噪音的容忍度，不是候选结构。归一化权重：pb 50.0% / ts_pct(pb,250) 25.0% / ts_pct(pb,20) 25.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.25
+- op: ts_pct
+  n: 20
+  of:
+    op: pb
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

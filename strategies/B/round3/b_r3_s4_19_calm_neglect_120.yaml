@@ -1,0 +1,12 @@
+name: b_r3_s4_19_calm_neglect_120
+type: score
+desc: "PB0.4、120日低波0.3、120日均换手负权0.3，月度调仓：低波与低换手是同一件事的两个侧面（价格没人推、筹码没人换），叠加后选到被彻底遗忘的便宜股，折价能留到修复正是没人交易的结果。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 120, weight: -0.3}
+- {op: turn_ma_n, n: 120, weight: -0.3}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

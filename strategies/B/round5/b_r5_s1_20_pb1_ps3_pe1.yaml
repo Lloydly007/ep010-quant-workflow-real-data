@@ -1,0 +1,18 @@
+name: b_r5_s1_20_pb1_ps3_pe1
+type: score
+desc: 配比 pb:ps:pe = 1:3:1（-0.25/-0.75/-0.25）：纯收入端倾斜的极值档。ps 主导的主要结构性风险是名单被“低毛利高收入”行业系统性占满（贸易、建筑、钢铁流通），这条就是把这个风险推到最大去看。
+factors:
+- op: pb
+  weight: -0.25
+- op: ps_ttm
+  weight: -0.75
+- op: pe_ttm
+  weight: -0.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,28 @@
+name: b_r6_s2_23_ulcer_own_pct250__f4n_d
+type: score
+desc: 22 的镜像：路径腿换成自身 250 日分位（ts_pct 250 套 ulcer_n(250) −0.225），波动腿保持绝对水平 vol_n(250)。假设
+  ulcer 的绝对水平几乎由股票的「性格」决定（某些行业天生爱挖坑），只有「比自己过去更深」才包含新信息。注意双重 250 窗需要约两年暖机，前期样本会自然变薄，这份的差异里含一段暖机成本，读结论时要扣掉。归一化权重：pb
+  20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250)自身250日分位 7.5% / vol_n(250)
+  7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ts_pct
+  n: 250
+  of:
+    op: ulcer_n
+    n: 250
+  weight: -0.225
+- op: vol_n
+  n: 120
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

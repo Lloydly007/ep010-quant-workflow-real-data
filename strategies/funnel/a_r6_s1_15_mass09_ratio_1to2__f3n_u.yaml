@@ -1,0 +1,20 @@
+name: a_r6_s1_15_mass09_ratio_1to2__f3n_u
+type: score
+desc: 把估值块总权从 1.00 压到 0.90，比例仍是 1:2：估值占三成半，规模加换手占六成半。假设比例的正确性可能依赖估值块的总话语权，这一格检验 1:2
+  在轻估值下是否依然稳定——若稳，则这条比例不是靠权重堆出来的。归一化权重：size_ln 37.7% / turn_ma_n(120) 28.3% / pb 22.6%
+  / ps_ttm 11.3%（ps:pb=0.30:0.60=1:2.00，总 |w|=2.65，估值块 34.0%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.3
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

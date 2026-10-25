@@ -1,0 +1,24 @@
+name: b_r2_s3_06_ulcer_path_gate
+type: rule
+desc: 现象：方差把单日跳空和横盘抖动同等对待，而决定"拿不拿得住"的是一年里最深那段回撤有多深，这是路径问题而不是幅度问题。为什么该有超额：低溃疡意味着筹码稳定、没有杠杆盘踩踏，这类股票因"没弹性"被A股长期折价；安全垫用PS（营收口径）而不是PB，避免账面价值被商誉和折旧政策污染。怎么进出：300ETF站上120日线时买ulcer_n(120)<8的股票、按PS升序取10只；ulcer_n(60)升破10（路径开始恶化）即卖——长窗入、短窗出的不对称，持有60日，不设价格止损。相对第1轮：低溃疡配置全部无市场状态，且用120日入、60日出做路径管理是新的出场结构。
+buy:
+- op: ulcer_n
+  n: 120
+  dir: below
+  threshold: 8
+- op: etf_above_ma_n
+  n: 120
+  dir: above
+  threshold: 0.5
+rank:
+  op: ps_ttm
+  order: asc
+sell:
+- op: ulcer_n
+  n: 60
+  dir: above
+  threshold: 10
+max_hold_days: 60
+stop_loss: null
+max_positions: 10
+industry_cap: 5

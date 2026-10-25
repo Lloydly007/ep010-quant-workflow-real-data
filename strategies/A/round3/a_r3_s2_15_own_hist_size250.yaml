@@ -1,0 +1,17 @@
+name: a_r3_s2_15_own_hist_size250
+type: score
+desc: 规模改用自身一年时序分位：选市值相对自己过去一年被持续压到低位的小盘，而不是绝对最小，避免只捡已经死在底部的高退市风险股。
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: size_ln
+  weight: -1.0
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

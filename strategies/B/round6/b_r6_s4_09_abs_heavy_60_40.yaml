@@ -1,0 +1,16 @@
+name: b_r6_s4_09_abs_heavy_60_40
+type: score
+desc: 绝对 PB 提到 60%、一年分位降到 40%：偏离半半，检验「跨股票可比」是否比「纵向压缩」更稀缺。若 09 优于 01，说明本池的估值时序分位信息量被高估，后续应回到绝对估值主结构。归一化权重：pb 60.0% / ts_pct(pb,250) 40.0%。
+factors:
+- op: pb
+  weight: -0.6
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

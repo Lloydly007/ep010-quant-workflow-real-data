@@ -1,0 +1,14 @@
+name: b_r4_s1_15_ratio_233
+type: score
+desc: 估值 7:3 主导：pb -1.05 / turn_ma_n(120) -0.45（2.333:1，PB 70%），假设换手在 0.45 仍有约三成排序贡献、再低就失去对拥挤筹码的约束；与 14 差一档 PB，用来判定 0.90→1.05 是否还带信息。
+factors:
+- op: pb
+  weight: -1.05
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

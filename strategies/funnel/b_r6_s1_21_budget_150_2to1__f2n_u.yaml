@@ -1,0 +1,23 @@
+name: b_r6_s1_21_budget_150_2to1__f2n_u
+type: score
+desc: 预算上界：分割 2:1，换手总预算 1.50（120 日 -1.00 / 250 日 -0.50），换手占 56.6%，pb 压到 18.9%、size_ln
+  24.5%。这是全组最激进的形态，用途是给“换手腿是否单调有效”划出上界——若 21 仍与 20 持平，说明预算在 1.2 以上已饱和；若 21 明显回落，则
+  1.20~1.50 之间存在反噬点，冻结时应停在 0.90~1.20 区间。注意：预算抬高不改变分割方向，因此 21 与 07 的差值是纯“量”的效应，可直接与
+  19 的“减量”效应配对读出单调性。归一化权重：pb 18.9% / size_ln 24.5% / turn_ma_n(120) 37.7% / turn_ma_n(250)
+  18.9%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -1.0
+- op: turn_ma_n
+  n: 250
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

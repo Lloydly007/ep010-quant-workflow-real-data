@@ -1,0 +1,16 @@
+name: b_r3_s3_01_cheap_small_equal_core
+type: score
+desc: "在沪深300与中证500的历史成分并集里按低 PB 与小市值等权倾斜、再叠加 120 日均换手率负权，选出便宜且被冷落的小盘股：低估值给出安全边际，小市值与低换手共同刻画机构覆盖不足造成的定价错位，等权配比是这批 1:1 到 1:4 权重梯度的基准点，用来确认在没有 ROE 的情况下纯 pb×size 底盘本身有多少超额。"
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

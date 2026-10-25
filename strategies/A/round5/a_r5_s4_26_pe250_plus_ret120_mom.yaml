@@ -1,0 +1,19 @@
+name: a_r5_s4_26_pe250_plus_ret120_mom
+type: score
+desc: "半年动量：ret_n(120) +0.50，配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。比 60 日更慢的趋势确认，更贴合周度调仓、低换手组合的持有节奏；若它强于 25，说明这条价值策略该配慢动量而不是快动量。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ret_n
+  n: 120
+  weight: 0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

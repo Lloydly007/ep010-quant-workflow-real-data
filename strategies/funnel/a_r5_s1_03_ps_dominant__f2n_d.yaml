@@ -1,0 +1,17 @@
+name: a_r5_s1_03_ps_dominant__f2n_d
+type: score
+desc: ps 反超 size（−1.20 对 −0.60）：假设 2014–2022 的 A 股对营收倍数（每元收入付多少钱）的定价比流通市值更有效，小市值只作必要的流动性过滤而非主导腿。名单会明显向低营收倍数行业（商贸、建筑、传统制造）偏移，与第
+  2 份只差两条腿的相对大小。
+factors:
+- op: size_ln
+  weight: -0.6
+- op: ps_ttm
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,27 @@
+name: a_r6_s2_29_cross_2x2_diag_pos
+type: score
+desc: "对角错配 B，与 28 恰好互为镜像：估值看旧（250 重 -0.50、120 轻 -0.30）、换手看新（120 重 -0.55、250 轻 -0.30）。假设估值折价的确认需要长历史——便宜只有在自己两年分位里也偏低时才算真便宜，半年分位太容易被一次下跌打满；而清淡度的信息是近期增量，季度窗已经足够说明关注度塌陷，年度窗只是把已经发生的事重复计入。28 与 29 一起构成尺度偏好的 2×2，若两者都优于 21，说明「按轴定时间常数」本身有效，符号朝哪边则交给市场回答。归一化权重：size_ln 37.7% / ts_pct(250, pb) 18.9% / ts_pct(120, pb) 11.3% / turn_ma_n(120) 20.8% / turn_ma_n(250) 11.3%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.50
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.30
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+- op: turn_ma_n
+  n: 250
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

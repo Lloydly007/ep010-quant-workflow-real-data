@@ -1,0 +1,23 @@
+name: a_r5_s3_33_deep_value_dual_guard
+type: score
+desc: "最便宜的一档加双重长期护栏：pb -0.6、行业内分位 -0.6、size_ln -0.6，ulcer_n 250 日 -0.4、vol_n 250 日 -0.3。假设极端便宜的样本必须同时排除年度高波动与深回撤，否则便宜的极端值本身就读数基本面恶化，本份押最便宜且路径最干净的那一小撮。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.6
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.6
+- op: ulcer_n
+  n: 250
+  weight: -0.4
+- op: vol_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

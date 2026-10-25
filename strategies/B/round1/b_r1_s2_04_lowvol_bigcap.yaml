@@ -1,0 +1,20 @@
+name: b_r1_s2_04_lowvol_bigcap
+type: rule
+desc: 60日波动率低于2%的低波股长期风险调整收益占优，而大市值公司的低波更可能是真实低风险而不是流动性假象，故在低波股里按流通市值降序取最大的10只，持有60日或20日ATR占比升破5%（低波结构破裂）离场，10%止损且同行业最多5只。
+buy:
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 2
+rank:
+  op: size_ln
+  order: desc
+sell:
+- op: atr_close_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 60
+stop_loss: 10%
+max_positions: 10
+industry_cap: 5

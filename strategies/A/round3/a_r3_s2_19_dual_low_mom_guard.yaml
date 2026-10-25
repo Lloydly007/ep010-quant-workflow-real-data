@@ -1,0 +1,17 @@
+name: a_r3_s2_19_dual_low_mom_guard
+type: score
+desc: 双低加半年动量正权当防跌刀：在被忽视的小盘里优先价格仍有确认的，用小权重动量过滤持续阴跌的价值陷阱。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 120
+  weight: 0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

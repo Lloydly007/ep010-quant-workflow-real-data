@@ -1,0 +1,19 @@
+name: a_r4_s1_23_t120_calmvol__f3n_d
+type: score
+desc: 120 日换手 -0.75 叠 120 日波动 -0.40：半年维度的清淡与低波同步，假设半年低波的小盘更可能是缺乏关注而不是基本面正在恶化。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

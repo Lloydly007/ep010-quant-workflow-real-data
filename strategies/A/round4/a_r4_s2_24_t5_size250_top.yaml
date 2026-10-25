@@ -1,0 +1,14 @@
+name: a_r4_s2_24_t5_size250_top
+type: score
+desc: "5 日窗口、规模 -2.50（占 76.9%），上端：本组最短窗口配最强倾斜，是窗口长度轴上最尖锐的一端，用来定位短窗口下的饱和边界。"
+factors:
+- op: size_ln
+  weight: -2.5
+- op: turn_ma_n
+  n: 5
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

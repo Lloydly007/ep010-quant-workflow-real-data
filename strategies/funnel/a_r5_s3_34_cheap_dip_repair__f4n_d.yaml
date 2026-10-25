@@ -1,0 +1,27 @@
+name: a_r5_s3_34_cheap_dip_repair__f4n_d
+type: score
+desc: 折价加长期趋势未破加一周砸坑：pb -0.5、行业内分位 -0.5、size_ln -0.55 作底，close_over_ma_n 250 日 +0.2、ret_n
+  5 日 -0.25、20 日换手 -0.3。假设最有效的买点是便宜、年线未破、最近一周被错杀三者同时成立，短反转提供时点、年线提供不被基本面拖走的保证。
+factors:
+- op: size_ln
+  weight: -0.55
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: close_over_ma_n
+  n: 250
+  weight: 0.2
+- op: ret_n
+  n: 3
+  weight: -0.25
+- op: turn_ma_n
+  n: 20
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

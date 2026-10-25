@@ -1,0 +1,16 @@
+name: a_r5_s2_02_own_pb_trough_120_short
+type: score
+desc: "与 01 同腿同权，只把窗口从 250 砍到 120：假设半年窗更能捕捉近期估值均值回复，代价是对长期估值中枢漂移不敏感，用来把'窗口长度本身'的贡献从权重里剥出来。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

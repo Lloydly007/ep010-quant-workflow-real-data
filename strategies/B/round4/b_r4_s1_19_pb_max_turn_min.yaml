@@ -1,0 +1,14 @@
+name: b_r4_s1_19_pb_max_turn_min
+type: score
+desc: 扫描区间另一端：pb -1.20 / turn_ma_n(120) -0.30（4:1，PB 80%），假设估值是唯一有效维度、换手只是防噪声的阻尼项；与 01 的 0.30:1 构成权重比轴两个端点，若中间档不能显著优于端点，说明该轴对收益结构不敏感。
+factors:
+- op: pb
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r5_s4_32_pe250_deep_size
+type: score
+desc: "规模推到比第 4 轮最深档（-1.60）更极端：size_ln -1.80，pe_ttm -0.60、turn_ma_n(250) -0.75 保持不变。检验规模倾斜是否单调有效，还是超过某一档后只剩流动性最差的一批，风险收益开始反向。"
+factors:
+- op: size_ln
+  weight: -1.80
+- op: pe_ttm
+  weight: -0.60
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

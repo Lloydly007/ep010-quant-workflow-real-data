@@ -1,0 +1,14 @@
+name: a_r2_s4_13_ind_calm_leader
+type: rule
+desc: 现象：在同一证监会行业内比较，120日溃疡指数最低且站在120日均线上方、60日涨幅为正的股票，是板块内资金优先选择的标的（行业内比较剔除了行业beta，只留同板块内的相对路径质量）。为什么A股该有超额：A股题材轮动以行业为单位，同一板块内资金会集中到图形最干净、上方阻力最小的那只票；行业整体波动在2015与2018年系统性抬高，绝对阈值会把整年都筛空或全选，行业内排名则自动适应当年该板块自身的波动水平。进出：买入需收盘价高于120日均线、120日溃疡指数低于10%、60日涨幅大于1%，排序键用 ind_rank 套 溃疡指数(120) 升序取行业内最干净的10只，industry_cap=3 限制单行业最多3只（强制跨板块分散，避免轮动行情里押注单一行业）；持有40日、止损10%，跌破120日均线即卖出。相对第1轮失败模式的改动：第1轮只用过行业内动量排名（选板块内最强，即最热的那只），本轮改成行业内路径质量排名（选板块内最稳的那只），并首次加行业持仓上限来控制主题集中风险。
+buy:
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: ulcer_n, n: 120, dir: below, threshold: 10}
+- {op: ret_n, n: 60, dir: above, threshold: 1}
+rank: {op: ind_rank, of: {op: ulcer_n, n: 120}, order: asc}
+sell:
+- {op: close_over_ma_n, n: 120, dir: below, threshold: 1.0}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 3

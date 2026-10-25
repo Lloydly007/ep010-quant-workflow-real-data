@@ -1,0 +1,17 @@
+name: a_r3_s1_11_size_turn_mom60
+type: score
+desc: 深度小市值配120日低换手并给60日动量正权，选冷门但在抬头的小盘，低换手过滤噪声交易者，正动量保证不接下跌中的刀，两者接近安静的趋势。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+- op: ret_n
+  n: 60
+  weight: 0.3
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

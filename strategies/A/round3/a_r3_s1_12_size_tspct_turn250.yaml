@@ -1,0 +1,17 @@
+name: a_r3_s1_12_size_tspct_turn250
+type: score
+desc: 小市值叠250日换手的自身时序分位，只买自身历史上最冷的时点，时序分位消除行业与股本结构造成的截面差异，比原始换手更纯粹地度量关注度是否异常低。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 250
+  weight: -0.45
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

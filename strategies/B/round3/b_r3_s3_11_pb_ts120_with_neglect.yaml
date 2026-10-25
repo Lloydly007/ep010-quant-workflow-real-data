@@ -1,0 +1,21 @@
+name: b_r3_s3_11_pb_ts120_with_neglect
+type: score
+desc: "用 120 日（约半年）的自身 PB 分位代替截面 PB 绝对水平并与 60 日均换手合谋，寻找半年内估值压缩且成交同步冷却的小盘：估值与关注度同时下行往往是悲观预期被一次性打满，月度调仓留出均值回归的时间。"
+factors:
+- op: pb
+  weight: -0.3
+- op: size_ln
+  weight: -0.6
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.4
+- op: turn_ma_n
+  n: 60
+  weight: -0.3
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

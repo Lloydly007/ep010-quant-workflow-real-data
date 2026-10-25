@@ -1,0 +1,18 @@
+name: a_r4_s3_23_dual_plus_ulcer_120
+type: score
+desc: "双低 + 半年浅回撤，三种风险度量全负权：回撤看路径、波动看离散、换手看关注度，只有三者同向才入选，压低单一风险指标在某一年失效带来的整批失真。"
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.7
+- op: vol_n
+  n: 120
+  weight: -0.55
+- op: ulcer_n
+  n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

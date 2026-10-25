@@ -1,0 +1,11 @@
+name: b_r5_s4_14_owncalm120_vol20
+type: score
+desc: "用 20 日波动在自身 120 日历史里的分位（0.5）替代绝对波动，配 PB 0.5：绝对低波会把天生安静的银行、电力整批买走，自身分位只在「自己最近变安静」时给分，让高波行业里的情绪冷却期也能入选——这是全组唯一不看绝对波动水平的构造。"
+factors:
+- {op: pb, weight: -0.5}
+- {op: ts_pct, n: 120, of: {op: vol_n, n: 20}, weight: -0.5}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

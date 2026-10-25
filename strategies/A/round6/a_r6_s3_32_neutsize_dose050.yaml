@@ -1,0 +1,19 @@
+name: a_r6_s3_32_neutsize_dose050
+type: score
+desc: "neut_size: true + ulcer_n(250) -0.50、size -1.20、pb -0.45、turn_ma_n(250) -0.70：强小市值 + 强回撤 + 市值中性化同时施加，是「风格与防御都满」的口径探针，判断中性化是否会吃掉回撤腿的边际。归一化权重：size_ln 42.1% / pb 15.8% / turn_ma_n(250) 24.6% / ulcer_n(250) 17.5%。"
+factors:
+- op: size_ln
+  weight: -1.20
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.70
+- op: ulcer_n
+  n: 250
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

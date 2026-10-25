@@ -1,0 +1,20 @@
+name: a_r5_s3_22_neutsize_indheavy
+type: score
+desc: "行业相对为主叠加市值中性：行业内 PB 分位 -0.75 拿主预算，pb -0.4、size_ln -0.5、vol_n 120 日 -0.4，neut_size 打开。假设行业内便宜选股与大小盘风格高度混淆，只有同时把行业与市值两个维度的风格暴露中性化，行业相对腿才是纯净的折价信号。"
+factors:
+- op: size_ln
+  weight: -0.5
+- op: pb
+  weight: -0.4
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.75
+- op: vol_n
+  n: 120
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: a_r3_s4_15_ulcer_plus_vol
+type: score
+desc: 同时要求半年浅回撤与 20 日低波；两种风险度量（路径回撤对收益离散）方向一致时才入选，压低单一指标在某年失效导致整批选股失真的风险。
+factors:
+- op: size_ln
+  weight: -1.65
+- op: ulcer_n
+  n: 120
+  weight: -0.6
+- op: vol_n
+  n: 20
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

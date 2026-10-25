@@ -1,0 +1,24 @@
+name: b_r6_s2_30_size_half__f2n_u
+type: score
+desc: 规模腿从 −1.20 降到 −0.90（pb:size 由 1:2 变 1:1.5），防御腿对半 0.225/0.225。与 27（1:1）夹出规模腿的中间档：如果
+  30 的结论落在 01 与 27 之间并随规模腿单调移动，说明防御腿的表现被「大盘 vs 小盘」这个暴露主导——小盘股天然高波动、高溃疡，防御腿其实在反向做规模。这是对母本最需要排除的一条混淆。归一化权重：pb
+  22.2% / size_ln 33.3% / turn_ma_n(120) 27.8% / ulcer_n(250) 8.3% / vol_n(250) 8.3%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -0.9
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

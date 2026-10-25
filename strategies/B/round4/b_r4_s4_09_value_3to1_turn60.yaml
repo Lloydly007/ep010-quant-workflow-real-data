@@ -1,0 +1,16 @@
+name: b_r4_s4_09_value_3to1_turn60
+type: score
+desc: "权重比轴反向：价值腿对成长腿 3:1（pb −0.90 / pe_ttm +0.30），换手 60 日、−0.75。PE 正权在这里退化为‘不要买亏损股’的软约束——权重小到无法把高 PE 票顶上来，但足以让 pe_ttm≤0 的约一成标的名次下滑。本质是带亏损筛的低 PB 价值组合，与第 3 轮 pb 主导的多份配置同向但保留了成长腿的最小暴露。"
+factors:
+- op: pe_ttm
+  weight: 0.3
+- op: pb
+  weight: -0.9
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

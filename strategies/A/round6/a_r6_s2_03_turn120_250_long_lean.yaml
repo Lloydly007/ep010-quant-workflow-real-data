@@ -1,0 +1,19 @@
+name: a_r6_s2_03_turn120_250_long_lean
+type: score
+desc: "02 的镜像：年度窗 -0.60、季度窗 -0.40。假设真正的冷门是「一年以来就没人看」的存量状态，近半年的安静既可能来自转冷，也可能来自一次还没结束的停牌、刚做完的定增、或者被指数剔除前的锁定，这些都是会退潮的临时安静，让年度窗压住季度窗可以少买这类名字。代价是对「正在转冷」的新鲜冷门反应慢，若 A 路的增量信息主要在半年级别，本份会显著落后于 02。归一化权重：size_ln 38.8% / pb 20.4% / turn_ma_n(120) 16.3% / turn_ma_n(250) 24.5%。"
+factors:
+- op: size_ln
+  weight: -0.95
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.40
+- op: turn_ma_n
+  n: 250
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

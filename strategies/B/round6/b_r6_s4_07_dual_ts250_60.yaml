@@ -1,0 +1,21 @@
+name: b_r6_s4_07_dual_ts250_60
+type: score
+desc: 双窗 250/60（各 25%）：把第二窗从 120 压到 60，检验「很长的底」加「很近的转折」这对组合是否比 250/120 更灵敏。60 日分位样本短、噪音大，但转折识别更快。归一化权重：pb 50.0% / ts_pct(pb,250) 25.0% / ts_pct(pb,60) 25.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.25
+- op: ts_pct
+  n: 60
+  of:
+    op: pb
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

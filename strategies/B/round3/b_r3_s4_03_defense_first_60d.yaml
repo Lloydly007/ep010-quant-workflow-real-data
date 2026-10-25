@@ -1,0 +1,11 @@
+name: b_r3_s4_03_defense_first_60d
+type: score
+desc: "把跌不动放在便宜之前，低波权重0.75是PB的3倍：近60日安静说明当下没有资金在里面反复定价，周度调仓能在波动刚抬头的第一周就换掉持仓，避免防御腿失效。"
+factors:
+- {op: pb, weight: -0.25}
+- {op: vol_n, n: 60, weight: -0.75}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,24 @@
+name: b_r6_s4_19_oversold_reversal
+type: score
+desc: 半半轴心 + 60 日反转负权 20%（40/20/20/−20）：与 18 相反，买「便宜且刚被砸」的名字，假设超跌修复是估值回归的主要实现路径。18 与 19 构成同一问题的正反两面。归一化权重：pb 40.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 20.0% / ret_n(60)，负权 −20.0% 20.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+- op: ret_n
+  n: 60
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

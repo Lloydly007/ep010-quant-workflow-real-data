@@ -1,0 +1,19 @@
+name: a_r5_s4_22_pe250_plus_ret250_rev
+type: score
+desc: "年度反转版：ret_n(250) 负权 -0.40，配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。主动买“跌了一整年”的便宜小盘。与 21 方向完全相反，是同一批候选里“趋势确认 vs 均值回复”的正面撞车，谁的边际更大一目了然。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ret_n
+  n: 250
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

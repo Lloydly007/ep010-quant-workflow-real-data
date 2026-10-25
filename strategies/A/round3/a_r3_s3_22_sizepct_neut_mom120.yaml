@@ -1,0 +1,18 @@
+name: a_r3_s3_22_sizepct_neut_mom120
+type: score
+desc: 市值中性前提下用120日动量正权加PB负权、按月换手：半年动量与低估值两条腿决定选股，用于判断小盘动量是否只是更小市值的伪装。
+factors:
+- op: xsec_pct
+  of:
+    op: size_ln
+  weight: -1.25
+- op: ret_n
+  n: 120
+  weight: 1.0
+- op: pb
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: a_r6_s3_11_win060_dose060
+type: score
+desc: "ulcer_n(60) 拉到 -0.60 上限：只看最近一个季度有没有深坑，最易受单次事件冲击，是本组最激进的短记忆表达。归一化权重：size_ln 35.1% / pb 17.5% / turn_ma_n(120) 26.3% / ulcer_n(60) 21.1%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 60
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

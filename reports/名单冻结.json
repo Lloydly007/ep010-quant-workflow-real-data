@@ -1,0 +1,24 @@
+{
+ "frozen_at": "2026-10-25T19:50:56",
+ "note": "名单冻结：开封前记录，开封后不得修改",
+ "split_date": "2024-12-31",
+ "sealed_window": "2025-01-02~2026-09-30",
+ "AI": {
+  "file": "shortlist_AI.json",
+  "names": [
+   "a_r6_s3_03_dose030_u250_t120",
+   "a_r6_s3_06_dose045_u250_t120",
+   "b_r5_s2_30_ulcer_extra_1to2"
+  ],
+  "sha256": "29a9a351acca8e1c37c4c9ca4ec9651bc8ee274409a23a366f7677abeb957abd"
+ },
+ "monkey_43": {
+  "file": "shortlist_monkey_43.json",
+  "names": [
+   "m43_046",
+   "m43_050",
+   "m43_084"
+  ],
+  "sha256": "73fec0c53c484066cf43a070304f156fd4fb991a818c586cb35e2970d2c3cdb5"
+ }
+}

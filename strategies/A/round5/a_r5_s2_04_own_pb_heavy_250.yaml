@@ -1,0 +1,16 @@
+name: a_r5_s2_04_own_pb_heavy_250
+type: score
+desc: "把 ts_pct(pb,250) 提到 -0.75、规模保住 -1.0：假设时序估值分位比截面 PB 更干净、值得重仓，与 03 构成估值权重 0.25/0.50/0.75 的剂量曲线。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

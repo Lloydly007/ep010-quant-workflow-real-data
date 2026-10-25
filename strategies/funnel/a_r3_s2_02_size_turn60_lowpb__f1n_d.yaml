@@ -1,0 +1,16 @@
+name: a_r3_s2_02_size_turn60_lowpb__f1n_d
+type: score
+desc: 把换手窗口从20日拉到60日，要求低关注持续一个季度而不是一次性缩量，再配低PB筛掉只是停摆的事件型小盘，选真冷且真便宜的票。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 20
+  weight: -0.5
+- op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,21 @@
+name: b_r3_s1_25_own_turn_trough
+type: score
+desc: 三镜低估叠加自身换手的一年时序分位处于低位者优先，用分位而不是绝对换手水平，换手阈值随个股流动性与全市场活跃度自适应，再剥离市值分档，超额来自每只股票自己历史最冷时刻的估值折价，避免绝对低换手阈值在不同年份含义漂移。
+factors:
+- op: pb
+  weight: -0.40
+- op: ps_ttm
+  weight: -0.35
+- op: pe_ttm
+  weight: -0.25
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.60
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

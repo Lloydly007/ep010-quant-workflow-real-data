@@ -1,0 +1,13 @@
+name: a_r2_s5_16_ind_rs_vol_confirm
+type: rule
+desc: 现象：行业内相对强度靠前、同时 20 日量比高于 1.2 倍的股票，说明行业资金不仅在推价格也在持续换手；只有价格排名而没有量能确认的行业内强者，常是流动性差造成的假强度。为什么在 A 股该有超额：行业内部的资金再配置会留下换手痕迹，量能是行业内相对强度的验证项；一旦 20 日量比回落到 0.5 倍以下，说明行业内关注度消失，此时退出比等均线破位更早。怎么进出：站上 60 日线且 20 日量比高于 1.2 倍者，按同门类内 20 日涨幅排名降序取前 10；20 日量比低于 0.5 倍（关注度消失）离场，10 日上限、8% 止损、同行业最多 3 只。相对第 1 轮的改动：第 1 轮把量能当买入触发（放量突破）；本配置把量能降级为行业内相对强度的确认项与退出信号，排序仍由相对强度决定。
+buy:
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: vol_ratio_n, n: 20, dir: above, threshold: 1.2}
+rank: {op: ind_rank, of: {op: ret_n, n: 20}, order: desc}
+sell:
+- {op: vol_ratio_n, n: 20, dir: below, threshold: 0.5}
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 3

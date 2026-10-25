@@ -1,0 +1,14 @@
+name: a_r2_s4_17_neglected_calm
+type: rule
+desc: 现象：120日均换手率低于1%（长期低关注）且站在120日均线上方、120日溃疡指数低于5%的股票，是"被锁仓的慢牛"（全池 turn_ma_120 中位1.37%，低于1%约四成，叠加路径与趋势条件后日均约40只候选）。为什么A股该有超额：换手率是A股最强的负向因子之一，高换手意味着筹码分散、游资反复博弈、均值回归剧烈；低换手且路径无伤的票多为大股东与长线资金锁定，抛压小，微小买盘即可推动价格，且不会因为一次大额卖单就破位。第1轮A路完全没有使用换手维度，等于放弃了A股最有效的风险刻度。进出：买入需120日均换手率低于1%、120日溃疡指数低于5%、收盘价高于120日均线，按120日均换手率升序取前10；持有40日、止损10%，120日均换手率升破5%（筹码松动、关注度异常）即卖出。相对第1轮失败模式的改动：新增换手率维度作为主筛选轴，方向是越低越好，与第1轮的放量确认（vol_ratio_n 大于1.5）完全相反。
+buy:
+- {op: turn_ma_n, n: 120, dir: below, threshold: 1}
+- {op: ulcer_n, n: 120, dir: below, threshold: 5}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+rank: {op: turn_ma_n, n: 120, order: asc}
+sell:
+- {op: turn_ma_n, n: 120, dir: above, threshold: 5}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: b_r1_s4_06_atr_smooth
+type: rule
+desc: 20日ATR相对收盘价低于3%的票日内振幅极小、冲击成本最低，配置型资金愿为其支付“平稳溢价”→买入低振幅组并优先选所属行业PS中位数最低者，持有40日、亏10%离场。
+buy:
+- op: atr_close_n
+  n: 20
+  dir: below
+  threshold: 3.0
+rank:
+  op: xsec_pct
+  of:
+    op: ind_median_ps
+  order: asc
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 0

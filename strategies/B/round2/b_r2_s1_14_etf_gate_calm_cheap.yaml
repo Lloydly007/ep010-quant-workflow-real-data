@@ -1,0 +1,14 @@
+name: b_r2_s1_14_etf_gate_calm_cheap
+type: rule
+desc: 现象是沪深300ETF在60日线上方（市场处于多头）时，低换手、低波动的便宜股才会被轮动资金照顾；指数走弱时同一批股票只是跟着跌。A股是资金推动的轮动市，冷门低估值股的补涨几乎都发生在指数上行段，逆势买冷门股正是第1轮超额回撤压不住、L3全灭的主因。进出为ETF在60日线上方、20日均换手低于2%、20日波动率低于3%三条件才买，ETF跌破60日线即全部离场（市场级止损），持仓上限60日、止损10%。相对第1轮失败模式的改动：第1轮B路完全没有市场状态开关，任何时点都满仓，回撤与指数同步；本版把ETF均线当仓位开关，冷门便宜股只在多头市场里买，估值排序保持不变。
+buy:
+- {op: etf_above_ma_n, n: 60, dir: above, threshold: 0.5}
+- {op: turn_ma_n, n: 20, dir: below, threshold: 2}
+- {op: vol_n, n: 20, dir: below, threshold: 3}
+sell:
+- {op: etf_above_ma_n, n: 60, dir: below, threshold: 0.5}
+rank: {op: pb, order: asc}
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

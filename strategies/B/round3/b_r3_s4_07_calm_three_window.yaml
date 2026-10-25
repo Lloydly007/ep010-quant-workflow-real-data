@@ -1,0 +1,13 @@
+name: b_r3_s4_07_calm_three_window
+type: score
+desc: "10/60/250三个窗口等权低波（合计0.75）加0.25轻估值，并在流通市值5档内中性化：要求跌不动在月、季、年三个尺度同时成立，任一尺度上的假安静都会被另两腿稀释。"
+factors:
+- {op: pb, weight: -0.25}
+- {op: vol_n, n: 20, weight: -0.25}
+- {op: vol_n, n: 60, weight: -0.25}
+- {op: vol_n, n: 250, weight: -0.25}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

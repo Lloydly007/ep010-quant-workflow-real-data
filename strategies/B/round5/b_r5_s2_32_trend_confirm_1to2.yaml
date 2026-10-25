@@ -1,0 +1,19 @@
+name: b_r5_s2_32_trend_confirm_1to2
+type: score
+desc: "在 05 基准（1:2）上加 close_over_ma_n(120) +0.30（正权，价格在 120 日线上方加分）：给“便宜但仍在下降通道”的股票设一道温和的趋势闸门，检验估值-规模轴是否需要趋势过滤来避开价值陷阱。这是四条腿实验里唯一的正权项，用于确认加一道正权闸门是把名单拉回中盘，还是只剔掉破位股。归一化权重：pb 21.1% / size_ln 42.1% / turn_ma_n(120) 26.3% / close_over_ma_n(120) 10.5%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: close_over_ma_n
+  n: 120
+  weight: 0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

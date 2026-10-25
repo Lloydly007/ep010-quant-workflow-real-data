@@ -1,0 +1,12 @@
+name: b_r3_s4_14_ulcer250_vol60
+type: score
+desc: "短期波动（60日，0.3）与长期下行路径（250日溃疡，0.35）跨窗口组合、PB0.35，周度调仓：一年没挖过深坑且最近一个季度也安静，才是跌不动的完整证据。"
+factors:
+- {op: pb, weight: -0.35}
+- {op: vol_n, n: 60, weight: -0.3}
+- {op: ulcer_n, n: 250, weight: -0.35}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

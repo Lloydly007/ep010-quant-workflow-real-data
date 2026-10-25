@@ -1,0 +1,16 @@
+name: b_r4_s3_08_pb_quiet60_control
+type: score
+desc: "pb 对照臂的季度窗口档：与 03 对齐，pb −0.45 / 规模 −0.55 / turn 60 −0.75。假设账面口径在季度尺度上更依赖行业资产负债表结构（重资产行业天然低 pb），所以行业中性化之后 pb 的季度档更容易退化成行业选择；本份用来验证'pb 的低估在短窗口上更像行业暴露'这条替代解释。"
+factors:
+- op: pb
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

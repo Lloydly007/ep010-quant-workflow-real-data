@@ -1,0 +1,18 @@
+name: b_r6_s3_34_parity_neutsize
+type: score
+desc: "29 号的第二处机制探针：权重一字不动，只打开 neut_size（市值分档内再排名）。假设平价结构里规模腿若有真信息，在中性化后应当仍有残余作用；与 29 号构成仅差一个开关的对照对，可以直接读出“规模腿是真信号还是纯风格暴露”，也顺便检验行业中性 + 市值中性叠加后是否把截面压平到选不出东西。归一化权重：四条腿各 25.0%。"
+factors:
+- op: pb
+  weight: -0.65
+- op: ps_ttm
+  weight: -0.65
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

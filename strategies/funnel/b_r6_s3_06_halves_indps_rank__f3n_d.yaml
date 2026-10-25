@@ -1,0 +1,22 @@
+name: b_r6_s3_06_halves_indps_rank__f3n_d
+type: score
+desc: 第二条估值腿换成行业相对口径：ps 用 ind_rank(ps_ttm)（当日同行业内营收倍数分位），权重 -0.50，其余同 01。假设跨行业的 ps
+  不可比（零售与软件天然差一个量级），行业内排名才说得清“同赛道里更便宜”；pb 仍留绝对口径，让配置同时具备行业内与跨行业两个视角。归一化权重：pb 20.0%
+  / ind_rank(ps_ttm) 20.0% / size_ln 34.0% / turn_ma_n(120) 26.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.5
+- op: size_ln
+  weight: -0.85
+- op: turn_ma_n
+  n: 60
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

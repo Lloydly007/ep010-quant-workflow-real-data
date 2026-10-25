@@ -1,0 +1,18 @@
+name: a_r5_s1_10_ps_plus_pe_trap
+type: score
+desc: "在 ps 主口径上加 pe_ttm 小权重（−0.20）作陷阱对照：pe_ttm 有 10.2% 负值，负权会把亏损股排成「最便宜」，本份不指望它更好，专门用来度量亏损股污染对 30 只名单的实际冲击幅度，为第 11 份的三口径配置提供基线。"
+factors:
+- op: size_ln
+  weight: -0.90
+- op: ps_ttm
+  weight: -0.50
+- op: pe_ttm
+  weight: -0.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

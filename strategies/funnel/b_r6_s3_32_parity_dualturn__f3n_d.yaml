@@ -1,0 +1,22 @@
+name: b_r6_s3_32_parity_dualturn__f3n_d
+type: score
+desc: 29 号的双窗版：25% 的换手权重近似对半拆成 120 日 -0.33 与 250 日 -0.32，其余不动。假设在严格平价结构下，双窗带来的方差下降最容易被观察到——其余三条腿不变，任何改善都只能归因于换手腿的两个尺度互补。归一化权重：pb
+  25.0% / ps_ttm 25.0% / size_ln 25.0% / turn_ma_n(120) 12.7% + turn_ma_n(250) 12.3%。
+factors:
+- op: pb
+  weight: -0.65
+- op: ps_ttm
+  weight: -0.65
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 60
+  weight: -0.33
+- op: turn_ma_n
+  n: 250
+  weight: -0.32
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

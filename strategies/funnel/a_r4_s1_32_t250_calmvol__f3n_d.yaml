@@ -1,0 +1,19 @@
+name: a_r4_s1_32_t250_calmvol__f3n_d
+type: score
+desc: 250 日换手 -0.75 叠 250 日波动 -0.40：一年维度的清淡加低波，最接近彻底被遗忘的画像，检验这条最慢的组合是只能改善稳定性还是也能拿到超额。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: vol_n
+  n: 120
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

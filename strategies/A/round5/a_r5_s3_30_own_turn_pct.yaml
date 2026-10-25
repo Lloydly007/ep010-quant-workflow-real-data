@@ -1,0 +1,23 @@
+name: a_r5_s3_30_own_turn_pct
+type: score
+desc: "换手改成跟自己比：ts_pct 250 日套 20 日均换手给 -0.5，pb -0.5、行业内分位 -0.5、size_ln -0.6。假设换手的绝对水平带板块与市值差（小盘与金融天然不同），跟自己过去一年比才反映关注度的相对降温，与绝对换手版的差别只在换手腿的口径。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

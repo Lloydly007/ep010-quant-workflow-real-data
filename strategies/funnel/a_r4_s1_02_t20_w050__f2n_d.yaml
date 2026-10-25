@@ -1,0 +1,16 @@
+name: a_r4_s1_02_t20_w050__f2n_d
+type: score
+desc: 换手窗口仍是 20 日、权重升到 -0.50：与 01 同窗不同预算，检验短窗拥挤度过滤的收益是否随权重单调改善，还是过了 0.5 就只是在重复规模腿的选股结果。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 10
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

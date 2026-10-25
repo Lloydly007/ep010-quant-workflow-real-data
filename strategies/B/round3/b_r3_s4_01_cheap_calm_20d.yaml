@@ -1,0 +1,11 @@
+name: b_r3_s4_01_cheap_calm_20d
+type: score
+desc: "选低PB且近20日波动最低的30只：便宜提供赔率，短期不惊说明没有坏消息在持续发酵，而A股高波股因彩票型偏好被系统性高估（低波异象），负PB把组合锚在已有折价上以等待均值回归。"
+factors:
+- {op: pb, weight: -0.6}
+- {op: vol_n, n: 20, weight: -0.4}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

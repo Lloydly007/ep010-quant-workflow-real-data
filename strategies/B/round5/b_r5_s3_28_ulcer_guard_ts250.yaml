@@ -1,0 +1,20 @@
+name: b_r5_s3_28_ulcer_guard_ts250
+type: score
+desc: "用回撤路径 ulcer_n(250) -0.35 代替波动率做防护：估值分位 -0.8、一年换手 -0.5。溃疡指标刻画的是“长期阴跌的深度”，比标准差更贴近价值股的真实风险形态；假设浅回撤 + 估值谷底的名字修复概率更高。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.8
+- op: turn_ma_n
+  n: 250
+  weight: -0.5
+- op: ulcer_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

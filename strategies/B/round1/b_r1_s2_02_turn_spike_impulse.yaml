@@ -1,0 +1,18 @@
+name: b_r1_s2_02_turn_spike_impulse
+type: rule
+desc: 单日换手突然放大到10%以上（本池中位仅约0.5%，属二十倍级异动）是资金当日主动抢筹的可观测痕迹，这种关注度冲击在情绪驱动下数日内仍有惯性，故买当日换手最猛的10只且只持有5日，换手再放大到15%以上（情绪透支）或-5%止损离场。
+buy:
+- op: turn
+  dir: above
+  threshold: 10
+rank:
+  op: turn
+  order: desc
+sell:
+- op: turn
+  dir: above
+  threshold: 15
+max_hold_days: 5
+stop_loss: 5%
+max_positions: 10
+industry_cap: 0

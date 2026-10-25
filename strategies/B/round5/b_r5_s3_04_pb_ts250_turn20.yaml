@@ -1,0 +1,17 @@
+name: b_r5_s3_04_pb_ts250_turn20
+type: score
+desc: "最紧的关注度确认：一年 PB 分位低位 + 最近一个月（20 日）换手低位。假设抛压按“月”出清，估值折价只有叠加月度无人问津才是真折价；代价是月度窗口易被一次消息面行情污染，波动更高的名字进出更频繁。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

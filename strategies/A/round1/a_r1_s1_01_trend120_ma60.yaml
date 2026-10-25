@@ -1,0 +1,13 @@
+name: a_r1_s1_01_trend120_ma60
+type: rule
+desc: 120日累计涨幅超10%且收盘站上60日线的股票，信息扩散与资金建仓是渐进的，中期动量不会一次走完，趋势延续概率高于均值回归｜按60日动量降序取强者，跌破60日线或满60日离场，8%止损截断趋势反转。
+buy:
+- {op: ret_n, n: 120, dir: above, threshold: 10.0}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: ret_n, n: 60, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 60
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

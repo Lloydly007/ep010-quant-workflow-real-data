@@ -1,0 +1,11 @@
+name: b_r5_s4_16_owncalm120_vol120
+type: score
+desc: "120 日波动在自身 120 日历史中的分位（0.55）配 PB 0.45：半年波动处在自身半年低位，等价于最近半年没有出现新的重估事件。这是低波异象里最保守的一种构造，时间跨度与样本量都最长，噪声最小但反应也最慢，与 14 的短基窗版本互为正交检验。"
+factors:
+- {op: pb, weight: -0.45}
+- {op: ts_pct, n: 120, of: {op: vol_n, n: 120}, weight: -0.55}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

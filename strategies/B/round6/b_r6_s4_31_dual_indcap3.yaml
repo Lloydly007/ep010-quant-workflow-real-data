@@ -1,0 +1,21 @@
+name: b_r6_s4_31_dual_indcap3
+type: score
+desc: 双窗半半 + industry_cap 3：比 30 更紧的行业上限，在 15 个门类、30 只持仓下会真实生效（cap 3 → 至少要 10 个行业）。若 31 明显变差，说明强制分散牺牲了估值集中的收益，终轮不该再加约束；若与 29 接近，说明行业集中本就不是本轴的收益来源。归一化权重：pb 50.0% / ts_pct(pb,250) 25.0% / ts_pct(pb,120) 25.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.25
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 3

@@ -1,0 +1,22 @@
+name: a_r6_s2_34_dual_turn_plus_ts20
+type: score
+desc: "双换手 120/250 各 -0.50 加上一个极短估值端 ts_pct(20, pb) -0.30，构成估值 20 日 + 换手 120/250 的混合尺度：短端估值负责识别「最近一个月被砸下来」的错杀，双换手窗负责确认这只票本来就冷门。与 21 的差别是估值轴从「250/120 的双窗平均」改成「单一极短窗」——如果 34 优于 21，说明估值侧的平滑没有必要，需要的只是一个新鲜的错杀触发器；若明显落后，说明 20 日分位主要是在买下跌动量。归一化权重：size_ln 43.5% / ts_pct(20, pb) 13.0% / turn_ma_n(120) 21.7% / turn_ma_n(250) 21.7%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 20
+  of:
+    op: pb
+  weight: -0.30
+- op: turn_ma_n
+  n: 120
+  weight: -0.50
+- op: turn_ma_n
+  n: 250
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: b_r3_s2_25_quiet250_dual_window
+type: score
+desc: 选近 250 日与近 20 日换手同时低、PB 偏低的小市值股票并按周调仓，理由是长期筹码沉淀叠加当下无人问津，才能排除历史安静但此刻已被热钱盯上的标的。
+factors:
+- op: pb
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.5
+- op: size_ln
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

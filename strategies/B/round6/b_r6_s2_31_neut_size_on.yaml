@@ -1,0 +1,22 @@
+name: b_r6_s2_31_neut_size_on
+type: score
+desc: "对半结构不变，打开 neut_size（先在当日流通市值 5 档内取秩，再做全局截面）：两腿的排序只在同一规模档内比较。这是直接排除「防御腿其实是规模腿的影子」的对照：若 31 与 01 同档，说明防御腿的效果确实独立于规模；若 31 明显掉档，说明低波低溃疡的名字主要靠小市值这一层暴露在赚钱，防御腿的可解释性要降级。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 7.5% / vol_n(250) 7.5%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

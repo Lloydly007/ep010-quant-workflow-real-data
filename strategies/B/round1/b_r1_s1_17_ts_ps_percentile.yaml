@@ -1,0 +1,12 @@
+name: b_r1_s1_17_ts_ps_percentile
+type: rule
+desc: 个股自身PS在过去250个交易日的分位比“截面便宜”更贴近估值均值回归——自身历史低位意味着相对其一贯定价被低估，故在5日均换手低于2%的温和成交期按自身PS分位升序买入、5日均换手回升过5%时兑现
+buy:
+- {op: turn_ma_n, n: 5, dir: below, threshold: 2}
+sell:
+- {op: turn_ma_n, n: 5, dir: above, threshold: 5}
+rank: {op: ts_pct, n: 250, of: {op: ps_ttm}, order: asc}
+max_hold_days: 60
+stop_loss: null
+max_positions: 10
+industry_cap: 0

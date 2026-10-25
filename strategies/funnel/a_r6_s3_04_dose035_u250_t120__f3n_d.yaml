@@ -1,0 +1,20 @@
+name: a_r6_s3_04_dose035_u250_t120__f3n_d
+type: score
+desc: 'ulcer_n(250) -0.35，形成 size 4 : pb 2 : turn 3 : ulcer 1.4 的权重结构：假设一年期回撤路径是最慢也最稳的防御维度，给到三分之一换手腿是「够用但不喧宾夺主」的位置。归一化权重：size_ln
+  38.5% / pb 19.2% / turn_ma_n(120) 28.8% / ulcer_n(250) 13.5%。'
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

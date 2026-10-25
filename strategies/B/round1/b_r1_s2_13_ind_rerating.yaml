@@ -1,0 +1,19 @@
+name: b_r1_s2_13_ind_rerating
+type: rule
+desc: 行业PB中位数抬升是市场给该行业重新定价的证据（景气上行或资产重估），这类行业里流动性好的活跃股最容易承接增量资金，故买行业PB锚最高行业里当日换手超5%的10只，20日均换手跌回1%以下（资金撤离、重估结束）或20日到期离场，8%止损且同行业最多3只。
+buy:
+- op: turn
+  dir: above
+  threshold: 5
+rank:
+  op: ind_median_pb
+  order: desc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: below
+  threshold: 1
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 3

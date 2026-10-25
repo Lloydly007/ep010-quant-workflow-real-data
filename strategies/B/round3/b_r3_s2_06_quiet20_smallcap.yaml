@@ -1,0 +1,16 @@
+name: b_r3_s2_06_quiet20_smallcap
+type: score
+desc: 选小市值、低 PB、近 20 日换手低的股票，理由是小盘的估值折价最深，而换手冷清说明这份折价还没被交易拥挤度抹平。
+factors:
+- op: size_ln
+  weight: -0.65
+- op: pb
+  weight: -0.7
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

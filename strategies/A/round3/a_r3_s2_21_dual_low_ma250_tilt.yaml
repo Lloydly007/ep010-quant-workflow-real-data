@@ -1,0 +1,17 @@
+name: a_r3_s2_21_dual_low_ma250_tilt
+type: score
+desc: 双低之上要求收盘站上250日均线：小盘低换手而价格仍在年线上方，说明冷的是成交量不是趋势，可避开长期下跌通道。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: close_over_ma_n
+  n: 250
+  weight: 0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

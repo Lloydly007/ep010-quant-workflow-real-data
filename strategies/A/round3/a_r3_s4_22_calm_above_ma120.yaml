@@ -1,0 +1,17 @@
+name: a_r3_s4_22_calm_above_ma120
+type: score
+desc: 低波加 120 日均线位置（站得越高越好）；均线位置确认的是平稳上行而非安静阴跌，专门规避低波股里最典型的慢性下跌价值陷阱。
+factors:
+- op: size_ln
+  weight: -1.4
+- op: vol_n
+  n: 60
+  weight: -0.55
+- op: close_over_ma_n
+  n: 120
+  weight: 0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

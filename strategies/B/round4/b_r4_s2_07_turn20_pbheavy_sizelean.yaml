@@ -1,0 +1,16 @@
+name: b_r4_s2_07_turn20_pbheavy_sizelean
+type: score
+desc: 20 日冷清 + 重 pb + -1.20 小盘：三条腿同时偏防御，假设低估值的小盘冷门股是错价最深的一格；估值权重加倍意味着宁可放弃一部分绝对冷清也要保证账面便宜，由此检验三重叠加是否把名单压得过窄。
+factors:
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -1.20
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r1_s2_19_lowvol_value_size_tilt
+type: score
+desc: 低波、低PB、小市值三类溢价同期同向时复合超额最稳，而做行业内排名可避免银行电力霸榜把组合变成单一行业赌注，故在30只池上按月度首日调仓对全池做风格倾斜（池内打分型选股退化，仅作风格倾斜诊断，不做选股能力声明）。
+factors:
+- op: vol_n
+  n: 20
+  weight: -0.4
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.2
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

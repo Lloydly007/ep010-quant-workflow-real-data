@@ -1,0 +1,17 @@
+name: b_r5_s3_11_pb_ts250_turn250_ts_heavy
+type: score
+desc: "抬估值腿、压关注度腿（-1.5 / -0.4）：假设估值时序分位本身已隐含关注度信息（越没人理越可能估值走低），换手只作弱确认，主导权交给“PB 相对自身一年最低”。用于验证估值腿能否单独承担选股。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -1.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

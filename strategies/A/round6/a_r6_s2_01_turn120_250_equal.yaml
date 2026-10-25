@@ -1,0 +1,19 @@
+name: a_r6_s2_01_turn120_250_equal
+type: score
+desc: "多时间尺度平滑的基本盘：季度与年度两个换手窗各 -0.50 等权，与规模（-1.00）、账面估值（-0.50）共处。假设「近一季没人交易」与「近一年没人交易」是同一条被忽视信号的两个噪声观测，等权平均能把单窗的停牌残余、事件后假安静、指数调入调出造成的口径跳变各自压掉一半，从而让清淡度排序更接近真实的结构性冷门，而不是某一次窗口末端的偶然。这是本组所有换手尺度扫描的参照系。归一化权重：size_ln 40.0% / pb 20.0% / turn_ma_n(120) 20.0% / turn_ma_n(250) 20.0%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.50
+- op: turn_ma_n
+  n: 250
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

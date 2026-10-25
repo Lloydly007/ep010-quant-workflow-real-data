@@ -1,0 +1,22 @@
+name: b_r2_s2_12_score_ind_small_cheap
+type: score
+desc: "现象：行业内有小市值 + 行业内便宜（PS 分位低）的票，是“同行里最不起眼且最便宜”的组合；第 1 轮有 5 份把 ind_median_pb/ind_median_ps 当“绝对中位数锚”排序，等于假设所有行业的估值中枢可比。为什么在 A 股该有超额：A 股行业间估值中枢差异极大（银行常 0.6 倍 PB、部分成长行业 5 倍以上），用行业内分位而非绝对中位数，才能把“便宜”定义成相对同行的折价；行业内小市值再叠一层流动性折价，两个折价同时收敛时弹性最大。怎么进出：月度首个交易日按 score = -0.5×市值行业内分位 -0.3×PS 行业内分位 -0.2×20 日均换手截面分位 排序取前 30，持有到下次调仓。相对第 1 轮失败模式改了什么：规模与估值都改成行业内分位（第 1 轮是绝对 size_ln 与行业绝对中位数），且把换手权重压到 0.2 让“便宜”和“小”分担主导权——第 1 轮把估值、规模、换手拆成三组独立假设、谁都没跑出来，本组检验它们在同一打分里的互补性。"
+factors:
+- op: ind_rank
+  of:
+    op: size_ln
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.3
+- op: xsec_pct
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.2
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: false
+neut_size: false
+industry_cap: 0

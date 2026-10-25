@@ -1,0 +1,20 @@
+name: b_r1_s2_09_small_quiet_atr
+type: rule
+desc: 60日ATR占收盘不足2%的小盘股是浮筹极少、持仓成本极低的安静型小票，这类票一旦有资金介入弹性远大于大盘，故在长期窄幅的票里按流通市值升序取最小的10只，持有40日或20日振幅重新放大到5%以上（波动扩张已发生）离场，8%止损。
+buy:
+- op: atr_close_n
+  n: 60
+  dir: below
+  threshold: 2
+rank:
+  op: size_ln
+  order: asc
+sell:
+- op: atr_close_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 40
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

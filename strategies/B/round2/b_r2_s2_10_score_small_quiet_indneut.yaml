@@ -1,0 +1,18 @@
+name: b_r2_s2_10_score_small_quiet_indneut
+type: score
+desc: "现象：第 1 轮选出的“小盘冷门”组合没有任何一份检验过行业口径的差异，很可能整体压在少数几个行业（银行/地产/钢铁小票），超额其实来自行业赌注。为什么在 A 股该有超额：行业轮动对 A 股收益的解释力强于个股 alpha，行业内的截面秩把两个因子都变成“在同行里最小、在同行里最冷”，行业暴露被剥掉，超额来源变成纯粹的组内相对错价。怎么进出：月度首个交易日按 score = -0.5×市值行业内分位 -0.5×20 日均换手行业内分位 排序取前 30，neut_industry=true 在证监会门类（全池 78 组，空行业自成一组）内做截面秩；持有到下次调仓。相对第 1 轮失败模式改了什么：第 1 轮的中性化只出现在 2 份 score 型里（s2_19 行业内、s2_20 市值档内），且都是估值/低波倾斜，从未用在“小市值+低换手”这条主线上；本组把它放到主线上，检验“被忽视”是不是行业内的现象——若 10 弱于 09，说明第 1 轮的超额主要来自行业集中。"
+factors:
+- op: xsec_pct
+  of:
+    op: size_ln
+  weight: -0.5
+- op: xsec_pct
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

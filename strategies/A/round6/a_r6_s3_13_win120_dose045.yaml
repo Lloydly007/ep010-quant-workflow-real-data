@@ -1,0 +1,19 @@
+name: a_r6_s3_13_win120_dose045
+type: score
+desc: "ulcer_n(120) -0.45：半年窗口中高剂量，可与 06（250 日同权重）做纯窗口对照，隔离「窗口」与「剂量」两个自由度。归一化权重：size_ln 37.0% / pb 18.5% / turn_ma_n(120) 27.8% / ulcer_n(120) 16.7%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

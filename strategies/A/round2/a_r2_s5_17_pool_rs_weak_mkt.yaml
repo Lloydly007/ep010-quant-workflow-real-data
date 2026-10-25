@@ -1,0 +1,15 @@
+name: a_r2_s5_17_pool_rs_weak_mkt
+type: rule
+desc: 现象：300ETF 在 250 日线下方时全池大部分股票都在跌，绝对动量信号几乎全灭；此时仍站上 120 日线、60 日涨幅为正的股票是稀缺的确定性，存量资金会持续向它们集中。为什么在 A 股该有超额：熊市里资金抱团效应强，弱市中能维持相对强度的股票获得超额流动性与机构增配；第 1 轮在弱市里做的是超跌反弹，本配置把弱市状态用于相对强度的多头——这是明确的反向假设，与第 1 轮相反方向使用同一状态变量。怎么进出：300ETF 在 250 日线下方、个股站上 120 日线与 60 日线且 60 日涨幅超 5% 者，按 60 日涨幅的全池截面分位降序取前 10；跌破 120 日线离场，20 日上限、10% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮的 ETF 状态只用来开关能不能买或做超跌反弹；本配置把市场状态与相对强度组合成条件——弱市才买相对强者，强市不追。
+buy:
+- {op: etf_above_ma_n, n: 250, dir: below, threshold: 0.5}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: ret_n, n: 60, dir: above, threshold: 5}
+rank: {op: xsec_pct, of: {op: ret_n, n: 60}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 120, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 10%
+max_positions: 10
+industry_cap: 5

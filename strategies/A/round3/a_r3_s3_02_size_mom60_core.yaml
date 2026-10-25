@@ -1,0 +1,14 @@
+name: a_r3_s3_02_size_mom60_core
+type: score
+desc: 把小盘内的动量窗口从20日拉长到60日：20日涨幅被周内噪声主导，季度动量更能代表资金持续建仓的方向，规模负权配60日动量可降低假信号。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ret_n
+  n: 60
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

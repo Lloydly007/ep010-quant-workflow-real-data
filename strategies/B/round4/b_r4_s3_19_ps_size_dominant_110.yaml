@@ -1,0 +1,16 @@
+name: b_r4_s3_19_ps_size_dominant_110
+type: score
+desc: "规模主导档：size −1.10 已超过 ps 与 turn 之和的可见权重，估值只做同风格内的排序。假设纯小盘在 2014-2022 的池子里本身就有超额，ps 口径的增量应被压到很小；若本份与 18 超额相近，说明 ps 的作用主要是'别买到贵的'，而不是'一定要买便宜的'，这会直接改变下一轮把估值腿继续加厚的方向。"
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: size_ln
+  weight: -1.1
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: a_r4_s3_22_dual_plus_ps_120_60
+type: score
+desc: "双低 + 低 PS（收入口径）：用 PS 而非 PB 以避开重资产行业账面值的行业性偏差，安静+稳负责“没人发现”，低 PS 负责“确实不贵”，两腿权重 0.75/0.6 大于估值 0.45。"
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.6
+- op: ps_ttm
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

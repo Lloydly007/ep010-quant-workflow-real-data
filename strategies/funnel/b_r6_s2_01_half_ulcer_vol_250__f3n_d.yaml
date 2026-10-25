@@ -1,0 +1,26 @@
+name: b_r6_s2_01_half_ulcer_vol_250__f3n_d
+type: score
+desc: 母本 b_r5_s2_30 的防御腿是 ulcer_n(250) 单腿 −0.45；本份把它严格一分为二：ulcer_n(250) 与 vol_n(250)
+  各 −0.225，账面其余三腿（pb −0.60 / size_ln −1.20 / turn_ma_n(120) −0.75）与母本逐位一致，窗口也沿用母本自己的
+  250 日。这是整组的坐标原点——同窗口、同预算、对半。若 30 只名单与母本高度重叠，说明一年尺度上「回撤挖得多深」与「日收益震得多凶」在行业中性后排序同源，对半拆分只是稳健性对冲；若名单明显换手，说明两条腿在
+  250 日上惩罚的已不是同一批股票，后面的比值梯度与窗口错配才有读点。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120)
+  25.0% / ulcer_n(250) 7.5% / vol_n(250) 7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: b_r4_s1_07_ratio_083
+type: score
+desc: 估值接近换手但未反超：pb -0.50 / turn_ma_n(120) -0.60（0.833:1，估值 45%），假设 120 日换手在行业中性后只剩流动性/情绪维度，而 PB 提供资产端独立信息，两者接近等权时组合分散度最高，是低换手偏好的温和版本。
+factors:
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,12 @@
+name: b_r5_s4_25_small_vol20
+type: score
+desc: "PB 0.35 + 小市值 0.35 + 20 日低波 0.3：小盘的低波异象通常更强（覆盖少、套利不足），但要靠短窗低波把「小且正在被砸」的名字剔除，否则小市值腿会放大尾部风险。这是本组唯一把规模与短窗情绪同时压上去的格。"
+factors:
+- {op: pb, weight: -0.35}
+- {op: size_ln, weight: -0.35}
+- {op: vol_n, n: 20, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

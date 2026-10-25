@@ -1,0 +1,12 @@
+name: b_r5_s4_32_ma120_confirm_vol60
+type: score
+desc: "在 PB 0.4、60 日低波 0.35 之上加「站上 120 日均线」正权 0.25：低波可能来自阴跌，价格站上半年线才说明抛压已经出清。用趋势确认把「跌不动」与「还在跌」区分开，这是本组唯一引入价格位置信息的构造。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 60, weight: -0.35}
+- {op: close_over_ma_n, n: 120, weight: 0.25}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

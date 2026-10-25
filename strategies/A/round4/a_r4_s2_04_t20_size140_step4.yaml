@@ -1,0 +1,14 @@
+name: a_r4_s2_04_t20_size140_step4
+type: score
+desc: "规模 -1.40（占 65.1%），20 日窗口第 4 档：每加一档规模权重换来的超额边际是否已开始递减，是规模倾斜曲线斜率的中枢估计点。"
+factors:
+- op: size_ln
+  weight: -1.4
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

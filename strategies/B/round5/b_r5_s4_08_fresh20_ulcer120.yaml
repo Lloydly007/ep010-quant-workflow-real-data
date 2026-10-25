@@ -1,0 +1,12 @@
+name: b_r5_s4_08_fresh20_ulcer120
+type: score
+desc: "20 日低波 0.35 叠加 120 日溃疡 0.25、PB 0.4：最近一个月安静只是必要条件，还要半年内没挖过深坑——两条不同期限的路径证据同时成立，才叫真的跌不动。溃疡权重刻意低于波动，检验「历史上没坑」是否只是「最近安静」的滞后影子。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 20, weight: -0.35}
+- {op: ulcer_n, n: 120, weight: -0.25}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

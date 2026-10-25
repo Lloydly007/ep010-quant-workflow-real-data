@@ -1,0 +1,22 @@
+name: b_r6_s1_06_split_1p77to1__f3n_d
+type: score
+desc: 比值 1.77:1（120 日 -0.575 / 250 日 -0.325）：短窗 28.0%，长窗 15.9%。这一档专测“长窗是否被稀释成噪声”：0.325
+  的权重在 1,545 只池里已经很难单凭自身把名单拉开，实际效果更接近“给短窗名单加一个轻微的长窗偏好”。若这一带表现平稳而 08/09 开始分化，说明 1.7~2.0
+  之间存在一个“长窗仍有边际、短窗尚未过拟合”的过渡带，可以为下一轮定参提供落点。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120)
+  28.0% / turn_ma_n(250) 15.9%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.575
+- op: turn_ma_n
+  n: 120
+  weight: -0.325
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

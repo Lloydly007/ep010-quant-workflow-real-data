@@ -1,0 +1,20 @@
+name: b_r5_s2_25_xsec_pb_1to2__f2n_u
+type: score
+desc: 把估值腿换成 pb 的当日截面分位（xsec_pct of pb，-0.60）配 size_ln -1.20（1:2）：截面分位对极端值不敏感，与 05
+  只差估值腿的变换方式。检验“便宜”从原值改成当日排名后，规模腿是否还同样有力——若 25 与 05 接近，说明比值轴不依赖 PB 的绝对水平。归一化权重：xsec_pct(pb)
+  23.5% / size_ln 47.1% / turn_ma_n(120) 29.4%。
+factors:
+- op: xsec_pct
+  of:
+    op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

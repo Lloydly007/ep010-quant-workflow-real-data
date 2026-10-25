@@ -1,0 +1,14 @@
+name: a_r2_s2_10_gate_mom_decay_exit
+type: rule
+desc: 现象：第1轮的卖出几乎全是“跌破均线”，而均线破位时价格已从高点回撤一大段，回撤因此累积。为何A股有超额：A股趋势股的领先信号是短期动量衰减而不是价格破位，5日跌幅超1%往往出现在均线破位之前，先离场能保住大部分趋势利润，把回撤压在止损触发之前。进出：ETF60日线上方、站上60日线、60日涨幅超5%时买入，按60日涨幅最温和者优先；卖出条件是5日跌幅超1%（动量衰减），而不是等均线破位，最长40日、8%止损兜底。相对第1轮改动：把退出触发从滞后的价格破位换成领先的动量衰减，直接针对第1轮回撤中位-89.5%的问题。
+buy:
+- {op: etf_above_ma_n, n: 60, dir: above, threshold: 0.5}
+- {op: ret_n, n: 60, dir: above, threshold: 5}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: ret_n, n: 60, order: asc}
+sell:
+- {op: ret_n, n: 5, dir: below, threshold: -1}
+max_hold_days: 40
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

@@ -1,0 +1,16 @@
+name: b_r3_s2_05_quiet20_ps_lens
+type: score
+desc: 选 PB 与 PS 同时低、近 20 日换手冷清的股票，理由是营收与账面两条口径同时便宜，才能排除资产重但收入差的伪低估。
+factors:
+- op: pb
+  weight: -0.6
+- op: ps_ttm
+  weight: -0.6
+- op: turn_ma_n
+  n: 20
+  weight: -0.9
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

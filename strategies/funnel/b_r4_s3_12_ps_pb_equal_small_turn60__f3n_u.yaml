@@ -1,0 +1,20 @@
+name: b_r4_s3_12_ps_pb_equal_small_turn60__f3n_u
+type: score
+desc: 等权双臂 + 小盘倾斜 + 60 日换手：ps −0.40 / pb −0.40 / size −0.60 / turn 60 −0.70，是本组'双臂
+  + 小盘 + 中短窗口'的组合点。假设在 1,545 只池里，双臂估值只有叠加在小盘暴露上才有超额，中盘以上两种口径都已被充分定价；与 11 相比多了规模腿、窗口缩短到
+  60 日，两个变化都指向'更小更快'。
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 120
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

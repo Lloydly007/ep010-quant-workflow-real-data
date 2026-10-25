@@ -1,0 +1,12 @@
+name: b_r1_s1_11_ulcer_path_value
+type: rule
+desc: 250日溃疡指数低于5%的个股长期回撤路径平滑，是缺失财务数据时最接近质量代理的度量，叠加低PB即“便宜且没受伤”，故按PB升序买入、20日溃疡破10%视为质量破坏离场
+buy:
+- {op: ulcer_n, n: 250, dir: below, threshold: 5}
+sell:
+- {op: ulcer_n, n: 20, dir: above, threshold: 10}
+rank: {op: pb, order: asc}
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

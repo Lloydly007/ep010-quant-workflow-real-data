@@ -1,0 +1,24 @@
+name: a_r5_s3_07_xsec_ind_layers
+type: score
+desc: "三层参照系同时进：全市场截面分位 xsec_pct(pb) -0.4、行业内分位 -0.45、PB 原值 -0.35，配 size_ln -0.5 与 250 日换手 -0.45。假设三种便宜口径各自带噪声（原值受行业属性、行业分位受小样本、截面分位受全池风格），只有三处都便宜才排前，年窗换手确认是长期被冷落而非刚被砸下来。"
+factors:
+- op: size_ln
+  weight: -0.5
+- op: pb
+  weight: -0.35
+- op: xsec_pct
+  of:
+    op: pb
+  weight: -0.4
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

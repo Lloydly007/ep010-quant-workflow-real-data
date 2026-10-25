@@ -1,0 +1,16 @@
+name: b_r4_s3_02_ps_quiet120_size_core
+type: score
+desc: "ps 口径的半年窗口档：与 01 唯一差别是换手窗口 250→120，规模与估值权重完全不动，用来测窗口轴在营收口径上的斜率。假设半年换手比年度换手更快捕捉到关注度的回流与退潮，错误定价被抹平的速度也更贴近实际抛压，因此 ps 配 120 日应比配 250 日更早换进冷落名字。"
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

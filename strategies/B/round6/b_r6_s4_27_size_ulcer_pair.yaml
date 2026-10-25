@@ -1,0 +1,26 @@
+name: b_r6_s4_27_size_ulcer_pair
+type: score
+desc: 半半轴心 + 小市值 10% + 一年 ulcer 10%：把规模与回撤路径各给一点点，检验两个弱腿能否互补成一条有效防御。若与 26 接近，说明双弱腿的收益来自「分散」而不是具体因子。归一化权重：pb 40.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 20.0% / size_ln 10.0% / ulcer_n(250) 10.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+- op: size_ln
+  weight: -0.1
+- op: ulcer_n
+  n: 250
+  weight: -0.1
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

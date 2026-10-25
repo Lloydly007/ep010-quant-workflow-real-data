@@ -1,0 +1,19 @@
+name: b_r6_s1_25_lightsize_2to1
+type: score
+desc: "第三条腿扰动：分割 2:1 不变，把 size_ln 从 -0.65 砍到 -0.30（120 日 -0.60 / 250 日 -0.30），估值 29.4%、换手短窗 35.3% 双双成为主力。核心怀疑是：换手与市值天然负相关（小盘换手低、流动性差），所以“加权重到短窗”可能只是“加权重到小盘”的另一种写法。把规模腿压到几乎不参与，若 25 与 07 表现接近，说明 07 的效果并非市值代理，换手项有独立信息；若 25 明显变差，则 07 的改善主要来自规模暴露的重新分配。归一化权重：pb 29.4% / size_ln 17.6% / turn_ma_n(120) 35.3% / turn_ma_n(250) 17.6%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.30
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+- op: turn_ma_n
+  n: 250
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,13 @@
+name: a_r1_s3_13_close_high_vol
+type: rule
+desc: 当日成交量达到10日均量1.5倍以上、且收盘价落在日内振幅80%以上的位置（不是冲高回落），说明买盘完全控制了局面、承接有力，这种“放量强势收盘”的日内结构在随后一两天仍会延续；3日跌幅超过3%说明动能已断即离场，3日持有、8%止损。
+buy:
+  - {op: close_pos_range, dir: above, threshold: 0.8}
+  - {op: vol_ratio_n, n: 10, dir: above, threshold: 1.5}
+sell:
+  - {op: ret_n, n: 3, dir: below, threshold: -3}
+rank: {op: ret_n, n: 5, order: desc}
+max_hold_days: 3
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

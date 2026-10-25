@@ -1,0 +1,21 @@
+name: b_r3_s3_14_ps_xsec_small_lean__f3n_d
+type: score
+desc: 用 PS 的截面分位而非原值消除营收规模带来的量纲差异，与 3:1 的小市值主导权重、20 日低换手合成，检验收入端便宜加小加冷是否比账面便宜更稳：PS
+  不受减值与净资产波动污染，对小盘成长股的收入预期错位更敏感。
+factors:
+- op: pb
+  weight: -0.25
+- op: size_ln
+  weight: -0.75
+- op: xsec_pct
+  of:
+    op: ps_ttm
+  weight: -0.35
+- op: turn_ma_n
+  n: 10
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

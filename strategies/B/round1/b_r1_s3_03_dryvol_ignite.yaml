@@ -1,0 +1,24 @@
+name: b_r1_s3_03_dryvol_ignite
+type: rule
+desc: 60日均换手不足1%（长期地量、筹码沉淀）的股票当日换手升破2%、相对自身地量水平翻倍以上，是无人交易之后第一笔增量资金进场的标志，地量股对增量资金的价格弹性最大；按60日均换手升序取筹码最干净的10只、持有10日，20日波动放大破5%（转为投机）离场，止损8%。
+buy:
+- op: turn
+  dir: above
+  threshold: 2.0
+- op: turn_ma_n
+  n: 60
+  dir: below
+  threshold: 1.0
+rank:
+  op: turn_ma_n
+  n: 60
+  order: asc
+sell:
+- op: vol_n
+  n: 20
+  dir: above
+  threshold: 5.0
+max_hold_days: 10
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r5_s2_15_annual_turn_1to1
+type: score
+desc: "年度窗口上的 1:1（pb -0.60 / size_ln -0.60 / turn_ma_n(250) -0.75）：250 日换手刻画的是持股结构稳定性而非近期关注度，与 01、10 构成三窗口同比值对照，检验“一年成交清淡”是否本就隐含了小盘与低估值，从而让等权结构更稳。归一化权重：pb 30.8% / size_ln 30.8% / turn_ma_n(250) 38.5%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -0.60
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

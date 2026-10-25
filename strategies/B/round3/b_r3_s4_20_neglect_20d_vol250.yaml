@@ -1,0 +1,12 @@
+name: b_r3_s4_20_neglect_20d_vol250
+type: score
+desc: "250日低波0.3、20日均换手负权0.3、PB0.4，周度调仓：用长窗口定质地、当下换手定关注度，年度安静但最近一个月突然没人交易往往是关注度刚见底的时点，周度调仓正好咬住这个冷却拐点。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 250, weight: -0.3}
+- {op: turn_ma_n, n: 20, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

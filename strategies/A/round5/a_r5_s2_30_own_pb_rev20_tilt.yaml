@@ -1,0 +1,19 @@
+name: a_r5_s2_30_own_pb_rev20_tilt
+type: score
+desc: "加 ret_n(20) -0.35 的短期反转：假设估值便宜且刚跌过的名字在周度再平衡下有更强的均值回复，测反转腿与估值腿是否叠加而非重复。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: ret_n
+  n: 20
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

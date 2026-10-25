@@ -1,0 +1,17 @@
+name: a_r4_s4_14_mom_weight_tiny
+type: score
+desc: "同一窗口格里把动量压到 +0.15（size_ln -1.25、turn_ma_n(120) -0.75）：接近关掉动量的对照组，为“小盘里加动量是否加分”划一条零附近的基线。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.15
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

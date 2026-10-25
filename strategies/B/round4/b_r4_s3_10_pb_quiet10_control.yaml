@@ -1,0 +1,16 @@
+name: b_r4_s3_10_pb_quiet10_control
+type: score
+desc: "pb 对照臂的双周窗口档：与 05 对齐，补全 ps/pb 在 250/120/60/20/10 五个窗口上的完整配对。五对配置构成本组的口径对照矩阵，任何一份的差异都能归因到估值字段而不是权重或窗口；这一档单看本身也是'最快的账面便宜'假设。"
+factors:
+- op: pb
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 10
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

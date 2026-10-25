@@ -1,0 +1,29 @@
+name: a_r1_s2_20_platform_volume_accum
+type: rule
+desc: 价格已贴近60日高点（5%以内）但20日涨幅不到5%，同时近5日量比超1.5倍，是高位横盘中的放量换手吸筹形态——涨得不多却持续放量说明筹码在平台区被收集；按量比取前10，10日期满或跌破20日线离场，-5%止损。
+buy:
+- op: vol_ratio_n
+  n: 5
+  dir: above
+  threshold: 1.5
+- op: dist_high_n
+  n: 60
+  dir: above
+  threshold: -5
+- op: ret_n
+  n: 20
+  dir: below
+  threshold: 5
+rank:
+  op: vol_ratio_n
+  n: 5
+  order: desc
+sell:
+- op: close_over_ma_n
+  n: 20
+  dir: below
+  threshold: 1.0
+max_hold_days: 10
+stop_loss: 5%
+max_positions: 10
+industry_cap: 0

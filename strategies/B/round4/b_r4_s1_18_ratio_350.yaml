@@ -1,0 +1,14 @@
+name: b_r4_s1_18_ratio_350
+type: score
+desc: 估值近满档、换手贴地：pb -1.05 / turn_ma_n(120) -0.30（3.5:1，PB 78%），假设行业中性化后 PB 已能独立完成选股，换手保留 0.30 只为挡住极端换手个股并让配置保持可移动窗口参数，是“准纯估值 + 最小换手约束”的极限形态。
+factors:
+- op: pb
+  weight: -1.05
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

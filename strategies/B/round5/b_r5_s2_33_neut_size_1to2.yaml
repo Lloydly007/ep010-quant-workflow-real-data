@@ -1,0 +1,16 @@
+name: b_r5_s2_33_neut_size_1to2
+type: score
+desc: "05 的完全复制，只把 neut_size 改为 true：规模腿 -1.20 改成在市值 5 档内做秩，跨档的市值差异被抹掉，只剩档内相对大小。这是整条比值轴的安慰剂检验——若 1:2 的超额在 33 上明显消失，说明 05 的收益主要来自纯市值暴露，估值腿只是包装；若保留大半，说明估值折价本身可交易。归一化权重：pb 23.5% / size_ln 47.1% / turn_ma_n(120) 29.4%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

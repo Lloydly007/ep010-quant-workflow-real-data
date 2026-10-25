@@ -1,0 +1,18 @@
+name: a_r5_s1_09_pb_leads_ps_check__f3n_u
+type: score
+desc: 反向对照：pb 主导（−0.80）、ps 只 −0.30。这是估值轴内部的安慰剂检验——若 ps 组的名单与 pb 主导组高度重叠，则「改用营收口径」不构成新信息；若明显不同，说明两者确实在挑不同的便宜。
+factors:
+- op: size_ln
+  weight: -0.9
+- op: ps_ttm
+  weight: -0.3
+- op: pb
+  weight: -0.8
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

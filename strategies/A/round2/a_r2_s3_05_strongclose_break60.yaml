@@ -1,0 +1,14 @@
+name: a_r2_s3_05_strongclose_break60
+type: rule
+desc: "现象：假突破最直接的可观测特征是当日冲高回落（长上影、收盘落回振幅下半区），而第1轮突破组只看收盘价是否越过阈值，从不看收盘在当日振幅里的位置。为什么该有超额：A股T+1，引擎在信号日次日开盘成交，突破日收盘位置决定了次日开盘的承接与浮盈盘行为；收在振幅80%以上说明尾盘买盘强、次日不易低开回落。怎么进出：60日新高、收盘位置>0.8、换手<8%才买；任一日收盘落回振幅下半区（<0.5，即冲高回落）立刻离场，这是次日不回落在本引擎里可执行的代理；持满10日、-8%止损；候选按60日涨幅降序取趋势最强10只。相对第1轮：新增日内结构维度，并把卖出从只看均线改成对日内结构崩塌做出反应。"
+buy:
+- {op: break_high_n, n: 60, dir: above, threshold: 0.5}
+- {op: close_pos_range, dir: above, threshold: 0.8}
+- {op: turn, dir: below, threshold: 8}
+rank: {op: ret_n, n: 60, order: desc}
+sell:
+- {op: close_pos_range, dir: below, threshold: 0.5}
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

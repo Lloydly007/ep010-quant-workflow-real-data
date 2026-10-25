@@ -1,0 +1,20 @@
+name: a_r6_s3_18_turn60_ulcer250_dose050__f2n_u
+type: score
+desc: 短换手（turn_ma_n(60) -0.65）+ 半剂量长回撤（ulcer_n(250) -0.50）：防御腿加到 0.50 但换手只记近两个月，检验回撤腿能否顶住短换手带来的噪声与高换手调仓。归一化权重：size_ln
+  35.3% / pb 19.6% / turn_ma_n(60) 25.5% / ulcer_n(250) 19.6%。
+factors:
+- op: size_ln
+  weight: -0.9
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.65
+- op: ulcer_n
+  n: 250
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

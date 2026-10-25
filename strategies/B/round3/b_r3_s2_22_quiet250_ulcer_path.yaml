@@ -1,0 +1,17 @@
+name: b_r3_s2_22_quiet250_ulcer_path
+type: score
+desc: 选低 PB、近 250 日换手低、近 120 日溃疡指数小的股票，理由是长期没人交易且下跌路径平缓，说明筹码稳定、没有套牢盘集中出逃的压力。
+factors:
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.65
+- op: ulcer_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

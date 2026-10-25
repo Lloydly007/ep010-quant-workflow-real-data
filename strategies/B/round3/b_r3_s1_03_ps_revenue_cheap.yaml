@@ -1,0 +1,18 @@
+name: b_r3_s1_03_ps_revenue_cheap
+type: score
+desc: 以 PS 为主的营收端视角给满权重，营收比利润更少被会计口径、杠杆与周期扰动，低 PS 在轻资产与成长型公司里才是真便宜，PB 与 PE 只作辅助，再要求 60 日低波以避开营收正在崩塌的样本，超额来自市场系统性高估销售端稳定但利润暂时受压的公司。
+factors:
+- op: ps_ttm
+  weight: -0.60
+- op: pb
+  weight: -0.25
+- op: pe_ttm
+  weight: -0.15
+- op: vol_n
+  n: 60
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

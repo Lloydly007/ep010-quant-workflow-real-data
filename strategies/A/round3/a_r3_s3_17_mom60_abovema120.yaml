@@ -1,0 +1,17 @@
+name: a_r3_s3_17_mom60_abovema120
+type: score
+desc: 60日动量正权再加收盘价相对120日均线的正权：前者是涨幅、后者是趋势位置，只有站上半年线之上的动量才是多头结构，两者叠加可筛掉下跌中继里的强势反弹。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ret_n
+  n: 60
+  weight: 0.75
+- op: close_over_ma_n
+  n: 120
+  weight: 0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

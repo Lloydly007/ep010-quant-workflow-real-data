@@ -1,0 +1,21 @@
+name: b_r6_s1_23_budget_120_1to2__f2n_d
+type: score
+desc: 预算轴镜像中档：分割 1:2，预算 1.20（250 日 -0.80 / 120 日 -0.40），换手占 51.0%。若长窗确实是结构性情形的载体，那么“重预算
+  + 长窗主导”应是本组信号最强的形态之一，但它同时把组合推向“长期冷门的小盘低 PB”，与价值陷阱重叠最深。这一档与 20 严格镜像，两者并列即可分离“方向效应”与“预算效应”，也是冻结前必须确认“不是单靠极端冷门股”的关键对照。归一化权重：pb
+  21.3% / size_ln 27.7% / turn_ma_n(120) 17.0% / turn_ma_n(250) 34.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 60
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.8
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

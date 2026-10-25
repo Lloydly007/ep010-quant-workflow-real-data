@@ -1,0 +1,17 @@
+name: a_r3_s2_18_dual_low_ulcer120
+type: score
+desc: 用溃疡指数替代波动率度量路径伤害，压低深回撤小盘，避免把“已经跌烂”当成“便宜”，目标是改善超额稳定性而不是幅度。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

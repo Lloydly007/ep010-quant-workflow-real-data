@@ -1,0 +1,16 @@
+name: b_r4_s2_17_turn120_pblight_sizeweak
+type: score
+desc: 半年换手（120 日）× pb -0.40 × 规模 -0.30：半年的平均换手接近持股结构的稳定度量，比单月换手更能代表长期无人问津；规模权重压到最低，让这个中期冷清信号单独承压。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

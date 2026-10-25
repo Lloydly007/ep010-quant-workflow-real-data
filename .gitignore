@@ -1,0 +1,44 @@
+# Local study commits retain configurations, notes, ledger, reports and manifests.
+# This file also protects a standalone copy made outside the public repository.
+.venv/
+.env
+.env.*
+.zcode/
+OPEN_SEALED
+cache/
+_fetch_staging/
+_smoke/
+setup_checks/
+perf_corpus*/
+data/raw/
+data/sealed/
+data/_fetch_state.json
+*.parquet
+*.parquet.*
+__pycache__/
+*.pyc
+*.lock
+*.tmp
+.DS_Store
+Thumbs.db
+~$*
+
+# 复刻补充说明（与原手册的差异）：reports/runs/ 下是每次回测的日收益与成交明细，
+# 本次合成数据跑完约 537 个目录 / 223MB。它们留在磁盘上供追溯（台账 note 列指向
+# 目录名），但不进 git：真实研究里这类产物应由外部对象存储归档，而不是塞进仓库。
+reports/runs/
+data/funnel_layers.json.tmp
+# ---- 可确定性重生成的配置（种子 + gen-monkey 即可重建，不必进仓库）
+strategies/random/
+strategies/monkey_farm/
+# ---- 一次性调试产物
+strategies/_orig067/
+strategies/_sens3/
+strategies/_regress*/
+strategies/_v1_rule/
+data/shard*/
+data/universe_*.txt
+reports/_*.log
+reports/_*.txt
+reports/_*.err
+reports/_*.json

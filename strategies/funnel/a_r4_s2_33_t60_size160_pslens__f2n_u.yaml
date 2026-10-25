@@ -1,0 +1,16 @@
+name: a_r4_s2_33_t60_size160_pslens__f2n_u
+type: score
+desc: 60 日单换手窗口、规模 -1.60 配 PS -0.60 的收入端便宜约束（规模占 54.2%）：PB 看资产、PS 看营收，检验规模倾斜与营收便宜是否指向同一批小盘。
+factors:
+- op: size_ln
+  weight: -1.6
+- op: ps_ttm
+  weight: -0.6
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

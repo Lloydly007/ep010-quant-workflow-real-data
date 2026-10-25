@@ -1,0 +1,21 @@
+name: a_r1_s2_07_panic_streakdown
+type: rule
+desc: 连续下跌3天以上后当日收盘回到日内振幅上方80%，代表恐慌抛压被日内买盘吸收，3至5日的超跌反弹胜率高于趋势继续下行；按连跌天数排序取值，连涨3天以上即止盈，5日期满或-5%止损。
+buy:
+- op: streak_down
+  dir: above
+  threshold: 3
+- op: close_pos_range
+  dir: above
+  threshold: 0.8
+rank:
+  op: streak_down
+  order: desc
+sell:
+- op: streak_up
+  dir: above
+  threshold: 3
+max_hold_days: 5
+stop_loss: 5%
+max_positions: 10
+industry_cap: 0

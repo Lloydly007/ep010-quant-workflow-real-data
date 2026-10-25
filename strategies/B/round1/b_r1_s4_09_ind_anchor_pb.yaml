@@ -1,0 +1,17 @@
+name: b_r1_s4_09_ind_anchor_pb
+type: rule
+desc: 行业PB中位数处于全市场最低档，说明该行业被整体抛弃、系统性风险已释放，行业内个股存在行业级均值回复→买入120日均换手低于5%且所属行业PB锚最低的票，持有60日、亏10%离场，同行业最多3只。
+buy:
+- op: turn_ma_n
+  n: 120
+  dir: below
+  threshold: 5.0
+rank:
+  op: xsec_pct
+  of:
+    op: ind_median_pb
+  order: asc
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 3

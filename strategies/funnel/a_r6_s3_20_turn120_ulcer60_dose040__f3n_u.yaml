@@ -1,0 +1,20 @@
+name: a_r6_s3_20_turn120_ulcer60_dose040__f3n_u
+type: score
+desc: 换手中窗（turn_ma_n(120) -0.70）+ 回撤短窗（ulcer_n(60) -0.40）：让「结构冷清」长期有效、让「近期深坑」快速反应，等价于给回撤腿一个更接近止损的读数。归一化权重：size_ln
+  36.0% / pb 20.0% / turn_ma_n(120) 28.0% / ulcer_n(60) 16.0%。
+factors:
+- op: size_ln
+  weight: -0.9
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.7
+- op: ulcer_n
+  n: 120
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

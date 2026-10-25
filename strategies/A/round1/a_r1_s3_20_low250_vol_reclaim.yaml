@@ -1,0 +1,14 @@
+name: a_r1_s3_20_low250_vol_reclaim
+type: rule
+desc: 股价贴近250日低点（距低点不足5%）却在20日量比上放大到2倍以上、并且当日收在日内上半区，构成“长期无量阴跌→首次放量承接”的反转信号，长跌之后的放量通常意味着筹码换手完成；反弹离开低点15%以上即了结，20日持有、10%止损。
+buy:
+  - {op: dist_low_n, n: 250, dir: below, threshold: 5}
+  - {op: vol_ratio_n, n: 20, dir: above, threshold: 2.0}
+  - {op: close_pos_range, dir: above, threshold: 0.5}
+sell:
+  - {op: dist_low_n, n: 250, dir: above, threshold: 15}
+rank: {op: vol_ratio_n, n: 20, order: desc}
+max_hold_days: 20
+stop_loss: 10%
+max_positions: 10
+industry_cap: 3

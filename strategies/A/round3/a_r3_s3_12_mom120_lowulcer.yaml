@@ -1,0 +1,17 @@
+name: a_r3_s3_12_mom120_lowulcer
+type: score
+desc: 120日动量配120日溃疡指数负权：溃疡指数衡量回撤深度而非波动幅度，负权等于要求涨得稳、回撤浅，把靠单日跳空堆出的动量排除，得到路径质量高的动量组合。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: ret_n
+  n: 120
+  weight: 1.0
+- op: ulcer_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

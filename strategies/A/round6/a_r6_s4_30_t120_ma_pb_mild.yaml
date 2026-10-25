@@ -1,0 +1,19 @@
+name: a_r6_s4_30_t120_ma_pb_mild
+type: score
+desc: "用 close_over_ma_n(120) 站上半年线的程度做趋势腿（+0.25）配 pb −0.4：与 27/28 的动量腿不同源（位置 vs 涨幅）。检验极端小盘里「已经在半年线上方」是否比「过去半年涨得多」更有用，以及温和档趋势腿份额上升后，组合是否从纯反转偏向趋势——这是全组唯一同时含正向位置腿与资产端下限的一对。本份为第 15 对的温和档：size_ln −0.80、turn_ma_n(120) −0.30。按 |w| 归一：size_ln 45.7% / turn_ma_n(120) 17.1% / close_over_ma_n(120) 14.3% / pb 22.9%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。"
+factors:
+- op: size_ln
+  weight: -0.80
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+- op: close_over_ma_n
+  n: 120
+  weight: 0.25
+- op: pb
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r4_s4_02_pg_turn5_equal
+type: score
+desc: "换手窗口轴 5 日档：一周平均换手正好覆盖上次调仓到这次调仓的全部交易日，是‘周度拥挤度’最直接的读数；与 3 日档相比只多平滑两个交易日，用来区分信号是噪声还是可持续的周级活跃。pe_ttm 正权、pb 负权的 1:1 对冲不变，若本份与 3 日档结果相近，说明换手窗口在 3~5 日之间不敏感，若差异明显则说明周内拥挤是真实信号。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 5
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

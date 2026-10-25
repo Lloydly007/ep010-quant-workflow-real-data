@@ -1,0 +1,17 @@
+name: b_r5_s2_13_short_turn_1to3__f2n_d
+type: score
+desc: 20 日窗口上的 1:3（pb -0.60 / size_ln -1.80）：短窗口叠加重规模。假设短期冷清的小盘更容易在两三周内出现补涨，但也更容易被流动性冲击打回；这一档就是检验短周期错价假说能否在重规模倾斜下站住。归一化权重：pb
+  19.0% / size_ln 57.1% / turn_ma_n(20) 23.8%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.8
+- op: turn_ma_n
+  n: 10
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

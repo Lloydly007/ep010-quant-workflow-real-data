@@ -1,0 +1,19 @@
+name: b_r5_s1_34_pb_with_own_pe250
+type: score
+desc: pb 横截面 -0.60 配 pe 的 250 日时序分位 -0.40，换手窗口拉到 250 日。双透镜分工：资产端横向选便宜，盈利端纵向选“pe 处于自身一年最低区间”（相对自己的盈利水平最便宜）；长换手保证名单不被短窗噪声冲刷。
+factors:
+- op: pb
+  weight: -0.6
+- op: ts_pct
+  n: 250
+  of:
+    op: pe_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,12 @@
+name: b_r2_s5_14_pb_ts_ma250_reclaim
+type: rule
+desc: 现象：A 路 100 份趋势配置里最好的一份年化仍 -3.8%，说明纯趋势在 A 股不成立；B 路 100 份又完全没有趋势确认——两路都没试过「估值约束 + 长期趋势」。为什么在 A 股该有超额：年线是 A 股最被广泛使用的多空分界，站上年线说明长期资金已经认可；而自身 PB 分位仍在 250 日底部说明定价还没反映基本面改善，两者同时成立时修复空间最大。怎么进出：收盘站上年线时买入，按自身 250 日 PB 分位升序取 10 只，收盘跌破年线(长期趋势破坏)或满 60 日离场，止损 10%、同行业最多 5 只。改了什么：把 A 路失效的长期趋势信号移进 B 路的估值约束里，并允许最长 60 日持有以匹配估值修复这个慢变量。
+buy:
+- {op: close_over_ma_n, n: 250, dir: above, threshold: 1.0}
+sell:
+- {op: close_over_ma_n, n: 250, dir: below, threshold: 1.0}
+rank: {op: ts_pct, n: 250, of: {op: pb}, order: asc}
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

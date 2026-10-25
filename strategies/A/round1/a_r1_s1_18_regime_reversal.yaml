@@ -1,0 +1,13 @@
+name: a_r1_s1_18_regime_reversal
+type: rule
+desc: 5日跌超8%后的反弹只在300ETF处于年线上方（流动性充裕、风险偏好高）时可靠——牛市急跌由情绪冲击主导会被快速修复，熊市里同样跌幅常是趋势下行的开始｜以ETF年线作反转开关，按跌幅取最深者，反弹回5日线即离场，5日上限、5%止损。
+buy:
+- {op: etf_above_ma_n, n: 250, dir: above, threshold: 0.5}
+- {op: ret_n, n: 5, dir: below, threshold: -8.0}
+rank: {op: ret_n, n: 5, order: asc}
+sell:
+- {op: close_over_ma_n, n: 5, dir: above, threshold: 1.0}
+max_hold_days: 5
+stop_loss: 5%
+max_positions: 10
+industry_cap: 5

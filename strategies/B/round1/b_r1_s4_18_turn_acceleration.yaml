@@ -1,0 +1,25 @@
+name: b_r1_s4_18_turn_acceleration
+type: rule
+desc: 关注度抬升的速度比水平更值钱——近5日均换手升破2%而60日均换手仍低于2%，说明最近一周的交投明显高于一季常态、新增资金是刚进场而非已驻扎，估值折价才刚开始被修正→买入加速最猛（5日均换手最高）的票，持有20日，20日均换手又回落到1%以下（加速彻底熄火）或亏8%离场。
+buy:
+- op: turn_ma_n
+  n: 5
+  dir: above
+  threshold: 2.0
+- op: turn_ma_n
+  n: 60
+  dir: below
+  threshold: 2.0
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: below
+  threshold: 1.0
+rank:
+  op: turn_ma_n
+  n: 5
+  order: desc
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

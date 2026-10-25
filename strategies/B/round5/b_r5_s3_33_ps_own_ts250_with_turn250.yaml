@@ -1,0 +1,17 @@
+name: b_r5_s3_33_ps_own_ts250_with_turn250
+type: score
+desc: "把时序分位的基零件从 PB 换成 PS（收入口径）：PS 一年分位 -0.9 + 一年换手 -0.7。假设收入端的估值压缩比资产端更贴近经营预期下修，且 PS 全为正、不像 PE 有负值口径问题；用于检验本轴结论是否依赖 PB 这一种估值锚。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: ps_ttm
+  weight: -0.9
+- op: turn_ma_n
+  n: 250
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,15 @@
+name: a_r4_s3_05_pure_dual_20_60
+type: score
+desc: "短换手 × 季度波动：季度低波先排除长期高 Beta 的名字，近月换手低再给一个“当下没人抢”的入场时点；这条腿检验时点信号放在短窗、风险信号放在中窗是否更稳。"
+factors:
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,24 @@
+name: b_r6_s2_03_half_ulcer_vol_60__f3n_u
+type: score
+desc: 窗口再缩到 60 日（季度）：此处的 ulcer 已退化为「近一季有没有坑」，与同窗波动率的语义最为接近，是对半拆分下「两腿必然重合」的下界参照。若 60/60
+  的名单与 120/120 排序近似，说明防御腿的信息主要在最近一个季度形成，长窗版本的优势来自换个说法重复同一条证据；若 60/60 明显弱，则季度窗太短，装不下一次完整的下跌—修复过程。归一化权重：pb
+  20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(60) 7.5% / vol_n(60) 7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.225
+- op: vol_n
+  n: 60
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

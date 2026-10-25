@@ -1,0 +1,14 @@
+name: a_r3_s2_22_sizen_control_turn120
+type: score
+desc: 市值分档内中性化的对照配置：剥离规模beta后只剩半年低换手，若仍有效说明换手因子是真信号，若失效则说明超额来自小市值暴露。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: turn_ma_n
+  n: 120
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

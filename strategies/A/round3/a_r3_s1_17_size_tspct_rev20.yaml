@@ -1,0 +1,17 @@
+name: a_r3_s1_17_size_tspct_rev20
+type: score
+desc: 小市值叠20日收益的自身时序分位，买自身历史区间内相对最弱的位置，时序分位把跌标准化为相对自己跌得狠，避免把高波小盘的正常波动误判为超跌。
+factors:
+- op: size_ln
+  weight: -1.75
+- op: ts_pct
+  n: 20
+  of:
+    op: ret_n
+    n: 20
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

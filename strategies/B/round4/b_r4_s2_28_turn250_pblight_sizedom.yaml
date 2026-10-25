@@ -1,0 +1,16 @@
+name: b_r4_s2_28_turn250_pblight_sizedom
+type: score
+desc: 250 日换手仅作微调、规模 -2.00 主导、pb -0.40：年度窗口上的最强规模检验，若它与 20、60、120 的同构档结果高度一致，则四个换手窗口在本池上都不提供独立信息。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -2.00
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

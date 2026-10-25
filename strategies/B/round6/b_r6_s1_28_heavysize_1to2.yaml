@@ -1,0 +1,19 @@
+name: b_r6_s1_28_heavysize_1to2
+type: score
+desc: "镜像侧的重规模档：分割 1:2，size_ln -1.10（250 日 -0.60 / 120 日 -0.30），规模 44.0%、长窗 24.0%。这是“长期冷门 + 重小盘 + 低 PB”三重叠加的最极端组合之一，接近价值陷阱的教科书画像。它的作用是给出本组的下界风险读数：若 28 明显弱于 26，说明长窗与重规模叠加会放大陷阱（很可能是同一批治理差、流动性差的公司被三个因子同时加分）；若两者相当，则说明长窗并不比短窗更危险。归一化权重：pb 20.0% / size_ln 44.0% / turn_ma_n(120) 12.0% / turn_ma_n(250) 24.0%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -1.10
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+- op: turn_ma_n
+  n: 250
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

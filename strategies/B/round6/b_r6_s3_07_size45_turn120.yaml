@@ -1,0 +1,18 @@
+name: b_r6_s3_07_size45_turn120
+type: score
+desc: "规模主导档：size_ln -1.35 吃掉 45% 的权重，两条估值腿各降到 -0.45，换手 -0.75。假设行业中性化之后，剩余的最大结构性收益来源仍是市值本身，估值与换手只在这条主轴之外做二次排序，不该与主轴平分权重。本档是“小市值是主菜、便宜与冷清是配菜”的表达，也是 02 号规模权重的上限侧。归一化权重：pb 15.0% / ps_ttm 15.0% / size_ln 45.0% / turn_ma_n(120) 25.0%。"
+factors:
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -1.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

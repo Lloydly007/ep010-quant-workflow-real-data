@@ -1,0 +1,16 @@
+name: b_r5_s2_02_ratio_1to1p25
+type: score
+desc: "把比值推到 1:1.25（pb 固定 -0.60，只把 size_ln 从 -0.60 抬到 -0.75）。检验 1:1 之后的第一步到底还在买便宜、还是已经开始买小：若名单的 PB 中位数在这一档仍随比值下降，说明估值腿还有独立信息；若已经平掉，说明 1:1 附近就是估值被规模挤出的临界点，后面的档位只是在买市值。归一化权重：pb 28.6% / size_ln 35.7% / turn_ma_n(120) 35.7%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

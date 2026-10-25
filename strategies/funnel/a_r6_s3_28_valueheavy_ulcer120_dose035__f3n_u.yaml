@@ -1,0 +1,21 @@
+name: a_r6_s3_28_valueheavy_ulcer120_dose035__f3n_u
+type: score
+desc: pb 提到 -0.95（size -0.70、turn_ma_n(250) -0.55、ulcer_n(120) -0.35）：估值主导 + 中窗回撤，检验「便宜
+  + 路径干净」是否比「又小又便宜」更抗噪。归一化权重：size_ln 27.5% / pb 37.3% / turn_ma_n(250) 21.6% / ulcer_n(120)
+  13.7%。
+factors:
+- op: size_ln
+  weight: -0.7
+- op: pb
+  weight: -0.95
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+- op: ulcer_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

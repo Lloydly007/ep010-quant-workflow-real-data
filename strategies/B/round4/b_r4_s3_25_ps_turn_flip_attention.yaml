@@ -1,0 +1,16 @@
+name: b_r4_s3_25_ps_turn_flip_attention
+type: score
+desc: "反向假设份：turn 120 取 +0.45，专门买'近期被交易得最多'的便宜小盘，其余两腿不变。这不是把符号写反的错误，而是一个必须验证的替代解释——小盘的营收低估可能要等成交量重新放大才被市场发现，低换手反而是价值陷阱的标记。若本份优于 22，则本组'低换手'的整条轴都要改写为关注度触发。"
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: 0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

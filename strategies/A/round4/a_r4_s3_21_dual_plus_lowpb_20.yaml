@@ -1,0 +1,17 @@
+name: a_r4_s3_21_dual_plus_lowpb_20
+type: score
+desc: "近月双低 + 低 PB：安静说明折价没被套利掉，低 PB 说明折价本身存在，两件事同时成立才构成“被忽视的便宜”；PB 只给 0.35，避免变成纯价值策略。"
+factors:
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: vol_n
+  n: 20
+  weight: -0.75
+- op: pb
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

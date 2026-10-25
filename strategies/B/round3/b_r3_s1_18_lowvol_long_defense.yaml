@@ -1,0 +1,21 @@
+name: b_r3_s1_18_lowvol_long_defense
+type: score
+desc: 三镜低估叠加 250 日长期低波与 20 日短期低换手，便宜而价格波动长期收敛的标的通常是被动与防御资金的底仓，月度调仓降低拥挤度，超额来自低波异象与估值折价两处独立的错误定价叠加。
+factors:
+- op: pb
+  weight: -0.40
+- op: ps_ttm
+  weight: -0.30
+- op: pe_ttm
+  weight: -0.30
+- op: vol_n
+  n: 250
+  weight: -0.60
+- op: turn_ma_n
+  n: 20
+  weight: -0.30
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: a_r4_s1_34_t250_calm_uptrend__f2n_d
+type: score
+desc: 250 日换手 -0.75 加半年均线相对位置 +0.35：一年没人交易但价格站上半年线，冷门里挑刚有趋势确认的，检验长窗清淡配短趋势能否降低接刀概率。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: close_over_ma_n
+  n: 120
+  weight: 0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

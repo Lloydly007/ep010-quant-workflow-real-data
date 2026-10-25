@@ -1,0 +1,14 @@
+name: a_r3_s1_10_size_ulcer60
+type: score
+desc: 小市值叠60日ulcer回撤路径因子，偏好阴跌型而非踩踏型下跌的小盘，踩踏伴随流动性冲击且修复慢，路径平滑的小盘卖压已分散释放，资金回流时弹性更好。
+factors:
+- op: size_ln
+  weight: -1.45
+- op: ulcer_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

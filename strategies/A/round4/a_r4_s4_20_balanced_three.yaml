@@ -1,0 +1,17 @@
+name: a_r4_s4_20_balanced_three
+type: score
+desc: "三腿接近等幅（size_ln -0.75、turn_ma_n(120) -1.00、ret_n(60) +1.00）：规模、换手、动量都不占主导，检验均衡配比是否比任何单腿主导更稳。"
+factors:
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -1.0
+- op: ret_n
+  n: 60
+  weight: 1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

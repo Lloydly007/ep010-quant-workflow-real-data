@@ -1,0 +1,14 @@
+name: b_r4_s1_02_turn_near_max
+type: score
+desc: 换手近极值只退一档：pb -0.30 / turn_ma_n(120) -0.90（0.333:1，换手 75%），假设换手权重在 1.00→0.90 之间已接近饱和、边际递减，若 01 的超额来自拥挤度本身而非换手数值，这一档应几乎不损失收益却降低对换手极端值的依赖，是与 01 配对的第一段斜率探针。
+factors:
+- op: pb
+  weight: -0.30
+- op: turn_ma_n
+  n: 120
+  weight: -0.90
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

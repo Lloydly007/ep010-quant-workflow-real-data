@@ -1,0 +1,16 @@
+name: b_r4_s4_11_pe_screen_value_core
+type: score
+desc: "PE 正权的最小剂量用法：pe_ttm 只给 +0.15，pb 给 −1.20，换手 120 日 −0.60。这一档不是在赌成长，而是把 PE 当成纯粹的‘盈利存在性’筛子——权重小到只够把负 PE（亏损）与极端高 PE 名字推下去，不改变低 PB 的排序主线。若本份显著强于 pb 单一因子，说明亏损筛本身有独立价值；若持平，说明第 3 轮的价值结论不需要这条护栏。"
+factors:
+- op: pe_ttm
+  weight: 0.15
+- op: pb
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

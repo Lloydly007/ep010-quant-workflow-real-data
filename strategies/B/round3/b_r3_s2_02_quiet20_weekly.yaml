@@ -1,0 +1,14 @@
+name: b_r3_s2_02_quiet20_weekly
+type: score
+desc: 选低 PB 且近 20 日换手冷清的股票并按周调仓，理由是短期换手信号半衰期只有数周，且市值档内比较能避免组合被小盘股的整体流动性水平垄断。
+factors:
+- op: pb
+  weight: -0.8
+- op: turn_ma_n
+  n: 20
+  weight: -0.8
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

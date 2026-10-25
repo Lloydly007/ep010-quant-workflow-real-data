@@ -1,0 +1,20 @@
+name: a_r6_s3_27_mutedsize_value_ulcer250__f2n_d
+type: score
+desc: 小市值腿缩到 -0.65、pb 提到 -0.60、turn_ma_n(120) -0.75 保留、ulcer_n(250) -0.40：小市值与价值之间换一点筹码，看回撤腿在价值为主的结构里是否仍有增量。归一化权重：size_ln
+  27.1% / pb 25.0% / turn_ma_n(120) 31.2% / ulcer_n(250) 16.7%。
+factors:
+- op: size_ln
+  weight: -0.65
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

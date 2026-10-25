@@ -1,0 +1,17 @@
+name: a_r3_s1_21_size_turn_ulcer__f2n_u
+type: score
+desc: 市值负权到2.00并叠120日低换手与60日ulcer，三腿都在说安静，越深的市值倾斜越需要最强的噪声抑制，否则组合会被少数高波动小盘的尾部风险主导。
+factors:
+- op: size_ln
+  weight: -2.0
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+- op: ulcer_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

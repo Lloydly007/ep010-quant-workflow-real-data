@@ -1,0 +1,17 @@
+name: a_r3_s4_21_calm_gentle_momentum
+type: score
+desc: 在 60 日低波的小盘股里给正动量正权；低波保证下行可控，温和上涨说明已有基本面确认，比起纯低波更快兑现，也比纯动量回撤更浅。
+factors:
+- op: size_ln
+  weight: -1.4
+- op: vol_n
+  n: 60
+  weight: -0.6
+- op: ret_n
+  n: 60
+  weight: 0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r4_s2_02_turn20_pblight_sizestd
+type: score
+desc: 20 日换手为主信号、pb -0.40 只保证不买贵、规模取 -0.65 的中间档：这是 20 日窗口的标准形态，作为本组横向比较的基准点，用于观察同一窗口在另外三档规模倾斜下的名单与风格漂移。
+factors:
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r5_s4_03_pe250_size_dominant
+type: score
+desc: "规模主导：size_ln -1.60（与第 4 轮最深倾斜同档）、pe_ttm -0.50 只作方向确认、turn_ma_n(250) -0.75。用来切分超额里“小”与“便宜”的份额——若与 02 打平，说明 PE 腿在小盘内部没有增量信息。"
+factors:
+- op: size_ln
+  weight: -1.60
+- op: pe_ttm
+  weight: -0.50
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

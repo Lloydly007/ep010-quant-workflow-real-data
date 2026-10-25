@@ -1,0 +1,16 @@
+name: b_r4_s2_18_turn120_pblight_sizestd
+type: score
+desc: 120 日换手 × 轻 pb × 规模 -0.65：把冷清拉长到半年、估值只设下限、规模取标准档，作为 120 日窗口的基准；它与 60、250 相邻档的差别应全部来自窗口本身而非权重结构。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

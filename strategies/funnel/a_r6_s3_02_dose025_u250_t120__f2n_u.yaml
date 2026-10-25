@@ -1,0 +1,20 @@
+name: a_r6_s3_02_dose025_u250_t120__f2n_u
+type: score
+desc: 与 01 同构但防御腿抬到 -0.25，其余三腿一分不动：在这一档插值是为了判断剂量响应是平滑上升还是存在门槛——若 0.25 已明显偏离 01，门槛就在下限附近，回撤信息不是线性可加的。归一化权重：size_ln
+  40.0% / pb 20.0% / turn_ma_n(120) 30.0% / ulcer_n(250) 10.0%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

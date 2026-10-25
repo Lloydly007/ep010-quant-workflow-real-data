@@ -1,0 +1,15 @@
+name: a_r2_s2_05_gate_mom_band_lowvol
+type: rule
+desc: 现象：第1轮100份配置的动量条件只有下界、排序键几乎全是动量降序，等于每次都在买涨得最凶的10只，正是A股均值回归的靶子。为何A股有超额：60日涨幅3%到15%的温和上行区间才是资金持续流入的常态区间，再叠加20日波动率最低优先，等于在趋势股里挑走势最稳的，避开情绪透支型急涨。进出：ETF60日线上方、60日涨幅高于3%且低于15%、站上60日线时买入，按20日波动率由低到高优先；60日涨幅转负超3%离场，最长40日、8%止损、同行业最多10只。相对第1轮改动：给动量加“上限”并改用低波排序，切断“越热越买”这条第1轮失败路径。
+buy:
+- {op: etf_above_ma_n, n: 60, dir: above, threshold: 0.5}
+- {op: ret_n, n: 60, dir: above, threshold: 3}
+- {op: ret_n, n: 60, dir: below, threshold: 15}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: vol_n, n: 20, order: asc}
+sell:
+- {op: ret_n, n: 60, dir: below, threshold: -3}
+max_hold_days: 40
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

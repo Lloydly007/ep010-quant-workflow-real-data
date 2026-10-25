@@ -1,0 +1,12 @@
+name: b_r1_s1_05_lowvol_anomaly
+type: rule
+desc: 20日收益标准差低于2%的低波股因杠杆约束与彩票偏好被系统性高估风险、投资者要求过高回报，风险调整后反而跑赢，故买入最平静的一批并持有到波动抬升过3%（风险溢价消失）离场
+buy:
+- {op: vol_n, n: 20, dir: below, threshold: 2}
+sell:
+- {op: vol_n, n: 20, dir: above, threshold: 3}
+rank: {op: vol_n, n: 20, order: asc}
+max_hold_days: 60
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

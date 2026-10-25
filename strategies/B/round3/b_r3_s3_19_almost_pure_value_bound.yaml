@@ -1,0 +1,16 @@
+name: b_r3_s3_19_almost_pure_value_bound
+type: score
+desc: "近似纯低估值的上界对照：把 size 权重压到 0.25 只留一点小盘倾斜、主体是 pb 负权最大档，用来测不含小市值赌注的深度价值能拿到多少超额，这是判断 06 与 07 的强度是否只来自小市值 beta 的关键参照。"
+factors:
+- op: pb
+  weight: -1.0
+- op: size_ln
+  weight: -0.25
+- op: vol_n
+  n: 120
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

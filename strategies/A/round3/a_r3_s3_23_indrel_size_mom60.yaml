@@ -1,0 +1,19 @@
+name: a_r3_s3_23_indrel_size_mom60
+type: score
+desc: 用行业内规模分位负权替代绝对规模，再叠60日动量正权与20日低换手：同一行业内挑最小且稳步走强的票，避免组合被单一行业的极小票占满。
+factors:
+- op: ind_rank
+  of:
+    op: size_ln
+  weight: -1.0
+- op: ret_n
+  n: 60
+  weight: 1.0
+- op: turn_ma_n
+  n: 20
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,23 @@
+name: a_r5_s3_14_vol20_guard
+type: score
+desc: "短期波动作护栏：vol_n 20 日 -0.45，pb -0.5、行业内分位 -0.5、size_ln -0.6，配 60 日换手 -0.35。假设便宜的短期波动是拥挤度与分歧的代理，刚被放量博弈过的便宜名字要打折，短期安静的那只更容易被重估。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: vol_n
+  n: 20
+  weight: -0.45
+- op: turn_ma_n
+  n: 60
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: b_r4_s1_08_parity_baseline
+type: score
+desc: 等权基准锚点：pb -0.60 / turn_ma_n(120) -0.60（1:1，各半），作为整条权重比扫描的中性基准，假设资产折价与冷门度信息量相当、所有偏离 1:1 的差异都应归因于两因子相关结构而非风格偏向；其余 33 份的读数都以它为参照。
+factors:
+- op: pb
+  weight: -0.60
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

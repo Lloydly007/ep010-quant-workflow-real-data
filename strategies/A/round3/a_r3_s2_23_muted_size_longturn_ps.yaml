@@ -1,0 +1,19 @@
+name: a_r3_s2_23_muted_size_longturn_ps
+type: score
+desc: 弱化规模并在市值分档内中性化，只押一年期低换手、一年期低波与弱PS，检验“长冷小盘”能否给出独立于规模暴露的超额。
+factors:
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -1.25
+- op: vol_n
+  n: 250
+  weight: -0.25
+- op: ps_ttm
+  weight: -0.25
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

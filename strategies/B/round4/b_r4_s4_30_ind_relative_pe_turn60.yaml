@@ -1,0 +1,18 @@
+name: b_r4_s4_30_ind_relative_pe_turn60
+type: score
+desc: "行业内相对估值口径：ind_rank(pe_ttm) 正权 +0.60 与 pb −0.60 都在行业内排（neut_industry 已开，industry 归组后仍在组内比较），换手 60 日 −0.75。成长偏好改成‘比自己同行业贵’而不是‘比全市场贵’，可避免整个行业处在高估值时把行业整体买满；本份用来判断 PE 正权到底是风格暴露还是行业内选股能力。"
+factors:
+- op: ind_rank
+  of:
+    op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

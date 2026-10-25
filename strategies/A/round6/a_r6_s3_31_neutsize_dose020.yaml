@@ -1,0 +1,19 @@
+name: a_r6_s3_31_neutsize_dose020
+type: score
+desc: "开 neut_size: true（流通市值 5 档内秩）配 ulcer_n(250) -0.20、size -0.95、pb -0.55、turn_ma_n(120) -0.70：在市值分层内比较，小市值腿被中和后只保留风格倾斜，用来检验低剂量回撤腿是否只在未中性化口径下才有信息。归一化权重：size_ln 39.6% / pb 22.9% / turn_ma_n(120) 29.2% / ulcer_n(250) 8.3%。"
+factors:
+- op: size_ln
+  weight: -0.95
+- op: pb
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.70
+- op: ulcer_n
+  n: 250
+  weight: -0.20
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r4_s1_18_t120_w030
+type: score
+desc: "半年窗 120 日换手只给 -0.30：用最长的中期窗口做最轻的拥挤度刹车，检验窗口拉长后轻权重是否已经够用，还是长窗本身把信号稀释掉了。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

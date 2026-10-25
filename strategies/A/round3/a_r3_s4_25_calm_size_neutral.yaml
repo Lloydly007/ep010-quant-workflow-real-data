@@ -1,0 +1,17 @@
+name: a_r3_s4_25_calm_size_neutral
+type: score
+desc: 打开市值分档内中性化作对照，权重仍押低波与浅回撤；把规模效应抽掉后若超额仍在，说明收益来自路径质量本身，这一份用来给整组的超额归因。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: vol_n
+  n: 60
+  weight: -0.9
+- op: ulcer_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

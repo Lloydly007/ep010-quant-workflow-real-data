@@ -1,0 +1,16 @@
+name: b_r4_s4_13_deepvalue_annual_quiet
+type: score
+desc: "价值腿主导但保留成长腿（pb −1.05 / pe_ttm +0.45），换手用年度窗口 250 日、权重降到 −0.45。动机是年度换手与季度换手高度相关，同时给 0.75 权重会造成换手腿事实上主导排序（见第 3 轮 s3 组的权重读数），因此本份把换手降为底座、把深度低 PB 提到前台，检验‘慢换手只需作背景约束’这一假设。"
+factors:
+- op: pe_ttm
+  weight: 0.45
+- op: pb
+  weight: -1.05
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

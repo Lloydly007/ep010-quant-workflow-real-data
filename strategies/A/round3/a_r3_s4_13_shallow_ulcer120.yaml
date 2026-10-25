@@ -1,0 +1,16 @@
+name: a_r3_s4_13_shallow_ulcer120
+type: score
+desc: 用半年溃疡指数筛小盘并月度换手；长期没让持有人难受往往对应稳定现金流与低杠杆，这类稳健小盘在信用收缩期更容易被当作避风港买入。
+factors:
+- op: size_ln
+  weight: -1.75
+- op: ulcer_n
+  n: 120
+  weight: -0.95
+- op: pb
+  weight: -0.4
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

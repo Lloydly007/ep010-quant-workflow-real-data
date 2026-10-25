@@ -1,0 +1,27 @@
+name: a_r6_s2_21_cross_2x2_equal
+type: score
+desc: "本轮的核心假设：两条轴同时平滑。换手 120/250 双窗各 -0.45、pb 的 250/120 双窗各 -0.35，加规模锚 -1.00，形成 2×2 的四个带窗腿。逻辑是任何一条信号在单窗口上都有窗口末端偶然，而偶然在不同轴上不相关——只在换手轴上平滑、估值轴仍是单点，等于留了一处未降噪的缺口；只有两轴都取两尺度平均，名单的稳健性才来自结构而不是运气。这也是全部 F4 的对照基准。归一化权重：size_ln 38.5% / ts_pct(250, pb) 13.5% / ts_pct(120, pb) 13.5% / turn_ma_n(120) 17.3% / turn_ma_n(250) 17.3%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.35
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

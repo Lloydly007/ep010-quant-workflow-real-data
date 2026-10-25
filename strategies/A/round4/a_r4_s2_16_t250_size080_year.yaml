@@ -1,0 +1,14 @@
+name: a_r4_s2_16_t250_size080_year
+type: score
+desc: "换手窗口取 250 日年度档、规模仅 -0.80（占 51.6%），年度冷门是最强的被忽视代理，本档检验只靠年度低换手加最低规模倾斜能否拿到超额。"
+factors:
+- op: size_ln
+  weight: -0.8
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

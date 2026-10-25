@@ -1,0 +1,12 @@
+name: b_r5_s4_21_ep_guard_vol20
+type: score
+desc: "低 PE 0.3、20 日低波 0.4、PB 0.3：把低波提到最高，专门检验短窗安静能否过滤掉负 PE 的亏损股。若过滤有效，低波的边际贡献应在短窗上更明显；20 日比 120 日更贴近爆雷事件的时间尺度，这是它与 20 的关键差别。"
+factors:
+- {op: pb, weight: -0.3}
+- {op: pe_ttm, weight: -0.3}
+- {op: vol_n, n: 20, weight: -0.4}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

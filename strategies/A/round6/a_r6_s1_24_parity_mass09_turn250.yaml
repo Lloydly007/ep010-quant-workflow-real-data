@@ -1,0 +1,18 @@
+name: a_r6_s1_24_parity_mass09_turn250
+type: score
+desc: "均分配年度清淡（turn 250）、估值块压到 0.90：parity 窗口梯子的慢端，也是终轮里最接近「长期便宜且长期无人问津」的朴素形态。预期换手最低、持有体验最稳，但选股自由度最受限——250 日窗的缺失样本（上市不足一年）会实质缩小可排序池；与 23 只差窗口，与 17 只差窗口，两点共同给出 parity 下的窗口弹性。归一化权重：size_ln 37.7% / turn_ma_n(250) 28.3% / ps_ttm 17.0% / pb 17.0%（ps:pb=0.45:0.45=1.00:1，总 |w|=2.65，估值块 34.0%）。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.45
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

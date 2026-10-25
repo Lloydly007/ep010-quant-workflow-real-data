@@ -1,0 +1,20 @@
+name: b_r2_s3_08_extreme_calm_250
+type: rule
+desc: 现象：低波异象的收益集中在极端尾部，而不是"比中位数低一点"的那一段。为什么该有超额：年化波动最低的一小撮（银行、公用事业、部分消费龙头）是A股长钱的底仓，散户因其无题材而长期给折价，形成稳定的低波溢价；250日窗口筛掉的是短暂平静，留下的是结构性低波。怎么进出：买vol_n(250)<1的股票、按PB升序取10只；20日波动升破5%（低波状态破裂、风险重定价）即卖，持有60日，不设止损（这类股票10%的回撤是常态而不是风险信号）。相对第1轮：round1最低波动阈值是2、最长窗口60日，结构性低波的尾部从未被测过。
+buy:
+- op: vol_n
+  n: 250
+  dir: below
+  threshold: 1
+rank:
+  op: pb
+  order: asc
+sell:
+- op: vol_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 60
+stop_loss: null
+max_positions: 10
+industry_cap: 3

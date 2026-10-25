@@ -1,0 +1,19 @@
+name: a_r6_s2_08_turn120_250_ps_lens
+type: score
+desc: "01 的换估值口径版：把账面 pb（-0.50）换成营收 ps_ttm（-0.60），双换手窗与规模完全不动。这是双窗结论的口径稳健性检查——pb 全正但受资本结构影响，ps_ttm 全正且更接近经营端，若两版年化接近，说明「两尺度换手 + 低估值 + 小市值」这个骨架对估值腿的取法不敏感，可以放心把它当成组内的结构基线；若 ps 版明显更好，后续冻结时应优先用 ps 作估值锚。归一化权重：size_ln 38.5% / ps_ttm 23.1% / turn_ma_n(120) 21.2% / turn_ma_n(250) 17.3%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.60
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,20 @@
+name: b_r1_s3_17_ind_ps_anchor
+type: rule
+desc: 当日行业中位PS低说明整个行业在收入端被便宜定价，行业层面的估值均值回归会把行业内个股一起抬起来、且比个股比价更抗噪；再要求个股60日溃疡低于10%（行业与个股同处低位），按行业中位PS升序取10只、持有40日，20日波动放大破5%（行业重回炒作）离场，止损10%。
+buy:
+- op: ulcer_n
+  n: 60
+  dir: below
+  threshold: 10.0
+rank:
+  op: ind_median_ps
+  order: asc
+sell:
+- op: vol_n
+  n: 20
+  dir: above
+  threshold: 5.0
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

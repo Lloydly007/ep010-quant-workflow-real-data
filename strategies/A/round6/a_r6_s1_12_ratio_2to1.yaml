@@ -1,0 +1,18 @@
+name: a_r6_s1_12_ratio_2to1
+type: score
+desc: "营收为主的两倍配比（ps 2 : pb 1）：账面只剩三分之一的估值份额，主要用于剔除「营收便宜但资产端持续失血」的标的。假设营收倍数的信息衰减比账面慢（收入比净资产更难被会计手法短期改写），因此值得给到两倍于账面的权重。归一化权重：size_ln 36.4% / turn_ma_n(120) 27.3% / ps_ttm 24.4% / pb 12.0%（ps:pb=0.67:0.33=2.03:1，总 |w|=2.75，估值块 36.4%）。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.67
+- op: pb
+  weight: -0.33
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

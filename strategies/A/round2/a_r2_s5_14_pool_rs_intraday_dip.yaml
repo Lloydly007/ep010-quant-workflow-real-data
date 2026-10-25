@@ -1,0 +1,13 @@
+name: a_r2_s5_14_pool_rs_intraday_dip
+type: rule
+desc: 现象：相对强度高但当日收在振幅下半区的股票，往往是盘中抛压压出来的价格而非基本面变化；第 1 轮把日内弱势一律当风险信号回避（只买收在 0.8 以上的），等于把最便宜的入场价让掉。为什么在 A 股该有超额：日内反转效应显著，趋势未破时的日内弱势次日修复概率高于继续走弱；它同时是“相对强者加当日更低价”的组合，止损位天然更近。怎么进出：站上 60 日线且当日收盘位置低于 0.5 者，按 20 日涨幅的全池截面分位降序取前 10；跌破 60 日线离场，5 日上限、5% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮把收盘位置高于 0.8 当买入确认；本配置反向使用日内结构，用低于 0.5 找被压制日、只做 5 日修复。
+buy:
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: close_pos_range, dir: below, threshold: 0.5}
+rank: {op: xsec_pct, of: {op: ret_n, n: 20}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 5
+stop_loss: 5%
+max_positions: 10
+industry_cap: 5

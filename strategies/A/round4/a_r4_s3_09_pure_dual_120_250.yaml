@@ -1,0 +1,15 @@
+name: a_r4_s3_09_pure_dual_120_250
+type: score
+desc: "半年换手 × 年度波动：年度低波先筛出长期平稳的名字（多为公用事业/金融类），半年换手再在其中挑更冷清的，是“稳在前、安静在后”的慢速组合。"
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: vol_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: b_r4_s1_29_cheap_momentum_250
+type: score
+desc: 年度动量为正的价值折价：pb -0.60 / turn_ma_n(120) -0.45 / ret_n(250) +0.30（归一化 44%/33%/22%），假设 250 日动量过滤的是长期恶化而非短期反弹，与 28 的 120 日窗口构成窗口对照，检验“价值 + 动量正权”是否对动量窗口敏感。
+factors:
+- op: pb
+  weight: -0.60
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+- op: ret_n
+  n: 250
+  weight: 0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

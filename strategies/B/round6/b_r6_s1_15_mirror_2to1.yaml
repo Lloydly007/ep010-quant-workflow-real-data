@@ -1,0 +1,19 @@
+name: b_r6_s1_15_mirror_2to1
+type: score
+desc: "镜像核心档：250:120 = 2:1（250 日 -0.60 / 120 日 -0.30），长窗 29.3%、短窗 14.6%。与 07 构成整条梯度最重要的一组对照——两者把同一份 0.90 的换手预算按相反方向分配，其余三条腿逐字相同；07 与 15 的差值直接就是“长窗 vs 短窗谁承载了换手信号”的干净估计。若两者几乎相同，则比值轴只是噪声，本组应以 1:1 的母本形态冻结；若拉开，则方向本身就是可复现的结构，需要在冻结前确认它不是行业或规模暴露的代理。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 14.6% / turn_ma_n(250) 29.3%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+- op: turn_ma_n
+  n: 250
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,12 @@
+name: a_r1_s1_09_tspct_dip_rank
+type: rule
+desc: 半年线向上的股票中，5日收益处于自身过去20日最低分位者属趋势内的短期恐慌回撤，用时序分位而非绝对跌幅可剔除个股波动率差异，回撤修复是大概率事件｜按该分位升序取最超跌者，跌破20日线离场，20日上限、8%止损。
+buy:
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+rank: {op: ts_pct, n: 20, of: {op: ret_n, n: 5}, order: asc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

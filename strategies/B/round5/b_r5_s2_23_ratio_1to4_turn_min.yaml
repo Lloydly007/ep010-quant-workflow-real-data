@@ -1,0 +1,16 @@
+name: b_r5_s2_23_ratio_1to4_turn_min
+type: score
+desc: "把换手压到最低：比值 1:4 的 pb -0.60 / size_ln -2.40 上只用 turn_ma_n(120) -0.30，换手占比 9.1%。与 09 只差换手权重，用于回答“端点弱是因为小盘暴露过大，还是因为换手刹车过重”——若 23 明显好于 09，端点的问题在换手权重而不再在比值本身。归一化权重：pb 18.2% / size_ln 72.7% / turn_ma_n(120) 9.1%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -2.40
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

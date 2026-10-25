@@ -1,0 +1,19 @@
+name: a_r5_s1_13_ps_ind_rank__f2n_u
+type: score
+desc: 用 ps_ttm 的行业内排名（ind_rank，−0.70）：在 neut_industry 已经把分数做行业内秩中性之后，再显式要求「同业内营收倍数更低」。假设行业级营收估值中枢差异极大（商贸
+  vs 软件），显式行业内比较比事后中性化更稳。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.7
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

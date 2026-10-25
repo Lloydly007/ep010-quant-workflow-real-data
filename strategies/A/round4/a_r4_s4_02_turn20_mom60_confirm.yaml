@@ -1,0 +1,17 @@
+name: a_r4_s4_02_turn20_mom60_confirm
+type: score
+desc: "换手 20 日 -0.75 做入场时机、动量拉到 60 日 +0.75，size_ln -1.25：快窗只筛当下成交冷清，慢窗保证趋势没被单周反转带偏，检验快慢错配是否优于同窗匹配。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

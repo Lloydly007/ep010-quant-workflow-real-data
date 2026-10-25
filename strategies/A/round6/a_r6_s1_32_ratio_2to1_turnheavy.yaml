@@ -1,0 +1,18 @@
+name: a_r6_s1_32_ratio_2to1_turnheavy
+type: score
+desc: "2:1 配重换手：营收主导但估值话语权最小，预期名单与 28 高度重合（都被规模加换手主导）。若真如此，Block 4 就给出一条明确结论：重换手结构下 ps:pb 的刻度不可辨识，冻结名单应取换手较轻的那一侧。归一化权重：turn_ma_n(120) 35.5% / size_ln 32.3% / ps_ttm 21.6% / pb 10.6%（ps:pb=0.67:0.33=2.03:1，总 |w|=3.10，估值块 32.3%）。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.67
+- op: pb
+  weight: -0.33
+- op: turn_ma_n
+  n: 120
+  weight: -1.10
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

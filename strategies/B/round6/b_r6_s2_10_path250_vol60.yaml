@@ -1,0 +1,22 @@
+name: b_r6_s2_10_path250_vol60
+type: score
+desc: "同上但短腿放宽到 60 日（季度）：给近期风险制度一个季度的观察窗，避免 20 日腿被单次事件带偏。09/10 与 01 三点连起来可以读出「短波动腿的最优观察期」：若 60 日优于 20 日，说明一个月太短、噪声占主导；若 20 日更好，说明风险制度变化很快，反应速度比稳定性重要。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 7.5% / vol_n(60) 7.5%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 60
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

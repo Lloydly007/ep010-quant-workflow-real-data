@@ -1,0 +1,18 @@
+name: b_r6_s3_09_size45_turn60
+type: score
+desc: "07 号的中窗（60 日）版本：在 20 日与 120 日之间取一档，其余权重不动。假设一个季度正好覆盖“业绩空窗 + 情绪消退”的完整周期，比单月稳、比半年灵活；这一档是用来检验窗口响应是否单调的中间点，若 20/60/120 三点单调，说明换手信号对尺度不敏感。归一化权重：pb 15.0% / ps_ttm 15.0% / size_ln 45.0% / turn_ma_n(60) 25.0%。"
+factors:
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -1.35
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,13 @@
+name: b_r1_s5_03_dry_volume
+type: rule
+desc: "当日换手与20日均换手都低于1%说明浮筹抛压已枯竭，小盘股在缩量筑底后反弹弹性最大；换手恢复到3%以上（反弹被普遍发现）或持有10日、止损5%离场。"
+buy:
+- {op: turn, dir: below, threshold: 1.0}
+- {op: turn_ma_n, n: 20, dir: below, threshold: 1.0}
+sell:
+- {op: turn, dir: above, threshold: 3.0}
+rank: {op: size_ln, order: asc}
+max_hold_days: 10
+stop_loss: 5
+max_positions: 10
+industry_cap: 0

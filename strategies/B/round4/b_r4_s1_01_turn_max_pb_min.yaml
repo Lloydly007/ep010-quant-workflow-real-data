@@ -1,0 +1,14 @@
+name: b_r4_s1_01_turn_max_pb_min
+type: score
+desc: 权重比扫描的换手极点：pb -0.30 / turn_ma_n(120) -1.00（pb:turn = 0.30:1，归一化换手占 77%），假设冷门股的超额主要来自筹码不拥挤而非资产折价，低换手直接筛掉已被资金盯上的标的，pb 只作轻度反脆弱约束、避免在极端贵资产上做纯换手投机；120 日窗口在全组 34 份里固定，只移动权重轴。
+factors:
+- op: pb
+  weight: -0.30
+- op: turn_ma_n
+  n: 120
+  weight: -1.00
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

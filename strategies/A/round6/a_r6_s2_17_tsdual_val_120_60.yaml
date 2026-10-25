@@ -1,0 +1,24 @@
+name: a_r6_s2_17_tsdual_val_120_60
+type: score
+desc: "估值双窗整体缩短到一年以内：pb 的 120 日与 60 日分位各 -0.40，换手留 120 日 -0.50。这条轴测的是「折价的新近性」——不是这只股票相对自己历史上贵不贵，而是最近两三个月到半年内它是否被明显砸下来了。若 17 优于 15（250+120），说明本池的估值折价需要新鲜度，长窗基线反而把已经修复的便宜名字留在名单里；若 17 明显更差，说明短窗只是把「刚跌」当成「便宜」，是动量反转的误装。归一化权重：size_ln 44.7% / ts_pct(120, pb) 17.0% / ts_pct(60, pb) 17.0% / turn_ma_n(120) 21.3%。"
+factors:
+- op: size_ln
+  weight: -1.05
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.40
+- op: ts_pct
+  n: 60
+  of:
+    op: pb
+  weight: -0.40
+- op: turn_ma_n
+  n: 120
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: a_r4_s3_25_four_leg_250_120__f0n_u
+type: score
+desc: 四腿：半年换手 -0.75、年度低波 -0.75、小市值 -0.4、低 PB -0.3。把“安静+稳+小+便宜”拆成四条弱腿而不是两条强腿，降低任一单腿失效时的脆弱性。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: vol_n
+  n: 250
+  weight: -0.75
+- op: size_ln
+  weight: -0.4
+- op: pb
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

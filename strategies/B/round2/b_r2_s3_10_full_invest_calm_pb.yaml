@@ -1,0 +1,20 @@
+name: b_r2_s3_10_full_invest_calm_pb
+type: rule
+desc: 现象：round1的双低配置爱用双层严条件（vol<2 且 ulcer<3），合格候选太少、长期不满仓——s2_06那类严条件9年只有437笔，10个仓位利用率不足六成；现金在年化+15.11%的池子里是确定性的负超额，严阈值还把入场时点绑在极端平静的少数交易日上，变成隐性择时。为什么该有超额：低波+低PB的alpha来自持续性而不是入场精确度，10个仓位常年打满才能把它完整收下。怎么进出：只留一条宽条件vol_n(60)<3，按PB升序取最便宜的10只，持有60日，不设止损；60日均换手升破5%（便宜标签被消灭）卖出。相对第1轮：第一次把"仓位利用率"当一等假设，round1没有任何一份配置以满仓为目标。
+buy:
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 3
+rank:
+  op: pb
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 60
+  dir: above
+  threshold: 5
+max_hold_days: 60
+stop_loss: null
+max_positions: 10
+industry_cap: 5

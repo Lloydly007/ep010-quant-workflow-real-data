@@ -1,0 +1,19 @@
+name: b_r4_s4_34_shallow_ulcer_quiet
+type: score
+desc: "以回撤路径替代波动做防御腿：ulcer_n(120) 负权 −0.40，PE/PB 各 0.6，换手 60 日 −0.70。ulcer 只惩罚下行回撤、不惩罚上行波动，与 vol_n 口径不同，因此本份检验‘混合估值 + 低换手’是否还需要一条纯粹的下行风险约束；若与 b_r4_s4_05 差异很小，说明回撤腿在小盘低换手池里已被换手与估值两腿吸收。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.7
+- op: ulcer_n
+  n: 120
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

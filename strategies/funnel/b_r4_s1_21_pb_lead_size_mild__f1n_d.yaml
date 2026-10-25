@@ -1,0 +1,17 @@
+name: b_r4_s1_21_pb_lead_size_mild__f1n_d
+type: score
+desc: 估值领先轴上叠加轻度小市值：pb -0.90 / turn_ma_n(120) -0.75 / size_ln -0.60（归一化 40%/33%/27%），假设小市值与低
+  PB 在行业内中性后仍有独立贡献但不应压过估值主线，检验 09 的收益有多少来自隐含的小盘暴露。
+factors:
+- op: pb
+  weight: -0.9
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: size_ln
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

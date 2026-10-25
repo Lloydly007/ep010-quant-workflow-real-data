@@ -1,0 +1,22 @@
+name: a_r4_s4_27_plus_indrel_mom
+type: score
+desc: "动量拆成横截面与行业内两腿：ret_n(60) +0.50 与 ind_rank 包 ret_n(120) +0.55，配 turn_ma_n(120) -0.75、size_ln -1.25：行业中性化行情后仍要求本行业内的相对强势，剥离行业整体涨跌造成的伪动量。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.5
+- op: ind_rank
+  of:
+    op: ret_n
+    n: 120
+  weight: 0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

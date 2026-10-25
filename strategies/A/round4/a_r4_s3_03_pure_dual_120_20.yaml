@@ -1,0 +1,15 @@
+name: a_r4_s3_03_pure_dual_120_20
+type: score
+desc: "半年换手 × 月波动，两腿均 -0.75：半年清淡说明持股结构稳、抛压小，月波动低说明近期没有事件驱动，合起来刻画“被遗忘但没出事”。"
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: vol_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

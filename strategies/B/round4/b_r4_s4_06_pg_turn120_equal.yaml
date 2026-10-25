@@ -1,0 +1,16 @@
+name: b_r4_s4_06_pg_turn120_equal
+type: score
+desc: "换手窗口轴 120 日（半年）档：半年度换手接近‘股东结构稳定性’的代理，低意味着持股人少换手、抛压小，错价更难被套利抹平。与 60 日档相比，多出的平滑会牺牲对近期拥挤的识别但显著降低名单的周度抖动。pe_ttm 正权 / pb 负权等权，用来判断成长-价值对冲在慢换手口径下是否需要不同的权重配比。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

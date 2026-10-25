@@ -1,0 +1,16 @@
+name: b_r4_s4_17_turn60_very_heavy_140
+type: score
+desc: "换手权重幅值轴更重档：60 日换手 −1.40，约为每条估值腿的 2.3 倍，低换手几乎垄断排序，估值对冲只剩下在同一类清淡名字里做价值/成长的取舍。若这一档超额仍高但 IR 下行，说明低换手在多因子外壳下其实是单一风格暴露；若超额下滑，说明纯低换手不可独立成立。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -1.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

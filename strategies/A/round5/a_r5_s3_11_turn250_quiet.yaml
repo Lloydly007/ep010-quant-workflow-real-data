@@ -1,0 +1,20 @@
+name: a_r5_s3_11_turn250_quiet
+type: score
+desc: "长期清淡换手主导：250 日均换手 -0.8，pb -0.45、行业内分位 -0.45、size_ln -0.6。编制对齐第 3 轮 b_r3_s3_03 的骨架（年窗换手全负权 + 低 PB + 小市值），本份额外要求绝对与行业相对同时便宜：假设年窗换手衡量的是折价的持续期，被遗忘一整年的便宜股才具备重估空间。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.45
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.8
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

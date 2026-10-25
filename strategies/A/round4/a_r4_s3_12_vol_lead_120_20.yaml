@@ -1,0 +1,15 @@
+name: a_r4_s3_12_vol_lead_120_20
+type: score
+desc: "波动主导、换手辅助：vol(20) -1.1 对 turn(120) -0.4，与 11 号窗口完全相同、只把权重比例翻过来；假设“不抖”比“冷清”更可交易，换手只在低波池里做二次筛选。"
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.4
+- op: vol_n
+  n: 20
+  weight: -1.1
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,29 @@
+name: a_r6_s2_32_cross_2x2_ind_rank__f3n_d
+type: score
+desc: '把估值侧的双窗换成行业内排名（ind_rank of ps -0.35 与 ind_rank of pb -0.35），换手保持 120/250 双窗各
+  -0.45，规模退到 -0.90。在已经有 neut_industry: true 的前提下再套一层行业内排名，等于把行业中性化做了两遍——本份就是测这种重复是否只是浪费票数。若
+  32 与 21 接近，说明行业维度的两次处理等价，多尺度平滑与行业中性化互不干扰；若 32 明显变差，说明行业内排名把 pb 的跨行业可比性丢掉了，而正是那部分在贡献收益。归一化权重：size_ln
+  36.0% / ind_rank(ps_ttm) 14.0% / ind_rank(pb) 14.0% / turn_ma_n(120) 18.0% / turn_ma_n(250)
+  18.0%。'
+factors:
+- op: size_ln
+  weight: -0.9
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.35
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.35
+- op: turn_ma_n
+  n: 60
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

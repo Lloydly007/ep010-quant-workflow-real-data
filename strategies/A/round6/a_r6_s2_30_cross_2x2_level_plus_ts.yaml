@@ -1,0 +1,26 @@
+name: a_r6_s2_30_cross_2x2_level_plus_ts
+type: score
+desc: "2×2 之外再挂一条绝对水平腿：pb -0.30 与 ps -0.30 管「横截面便宜」，pb 的 250 日分位 -0.35 管「对自己便宜」，换手双窗各 -0.40 / -0.45 提供关注度维度。这是六腿版本，假设水平与分位捕捉的是不同东西（绝对估值锚 vs 自我修复空间），叠加后可以避免只买「跌到自身历史低位但全场都在杀估值」的名字。代价是腿数多、互相稀释，若年化不如四腿的 21，说明在本池里加腿的边际收益已经为负，冻结时该回到减法。归一化权重：size_ln 35.7% / pb 10.7% / ps_ttm 10.7% / ts_pct(250, pb) 12.5% / turn_ma_n(120) 16.1% / turn_ma_n(250) 14.3%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pb
+  weight: -0.30
+- op: ps_ttm
+  weight: -0.30
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,21 @@
+name: b_r6_s1_16_mirror_2p27to1__f2n_u
+type: score
+desc: 镜像 2.27:1（250 日 -0.625 / 120 日 -0.275）：长窗 30.5% 成为全组合第一大权重，短窗 13.4% 进入弱提示。这一档把组合的定义推向“长期被市场忽略”——不是最近变冷，而是一年维度上持续低换手，且叠加低
+  PB、小市值，接近经典的“价值 + 冷门”双筛。风险是价值陷阱：低换手可能对应治理差、流动性折价、退市风险，而财务质量零件在本轮数据里为空表、无法用于识别，只能靠行业中性化与分散度间接缓解。归一化权重：pb
+  24.4% / size_ln 31.7% / turn_ma_n(120) 13.4% / turn_ma_n(250) 30.5%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.275
+- op: turn_ma_n
+  n: 250
+  weight: -0.625
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,21 @@
+name: b_r5_s3_24_triple_value_ts250
+type: score
+desc: "三条估值腿同时偏低才算便宜：PB 绝对 -0.3、PS 绝对 -0.3、PB 自身一年分位 -0.8，再用半年换手 -0.6 确认关注度；交叉口径可过滤“资产便宜但收入贵”的价值陷阱（如重资产低效），代价是名单更集中在大市值传统行业。"
+factors:
+- op: pb
+  weight: -0.3
+- op: ps_ttm
+  weight: -0.3
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.8
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

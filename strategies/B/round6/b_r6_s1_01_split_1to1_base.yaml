@@ -1,0 +1,19 @@
+name: b_r6_s1_01_split_1to1_base
+type: score
+desc: "第 6 轮 B1 组的分档原点：以母本 b_r4_s2_33 为骨，估值腿从 pb -0.40 收到 -0.50，两个换手窗口回到 1:1（各 -0.45），换手总预算固定 0.90。假设“常年冷清（250 日）”与“近半年转冷（120 日）”是两份不同信息——前者是结构（持股结构与风格），后者是状态（事件与情绪）。01→10 整条分档只移动两窗口之间的分配比例、不动换手总预算，所以这一档是既不偏长窗也不偏短窗的中性对照，用来读出“分割”本身的边际效应，而不是“换手总量”的效应。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 22.0% / turn_ma_n(250) 22.0%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

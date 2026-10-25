@@ -1,0 +1,25 @@
+name: a_r1_s2_10_weak_market_reversal
+type: rule
+desc: 反向假设：300ETF在250日年线下方时市场处于弱势，此时的深度超跌（20日跌超10%）更易出现资金与政策驱动的均值回复，而强市里超跌股常继续补跌；按跌幅最深取前10，反弹超10%或20日期满离场，-8%止损。
+buy:
+- op: etf_above_ma_n
+  n: 250
+  dir: below
+  threshold: 0.5
+- op: ret_n
+  n: 20
+  dir: below
+  threshold: -10
+rank:
+  op: ret_n
+  n: 20
+  order: asc
+sell:
+- op: ret_n
+  n: 20
+  dir: above
+  threshold: 10
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

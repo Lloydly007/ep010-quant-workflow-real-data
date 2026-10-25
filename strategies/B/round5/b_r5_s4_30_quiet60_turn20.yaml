@@ -1,0 +1,12 @@
+name: b_r5_s4_30_quiet60_turn20
+type: score
+desc: "换手窗口压到 20 日（0.3）、波动取 60 日（0.3）、PB 0.4：最近一个月的成交清淡比年度清淡更接近「当下没人理」，适合周度调仓替换。与 29 的窗口组合相反，代价是名单更容易被一次事件打断，用来检验关注度衰减的时间尺度。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 60, weight: -0.3}
+- {op: turn_ma_n, n: 20, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

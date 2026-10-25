@@ -1,0 +1,26 @@
+name: b_r1_s2_07_capitulation_reversal
+type: rule
+desc: 一年溃疡指数超过15%叠加当日换手不足3%，是无量阴跌到底的形态——没人接盘说明最后一批浮筹已出清，换手处于自身一年最低分位的票向上阻力最小，故买其中最冷的10只，回撤收敛到5%以下（修复完成）或40日到期离场，10%止损。
+buy:
+- op: ulcer_n
+  n: 250
+  dir: above
+  threshold: 15
+- op: turn
+  dir: below
+  threshold: 3
+rank:
+  op: ts_pct
+  n: 250
+  of:
+    op: turn
+  order: asc
+sell:
+- op: ulcer_n
+  n: 120
+  dir: below
+  threshold: 5
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

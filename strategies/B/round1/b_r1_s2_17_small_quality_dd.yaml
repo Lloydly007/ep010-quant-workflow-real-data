@@ -1,0 +1,20 @@
+name: b_r1_s2_17_small_quality_dd
+type: rule
+desc: 小盘股最大的风险是回撤，120日溃疡指数低于5%说明它跌不动、有真实筹码和业绩支撑，规模溢价叠加回撤控制就构成小盘质量，故买回撤最浅的小盘10只，持有60日或250日溃疡指数恶化到15%以上（质量假设被证伪）离场，8%止损。
+buy:
+- op: ulcer_n
+  n: 120
+  dir: below
+  threshold: 5
+rank:
+  op: size_ln
+  order: asc
+sell:
+- op: ulcer_n
+  n: 250
+  dir: above
+  threshold: 15
+max_hold_days: 60
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

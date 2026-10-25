@@ -1,0 +1,20 @@
+name: a_r4_s4_32_dual_turn_20_250
+type: score
+desc: "换手拆双腿：turn_ma_n(20) -0.50 与 turn_ma_n(250) -0.50，配 ret_n(60) +0.75、size_ln -1.25：既要近期缩量也要年度清静，检验长短换手双约束是否比单窗更挑。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 20
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.5
+- op: ret_n
+  n: 60
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

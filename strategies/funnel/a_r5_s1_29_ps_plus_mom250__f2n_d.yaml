@@ -1,0 +1,20 @@
+name: a_r5_s1_29_ps_plus_mom250__f2n_d
+type: score
+desc: 加 250 日动量正权（ret_n +0.35）：便宜且一年内没崩，是「低估值 + 长期动量确认」的版本。假设长期动量筛掉的是价值陷阱（营收在萎缩、倍数低是因为基本面在恶化），与第
+  28 份的短期反转互为对照。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.6
+- op: ret_n
+  n: 250
+  weight: 0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

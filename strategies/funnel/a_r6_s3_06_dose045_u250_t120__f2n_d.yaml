@@ -1,0 +1,20 @@
+name: a_r6_s3_06_dose045_u250_t120__f2n_d
+type: score
+desc: ulcer_n(250) -0.45 与 turn_ma_n(120) -0.75 构成 3:5 的防御双腿，size/pb 仍为 -1.00/-0.50：剂量阶梯上中段，检验防御腿逼近换手腿时是否开始挤压小市值与低估值的选股空间。归一化权重：size_ln
+  37.0% / pb 18.5% / turn_ma_n(120) 27.8% / ulcer_n(250) 16.7%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

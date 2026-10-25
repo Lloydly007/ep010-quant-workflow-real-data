@@ -1,0 +1,28 @@
+name: b_r6_s2_33_reversal_confound__f2n_d
+type: score
+desc: 在 01 之上加 ret_n(20) −0.30（近一个月跌得多加分），账面六腿。这是本组唯一带收益动量的混淆项：高波动股在下跌时也往往处于短期反转区间，「低波」可能只是「最近跌得少」甚至「最近刚反弹完」的同义词。若
+  33 与 01 同档，说明防御腿的超额不是短期反转的镜像；若 33 明显偏离，说明替代关系里混着反转效应，终轮冻结前必须把这条混淆单独校准。归一化权重：pb 18.2%
+  / size_ln 36.4% / turn_ma_n(120) 22.7% / ulcer_n(250) 6.8% / vol_n(250) 6.8% / ret_n(20)
+  9.1%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+- op: ret_n
+  n: 20
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

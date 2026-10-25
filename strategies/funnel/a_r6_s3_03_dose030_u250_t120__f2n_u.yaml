@@ -1,0 +1,21 @@
+name: a_r6_s3_03_dose030_u250_t120__f2n_u
+type: score
+desc: ulcer_n(250) -0.30 配 size_ln -1.00 / pb -0.50 / turn_ma_n(120) -0.75：三腿权重原封不动，只把防御腿加到换手腿的四成，检验「低换手
+  + 低估值 + 小市值」之外是否还存在独立的回撤补偿。归一化权重：size_ln 39.2% / pb 19.6% / turn_ma_n(120) 29.4%
+  / ulcer_n(250) 11.8%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

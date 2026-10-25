@@ -1,0 +1,19 @@
+name: a_r3_s4_18_calm_own_vol_pct
+type: score
+desc: 把 20 日波动放到自身过去 120 日的时序分位里看，选处于自己最安静状态的小盘低 PB 股；与自身历史比而非与别人比，能抓到刚经历风险释放、波动回归常态的错杀标的。
+factors:
+- op: size_ln
+  weight: -1.7
+- op: ts_pct
+  n: 120
+  of:
+    op: vol_n
+    n: 20
+  weight: -0.85
+- op: pb
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

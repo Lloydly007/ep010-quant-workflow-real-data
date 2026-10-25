@@ -1,0 +1,24 @@
+name: a_r6_s3_21_dual120_250_ulcer250_dose030__f3n_d
+type: score
+desc: 换手拆成两个窗口（turn_ma_n(120) -0.40 与 turn_ma_n(250) -0.40）再配 ulcer_n(250) -0.30、size
+  -0.90、pb -0.45：常年冷清是结构、近半年转冷是状态，回撤腿只取低剂量作第三维确认。归一化权重：size_ln 36.7% / pb 18.4% /
+  turn_ma_n(120) 16.3% / turn_ma_n(250) 16.3% / ulcer_n(250) 12.2%。
+factors:
+- op: size_ln
+  weight: -0.9
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.4
+- op: ulcer_n
+  n: 250
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

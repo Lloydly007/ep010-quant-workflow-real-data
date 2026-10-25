@@ -1,0 +1,20 @@
+name: a_r5_s3_10_turn20_quiet
+type: score
+desc: "短期清淡换手主导：20 日均换手 -0.8，pb -0.45、行业内分位 -0.45、size_ln -0.6。形态对齐第 3 轮 b_r3_s2_06（20 日换手负权配低 PB、小市值）的编制，这里再补行业相对这条腿：假设一个月的清淡已足够标出无人问津的名字，没人抢跑的价格才可能既便宜又没人抢。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.45
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 20
+  weight: -0.8
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

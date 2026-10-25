@@ -1,0 +1,16 @@
+name: b_r4_s4_04_pg_turn20_equal
+type: score
+desc: "换手窗口轴 20 日（月度）档，与第 3 轮 b_r3_s2_06 的换手口径一致但估值方向相反：把 pe_ttm 从负权改成正权。20 日是‘一个月换手’的常规口径，能过滤掉月末效应，同时保留对叙事交易的反向暴露。本份是该轴的中枢参照，其余档位与权重变体都相对它读增量。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

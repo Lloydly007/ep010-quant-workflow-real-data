@@ -1,0 +1,19 @@
+name: b_r5_s3_22_size_lean_ts250_turn250
+type: score
+desc: "规模腿加重（size_ln -0.75），估值分位 -0.8、一年换手 -0.75：接近 r3 组“年度清淡 + 便宜小盘”骨架，但把 pb 绝对水平换成了 pb 自身分位——用来分辨超额究竟来自“绝对便宜”还是“相对自己便宜”。"
+factors:
+- op: size_ln
+  weight: -0.75
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.8
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: a_r5_s1_25_ps_plus_lowvol60__f2n_u
+type: score
+desc: 在基准上加 60 日低波负权（vol_n −0.40，换手降到 −0.60）：低波在这里不是独立风格，而是替低换手做交易层面的确认——成交量低但价格乱跳的名字风险高，量价同时安静才是真的没人管。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+- op: vol_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,15 @@
+name: a_r4_s3_02_pure_dual_60_20
+type: score
+desc: "换手用季度窗、波动用月窗：换手是关注度存量，需要一个季度才稳定；波动是情绪流量，一个月就够。两腿窗口刻意不对称，避免短窗换手噪声把正常调仓误读成被抛弃。"
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: vol_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

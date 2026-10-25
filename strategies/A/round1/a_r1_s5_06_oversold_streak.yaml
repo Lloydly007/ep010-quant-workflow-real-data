@@ -1,0 +1,13 @@
+name: a_r1_s5_06_oversold_streak
+type: rule
+desc: 股价距60日低点5%以内且已连跌6日以上，短周期抛压被过度释放、继续下跌需要新的卖盘，故在连跌末端买入、10日反弹超8%止盈或5日到期走人，且不设价格止损以避免反弹前的假破位洗出
+buy:
+- {op: dist_low_n, n: 60, dir: below, threshold: 5}
+- {op: streak_down, dir: above, threshold: 5}
+sell:
+- {op: ret_n, n: 10, dir: above, threshold: 8}
+rank: {op: ret_n, n: 20, order: asc}
+max_hold_days: 5
+stop_loss: none
+max_positions: 10
+industry_cap: 0

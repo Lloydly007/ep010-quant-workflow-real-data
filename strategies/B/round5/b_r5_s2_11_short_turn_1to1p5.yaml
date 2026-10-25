@@ -1,0 +1,16 @@
+name: b_r5_s2_11_short_turn_1to1p5
+type: score
+desc: "20 日窗口上的 1:1.5（pb -0.60 / size_ln -0.90）：与 03 构成严格的窗口对照，检验同一比值在短窗口下是否仍然有效，还是短窗口的换手信号本身带强反转属性、把估值腿的方向冲掉。归一化权重：pb 26.7% / size_ln 40.0% / turn_ma_n(20) 33.3%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -0.90
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

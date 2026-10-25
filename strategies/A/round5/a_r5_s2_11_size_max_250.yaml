@@ -1,0 +1,16 @@
+name: a_r5_s2_11_size_max_250
+type: score
+desc: "规模 -2.0 打满、估值仍 -0.5：本组的规模上界探针。若超额主要由规模解释，这份应与 10 接近且与 06 明显分开，从而给整组的规模预算画一条天花板。"
+factors:
+- op: size_ln
+  weight: -2.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

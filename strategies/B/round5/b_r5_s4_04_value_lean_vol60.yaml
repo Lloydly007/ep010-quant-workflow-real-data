@@ -1,0 +1,11 @@
+name: b_r5_s4_04_value_lean_vol60
+type: score
+desc: "把 PB 提到低波的 2.3 倍、窗口取 60 日：主假设是折价本身，季度级平静只用来剔除财报前后被剧烈重估的名字。若价值腿独自就能抗跌，压低低波权重不应明显掉效果；反之说明便宜需要安静来躲开越跌越便宜的陷阱。与 02 同窗不同权，是 60 日这一格里的倾斜对照。"
+factors:
+- {op: pb, weight: -0.7}
+- {op: vol_n, n: 60, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

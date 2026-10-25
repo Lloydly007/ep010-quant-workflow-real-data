@@ -1,0 +1,21 @@
+name: b_r3_s1_20_cheap_long_reversal
+type: score
+desc: 三镜低估叠加 250 日跌幅大与 20 日低换手，一年期跌透且当下换手枯竭是筹码出清完成的典型形态，超额来自超跌之后估值向中枢的回归，用长窗反转而非短窗追跌，避免买在半山腰。
+factors:
+- op: pb
+  weight: -0.35
+- op: ps_ttm
+  weight: -0.35
+- op: pe_ttm
+  weight: -0.30
+- op: ret_n
+  n: 250
+  weight: -0.45
+- op: turn_ma_n
+  n: 20
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

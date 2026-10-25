@@ -1,0 +1,14 @@
+name: b_r1_s4_12_ps_growth_premium
+type: rule
+desc: 市场愿为营收扩张支付高PS，高PS叠加当日换手破3%说明成长预期正被资金确认而非无人问津→买入高PS且换手放大的成长股，持有20日、亏8%离场，同行业最多3只。
+buy:
+- op: turn
+  dir: above
+  threshold: 3.0
+rank:
+  op: ps_ttm
+  order: desc
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

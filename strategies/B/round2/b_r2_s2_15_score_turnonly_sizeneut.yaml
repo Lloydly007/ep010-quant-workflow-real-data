@@ -1,0 +1,17 @@
+name: b_r2_s2_15_score_turnonly_sizeneut
+type: score
+desc: "现象：如果“低换手溢价”只是小市值的代理，那么把规模中性化后它应当消失；这是第 1 轮诊断“低估值低波只是少亏”能否被推翻的关键。为什么在 A 股该有超额（或被证伪）：交易量本身就是关注度的价格，同一市值档内换手最低的那批票后续收益更高，因为“没人讨论”意味着预期差没被交易掉；neut_size=true 按当日流通市值 5 档分组，把因子的秩限制在组内计算，等于只在同规模组里比“谁更冷”。怎么进出：月度首个交易日按 score = -0.6×20 日均换手截面分位 -0.4×60 日波动 排序取前 30，neut_size=true；持有到下次调仓。相对第 1 轮失败模式改了什么：本组有两个“对照/证伪”设计，15 负责剥离规模（第 1 轮从没做过这种剥离，它的 2 份带 neut_size 的 score 型做的是估值倾斜），20 负责保留第 1 轮绝对口径；若 15 也能过 L2，说明被忽视效应独立成立，第 3 轮应把资源投向中性化口径而不是继续加规模暴露。"
+factors:
+- op: xsec_pct
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.6
+- op: vol_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: false
+neut_size: true
+industry_cap: 0

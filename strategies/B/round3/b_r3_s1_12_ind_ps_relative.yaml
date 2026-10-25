@@ -1,0 +1,20 @@
+name: b_r3_s1_12_ind_ps_relative
+type: score
+desc: 行业内 PS 分位最低者优先，行业内比营收估值能同时规避盈利周期与杠杆结构的干扰，月度调仓配合 120 日低波过滤，超额来自同一行业内销售端折价的收敛，比跨行业比 PS 更不容易选中重资产或高杠杆行业的永久便宜。
+factors:
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.50
+- op: pb
+  weight: -0.30
+- op: pe_ttm
+  weight: -0.15
+- op: vol_n
+  n: 120
+  weight: -0.40
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

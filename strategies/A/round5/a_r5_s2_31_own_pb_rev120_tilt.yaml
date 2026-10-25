@@ -1,0 +1,19 @@
+name: a_r5_s2_31_own_pb_rev120_tilt
+type: score
+desc: "ret_n(120) -0.3 半年反转：窗口与估值长窗同频，测'半年下跌 + 相对自身便宜'的深度错价组合是否比短反更稳。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: ret_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r1_s4_20_laggard_catchup
+type: rule
+desc: 300ETF在60日线上方（市场整体向上）而个股20日仍跌超5%，说明资金只是暂时离开该股而非离开市场，牛市里的落后股存在向市场均值回归的补涨压力，这与弱市追涨和弱市超跌是两种不同的赔率来源——故在市场向上状态下买短期落后但仍在年线上方的股票，20日跌幅最深者优先，跌破年线（长期趋势破坏）离场，40日为限、10%止损，行业上限5只。
+buy:
+  - {op: etf_above_ma_n, n: 60, dir: above, threshold: 0.5}
+  - {op: ret_n, n: 20, dir: below, threshold: -5}
+  - {op: close_over_ma_n, n: 250, dir: above, threshold: 1.0}
+sell:
+  - {op: close_over_ma_n, n: 250, dir: below, threshold: 1.0}
+rank: {op: ret_n, n: 20, order: asc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

@@ -1,0 +1,24 @@
+name: b_r6_s1_31_vol_leg_2to1__f4n_d
+type: score
+desc: 第三腿检验（低波）：在 07（分割 2:1）上追加 vol_n(120) -0.35，低波动占 14.6%。换手与波动在同一个“冷清”概念下高度相关，但内涵不同——低换手是“没人交易”，低波动是“价格不折腾”。若加上低波后组合稳定而换手双窗的表现不被稀释，说明两条腿各自携带独立信息，冻结可以把低波并入；若加上后与
+  07 无差别，则低波只是换手的影子，没有必要在终版里多一条共线腿。这是本组里唯一直接比较“活跃度”与“价格路径”两种防御口径的配置。归一化权重：pb 20.8%
+  / size_ln 27.1% / turn_ma_n(120) 25.0% / turn_ma_n(250) 12.5% / vol_n(120) 14.6%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.3
+- op: vol_n
+  n: 60
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

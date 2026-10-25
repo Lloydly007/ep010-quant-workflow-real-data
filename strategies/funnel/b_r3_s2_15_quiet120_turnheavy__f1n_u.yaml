@@ -1,0 +1,14 @@
+name: b_r3_s2_15_quiet120_turnheavy__f1n_u
+type: score
+desc: 选近 120 日换手极低、PB 不贵的股票，理由是中期换手是筹码沉淀度的直接度量，低 PB 在此只作估值上限以免买到贵资产。
+factors:
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -1.4
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

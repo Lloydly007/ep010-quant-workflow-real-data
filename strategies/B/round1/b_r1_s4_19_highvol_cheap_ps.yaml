@@ -1,0 +1,17 @@
+name: b_r1_s4_19_highvol_cheap_ps
+type: rule
+desc: 60日波动高于3%说明市场对这批票的分歧很大、风险补偿要求很高，而行业内PS最低意味着收入端已被同业折价定价，分歧一旦向基本面收敛、向上弹性最大且下行有收入端缓冲→买入高波组并按行业内PS升序取最便宜者，持有40日、亏10%离场。
+buy:
+- op: vol_n
+  n: 60
+  dir: above
+  threshold: 3.0
+rank:
+  op: ind_rank
+  of:
+    op: ps_ttm
+  order: asc
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

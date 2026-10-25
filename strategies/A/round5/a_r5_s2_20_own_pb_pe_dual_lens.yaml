@@ -1,0 +1,21 @@
+name: a_r5_s2_20_own_pb_pe_dual_lens
+type: score
+desc: "PB 250 日分位 -0.45 配 PE 120 日分位 -0.3：加入盈利端口径，PE 用短窗是因为分母 E 更新更快，测'资产便宜 + 盈利便宜'双确认能否减少价值陷阱。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.45
+- op: ts_pct
+  n: 120
+  of:
+    op: pe_ttm
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

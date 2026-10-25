@@ -1,0 +1,14 @@
+name: a_r4_s2_01_t20_size080_baseline
+type: score
+desc: "规模负权 -0.80、与 20 日低换手 -0.75 近乎等权（规模占 |w| 51.6%），作为换手窗口轴 20 日档的基线锚：若阶梯上端相对本档无改善，说明短窗口冷门股里的小市值溢价已被挤干。"
+factors:
+- op: size_ln
+  weight: -0.8
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

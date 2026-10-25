@@ -1,0 +1,14 @@
+name: b_r3_s2_01_lowpb_quiet20_core
+type: score
+desc: 选 PB 最低且近 20 日平均换手率最低的股票，理由是关注度不足的便宜货被系统性折价，成交安静意味着情绪溢价与边际卖压都已消退。
+factors:
+- op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 20
+  weight: -1.0
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

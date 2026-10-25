@@ -1,0 +1,16 @@
+name: b_r4_s2_31_turn250_pbheavy_sizelean
+type: score
+desc: 250 日换手 + 重 pb + -1.20 小盘：三条慢变量同时加权，假设年度冷门的小盘低估股换手最低、名单最稳，周度调仓的作用主要是等待名单自然轮换而非主动追信号。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -1.20
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

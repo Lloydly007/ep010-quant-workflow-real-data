@@ -1,0 +1,17 @@
+name: a_r3_s2_17_dual_low_lowvol60
+type: score
+desc: 双低再叠60日低波：被忽视的小盘若同时低波，更像缺少关注而不是基本面恶化，回撤可控性提升，月度调仓减少噪声换手。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

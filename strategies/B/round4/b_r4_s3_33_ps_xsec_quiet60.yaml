@@ -1,0 +1,18 @@
+name: b_r4_s3_33_ps_xsec_quiet60
+type: score
+desc: "全池截面分位口径：xsec_pct(ps_ttm) −0.60 配 size −0.55 与 turn 60 −0.65，去掉绝对 ps 与行业维度。假设 ps 的原始分布极度右偏（营收倍数从个位数到几十），原始值的加权会退化成'几乎只看极值'，先取当日截面分位再线性加权才能让中间段也参与排序；与 31 的自身历史、32 的行业内相比，本份是第三种尺度，也是 ps 分布形状问题的直接补丁。"
+factors:
+- op: xsec_pct
+  of:
+    op: ps_ttm
+  weight: -0.6
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 60
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

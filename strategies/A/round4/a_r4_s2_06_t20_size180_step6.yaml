@@ -1,0 +1,14 @@
+name: a_r4_s2_06_t20_size180_step6
+type: score
+desc: "规模 -1.80（占 70.6%），20 日窗口第 6 档：把换手压成只做否决的弱约束，观察小盘端收益继续陡升，还是进入纯规模 beta 解释的区间。"
+factors:
+- op: size_ln
+  weight: -1.8
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

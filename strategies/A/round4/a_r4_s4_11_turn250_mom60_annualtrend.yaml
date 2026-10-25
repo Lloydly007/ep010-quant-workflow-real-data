@@ -1,0 +1,17 @@
+name: a_r4_s4_11_turn250_mom60_annualtrend
+type: score
+desc: "换手 250 日 -0.75、动量 60 日 +0.75，size_ln -1.25：以年为单位筛掉交易拥挤的名字，再用季度涨幅确认资金已开始重新定价。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

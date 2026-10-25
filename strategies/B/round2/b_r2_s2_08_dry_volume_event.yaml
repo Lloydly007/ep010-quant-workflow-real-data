@@ -1,0 +1,24 @@
+name: b_r2_s2_08_dry_volume_event
+type: rule
+desc: "现象：单日换手 <1%（当日约 46% 的样本在这条线以下）同时 20 日 ATR/收盘 <2%，是“当天完全没人交易、近期也没波动”的极值地量。为什么在 A 股该有超额：A 股地量日常常是短期底部标记——没有增量卖盘，随后少量资金进场价格弹性极大；要求“同时窄幅”把“地量但趋势剧烈”的票排除掉（那是流动性枯竭的风险票，不是机会）。怎么进出：当日换手 <1% 且 ATR(20)/收盘 <2% 过滤，按市值截面分位升序取前 10；单日换手回到 5% 以上（资金进场、事件目标达成）卖出；最长 20 日（事件型不做长持），8% 止损。相对第 1 轮失败模式改了什么：第 1 轮 s3_12 只用“单日地量”一个条件、持有 60 日，等于把地量当长期低估信号；本组明确把它当事件，加“窄幅”做二次确认，并把持有上限压到 20 日、用放量兑现而不是时间/回撤离场，从结构上限制第 1 轮暴露的换手成本。"
+buy:
+- op: turn
+  dir: below
+  threshold: 1
+- op: atr_close_n
+  n: 20
+  dir: below
+  threshold: 2
+rank:
+  op: xsec_pct
+  of:
+    op: size_ln
+  order: asc
+sell:
+- op: turn
+  dir: above
+  threshold: 5
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

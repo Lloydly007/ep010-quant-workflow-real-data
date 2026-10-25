@@ -1,0 +1,18 @@
+name: b_r3_s1_06_asset_income_reversal
+type: score
+desc: 资产与营收双镜都便宜、再叠加 120 日跌幅大者优先，便宜且已经跌透的标的在估值均值回归中弹性最大，长期负动量在这里不是追跌而是确认出清，PE 只留微调以躲开负值标的，超额来自深度调整后资产底与营收底的修复。
+factors:
+- op: pb
+  weight: -0.50
+- op: ps_ttm
+  weight: -0.40
+- op: pe_ttm
+  weight: -0.10
+- op: ret_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

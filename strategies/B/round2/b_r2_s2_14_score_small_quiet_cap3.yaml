@@ -1,0 +1,18 @@
+name: b_r2_s2_14_score_small_quiet_cap3
+type: score
+desc: "现象：打分型天然向极端小票集中，30 只里可能数只来自同一行业；而第 1 轮 A 路回撤中位 -89.5% 的教训说明集中度才是回撤的来源。为什么在 A 股该有超额：A 股行业同涨同跌，行业上限把“个股错价”与“行业 beta”分开，是用组合结构换稳定性；在等权全池 +15.11%/年 这个真对手面前，小盘冷门组合必须靠更低的回撤和更稳的路径才有资格谈超额。怎么进出：月度首个交易日按 score = -0.5×市值截面分位 -0.5×60 日均换手截面分位 排序取前 30，industry_cap=3 在选股时点强制（同行业最多 3 只）；持有到下次调仓。相对第 1 轮失败模式改了什么：第 1 轮 52 份 rule 型带了 industry_cap（3 或 5），但仅有的 2 份 score 型cap 都是 0——打分型一次持有 30 只，不做行业上限时集中度完全失控；本组是第一次把行业约束加在打分型上，并把换手窗口放到 60 日做结构性冷门，用来测“score + 行业上限”组合的净超额。"
+factors:
+- op: xsec_pct
+  of:
+    op: size_ln
+  weight: -0.5
+- op: xsec_pct
+  of:
+    op: turn_ma_n
+    n: 60
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: false
+neut_size: false
+industry_cap: 3

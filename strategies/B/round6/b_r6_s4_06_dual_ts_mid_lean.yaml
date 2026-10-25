@@ -1,0 +1,21 @@
+name: b_r6_s4_06_dual_ts_mid_lean
+type: score
+desc: 双窗但中端偏心（50/20/30）：与 05 镜像，假设半年分位才是当期定价的主导，一年分位只作底部确认。若 06 优于 05，说明本池估值反转的半衰期偏短，后续应压缩长窗权重。归一化权重：pb 50.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 30.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

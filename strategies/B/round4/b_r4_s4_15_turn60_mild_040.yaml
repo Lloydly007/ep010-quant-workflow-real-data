@@ -1,0 +1,16 @@
+name: b_r4_s4_15_turn60_mild_040
+type: score
+desc: "换手权重幅值轴轻档：60 日换手 −0.40，PE/PB 各 0.6。权重比约等于 1:1.5:1.5（换手 : PE : PB），属于把换手当第二主因子的配置。与 −0.20 档和 −1.00 档一起把权重幅值切成可比的四档，让‘换手权重边际收益是否单调’成为可读的结论。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

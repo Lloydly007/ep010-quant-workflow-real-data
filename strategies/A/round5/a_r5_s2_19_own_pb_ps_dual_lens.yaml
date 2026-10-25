@@ -1,0 +1,21 @@
+name: a_r5_s2_19_own_pb_ps_dual_lens
+type: score
+desc: "PB 与 PS 各取 250 日时序分位，-0.5 / -0.3：两个估值口径同时便宜才算便宜，PS 对盈利波动不敏感，正好补 PB 在重资产行业的失真。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: ps_ttm
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

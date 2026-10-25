@@ -1,0 +1,22 @@
+name: b_r6_s2_02_half_ulcer_vol_120
+type: score
+desc: "把 01 的两个窗口同时缩到 120 日：仍是对半、同预算，只换记忆长度。假设是「防御信号不必记满一年」，半年窗可算样本更多（250 日腿在次新股与长停牌上缺值更凶），代价是深坑的记忆更短。若本份与 01 差距很小，说明两条腿的信息主要在半年内形成，长窗只是重复计数；若本份更差，则说明 250 日的路径记忆本身值钱，缩短窗口削掉的是 ulcer 的独特部分。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(120) 7.5% / vol_n(120) 7.5%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.225
+- op: vol_n
+  n: 120
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

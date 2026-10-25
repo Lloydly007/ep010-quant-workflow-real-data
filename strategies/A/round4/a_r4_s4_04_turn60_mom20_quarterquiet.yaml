@@ -1,0 +1,17 @@
+name: a_r4_s4_04_turn60_mom20_quarterquiet
+type: score
+desc: "换手拉到 60 日 -0.75、动量用 20 日 +0.75，size_ln -1.25：季度层面成交清淡代表持股结构稳定，月内强势代表信息刚被消化，检验长换手配短动量的错配方向。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

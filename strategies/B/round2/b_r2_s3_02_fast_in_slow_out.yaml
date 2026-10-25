@@ -1,0 +1,24 @@
+name: b_r2_s3_02_fast_in_slow_out
+type: rule
+desc: 现象：A股是急涨缓跌，用同一条均线做进出会在震荡市反复穿越，把超额磨成手续费。为什么该有超额：入场与出场的信息含量不对称——指数站上短期均线只说明抛压暂歇，该快；趋势真破位需要中期确认，该慢。非对称闸门既能在牛市初期不掉队，又不在下跌初期抢跑。怎么进出：300ETF站上60日线就买vol_n(60)<3的股票、按PB升序取10只；只在300ETF跌破250日线时清仓，持有60日，不设价格止损（低波股的10%止损等于随机割肉），风险整体交给市场开关。相对第1轮：round1没有任何市场级择时，且用5%~10%固定止损制造了大量无效换手和割在低点。
+buy:
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 3
+- op: etf_above_ma_n
+  n: 60
+  dir: above
+  threshold: 0.5
+rank:
+  op: pb
+  order: asc
+sell:
+- op: etf_above_ma_n
+  n: 250
+  dir: below
+  threshold: 0.5
+max_hold_days: 60
+stop_loss: null
+max_positions: 10
+industry_cap: 5

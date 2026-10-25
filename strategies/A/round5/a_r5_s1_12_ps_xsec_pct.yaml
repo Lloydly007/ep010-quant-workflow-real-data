@@ -1,0 +1,18 @@
+name: a_r5_s1_12_ps_xsec_pct
+type: score
+desc: "用 ps_ttm 的当日截面分位（xsec_pct）代替原值（−0.70）：ps_ttm 右偏长尾重（微利公司倍数极高），原值会把权重全压给尾部的极端低价股；截面分位把评分变成「今天在池里相对多贵」，量纲与尾部都被压平。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: xsec_pct
+  of:
+    op: ps_ttm
+  weight: -0.70
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

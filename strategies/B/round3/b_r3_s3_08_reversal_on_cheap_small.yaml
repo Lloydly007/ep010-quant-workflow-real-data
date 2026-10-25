@@ -1,0 +1,16 @@
+name: b_r3_s3_08_reversal_on_cheap_small
+type: score
+desc: "在便宜小盘底盘上叠加 20 日收益负权做短期反转，买入估值低、市值小、刚被砸过的标的：A 股短期反转在低流动性小票上最强，超跌后的流动性补偿与情绪修复是超额来源，周度调仓保证反转信号不过期。"
+factors:
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.8
+- op: ret_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,15 @@
+name: a_r4_s3_17_turnheavy_250_volguard
+type: score
+desc: "与 16 号同用年度双窗，但权重结构完全不同：turn(250) -1.5 对 vol(250) -0.4（3.75:1），波动只作最小保险；这是“忽视”假设的最强表达，用于把窗口效应与权重效应拆开。"
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -1.5
+- op: vol_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

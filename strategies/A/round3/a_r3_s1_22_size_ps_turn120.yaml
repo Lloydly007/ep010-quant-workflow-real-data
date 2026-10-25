@@ -1,0 +1,16 @@
+name: a_r3_s1_22_size_ps_turn120
+type: score
+desc: 市值负权到2.10并配低PS与120日低换手，选便宜且没人炒的小盘，PS不受杠杆与会计口径影响，在小盘股里比PB更少被一次性资产减值污染。
+factors:
+- op: size_ln
+  weight: -2.1
+- op: ps_ttm
+  weight: -0.3
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

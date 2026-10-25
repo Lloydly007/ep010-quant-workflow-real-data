@@ -1,0 +1,23 @@
+name: b_r1_s3_04_turn_calm_chips
+type: rule
+desc: 换手率高于3%却伴随20日收益波动低于3%，说明筹码在高换手下依然稳定、成交由理性资金而非情绪对倒驱动，这类股票的估值折价更容易被基本面修复；在"活跃但平静"的集合里按PB升序取最便宜的10只、持有20日，20日真实振幅破8%（筹码松动）离场，止损8%。
+buy:
+- op: turn
+  dir: above
+  threshold: 3.0
+- op: vol_n
+  n: 20
+  dir: below
+  threshold: 3.0
+rank:
+  op: pb
+  order: asc
+sell:
+- op: atr_close_n
+  n: 20
+  dir: above
+  threshold: 8.0
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

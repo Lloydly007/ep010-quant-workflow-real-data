@@ -1,0 +1,21 @@
+name: a_r6_s2_02_turn120_250_short_lean__f2n_u
+type: score
+desc: 同一对换手窗向内倾斜 3:2（120 日 -0.60 / 250 日 -0.40）：若「转冷」是一种状态而非恒定的结构，近期窗口的信息应该更新得比年度窗口快，年度窗只是提供基线，不该与季度窗同票。与
+  01 的差别只在两窗的相对票数，因此可以把两者的年化差直接读成「尺度权重该给谁」，不用再担心选股域变了。风险是季度窗被一次停牌复牌或大宗集中成交拉偏，年度窗此时才是压舱石。归一化权重：size_ln
+  40.0% / pb 20.0% / turn_ma_n(120) 24.0% / turn_ma_n(250) 16.0%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

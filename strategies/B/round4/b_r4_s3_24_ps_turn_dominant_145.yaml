@@ -1,0 +1,16 @@
+name: b_r4_s3_24_ps_turn_dominant_145
+type: score
+desc: "换手主导档：turn 120 −1.45，低换手几乎垄断排序，ps 与规模退到同风格内的次序微调。假设冷清度是唯一稳定的可交易信号，估值口径只在边界上做否决；本份与 21 一起框定换手权重从 0.25 到 1.45 的整条曲线，若两端都弱于中档，则换手存在最优区间而不是单调有效。"
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -1.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

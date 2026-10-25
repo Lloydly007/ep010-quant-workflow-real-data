@@ -1,0 +1,16 @@
+name: a_r5_s4_08_pe250_quiet_tilt
+type: score
+desc: "换手只留 -0.50：turn_ma_n(250) -0.50、size_ln -1.40、pe_ttm -0.60。250 日窗口本身已把候选压成“常年没人碰”的一批，再加 -0.75 是边际递减，于是把权重让给更深的规模倾斜，检验长窗口下换手腿是否已经饱和。"
+factors:
+- op: size_ln
+  weight: -1.40
+- op: pe_ttm
+  weight: -0.60
+- op: turn_ma_n
+  n: 250
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r4_s2_08_t20_size220_step8
+type: score
+desc: "规模 -2.20（占 74.6%），20 日窗口第 8 档：逼近只按市值排序的极端，检验 20 日换手在此强度下是否仍有增量信息。"
+factors:
+- op: size_ln
+  weight: -2.2
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r4_s4_16_turn60_heavy_100
+type: score
+desc: "换手权重幅值轴重档：60 日换手 −1.00，超过单条估值腿（0.6），换手成为排序的单一主导项，PE/PB 对冲退化为在‘低换手池内’的二次排序。这是对‘低换手本身即 alpha’的直接押注，也是检验第 3 轮 a_r3_s2_03 里 turn −0.75 是否已经过重的对照。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

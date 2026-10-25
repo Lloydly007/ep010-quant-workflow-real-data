@@ -1,0 +1,16 @@
+name: a_r6_s4_12_t20_ps_mild
+type: score
+desc: "20 日换手是月内活跃度，最贴「刚刚被冷落」的状态腿，也是本族噪音与换手成本最高的一档。激进档等于用一个月的冷清成交去换极端小市值暴露；温和档是全组最保守的配置之一。本对给出「短窗状态信号值不值得承担周度换手」的直接读数，并检验短窗是否只是规模的另一种写法。本份为第 6 对的温和档：size_ln −0.80、turn_ma_n(20) −0.30。按 |w| 归一：size_ln 50.0% / turn_ma_n(20) 18.8% / ps_ttm 31.2%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓 30、每周首个交易日调仓、按行业内秩中性化。"
+factors:
+- op: size_ln
+  weight: -0.80
+- op: turn_ma_n
+  n: 20
+  weight: -0.30
+- op: ps_ttm
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

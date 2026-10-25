@@ -1,0 +1,21 @@
+name: a_r6_s3_15_turn60_ulcer250_dose035__f3n_d
+type: score
+desc: 换手腿缩到 60 日（turn_ma_n(60) -0.70）配 ulcer_n(250) -0.35：短换手说「最近冷清」、长回撤说「一路抗跌」，两个尺度错开，检验「刚变冷
+  + 一直稳」是否优于同尺度叠加。归一化权重：size_ln 36.7% / pb 20.4% / turn_ma_n(60) 28.6% / ulcer_n(250)
+  14.3%。
+factors:
+- op: size_ln
+  weight: -0.9
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.7
+- op: ulcer_n
+  n: 120
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

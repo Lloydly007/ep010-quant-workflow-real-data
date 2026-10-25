@@ -1,0 +1,16 @@
+name: b_r6_s4_32_axis_flip_control
+type: score
+desc: 反向对照（证伪用）：把两条腿都翻正——绝对 PB +0.5、250 日分位 +0.5，选「绝对贵且已在自己一年高位」的名字。若本轴超额真来自低估值低关注，此份应显著跑输；若它也赚钱，说明本组收益来自风格 beta 而非估值轴本身。归一化权重：pb 50.0% / ts_pct(pb,250) 50.0%（均为正权）。
+factors:
+- op: pb
+  weight: 0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: 0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

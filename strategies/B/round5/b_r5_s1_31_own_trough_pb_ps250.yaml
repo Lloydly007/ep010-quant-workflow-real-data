@@ -1,0 +1,22 @@
+name: b_r5_s1_31_own_trough_pb_ps250
+type: score
+desc: 把 pb 与 ps 换成各自的 250 日时序分位（纵向便宜，各 -0.50）+ 120 日换手。假设“相对自己过去一年便宜”比“相对同行便宜”更接近均值回复的触发条件——同行的估值可能整批上移，横向排名因此失去绝对锚。
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

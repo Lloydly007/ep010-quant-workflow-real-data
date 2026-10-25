@@ -1,0 +1,24 @@
+name: a_r5_s3_25_pb_ps_pe_stack
+type: score
+desc: "三条估值齐上：pb -0.45、ps_ttm -0.3、pe_ttm -0.2，加行业内 PB 分位 -0.45、size_ln -0.55、20 日低波 -0.3。pe_ttm 有约一成负值（真实亏损股），负权会把亏损股排到最前，故只给最小权重当最弱的边际修正，主判断由 PB 与 PS 承担，本份测三分母叠加是增益还是互相稀释。"
+factors:
+- op: size_ln
+  weight: -0.55
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.3
+- op: pe_ttm
+  weight: -0.2
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.45
+- op: vol_n
+  n: 20
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

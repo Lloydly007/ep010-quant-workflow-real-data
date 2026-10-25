@@ -1,0 +1,17 @@
+name: a_r4_s2_32_t20_size080_volguard
+type: score
+desc: "20 日单换手窗口的防守对照：低波 -1.30 主导、规模 -0.80（占 28.1%）把组合压向大盘低波端，用来确认规模倾斜的符号在反向配置中严格翻转。"
+factors:
+- op: size_ln
+  weight: -0.8
+- op: vol_n
+  n: 60
+  weight: -1.3
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

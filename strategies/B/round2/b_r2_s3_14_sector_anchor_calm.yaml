@@ -1,0 +1,20 @@
+name: b_r2_s3_14_sector_anchor_calm
+type: rule
+desc: 现象：个股PB折价可能是它确实该便宜（基本面有缺陷），但整个行业被系统性抛弃后的估值中枢下移，通常在2到3年内随行业轮动回归。为什么该有超额：A股行业轮动与政策周期绑定，被抛弃行业里"最平静的幸存者"既享受行业估值修复的beta，又有筹码稳定的保护，比单纯买个股便宜更可靠。怎么进出：买vol_n(60)<2的股票、按所属门类PB中位数升序（先选便宜行业）取10只；60日均换手升破5%（行业整体拥挤化、修复到位）即卖，持有60日，10%止损。相对第1轮：round1的行业估值锚只当排序键、从未与低波条件绑定，出场也全是个股信号而非行业修复位。
+buy:
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 2
+rank:
+  op: ind_median_pb
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 60
+  dir: above
+  threshold: 5
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

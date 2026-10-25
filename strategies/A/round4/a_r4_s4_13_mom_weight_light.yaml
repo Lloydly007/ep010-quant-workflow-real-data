@@ -1,0 +1,17 @@
+name: a_r4_s4_13_mom_weight_light
+type: score
+desc: "与基准格同窗口（turn_ma_n(120)、ret_n(60)）但把动量权重压到 +0.30（size_ln -1.25）：检验动量只是排序扰动而非收益来源，若超额不塌说明小盘加低换手的核心已足够。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

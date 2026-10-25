@@ -1,0 +1,19 @@
+name: a_r3_s4_04_small_calm_vol250
+type: score
+desc: 选过去一年波动最低、且近半年涨幅最小的小盘低 PB 股；年窗低波筛掉全年靠事件驱动的暴涨暴跌，半年未涨保证安静不是已经兑现过的行情，剩下的冷门小公司更容易被长线资金持续买入。
+factors:
+- op: size_ln
+  weight: -1.9
+- op: vol_n
+  n: 250
+  weight: -0.95
+- op: ret_n
+  n: 120
+  weight: -0.35
+- op: pb
+  weight: -0.4
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

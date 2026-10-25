@@ -1,0 +1,22 @@
+name: a_r6_s3_25_dual20_120_ulcer60_dose050
+type: score
+desc: "换手取 20 日（-0.35）与 120 日（-0.40）双短窗，回撤也取短窗 ulcer_n(60) -0.50：全短记忆配置，假设周度调仓下近端信息噪声最低，是与 17（全长记忆）的镜像对照。归一化权重：size_ln 35.2% / pb 18.5% / turn_ma_n(20) 13.0% / turn_ma_n(120) 14.8% / ulcer_n(60) 18.5%。"
+factors:
+- op: size_ln
+  weight: -0.95
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 20
+  weight: -0.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.40
+- op: ulcer_n
+  n: 60
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

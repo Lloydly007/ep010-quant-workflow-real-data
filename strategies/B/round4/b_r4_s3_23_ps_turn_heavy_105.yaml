@@ -1,0 +1,16 @@
+name: b_r4_s3_23_ps_turn_heavy_105
+type: score
+desc: "换手权重偏重档：turn 120 −1.05，约为 ps 腿的 2.3 倍。假设在小盘上低换手本身就是独立的 alpha 来源，营收便宜只是把名单限制在'不会因为贵而被杀'的范围内，因此换手应主导排序；若本份 IR 明显高于 22 而超额相近，说明 ps 提供的是一条降低波动的护城河，而非收益引擎。"
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -1.05
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

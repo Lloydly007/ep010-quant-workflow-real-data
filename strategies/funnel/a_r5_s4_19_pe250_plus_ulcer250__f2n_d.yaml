@@ -1,0 +1,19 @@
+name: a_r5_s4_19_pe250_plus_ulcer250__f2n_d
+type: score
+desc: 补 250 日回撤路径：ulcer_n(250) -0.60，配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。换手低不代表跌得浅，回撤平方均值衡量的是持有期能不能扛住；低估值低换手若配深回撤，组合实际很难拿，本份检验路径平滑是否独立加分。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

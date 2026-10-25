@@ -1,0 +1,15 @@
+name: a_r4_s3_08_pure_dual_250_60
+type: score
+desc: "年度换手 + 季度波动：年度清淡是持股结构与抛压的证据，季度波动只作近期风险守门人；与 07 相比把换手窗再拉长一倍，检验忽视溢价是否需要一年尺度。"
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,19 @@
+name: a_r5_s4_17_pe250_plus_lowvol250
+type: score
+desc: "补 250 日低波：vol_n(250) -0.60，配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。低换手描述筹码、低波描述价格路径，“安静”可能只是其中之一的代理；用同窗口波动率把换手是否只是波动的影子这一点检验掉。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: vol_n
+  n: 250
+  weight: -0.60
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

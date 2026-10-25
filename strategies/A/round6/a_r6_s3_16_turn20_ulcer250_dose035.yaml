@@ -1,0 +1,19 @@
+name: a_r6_s3_16_turn20_ulcer250_dose035
+type: score
+desc: "换手腿取 20 日（-0.75）配 ulcer_n(250) -0.35：最短换手对最长回撤的极端错配，假设近期成交骤冷就是流动性折价来源，而一年回撤负责滤掉结构脆弱的票。归一化权重：size_ln 36.0% / pb 20.0% / turn_ma_n(20) 30.0% / ulcer_n(250) 14.0%。"
+factors:
+- op: size_ln
+  weight: -0.90
+- op: pb
+  weight: -0.50
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,20 @@
+name: a_r6_s3_30_mutedturn_ulcer250_dose045__f2n_u
+type: score
+desc: 换手腿降到 -0.35（size -0.95、pb -0.55、ulcer_n(250) -0.45）：假设换手与回撤高度相关，压低换手腿以减少共线挤压、让回撤腿独立承担防御角色，检验两条腿的替代关系。归一化权重：size_ln
+  41.3% / pb 23.9% / turn_ma_n(120) 15.2% / ulcer_n(250) 19.6%。
+factors:
+- op: size_ln
+  weight: -0.95
+- op: pb
+  weight: -0.55
+- op: turn_ma_n
+  n: 250
+  weight: -0.35
+- op: ulcer_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

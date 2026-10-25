@@ -1,0 +1,16 @@
+name: b_r3_s3_09_long_momentum_tilt
+type: score
+desc: "把第三腿从反转改成 250 日动量正权，检验便宜小盘里也要挑已经走出趋势的互补假设：低估值提供赔率、长期动量提供胜率，动量腿把持续阴跌的价值陷阱筛掉，月度调仓匹配年度动量这一慢变量。"
+factors:
+- op: pb
+  weight: -0.3
+- op: size_ln
+  weight: -0.6
+- op: ret_n
+  n: 250
+  weight: 0.3
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

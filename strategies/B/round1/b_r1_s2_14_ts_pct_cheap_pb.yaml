@@ -1,0 +1,22 @@
+name: b_r1_s2_14_ts_pct_cheap_pb
+type: rule
+desc: 便宜的绝对标准因行业与时代而异，个股PB处于自身过去250日最低分位才是相对自己的历史便宜，这种自身估值分位极低、当日换手又不足1%（几乎无人交易）的票均值回复概率最高，故买时序PB分位最低的10只，持有40日或20日均换手回到2%以上（关注度回升）离场，10%止损。
+buy:
+- op: turn
+  dir: below
+  threshold: 1
+rank:
+  op: ts_pct
+  n: 250
+  of:
+    op: pb
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 2
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

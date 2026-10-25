@@ -1,0 +1,23 @@
+name: b_r1_s3_09_path_smooth
+type: rule
+desc: 60日溃疡指数低于5%意味着过去一季价格路径平滑、回撤浅，回撤厌恶型资金会持续买入这类"拿得住"的股票并压低其风险溢价；用当日截面回撤分位（抗单只极值）取最平滑的10只、持有40日，60日溃疡回升破15%（平滑路径已破坏）离场，止损8%。
+buy:
+- op: ulcer_n
+  n: 60
+  dir: below
+  threshold: 5.0
+rank:
+  op: xsec_pct
+  of:
+    op: ulcer_n
+    n: 60
+  order: asc
+sell:
+- op: ulcer_n
+  n: 60
+  dir: above
+  threshold: 15.0
+max_hold_days: 40
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

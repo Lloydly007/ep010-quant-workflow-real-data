@@ -1,0 +1,16 @@
+name: a_r3_s2_03_size_turn120_noroe__f2n_d
+type: score
+desc: 照067骨架但去掉ROE（本轮财务表为空），用半年低换手替代质量维度，并把小市值负权加倍到-2.0，用更极端的规模倾斜补偿无法筛盈利质量的价值陷阱风险。
+factors:
+- op: size_ln
+  weight: -2.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

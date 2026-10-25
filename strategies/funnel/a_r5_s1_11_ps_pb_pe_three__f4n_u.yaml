@@ -1,0 +1,21 @@
+name: a_r5_s1_11_ps_pb_pe_three__f4n_u
+type: score
+desc: 三口径并用（ps −0.60 / pb −0.30 / pe −0.30）：营收、账面、盈利三条估值线同时负权，问「多口径一致便宜」是否比单一口径更挑剔。相对第
+  10 份多了 pb，污染面被资产端稀释；相对第 7 份多了 pe，便宜的门槛再抬一档。
+factors:
+- op: size_ln
+  weight: -0.8
+- op: ps_ttm
+  weight: -0.6
+- op: pb
+  weight: -0.3
+- op: pe_ttm
+  weight: -0.3
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

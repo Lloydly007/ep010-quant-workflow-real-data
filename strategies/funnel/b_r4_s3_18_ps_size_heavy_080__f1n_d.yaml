@@ -1,0 +1,17 @@
+name: b_r4_s3_18_ps_size_heavy_080__f1n_d
+type: score
+desc: 规模倾斜偏重档：size −0.80，约为 ps 腿的两倍，turn 120 保持 −0.75。假设在小盘上'够小'比'够便宜'更决定性，ps 只是在小盘里做同风格排序；与第
+  3 轮表现最好的骨架相比，这里把主信号从账面估值换成了营收估值，规模强度不变，用来检验那条骨架的收益来源是不是规模而非估值口径。
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: size_ln
+  weight: -0.8
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

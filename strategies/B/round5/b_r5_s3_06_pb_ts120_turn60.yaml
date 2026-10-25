@@ -1,0 +1,17 @@
+name: b_r5_s3_06_pb_ts120_turn60
+type: score
+desc: "半年估值分位 + 季度换手：估值取半年内的相对压缩程度，关注度取季度内的冷却程度，权重仍等量负。假设半年视角已足够剔除单次事件冲击，而季度换手能更早捕捉到“缩量筑底”的起点。"
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

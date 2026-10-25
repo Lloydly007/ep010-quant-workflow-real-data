@@ -1,0 +1,12 @@
+name: b_r5_s4_13_yearpath_ulcer250
+type: score
+desc: "250 日溃疡 0.35 配 120 日低波 0.2、PB 0.45：一年没挖过深坑是抗跌性最强的证据，低波只做辅助，价值权重给到最高。这是主动牺牲一部分防御性去换折价赔率的一档，检验长周期下行路径与估值之间谁更该拿主导权。"
+factors:
+- {op: pb, weight: -0.45}
+- {op: vol_n, n: 120, weight: -0.2}
+- {op: ulcer_n, n: 250, weight: -0.35}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,22 @@
+name: a_r3_s4_20_calm_quiet_strength
+type: score
+desc: 低波用截面分位（相对全池安静）、动量用自身时序分位（相对自己转强）两种口径组合；安静中悄悄走强的小盘股既没有拥挤风险又有资金开始关注，是低波与动量的交集。
+factors:
+- op: size_ln
+  weight: -1.55
+- op: xsec_pct
+  of:
+    op: vol_n
+    n: 120
+  weight: -0.6
+- op: ts_pct
+  n: 60
+  of:
+    op: ret_n
+    n: 20
+  weight: 0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

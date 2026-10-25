@@ -1,0 +1,21 @@
+name: a_r5_s4_31_pe250_five_legs
+type: score
+desc: "五腿综合：size_ln -1.00、pe_ttm -0.60、pb -0.35、turn_ma_n(250) -0.75、vol_n(250) -0.45。多腿平均压低任何单因子的极端暴露，检验“稀释”是让组合更稳，还是把信号洗没了——这是对前四块单点结论的汇总式反问。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.60
+- op: pb
+  weight: -0.35
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: vol_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

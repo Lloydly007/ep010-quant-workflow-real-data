@@ -1,0 +1,12 @@
+name: b_r3_s4_22_dual_val_calm120
+type: score
+desc: "PB与PS各0.35（合计0.7）加120日低波0.3，月度调仓：单一口径便宜可能只是会计特征，两把尺子同时便宜且价格安静，错价概率更高、修复空间才在。"
+factors:
+- {op: pb, weight: -0.35}
+- {op: ps_ttm, weight: -0.35}
+- {op: vol_n, n: 120, weight: -0.3}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

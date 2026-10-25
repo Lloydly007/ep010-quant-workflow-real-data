@@ -1,0 +1,20 @@
+name: b_r1_s3_05_lowvol_anomaly
+type: rule
+desc: 60日日收益标准差低于3%的股票波动风险低，在杠杆约束与业绩考核下会被系统性低配、风险调整后收益因此长期偏高；低波集合内按市销率升序取收入端最便宜的10只、持有60日等待特征被重新定价，20日均换手升破5%（低波股被炒热）离场，止损10%。
+buy:
+- op: vol_n
+  n: 60
+  dir: below
+  threshold: 3.0
+rank:
+  op: ps_ttm
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 5.0
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 3

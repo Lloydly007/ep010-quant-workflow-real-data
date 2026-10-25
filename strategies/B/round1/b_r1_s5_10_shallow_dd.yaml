@@ -1,0 +1,12 @@
+name: b_r1_s5_10_shallow_dd
+type: rule
+desc: "60日溃疡指数低于3%说明回撤浅且修复快，此类股票筹码与经营更稳，长期享受质量溢价；回撤恶化到8%以上（结构破坏）或持有满60日、止损10%离场。"
+buy:
+- {op: ulcer_n, n: 60, dir: below, threshold: 3.0}
+sell:
+- {op: ulcer_n, n: 60, dir: above, threshold: 8.0}
+rank: {op: pb, order: asc}
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

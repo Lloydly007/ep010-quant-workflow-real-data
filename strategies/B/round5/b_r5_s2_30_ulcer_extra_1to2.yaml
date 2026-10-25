@@ -1,0 +1,19 @@
+name: b_r5_s2_30_ulcer_extra_1to2
+type: score
+desc: "在 05 基准（1:2）上加 ulcer_n(250) -0.45（一年回撤路径浅）：用回撤深度替代波动率作防御腿，检验“跌得少”与“跌得慢”是否是同一件事，以及防御腿能否与重规模共处。回撤是有量纲的路径指标，比波动率更贴近持有体验，但 250 日窗口在小盘上可能缺失更多，需要单独看。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 15.0%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

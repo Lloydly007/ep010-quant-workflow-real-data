@@ -1,0 +1,25 @@
+name: a_r5_s3_06_twin_ind_cheap__f4n_d
+type: score
+desc: 双行业相对便宜：同门类内 PB 分位 -0.55 与 PS 分位 -0.45 并重，绝对 pb 只 -0.3，配 size_ln -0.5 与 60 日换手
+  -0.4。假设只有在行业内部比较才能剔除重资产与轻资产的估值口径差，两条行业内证据互相确认可压低单一分母的噪音，超额来自门类内的折价向中位回归。
+factors:
+- op: size_ln
+  weight: -0.5
+- op: pb
+  weight: -0.3
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.55
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.45
+- op: turn_ma_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

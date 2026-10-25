@@ -1,0 +1,21 @@
+name: b_r5_s3_31_ind_rank_pb_ts250
+type: score
+desc: "行业内 PB 排名 ind_rank -0.5 取代截面绝对 PB，配 250 日自身分位 -0.7 与 120 日换手 -0.6：行业内便宜可剔除行业估值中枢差异（银行与科技不可比），自身分位再看纵向压缩；注意本池行业是单期快照，行业口径只能算近似。"
+factors:
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.7
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

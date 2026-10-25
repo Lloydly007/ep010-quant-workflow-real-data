@@ -1,0 +1,20 @@
+name: a_r6_s1_27_ratio_1to2_turnlight__f3n_d
+type: score
+desc: 1:2 配轻换手（turn_ma_n 120 只给 −0.40）：清淡只在打分接近时做裁决，不参与主排序。假设估值本身已足够区分好坏，换手腿给太重反而把名单推成「冷门集合」；这一格检验
+  1:2 在换手腿明显变轻时的纯估值表现。归一化权重：size_ln 41.7% / pb 27.9% / turn_ma_n(120) 16.7% / ps_ttm
+  13.8%（ps:pb=0.33:0.67=1:2.03，总 |w|=2.40，估值块 41.7%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.33
+- op: pb
+  weight: -0.67
+- op: turn_ma_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,13 @@
+name: b_r2_s5_15_ps_ts_slim_reclaim
+type: rule
+desc: 现象：第1轮所有短持有期配置都由高换手或高波动驱动，等于在情绪最热时进场；A 路追涨类系统性买在高点的结论对 B 路同样是硬约束。为什么在 A 股该有超额：缩量突破是最干净的启动形态——收盘重回 10 日均线而当日换手仍低于 2%，说明上涨还没被发现，估值修复的第一段最陡；用半年自身 PS 分位作估值约束，避免买到贵的缩量反弹。怎么进出：收盘站上 10 日均线且当日换手 <2% 时买入，按自身 120 日 PS 分位升序取 10 只，单日换手破 8%(被发现)或满 10 日离场，止损 5%、同行业最多 3 只。改了什么：第1轮的短打建立在追量上，本份把短打建立在「低换手 + 短周期趋势」上，并把持有期压到 10 日以匹配第一段修复的长度。
+buy:
+- {op: close_over_ma_n, n: 10, dir: above, threshold: 1.0}
+- {op: turn, dir: below, threshold: 2}
+sell:
+- {op: turn, dir: above, threshold: 8}
+rank: {op: ts_pct, n: 120, of: {op: ps_ttm}, order: asc}
+max_hold_days: 10
+stop_loss: 5
+max_positions: 10
+industry_cap: 3

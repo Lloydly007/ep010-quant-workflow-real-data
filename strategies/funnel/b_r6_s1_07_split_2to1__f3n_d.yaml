@@ -1,0 +1,22 @@
+name: b_r6_s1_07_split_2to1__f3n_d
+type: score
+desc: 核心档：比值 2:1（120 日 -0.60 / 250 日 -0.30），短窗拿到 2/3 换手预算、29.3%，长窗只剩 14.6%，但仍高于母本里任何一条腿以外的“零权重”。假说的强形态是——状态腿（半年转冷）单独就足够，年度腿只用来剔除“从未被交易过”的死票；若
+  07 明显强于 01 且与 09 相当，说明长窗的边际贡献在 2:1 就已耗尽，梯度可在这一点收敛；若 07 与 01 无差别，则整条比值轴在本池上无效，应退回
+  1:1 的稳健解释。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 29.3% / turn_ma_n(250)
+  14.6%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+- op: turn_ma_n
+  n: 120
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

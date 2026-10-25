@@ -1,0 +1,18 @@
+name: b_r1_s4_11_size_large_anchor
+type: rule
+desc: 流动性收缩期资金向低换手、回撤浅的大市值股集中，这类“安全资产”有配置型资金的稳定买盘→买入60日均换手低于2%、120日回撤浅的大盘股并按市值降序取前10，持有60日，不设止损以免被噪声打出局。
+buy:
+- op: turn_ma_n
+  n: 60
+  dir: below
+  threshold: 2.0
+- op: ulcer_n
+  n: 120
+  dir: below
+  threshold: 8.0
+rank:
+  op: size_ln
+  order: desc
+max_hold_days: 60
+max_positions: 10
+industry_cap: 0

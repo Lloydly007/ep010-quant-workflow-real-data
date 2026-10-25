@@ -1,0 +1,14 @@
+name: a_r4_s2_09_t20_size250_saturate__f1n_d
+type: score
+desc: 规模 -2.50（占 76.9%），20 日窗口上端饱和档：几乎退化为纯最小市值组合，作为规模倾斜边际收益是否转负的边界参照。
+factors:
+- op: size_ln
+  weight: -2.5
+- op: turn_ma_n
+  n: 10
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

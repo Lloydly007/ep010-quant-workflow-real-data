@@ -1,0 +1,22 @@
+name: b_r6_s2_28_ps_for_pb
+type: score
+desc: "只把估值腿从 pb 换成 ps_ttm（−0.60），防御腿对半不动：ps_ttm 全正、没有 pe 的负值陷阱，口径上更干净，但含营收规模与毛利率结构的差异。若 28 与 01 同档，说明防御腿的配比结论不依赖估值腿用的是哪本账；若 28 明显不同，说明两条防御腿的效果与估值口径纠缠在一起，配比只能在母本的 pb 账面上解释。归一化权重：ps_ttm 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 7.5% / vol_n(250) 7.5%。"
+factors:
+- op: ps_ttm
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

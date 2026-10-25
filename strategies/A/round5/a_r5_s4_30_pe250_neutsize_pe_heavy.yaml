@@ -1,0 +1,16 @@
+name: a_r5_s4_30_pe250_neutsize_pe_heavy
+type: score
+desc: "规模中性化下加重 PE：size_ln -1.00、pe_ttm -1.00、turn_ma_n(250) -0.75，neut_size 打开。既然规模被剥掉，就让估值腿承担全部排序；若与 07（同权重但不中性化）差距很大，说明 07 的超额里规模成分很重。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -1.00
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

@@ -1,0 +1,17 @@
+name: a_r4_s4_16_size_extreme
+type: score
+desc: "规模负权加倍到 -2.00、动量减半到 +0.50（turn_ma_n(60) -0.75）：把组合推到市值最末端，检验极小微盘里动量是否仍有增量，还是被规模暴露完全盖住。"
+factors:
+- op: size_ln
+  weight: -2.0
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

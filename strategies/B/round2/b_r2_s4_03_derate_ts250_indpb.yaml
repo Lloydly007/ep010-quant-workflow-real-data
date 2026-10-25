@@ -1,0 +1,12 @@
+name: b_r2_s4_03_derate_ts250_indpb
+type: rule
+desc: 现象是把个股PB换成同业分位后，再看这个分位自身的一年位置，可区分“刚刚被同业杀下去”的新鲜折价与“杀了很久没人管”的旧折价，两者赔率完全不同；A股行业轮动由资金面驱动，同业比价的均值回复半衰期在一到两个季度，最近创出相对估值新低的票最容易被行业内的比价资金捞回。做法是要求60日均换手低于8%保证可交易，按“行业内PB分位的250日时序分位”升序取10只，价格回到20日均线上方20%（修复到位）或持满60日、亏10%离场，不设行业上限。相对第1轮改动：第1轮只做绝对PB的时序分位或单纯的行业分位，从未把两层叠起来，这份专测相对折价的新鲜度。
+buy:
+- {op: turn_ma_n, n: 60, dir: below, threshold: 8}
+rank: {op: ts_pct, n: 250, of: {op: ind_rank, of: {op: pb}}, order: asc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.2}
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 0

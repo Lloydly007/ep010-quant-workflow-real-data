@@ -1,0 +1,23 @@
+name: a_r6_s4_27_t120_mom_ps_agg__f1n_d
+type: score
+desc: 加一条 120 日动量正权（+0.25）做趋势确认配 ps −0.5：A 路本行是量价，而本组前 13 对几乎全是「越低越好」的反向腿，本对与 29/30
+  是全组仅有的两条正向腿，这一条取动量口径。激进档里动量只占约 6%，基本被规模淹没；温和档动量份额升到 13% 以上，检验动量能否在规模退潮后补上收益。温和档若反而更好，说明极端小盘里动量只是噪声。本份为第
+  14 对的激进档：size_ln −2.50、turn_ma_n(120) −1.00。按 |w| 归一：size_ln 58.8% / turn_ma_n(120)
+  23.5% / ret_n(120) 5.9% / ps_ttm 11.8%。同对的另一份只改规模与换手两个档位，其余腿与窗口完全一致，因此两份之差就是「风格暴露强度」的边际贡献。持仓
+  30、每周首个交易日调仓、按行业内秩中性化。
+factors:
+- op: size_ln
+  weight: -2.5
+- op: turn_ma_n
+  n: 60
+  weight: -1.0
+- op: ret_n
+  n: 120
+  weight: 0.25
+- op: ps_ttm
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

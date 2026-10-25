@@ -1,0 +1,14 @@
+name: a_r1_s4_10_volprice_sync
+type: rule
+desc: 当日成交量相对自身20日均量放大1.2倍、同时20日涨幅超5%的量价齐升，代表资金在数周尺度上持续净流入而非单日脉冲，噪声更低因此更能延续——故买量价共振且量能放大倍数最高者优先，10日回撤超8%判定资金撤离离场，20日为限、8%止损，行业上限5只。
+buy:
+  - {op: vol_ratio_n, n: 20, dir: above, threshold: 1.2}
+  - {op: ret_n, n: 20, dir: above, threshold: 5}
+  - {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+sell:
+  - {op: ret_n, n: 10, dir: below, threshold: -8}
+rank: {op: vol_ratio_n, n: 20, order: desc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

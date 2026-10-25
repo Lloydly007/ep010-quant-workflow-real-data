@@ -1,0 +1,27 @@
+name: b_r6_s4_34_frozen_combo
+type: score
+desc: 终局提案：把前几轮已验证的两个结构叠进来——半半估值（pb 40% / 双窗分位合计 40%）+ 双窗低换手各 10%（120 与 250，对应 b_r4_s2_33 的双尺度结论）。假设双窗在任何一条腿上都比单窗稳，本份是「三处双窗同时生效」的最保守版本；若它没能同时赢过 04 与 26，终轮就不该把双窗当默认，冻结时应退回 01/04。归一化权重：pb 40.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 20.0% / turn_ma_n(120) 10.0% / turn_ma_n(250) 10.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.1
+- op: turn_ma_n
+  n: 250
+  weight: -0.1
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

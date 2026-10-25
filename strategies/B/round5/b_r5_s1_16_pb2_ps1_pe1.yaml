@@ -1,0 +1,18 @@
+name: b_r5_s1_16_pb2_ps1_pe1
+type: score
+desc: 配比 pb:ps:pe = 2:1:1（-0.60/-0.30/-0.30）：pb 权重等于另两口径之和。假设资产端最硬——净资产比收入与盈利更难被会计操纵，估值修复的锚在账面；pe 仍留 1/4 份额保留盈利视角。载体固定 120 日换手 -0.75，便于本节 15 条配比横比。
+factors:
+- op: pb
+  weight: -0.6
+- op: ps_ttm
+  weight: -0.3
+- op: pe_ttm
+  weight: -0.3
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

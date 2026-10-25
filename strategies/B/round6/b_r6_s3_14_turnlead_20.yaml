@@ -1,0 +1,18 @@
+name: b_r6_s3_14_turnlead_20
+type: score
+desc: "13 号的短窗版：换手压到 20 日，其余不动。假设换手主导若成立，信号应该来自最新的成交冷却而不是长期均值——一个月内没人碰的票，定价修复最快；这一档同时是整组里换手权重最高的短窗组合，若它最差，说明高权重必须配长窗口才稳。归一化权重：pb 16.0% / ps_ttm 16.0% / size_ln 26.0% / turn_ma_n(20) 42.0%。"
+factors:
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 20
+  weight: -1.05
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

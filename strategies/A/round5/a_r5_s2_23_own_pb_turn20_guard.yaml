@@ -1,0 +1,19 @@
+name: a_r5_s2_23_own_pb_turn20_guard
+type: score
+desc: "在基准上加 20 日均换手 -0.35：近期清淡意味着没人抢跑，便宜还没被交易掉，测短窗换手能否替估值腿挡住已经拥挤的名字。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

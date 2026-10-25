@@ -1,0 +1,13 @@
+name: a_r2_s5_19_ind_rs_laggard
+type: rule
+desc: 现象：行业整体上行（300ETF 站上 120 日线、个股站上 250 日线）时，行业内 20 日涨幅最落后的成员，其落后多是资金还没轮到而非基本面掉队；第 1 轮只在行业内选最强者，等于在轮动行情里永远买在已经涨过的那一头。为什么在 A 股该有超额：板块行情内部有明确的轮涨顺序，落后成员在行业 β 向上的窗口里存在补涨压力；行业内分位升序把“相对最弱”限制在行业内，避免买到真正走坏的股票。怎么进出：300ETF 站上 120 日线、个股站上 250 日线者，按同门类内 20 日涨幅排名升序取最落后的 10 只；跌破 250 日线（补涨逻辑失效）离场，补涨窗口以 20 日上限计，8% 止损、同行业最多 3 只。相对第 1 轮的改动：第 1 轮的行业排序一律降序选最强者；本配置把行业内排序反过来用，并靠行业上限 3 只防止整组押在同一个落后行业。
+buy:
+- {op: etf_above_ma_n, n: 120, dir: above, threshold: 0.5}
+- {op: close_over_ma_n, n: 250, dir: above, threshold: 1.0}
+rank: {op: ind_rank, of: {op: ret_n, n: 20}, order: asc}
+sell:
+- {op: close_over_ma_n, n: 250, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 3

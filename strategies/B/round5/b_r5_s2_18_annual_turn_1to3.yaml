@@ -1,0 +1,16 @@
+name: b_r5_s2_18_annual_turn_1to3
+type: score
+desc: "年度窗口上的 1:3（pb -0.60 / size_ln -1.80）：年度冷清叠加重规模，接近“长期无人问津的小盘”这一经典价值陷阱区。行业中性只能减轻、不能消除行业集中，这一档用于观察该风险在权重端的暴露边界。归一化权重：pb 19.0% / size_ln 57.1% / turn_ma_n(250) 23.8%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.80
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

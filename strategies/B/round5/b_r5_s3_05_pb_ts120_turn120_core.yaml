@@ -1,0 +1,17 @@
+name: b_r5_s3_05_pb_ts120_turn120_core
+type: score
+desc: "把估值分位与换手窗口同时压到半年（120 日）：假设一轮估值压缩与关注度冷却的典型周期是半年，用同窗对齐可避免一年分位里混入上一轮行业景气噪音；两条腿节奏一致，名单稳定性高于年度版。"
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -1.0
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

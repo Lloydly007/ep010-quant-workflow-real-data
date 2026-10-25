@@ -1,0 +1,12 @@
+name: b_r5_s4_12_fresh20_ulcer60
+type: score
+desc: "短周期的完整证据链：20 日低波 0.3、60 日溃疡 0.4、PB 0.3，两条腿都压在最近一个季度内，专门找刚止跌的便宜股。比长窗版本更早介入，代价是更容易被单季噪声欺骗，与 08 的错配比例形成纯窗口对照。"
+factors:
+- {op: pb, weight: -0.3}
+- {op: vol_n, n: 20, weight: -0.3}
+- {op: ulcer_n, n: 60, weight: -0.4}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

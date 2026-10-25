@@ -1,0 +1,18 @@
+name: b_r5_s1_22_pb3_ps2_pe1
+type: score
+desc: 配比 pb:ps:pe = 3:2:1（-0.60/-0.40/-0.20）：按“口径可信度”递减赋权——净资产最不可操纵、收入次之、盈利最易被一次性项目扭曲。假设权重应按可信度排序而不是按信息独立性等权。
+factors:
+- op: pb
+  weight: -0.6
+- op: ps_ttm
+  weight: -0.4
+- op: pe_ttm
+  weight: -0.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

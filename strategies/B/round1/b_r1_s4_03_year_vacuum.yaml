@@ -1,0 +1,14 @@
+name: b_r1_s4_03_year_vacuum
+type: rule
+desc: 250日均换手不足1%意味着这只票整整一年无人问津、流动性折价被压到极致，任何买盘的价格冲击都被放大，而小盘股的折价最深、重估弹性最大→买入一年期流动性真空组并按市值升序取最小的10只，持有60日靠时间等待重估、不设止损，同行业最多3只。
+buy:
+- op: turn_ma_n
+  n: 250
+  dir: below
+  threshold: 1.0
+rank:
+  op: size_ln
+  order: asc
+max_hold_days: 60
+max_positions: 10
+industry_cap: 3

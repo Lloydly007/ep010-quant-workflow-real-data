@@ -1,0 +1,16 @@
+name: a_r5_s4_29_pe250_neutsize_base
+type: score
+desc: "与 01 同因子同权重（size_ln -1.25、pe_ttm -0.75、turn_ma_n(250) -0.75），只把 neut_size 打开：规模倾斜被市值分档内秩剥掉后，PE 与 250 日清淡是否仍独立有效。这是分辨超额来自“小”还是来自“便宜 + 冷清”的干净实验。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

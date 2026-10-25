@@ -1,0 +1,14 @@
+name: a_r4_s2_03_t20_size120_step3
+type: score
+desc: "规模 -1.20（占 61.5%），20 日窗口第 3 档：小盘首次成为名义主导权重但换手仍有否决力，检验名义主导与实际选股主导是否同步发生。"
+factors:
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

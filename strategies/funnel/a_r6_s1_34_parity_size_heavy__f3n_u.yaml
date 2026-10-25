@@ -1,0 +1,20 @@
+name: a_r6_s1_34_parity_size_heavy__f3n_u
+type: score
+desc: 均分配重规模（size_ln −1.25）：规模腿占到四成以上，估值与换手各让一档，是本组的小盘加强对照。若 34 明显强于均分基准，说明终轮名单的收益主要由规模腿承担，比例轴的精细刻度就不该被过度解读。归一化权重：size_ln
+  41.7% / turn_ma_n(120) 25.0% / ps_ttm 16.7% / pb 16.7%（ps:pb=0.50:0.50=1.00:1，总
+  |w|=3.00，估值块 33.3%）。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ps_ttm
+  weight: -0.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: b_r2_s3_17_dual_low_raw_weekly
+type: score
+desc: 现象：中性化会不会把alpha一起中性掉？如果低波+低PB的超额本来就来自行业与市值上的结构性错配，强行中性化后可能只剩噪声。为什么该有超额：这是15、16两份的严格对照组，唯一差别是关掉两个中性化开关并把调仓从月度改成周度，以提高对估值修复的响应速度；三份同批回测才能回答中性化到底是帮忙还是帮倒忙。怎么进出：vol_n(60)负权0.5、PB负权0.5，不做行业与市值中性，每周首个交易日调仓持30只。相对第1轮：round1的打分配置每次同时换因子、频率与中性化三个维度，无法归因；这里把中性化单独隔离成对照。
+factors:
+- op: vol_n
+  n: 60
+  weight: -0.5
+- op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: false
+neut_size: false
+industry_cap: 0

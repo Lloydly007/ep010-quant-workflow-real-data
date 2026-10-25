@@ -1,0 +1,18 @@
+name: b_r4_s4_22_smallcap_pg_quiet60
+type: score
+desc: "在成长-价值对冲上加小市值腿：size_ln −0.60 与 PB 同权，pe_ttm +0.60，换手 60 日 −0.70，形成‘便宜 + 小 + 高 PE 成长’的四腿结构。小市值与高 PE 在历史上常常同向（小盘更容易给高估值），因此这份实际是在检验两条腿叠加会不会把组合推到极端小盘高估区，从而放大回撤。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

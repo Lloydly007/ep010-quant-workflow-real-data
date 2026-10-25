@@ -1,0 +1,17 @@
+name: b_r3_s3_06_ep010_067_skeleton_no_roe__f2n_d
+type: score
+desc: 复刻原项目 067 的骨架、把本轮缺失的 ROE 整段去掉，只留 size_ln 与 pb 的 1:4 规模主导配比再加 120 日均换手负权，用极小市值、低估值、低换手三件真实可得的零件重建规模主导底盘：小市值在
+  A 股有长期溢价，低 PB 与低换手负责把纯壳股与炒作票排掉。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -2.0
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

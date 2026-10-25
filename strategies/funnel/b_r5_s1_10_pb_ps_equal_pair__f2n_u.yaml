@@ -1,0 +1,17 @@
+name: b_r5_s1_10_pb_ps_equal_pair__f2n_u
+type: score
+desc: pb:ps = 1:1（各 -0.50），砍掉 pe。pe_ttm 有约一成负值，升序排名会把负 pe 当成“最便宜”，这条是“去掉污染源”的对照：资产端
+  + 收入端双口径是否已足够刻画便宜。
+factors:
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

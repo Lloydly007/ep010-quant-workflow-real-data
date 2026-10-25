@@ -1,0 +1,14 @@
+name: b_r4_s1_16_ratio_250
+type: score
+desc: 换手退到扫描下界、估值中高档：pb -0.75 / turn_ma_n(120) -0.30（2.5:1，PB 71%），假设 120 日换手只需极小权重就能完成“剔除极端拥挤”的职责、其余交给 PB，检验换手是二值过滤器还是连续因子。
+factors:
+- op: pb
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

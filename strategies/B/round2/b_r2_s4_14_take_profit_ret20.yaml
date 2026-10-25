@@ -1,0 +1,12 @@
+name: b_r2_s4_14_take_profit_ret20
+type: rule
+desc: 现象是A股的同业折价修复常以脉冲完成，20个交易日涨15%就把一年份折价抹平，之后是长达数月的回吐，第1轮B路的固定持有期把已经实现的修复利润原样还回去，这是“L2过、L3全灭”在IR层面的直接原因；A股均值回归快而短，“涨够了就卖”比“持够天数”更接近折价收敛的经济终点，也缩短了暴露在beta上的时间。做法是60日均换手低于8%触发买入，按行业内PB分位升序取10只，20日收益超过15%（修复兑现）或亏8%止损，最长持有60日兜底，同行业最多3只。相对第1轮改动：把退出规则从时间驱动改成收益驱动，这是第1轮没有的独立假设。
+buy:
+- {op: turn_ma_n, n: 60, dir: below, threshold: 8}
+rank: {op: ind_rank, of: {op: pb}, order: asc}
+sell:
+- {op: ret_n, n: 20, dir: above, threshold: 15}
+max_hold_days: 60
+stop_loss: 8
+max_positions: 10
+industry_cap: 3

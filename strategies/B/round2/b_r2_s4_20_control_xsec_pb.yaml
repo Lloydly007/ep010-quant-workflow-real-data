@@ -1,0 +1,11 @@
+name: b_r2_s4_20_control_xsec_pb
+type: rule
+desc: 这是一份显式的空假设对照，现象是若把同样的候选条件换成全市场PB分位，低PB会自然集中在银行、地产、钢铁；A股的行业swing（银行地产钢铁的估值重估）幅度常常大于个股alpha，2014与2019的行业行情会把组合抬起来，使超额变成行业注而不是选股。它用来量化“行业beta”与“个股折价”各自的贡献，若它与保留beta的行业中性配置表现接近，说明行业中性化没有增益、折价本身才是收益源，后续轮次就不该在行业调整上继续加码。做法与第1份完全相同（60日均换手低于8%、60日波动高于2%），只是排序键换成全市场PB分位，持20日、亏10%止损，同行业最多3只。相对第1轮改动：第1轮把低PB直接当信号，从未做过同条件、只换排序键的配对，无法判断超额来自行业还是个股，这份补上识别步骤。
+buy:
+- {op: turn_ma_n, n: 60, dir: below, threshold: 8}
+- {op: vol_n, n: 60, dir: above, threshold: 2}
+rank: {op: xsec_pct, of: {op: pb}, order: asc}
+max_hold_days: 20
+stop_loss: 10
+max_positions: 10
+industry_cap: 3

@@ -1,0 +1,16 @@
+name: a_r5_s2_07_size_light_250
+type: score
+desc: "规模腿只给 -0.6、估值 -0.5，等于把近一半预算让给估值：假设 1,545 只池里小市值交易已拥挤，宽松的规模约束能让更便宜的名字挤进前 30。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

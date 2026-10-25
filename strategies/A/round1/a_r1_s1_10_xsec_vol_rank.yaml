@@ -1,0 +1,13 @@
+name: a_r1_s1_10_xsec_vol_rank
+type: rule
+desc: 同样站上20日线的股票中，5日量比在当日全池截面分位最高者代表资金关注度最强，增量资金入场后的短期延续性更好｜截面相对强弱比绝对量比阈值更抗全市场缩量，跌破20日线离场，10日上限、8%止损。
+buy:
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+- {op: vol_ratio_n, n: 5, dir: above, threshold: 1.0}
+rank: {op: xsec_pct, of: {op: vol_ratio_n, n: 5}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

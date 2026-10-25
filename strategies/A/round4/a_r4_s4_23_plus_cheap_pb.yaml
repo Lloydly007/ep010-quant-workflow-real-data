@@ -1,0 +1,19 @@
+name: a_r4_s4_23_plus_cheap_pb
+type: score
+desc: "基准格上补低 PB 负权 -0.50（turn_ma_n(120) -0.75、ret_n(60) +0.75、size_ln -1.25）：小盘动量容易撞上高估值成长，加一条账面价值锚筛出便宜的小而强。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.75
+- op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

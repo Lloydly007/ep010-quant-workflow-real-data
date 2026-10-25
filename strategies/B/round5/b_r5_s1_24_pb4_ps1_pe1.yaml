@@ -1,0 +1,18 @@
+name: b_r5_s1_24_pb4_ps1_pe1
+type: score
+desc: 配比 pb:ps:pe = 4:1:1（-0.80/-0.20/-0.20）：pb 占 2/3，接近纯 pb 但保留少量另两口径去噪。与 13 号纯 pb 锚配对，用来拆分“纯 pb 的表现”里有多少来自 pb 本身、多少来自“没有别的口径干扰”。
+factors:
+- op: pb
+  weight: -0.8
+- op: ps_ttm
+  weight: -0.2
+- op: pe_ttm
+  weight: -0.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

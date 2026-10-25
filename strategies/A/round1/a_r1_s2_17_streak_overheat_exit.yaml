@@ -1,0 +1,24 @@
+name: a_r1_s2_17_streak_overheat_exit
+type: rule
+desc: 中期动量股（60日涨超8%且站上60日线）持有期间若连续5天以上上涨，属情绪加速段、其后短期回撤概率显著抬升，因此在过热而非破位时止盈；剩余靠40日长持有管理，不另设止损以免与止盈信号冲突。
+buy:
+- op: close_over_ma_n
+  n: 60
+  dir: above
+  threshold: 1.0
+- op: ret_n
+  n: 60
+  dir: above
+  threshold: 8
+rank:
+  op: ret_n
+  n: 60
+  order: desc
+sell:
+- op: streak_up
+  dir: above
+  threshold: 5
+max_hold_days: 40
+stop_loss: none
+max_positions: 10
+industry_cap: 0

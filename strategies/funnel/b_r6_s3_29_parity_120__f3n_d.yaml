@@ -1,0 +1,19 @@
+name: b_r6_s3_29_parity_120__f3n_d
+type: score
+desc: 四腿严格平价：pb / ps_ttm / size_ln / turn_ma_n(120) 各 -0.65，各占 25%。假设四条腿的信息来源彼此独立，任何非平价加权都是对未知收益协方差的押注，平价是零信息下的最小后悔解。本档是整组的无偏基准——其余五组配比若打不赢它，就说明加权本身没有带来信息，终轮应回到平价。归一化权重：四条腿各
+  25.0%。
+factors:
+- op: pb
+  weight: -0.65
+- op: ps_ttm
+  weight: -0.65
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 60
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

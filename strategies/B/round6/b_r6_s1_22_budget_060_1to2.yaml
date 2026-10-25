@@ -1,0 +1,19 @@
+name: b_r6_s1_22_budget_060_1to2
+type: score
+desc: "预算轴镜像起点：分割 1:2（长窗主导），预算压到 0.60（250 日 -0.40 / 120 日 -0.20）。与 19 严格镜像，用于检验“预算效应”是否与“分割方向”独立：若 19 与 22 都优于 0.90 预算的对应档（07 / 15），则说明换手腿整体偏重是主要问题，方向只是次要修正；若只有一侧改善，则预算与方向存在交互，冻结时必须成对选参而不能分开调。归一化权重：pb 28.6% / size_ln 37.1% / turn_ma_n(120) 11.4% / turn_ma_n(250) 22.9%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.20
+- op: turn_ma_n
+  n: 250
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

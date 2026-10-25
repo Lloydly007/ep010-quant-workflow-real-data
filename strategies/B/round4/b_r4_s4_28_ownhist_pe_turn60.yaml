@@ -1,0 +1,19 @@
+name: b_r4_s4_28_ownhist_pe_turn60
+type: score
+desc: "把成长腿从‘截面高 PE’换成‘自身历史高 PE 分位’：ts_pct(pe_ttm, n=250) 正权 +0.60，pb −0.60，换手 60 日 −0.75。经济含义完全不同——截面正权买的是全市场绝对高估值，自身分位正权买的是‘相对自己过去一年最贵’的时点，即盈利被压到历史谷底而资产仍便宜（低 PB）的潜在反转标的。两者都叫‘高 PE 成长’，但一个是横截面、一个是时间序列，本份就是这条口径分叉的检验。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,28 @@
+name: b_r6_s2_22_vol_own_pct250__f2n_d
+type: score
+desc: 波动腿换成「自身 250 日分位」（ts_pct 250 套 vol_n(250) −0.225），路径腿仍是绝对水平的 ulcer_n(250)。这一格把两腿的基准拆开：波动改成跟自己历史比（去掉行业与规模带来的波动水平差），路径仍是绝对值。若
+  22 与 01 同档，说明波动腿在行业中性后本就主要在比自身历史；若 22 明显不同，说明「绝对低波」这四个字里含有行业与规模的信息，把基准换掉等于换了假设。归一化权重：pb
+  20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 7.5% / vol_n(250)自身250日分位
+  7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: ts_pct
+  n: 250
+  of:
+    op: vol_n
+    n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

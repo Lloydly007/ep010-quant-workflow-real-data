@@ -1,0 +1,19 @@
+name: a_r5_s4_23_pe250_plus_ret20_rev
+type: score
+desc: "月内反转：ret_n(20) -0.50，配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。在便宜、清淡、小盘里专挑最近一个月被砸的，赌流动性冲击的短期回补；这一腿把 250 日的“长期冷”与 20 日的“短期更冷”叠在一起。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: -0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

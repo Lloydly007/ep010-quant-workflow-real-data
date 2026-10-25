@@ -1,0 +1,14 @@
+name: a_r3_s2_08_turn_dom_60_weekly
+type: score
+desc: 换手负权占八成、规模只留-0.5的弱倾斜：不赌市值风格，纯粹捕捉交易层面被遗忘的票，验证低换手溢价能否脱离规模暴露单独成立。
+factors:
+- op: size_ln
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -2.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

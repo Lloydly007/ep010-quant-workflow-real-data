@@ -1,0 +1,17 @@
+name: a_r3_s3_13_mom20_ulcer250
+type: score
+desc: 20日动量正权、250日溃疡指数负权：短期强势必须建立在一整年的平滑路径上，避免在长期下跌趋势里买短期反弹的左侧陷阱，小盘倾斜保留-1.00使规模不是唯一驱动。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ret_n
+  n: 20
+  weight: 0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

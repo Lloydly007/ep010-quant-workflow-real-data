@@ -1,0 +1,12 @@
+name: b_r1_s5_06_low_vol
+type: rule
+desc: "120日收益波动低于2%的股票因缺乏博弈弹性被追求高收益的资金系统性忽略，风险调整后的长期超额更稳；再按低PB排序强化便宜属性，20日波动放大到5%以上或持有满60日离场（不设止损）。"
+buy:
+- {op: vol_n, n: 120, dir: below, threshold: 2.0}
+sell:
+- {op: vol_n, n: 20, dir: above, threshold: 5.0}
+rank: {op: pb, order: asc}
+max_hold_days: 60
+stop_loss: null
+max_positions: 10
+industry_cap: 0

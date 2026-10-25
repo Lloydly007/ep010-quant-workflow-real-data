@@ -1,0 +1,12 @@
+name: m16_166__f0n_d
+type: score
+desc: 种子猴子随机配置（seed=16，engine/funnel.py gen-monkey）
+factors:
+- op: atr_close_n
+  n: 60
+  weight: 0.5
+- op: turn_ma_n
+  n: 60
+  weight: -1.5
+holdings: 30
+rebalance: weekly_first_trade_day

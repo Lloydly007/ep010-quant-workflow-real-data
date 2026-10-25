@@ -1,0 +1,19 @@
+name: a_r6_s2_13_turn20_120_light_legs
+type: score
+desc: "短中轴的「换手剥离」对照：20 与 120 两腿各压到 -0.25，规模提到 -1.15、pb 提到 -0.60，与 06 在年度轴上做的是同一件事。两份合起来可以判断「减小换手票数后年化是否守恒」这件事是否依赖所选窗口：若 06 与 13 都守恒，说明双窗平滑的主要贡献是排序稳定性而非暴露强度；若只有其中一个守恒，则那个窗口轴的平滑更接近纯降噪，另一个更像暴露放大器。归一化权重：size_ln 50.0% / pb 26.1% / turn_ma_n(20) 10.9% / turn_ma_n(120) 13.0%。"
+factors:
+- op: size_ln
+  weight: -1.15
+- op: pb
+  weight: -0.60
+- op: turn_ma_n
+  n: 20
+  weight: -0.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

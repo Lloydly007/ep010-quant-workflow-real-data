@@ -1,0 +1,11 @@
+name: a_r1_s4_05_lowsupport
+type: rule
+desc: 股价贴近120日低点（相距3%以内）而5日涨幅已经转正，说明低位出现承接、空头动能衰竭，此时向上反弹的空间远大于继续下破的空间——故买低位止跌回升，距低点最近者优先，不设趋势型卖出只靠持满10日与5%止损退出，并用行业上限3只防止同行业一起破位。
+buy:
+  - {op: dist_low_n, n: 120, dir: below, threshold: 3}
+  - {op: ret_n, n: 5, dir: above, threshold: 2}
+rank: {op: dist_low_n, n: 120, order: asc}
+max_hold_days: 10
+stop_loss: 5
+max_positions: 10
+industry_cap: 3

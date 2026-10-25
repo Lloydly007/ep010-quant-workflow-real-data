@@ -1,0 +1,25 @@
+name: b_r6_s4_23_ind_rank_lens
+type: score
+desc: 半半轴心 + 行业内 PB 排名 20%（ind_rank）：绝对 pb 已含跨行业不可比问题，再加一条行业内相对便宜作修正。注意本池行业是单期快照、15 个证监会门类，行业口径只能算近似，本份结果须按此折扣解读。归一化权重：pb 40.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 20.0% / ind_rank(pb) 20.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

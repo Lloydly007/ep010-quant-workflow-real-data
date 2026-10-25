@@ -1,0 +1,17 @@
+name: b_r3_s2_13_quiet120_ulcer_path__f1n_u
+type: score
+desc: 选低 PB、近 120 日换手低、溃疡指数小的股票，理由是用回撤路径深度替代波动率，能挑出既便宜又冷清、且下跌过程平缓无恐慌抛售的筹码。
+factors:
+- op: pb
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+- op: ulcer_n
+  n: 250
+  weight: -0.55
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

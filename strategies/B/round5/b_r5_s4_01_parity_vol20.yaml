@@ -1,0 +1,11 @@
+name: b_r5_s4_01_parity_vol20
+type: score
+desc: "低 PB 与 20 日低波 1:1 平价，作为短窗基准：20 日波动度量最近一个月的情绪温度，平价让便宜与不惊各拿一半话语权。短窗对单次事件反应最快，是「跌不动」最灵敏的一档，代价是名单更容易被噪声推动，后面所有加权变体都以它为对照原点。"
+factors:
+- {op: pb, weight: -0.5}
+- {op: vol_n, n: 20, weight: -0.5}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

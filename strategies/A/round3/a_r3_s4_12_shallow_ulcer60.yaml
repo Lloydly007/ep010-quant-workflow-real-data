@@ -1,0 +1,16 @@
+name: a_r3_s4_12_shallow_ulcer60
+type: score
+desc: 选季窗溃疡指数最低的小盘低估股；60 日窗口能覆盖一次完整的行业调整，惩罚深坑型走势，留下跌不深且能自己修复的稳健公司。
+factors:
+- op: size_ln
+  weight: -1.6
+- op: ulcer_n
+  n: 60
+  weight: -0.75
+- op: pb
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

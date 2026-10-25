@@ -1,0 +1,29 @@
+name: a_r1_s2_02_high_tight_flag
+type: rule
+desc: 收盘距60日高点3%以内但近5日涨幅不足8%，属高位窄幅强势整理而非情绪加速，抛压已被消化、再突破阻力小；按60日动量排序取前10，回落至离高点10%以外或20日期满离场，-8%止损。
+buy:
+- op: dist_high_n
+  n: 60
+  dir: above
+  threshold: -3
+- op: close_over_ma_n
+  n: 20
+  dir: above
+  threshold: 1.0
+- op: ret_n
+  n: 5
+  dir: below
+  threshold: 8
+rank:
+  op: ret_n
+  n: 60
+  order: desc
+sell:
+- op: dist_high_n
+  n: 60
+  dir: below
+  threshold: -10
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

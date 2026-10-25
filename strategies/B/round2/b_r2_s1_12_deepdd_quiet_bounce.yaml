@@ -1,0 +1,14 @@
+name: b_r2_s1_12_deepdd_quiet_bounce
+type: rule
+desc: 现象是250日溃疡率超过15%（过去一年深度回撤）、已经连涨4日以上、但换手仍低于3%，即深跌后的无量连涨，反映套牢盘不愿割、增量资金试探性买入。A股深跌股反弹的第一段往往由缩量完成，放量反而意味着解套盘出逃，低PB股在惜售阶段弹性最大。进出为深回撤、连涨、低换手三条件同时成立才买，10日涨幅超过10%兑现，持仓上限20日、止损8%。相对第1轮失败模式的改动：第1轮只在深回撤里找反弹，却不区分反弹的量能性质，也没有连涨确认，买在解套盘出逃的放量反弹上；本版用「连涨但无量」把放量反弹筛掉，估值排序留给深跌股里资产最便宜的。
+buy:
+- {op: ulcer_n, n: 250, dir: above, threshold: 15}
+- {op: streak_up, dir: above, threshold: 3}
+- {op: turn, dir: below, threshold: 3}
+sell:
+- {op: ret_n, n: 10, dir: above, threshold: 10}
+rank: {op: pb, order: asc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

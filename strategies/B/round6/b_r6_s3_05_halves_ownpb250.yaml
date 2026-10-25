@@ -1,0 +1,21 @@
+name: b_r6_s3_05_halves_ownpb250
+type: score
+desc: "估值口径实验：pb 不用绝对水平，改用 ts_pct(pb,250)——当前 pb 在过去一年自身历史中的分位，权重 -0.50。假设“便宜”是相对自己历史而言的：绝对低 pb 会把长期低估值的行业整段吸进来，自身历史分位则单独拎出“这家公司现在比过去一年都便宜”。与 01 对比，可分离行业性折价与公司自身估值周期。归一化权重：ts_pct(pb,250) 20.0% / ps_ttm 20.0% / size_ln 34.0% / turn_ma_n(120) 26.0%。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+- op: size_ln
+  weight: -0.85
+- op: turn_ma_n
+  n: 120
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

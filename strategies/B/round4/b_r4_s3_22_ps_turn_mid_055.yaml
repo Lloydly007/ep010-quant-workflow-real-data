@@ -1,0 +1,16 @@
+name: b_r4_s3_22_ps_turn_mid_055
+type: score
+desc: "换手权重中档：turn 120 −0.55，与 ps 权重同量级。假设便宜与冷清是两条对等的证据链——单看营收便宜会买到'便宜但正在被交易量证伪'的名字，单看冷清会买到'无人问津但很贵'的名字，只有两者同权才能兼顾。这是本组的中性参照点，其余档位的斜率都以它为基准读。"
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

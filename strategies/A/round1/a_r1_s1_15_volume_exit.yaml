@@ -1,0 +1,13 @@
+name: a_r1_s1_15_volume_exit
+type: rule
+desc: 趋势向上的股票一旦出现5日量比超2倍的放量，多为获利盘与机构借高流动性派发（本池缺乏承接盘），此时减仓优于等均线破位｜以放量为唯一退出触发、不设均线卖点，按20日动量取最强趋势，40日上限与10%止损兜底。
+buy:
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: ret_n, n: 20, dir: above, threshold: 3.0}
+rank: {op: ret_n, n: 20, order: desc}
+sell:
+- {op: vol_ratio_n, n: 5, dir: above, threshold: 2.0}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 10

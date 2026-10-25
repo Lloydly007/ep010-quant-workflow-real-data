@@ -1,0 +1,14 @@
+name: a_r1_s1_05_streak_calm20
+type: rule
+desc: 连续4日以上收涨但收盘尚未偏离20日线20%以上的温和连涨，是资金持续小额买入的形态，浮盈不厚、获利回吐压力小，短期最容易延续｜按连涨天数降序取最持久者，跌破20日线离场，5日上限与5%止损限制追涨风险。
+buy:
+- {op: streak_up, dir: above, threshold: 3}
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.2}
+rank: {op: streak_up, order: desc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+max_hold_days: 5
+stop_loss: 5%
+max_positions: 10
+industry_cap: 5

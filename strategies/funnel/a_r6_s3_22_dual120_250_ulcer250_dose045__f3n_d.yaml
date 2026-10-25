@@ -1,0 +1,23 @@
+name: a_r6_s3_22_dual120_250_ulcer250_dose045__f3n_d
+type: score
+desc: 同上双换手窗，但 ulcer_n(250) 提到 -0.45：双换手总权重被摊到 0.70，检验「两个换手尺度 + 中等回撤」是否三条防御腿同时压一个方向而过度防御。归一化权重：size_ln
+  36.0% / pb 18.0% / turn_ma_n(120) 14.0% / turn_ma_n(250) 14.0% / ulcer_n(250) 18.0%。
+factors:
+- op: size_ln
+  weight: -0.9
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.35
+- op: ulcer_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

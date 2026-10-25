@@ -1,0 +1,21 @@
+name: a_r4_s1_09_t20_ind_turn_rank
+type: score
+desc: "20 日换手 -0.75 加行业内换手排名 -0.40：只跟同行比谁更冷，避免整组押到天生低换手的行业，检验 20 日拥挤度在行业中性口径下还剩多少独立信息。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: ind_rank
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

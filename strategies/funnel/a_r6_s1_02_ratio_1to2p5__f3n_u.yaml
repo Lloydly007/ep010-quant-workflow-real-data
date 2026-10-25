@@ -1,0 +1,20 @@
+name: a_r6_s1_02_ratio_1to2p5__f3n_u
+type: score
+desc: 'pb 约 2.45 : ps 1，从 01 的 3:1 往回收半档，给营收倍数留出 29% 的估值话语权。目的是找估值块转向的断点而非斜率：如果名单在
+  2.45:1 档已经明显离开重资产聚集，说明 3:1 属于过度集中而非更稳健的便宜。归一化权重：size_ln 36.4% / turn_ma_n(120) 27.3%
+  / pb 25.8% / ps_ttm 10.5%（ps:pb=0.29:0.71=1:2.45，总 |w|=2.75，估值块 36.4%）。'
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.29
+- op: pb
+  weight: -0.71
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

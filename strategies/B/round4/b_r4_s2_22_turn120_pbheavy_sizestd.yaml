@@ -1,0 +1,16 @@
+name: b_r4_s2_22_turn120_pbheavy_sizestd
+type: score
+desc: 120 日换手 -0.75 与 pb -0.80 共决、规模 -0.65：半年窗口 + 低估值 + 标准小盘的中性配置，用于检验 pb 加重后 120 日窗口是否仍是稳定的主信号。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

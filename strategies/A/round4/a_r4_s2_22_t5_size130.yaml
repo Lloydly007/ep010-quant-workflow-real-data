@@ -1,0 +1,14 @@
+name: a_r4_s2_22_t5_size130
+type: score
+desc: "5 日窗口、规模 -1.30（占 63.4%），阶梯第 2 档：短窗口换手噪声大，加大规模权重可压住噪声，检验倾斜是否在此扮演降噪角色。"
+factors:
+- op: size_ln
+  weight: -1.3
+- op: turn_ma_n
+  n: 5
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

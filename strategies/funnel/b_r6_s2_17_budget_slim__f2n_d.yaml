@@ -1,0 +1,24 @@
+name: b_r6_s2_17_budget_slim__f2n_d
+type: score
+desc: 近乎消融：两条腿各 −0.075（合计 0.15，占账面 5.6%）。这是「把防御腿基本拆掉、只留一点痕迹」的对照，用来判断 01 相对母本的任何差异到底是防御腿配比造成的，还是三条主腿（估值/规模/换手）自己就够了。若
+  17 与 01 差距小于抽样噪声，则本组整条轴在本池上都属于微调，终轮应把预算留给别的轴。归一化权重：pb 22.2% / size_ln 44.4% / turn_ma_n(120)
+  27.8% / ulcer_n(250) 2.8% / vol_n(250) 2.8%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.075
+- op: vol_n
+  n: 250
+  weight: -0.075
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

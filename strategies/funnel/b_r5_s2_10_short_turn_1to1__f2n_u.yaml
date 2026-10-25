@@ -1,0 +1,18 @@
+name: b_r5_s2_10_short_turn_1to1__f2n_u
+type: score
+desc: 把比值退回 1:1，同时把换手窗口从 120 日压到 20 日（pb -0.60 / size_ln -0.60 / turn_ma_n(20) -0.75）：与
+  01 只差一个窗口。检验“近一个月冷清”是否比“半年冷清”更能保护等权结构下的估值腿——短期换手低往往对应关注度空窗，而不是长期机构持仓。归一化权重：pb 30.8%
+  / size_ln 30.8% / turn_ma_n(20) 38.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

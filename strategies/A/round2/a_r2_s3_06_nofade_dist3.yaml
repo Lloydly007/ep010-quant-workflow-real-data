@@ -1,0 +1,15 @@
+name: a_r2_s3_06_nofade_dist3
+type: rule
+desc: "现象：真突破与假突破的分水岭在突破后1~3个交易日——假突破往往在两三天内就跌回突破点，而第1轮配置没有任何突破后仍贴住高点的确认。为什么该有超额：A股高换手均值回归让突破后回落成为常态，能连续3天不丢掉3日高点3%以上的票，说明承接是持续的而不是一次性冲击。怎么进出：60日新高、距3日高点不超3%（dist_high_3>-3，即未回落）、站上5日线、换手<10%才买；跌破20日线离场、持满20日、-8%止损、行业最多5只；候选按60日涨幅降序。相对第1轮：把入场条件从突破当日一根K线升级为突破后仍未回落的多日确认，直接对治第1轮买在假突破首日的问题，同时给出可执行的次日不回落代理。"
+buy:
+- {op: break_high_n, n: 60, dir: above, threshold: 0.5}
+- {op: dist_high_n, n: 3, dir: above, threshold: -3}
+- {op: close_over_ma_n, n: 5, dir: above, threshold: 1.0}
+- {op: turn, dir: below, threshold: 10}
+rank: {op: ret_n, n: 60, order: desc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

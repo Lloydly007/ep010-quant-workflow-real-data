@@ -1,0 +1,18 @@
+name: b_r1_s4_07_own_pb_ts
+type: rule
+desc: 个股PB处在自身近250日低位，说明市场已把它的定价压到自身历史底部，估值均值回复胜率高于绝对低PB→买入近20日均换手低于3%且自身PB分位最低的票，持有40日、亏8%离场，同行业最多5只。
+buy:
+- op: turn_ma_n
+  n: 20
+  dir: below
+  threshold: 3.0
+rank:
+  op: ts_pct
+  n: 250
+  of:
+    op: pb
+  order: asc
+max_hold_days: 40
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

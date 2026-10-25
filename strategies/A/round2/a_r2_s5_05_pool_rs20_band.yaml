@@ -1,0 +1,14 @@
+name: a_r2_s5_05_pool_rs20_band
+type: rule
+desc: 现象：20 日相对强度的头部股票里有一部分已偏离 20 日线 20% 以上，属于情绪定价，之后 5 到 20 日回撤概率显著上升；把它们和正常延伸的强者放在一张榜上排序，等于用平均收益掩盖两类完全不同的股票。为什么在 A 股该有超额：截面动量的有效区间是“趋势已确立但未极端”，用收盘对 20 日线的偏离度做上下两条边界（1.0 到 1.2 倍），把位置而不是涨幅写成条件，正好剔除第 1 轮最容易买到的那段过热。怎么进出：站上 60 日线、且收盘在 20 日线 1.0 到 1.2 倍之间者，按 20 日涨幅的全池截面分位降序取前 10；跌破 60 日线离场，20 日上限、8% 止损、同行业最多 5 只。相对第 1 轮的改动：第 1 轮只有单边门槛（涨超多少就买）、没有上界；本配置加上偏离度上界，把“相对强但不极端”写进条件。
+buy:
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.2}
+rank: {op: xsec_pct, of: {op: ret_n, n: 20}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

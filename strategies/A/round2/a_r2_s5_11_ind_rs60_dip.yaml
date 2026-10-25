@@ -1,0 +1,14 @@
+name: a_r2_s5_11_ind_rs60_dip
+type: rule
+desc: 现象：行业内的相对强者回落时，同行业其他成员往往还在涨，这种“行业内暂时掉队”多由个股事件或流动性造成；第 1 轮只在行业内选最强者，回落时无法区分洗盘与变弱。为什么在 A 股该有超额：行业内相对强度仍在、短期相对走弱时，卖压来自短线交易者而非行业逻辑，行业轮动按周计，行业 β 未反转前的个股回落修复概率较高。怎么进出：站上 120 日线与 60 日线、且距 20 日高点回撤超过 5% 者，按同门类内 60 日涨幅排名降序取前 10；跌破 60 日线离场，20 日上限、8% 止损、同行业最多 3 只。相对第 1 轮的改动：第 1 轮行业内排序只在当天最强的股票里选，买入集中在上涨日；本配置用“距 20 日高点回撤”替代涨幅条件，把入场点移到行业内回落日。
+buy:
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+- {op: dist_high_n, n: 20, dir: below, threshold: -5}
+rank: {op: ind_rank, of: {op: ret_n, n: 60}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 3

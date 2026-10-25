@@ -1,0 +1,17 @@
+name: b_r4_s1_23_turn_max_size_light__f0n_u
+type: score
+desc: 换手绝对主导 + 轻度小市值：turn_ma_n(120) -1.00 / pb -0.30 / size_ln -0.45（归一化 57%/17%/26%），假设冷门度在控制市值后仍有独立信息；若
+  01 的超额主要来自小盘暴露，本份应明显劣于 01，反之说明换手本身有效。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -1.0
+- op: pb
+  weight: -0.3
+- op: size_ln
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

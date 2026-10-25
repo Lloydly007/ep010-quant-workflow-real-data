@@ -1,0 +1,18 @@
+name: b_r4_s3_32_ps_ind_rank_quiet250__f2n_d
+type: score
+desc: 行业内相对 ps 口径：ind_rank(ps_ttm) −0.60 配 size −0.55 与 turn 250 −0.70，去掉绝对 ps。假设中性化之后仍要按行业内比较，才能避免'整个行业都贵'把该行业的所有名字排除、也避免'整个行业都便宜'把差公司塞进名单；行业组只有证监会门类十几组，这条腿的颗粒度粗，本份用来测粗行业内的营收便宜是否仍优于跨行业绝对便宜。
+factors:
+- op: ind_rank
+  of:
+    op: ps_ttm
+  weight: -0.6
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

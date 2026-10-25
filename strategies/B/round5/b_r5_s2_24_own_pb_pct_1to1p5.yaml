@@ -1,0 +1,19 @@
+name: b_r5_s2_24_own_pb_pct_1to1p5
+type: score
+desc: "把绝对 PB 换成自身一年分位：ts_pct(pb,250) -0.60 作估值腿、size_ln -0.90（1:1.5），叠加 120 日换手 -0.75。假设“相对自己历史便宜”比“绝对便宜”更能剔除行业估值中枢漂移，与 03 只差估值腿的定义，用于检验比值轴是否依赖 pb 的横截面水平结构。归一化权重：ts_pct(pb,250) 26.7% / size_ln 40.0% / turn_ma_n(120) 33.3%。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -0.90
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,12 @@
+name: b_r2_s5_11_pb_ts_double_norm
+type: rule
+desc: 现象：2014、2018、2022 全市场一起杀估值时几乎所有股票的自身 PB 分位都跌到低位，绝对低分位分不清「市场便宜」与「个股错杀」；第1轮 s4_20 用了双重分位排序，但买点只是 ATR 压缩的静态条件。为什么在 A 股该有超额：对自身分位再做一次当日截面分位，只留「别人已回到自身分位中段、它还在底部」的极端错杀；再用收盘站上 60 日均线确认中期趋势转正，把错杀与趋势分开。怎么进出：收盘站上 60 日均线时买入，按「自身 250 日 PB 分位的当日截面分位」升序取 10 只，收盘重新跌破 20 日均线或满 40 日离场，止损 8%、同行业最多 5 只。改了什么：第1轮 s4_20 只做了排序增强，本份把买点换成中期趋势转正、卖出跟随趋势，让双重分位的结论有条件可验证。
+buy:
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+rank: {op: xsec_pct, of: {op: ts_pct, n: 250, of: {op: pb}}, order: asc}
+max_hold_days: 40
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

@@ -1,0 +1,16 @@
+name: b_r4_s3_34_ps_quiet120_neutsize_probe
+type: score
+desc: "市值分档中性化探针：因子与 02 完全一致（ps −0.40 / size −0.60 / turn 120 −0.75），唯一差别是 neut_size: true——打分先在当日流通市值五档内做秩，再把 size_ln 腿叠上去。假设本组的超额可能只是规模暴露，那么在中性化后 size_ln 腿在档内几乎并列、名单会从'最小的一批'变成'各档里最便宜的'；02 与 34 的超额差就是规模暴露的净贡献，这是本组唯一能直接分离'真选股'与'买小盘'的配对。"
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

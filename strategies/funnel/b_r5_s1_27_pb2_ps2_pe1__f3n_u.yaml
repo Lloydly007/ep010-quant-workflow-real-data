@@ -1,0 +1,19 @@
+name: b_r5_s1_27_pb2_ps2_pe1__f3n_u
+type: score
+desc: 配比 pb:ps:pe = 2:2:1（-0.50/-0.50/-0.25）：资产与收入等权为骨干、盈利只给半份。假设 pb 与 ps 的互补性最强（一个看存量资产、一个看流量收入），pe
+  作轻微确认即可，避免负值主导。
+factors:
+- op: pb
+  weight: -0.5
+- op: ps_ttm
+  weight: -0.5
+- op: pe_ttm
+  weight: -0.25
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

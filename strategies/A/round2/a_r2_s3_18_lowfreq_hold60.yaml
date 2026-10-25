@@ -1,0 +1,15 @@
+name: a_r2_s3_18_lowfreq_hold60
+type: rule
+desc: "现象：A路前五轮把持有期压在3~20日、止损5~10%，在A股高换手均值回归里被反复震出，扣成本后为负，回撤中位-89.5%。为什么该有超额：真突破的收益集中在少数右尾，短持有期加紧止损会把右尾剪掉；把持有期放到60日、只在60日线破位时卖，让一次真突破跑完，同时用20日均换手<3%保证持有的是安静票、不需要频繁止损，再用沪深300ETF跌破250日线作为无止损下的市场兜底。怎么进出：60日新高、20日均换手<3%、站在20日线上方才买；跌破60日线或ETF跌到250日线下方即卖（或关系），持满60日，不设个股止损；行业最多5只、按250日涨幅降序。相对第1轮：把交易频率降到最低、取消个股止损，检验亏损主要来自交易成本与噪声止损而不是信号本身。"
+buy:
+- {op: break_high_n, n: 60, dir: above, threshold: 0.5}
+- {op: turn_ma_n, n: 20, dir: below, threshold: 3}
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+rank: {op: ret_n, n: 250, order: desc}
+sell:
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+- {op: etf_above_ma_n, n: 250, dir: below, threshold: 0.5}
+max_hold_days: 60
+stop_loss: none
+max_positions: 10
+industry_cap: 5

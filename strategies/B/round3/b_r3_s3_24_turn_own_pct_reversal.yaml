@@ -1,0 +1,22 @@
+name: b_r3_s3_24_turn_own_pct_reversal
+type: score
+desc: "只看 20 日均换手相对自己过去两年是否处于低位（时序分位）而不看绝对换手水平，再叠 20 日反转，选自身关注度降到两年冰点、刚被砸过的便宜小盘：时序口径自动适应不同股票的换手中枢，冰点关注度意味着卖方已出清。"
+factors:
+- op: pb
+  weight: -0.3
+- op: size_ln
+  weight: -0.75
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.4
+- op: ret_n
+  n: 20
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

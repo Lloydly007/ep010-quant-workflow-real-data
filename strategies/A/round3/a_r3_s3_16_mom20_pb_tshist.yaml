@@ -1,0 +1,19 @@
+name: a_r3_s3_16_mom20_pb_tshist
+type: score
+desc: 20日动量正权加自身250日PB时序分位负权：动量要求短期强、估值要求处在自己历史低位，两条腿分别管何时买与贵不贵，避免追高已重估的票。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ret_n
+  n: 20
+  weight: 0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

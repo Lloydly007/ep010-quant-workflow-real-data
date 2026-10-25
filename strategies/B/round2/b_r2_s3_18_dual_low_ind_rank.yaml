@@ -1,0 +1,18 @@
+name: b_r2_s3_18_dual_low_ind_rank
+type: score
+desc: 现象：跨行业比波动等于永远选银行——波动是行业属性而不是个股属性，所以"低波"在截面上几乎不含个股信息。为什么该有超额：同行业的股票面对同一套政策与景气，行业内"最平静+最便宜"才是可比信息，能把波动维度还原成个股信息；这与用中性化开关处理最终分数不同，是在因子层面就分组，避免中性化把估值alpha一起抹平（round1的行业相对估值类配置IR普遍在0.13以下）。怎么进出：因子取两次行业内秩——20日波动行业内秩负权0.5、PB行业内秩负权0.5，月度调仓持30只，不再额外中性化。相对第1轮：round1的ind_rank只包过估值单一维度，从未把行业内秩用在波动上。
+factors:
+- op: ind_rank
+  of:
+    op: vol_n
+    n: 20
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: false
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,22 @@
+name: b_r6_s2_05_ratio_path2_vol1
+type: score
+desc: "总防御预算锁死 0.45（与母本相同），内部按 2:1 分给路径与波动：ulcer_n(250) −0.30 / vol_n(250) −0.15。这是「同样 15% 的钱，该多买跌得浅还是多买震得小」的第一档。若 05 优于 01（对半），说明在固定预算下路径的边际价值更高，后面的梯度应当继续向 ulcer 倾斜；若 05 与 01 无差别，则比值在此区间不敏感，支配项是预算总额而不是内部配比。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 10.0% / vol_n(250) 5.0%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.30
+- op: vol_n
+  n: 250
+  weight: -0.15
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

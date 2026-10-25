@@ -1,0 +1,13 @@
+name: b_r1_s1_08_vol_regime_shift
+type: rule
+desc: 20日ATR仍在2%以下的平静状态里5日ATR翻倍升破2%，通常对应新信息落地而非趋势终结、波动扩张期短线有延续性，故按短期ATR降序买入冲击最大者，ATR回落到1%以下即视作信息出尽离场
+buy:
+- {op: atr_close_n, n: 20, dir: below, threshold: 2}
+- {op: atr_close_n, n: 5, dir: above, threshold: 2}
+sell:
+- {op: atr_close_n, n: 5, dir: below, threshold: 1}
+rank: {op: atr_close_n, n: 5, order: desc}
+max_hold_days: 20
+stop_loss: 5
+max_positions: 10
+industry_cap: 0

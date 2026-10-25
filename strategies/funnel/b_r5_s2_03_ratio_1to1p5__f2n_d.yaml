@@ -1,0 +1,18 @@
+name: b_r5_s2_03_ratio_1to1p5__f2n_d
+type: score
+desc: '比值 1:1.5（pb -0.60 / size_ln -0.90）。1:1.5 是第 3 轮 B 组已经出现过的轴位（当时 pb 0.40 : size
+  0.60），这里把两条腿同比例加到 1.5 倍刻度、换手窗口换成 120 日，检验同比值在不同绝对刻度与窗口下是否给出同一批股票——用于确认后面几档的差异来自比值本身而不是刻度噪声。归一化权重：pb
+  26.7% / size_ln 40.0% / turn_ma_n(120) 33.3%。'
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -0.9
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

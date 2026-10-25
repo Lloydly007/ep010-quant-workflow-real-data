@@ -1,0 +1,19 @@
+name: b_r4_s4_32_slow_momentum_confirm
+type: score
+desc: "在 PE 正权 / PB 负权 / 换手 120 日 −0.75 之上加 60 日动量正权 +0.35。假设是‘高 PE + 低 PB’这一组合单看估值容易买到价值陷阱（便宜但持续下跌），用季频动量做确认能把正在被重估的名字留下；这是全组唯一带方向性动量的配置，用来检验混合估值是否需要价格确认腿才成立。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

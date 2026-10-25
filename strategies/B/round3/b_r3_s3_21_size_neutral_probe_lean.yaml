@@ -1,0 +1,16 @@
+name: b_r3_s3_21_size_neutral_probe_lean
+type: score
+desc: "把规模偏向提到 2:1 再打开 neut_size，市值档内中性化会大幅削弱 size 因子的排序作用，等于在同档内挑便宜且 20 日低波的股票，用来验证规模权重被中性化稀释后还剩多少残余效应。"
+factors:
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.8
+- op: vol_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: true
+industry_cap: 0

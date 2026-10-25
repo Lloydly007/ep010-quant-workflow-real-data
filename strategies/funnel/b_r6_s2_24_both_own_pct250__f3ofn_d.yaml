@@ -1,0 +1,30 @@
+name: b_r6_s2_24_both_own_pct250__f3ofn_d
+type: score
+desc: 两条腿都换成自身 250 日分位：纯「跟自己比」的防御组合，把行业与规模的波动水平差整体扣掉（虽然账面已有行业中性）。若 24 与 01 同档，说明本组整条轴对基准的选择不敏感，替代关系是价格行为层面的而非风格层面的；若
+  24 明显更差，说明「绝对低波」本身就是一个有效的风格暴露，把它中性化掉等于自废一半。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120)
+  25.0% / ulcer_n(250)自身250日分位 7.5% / vol_n(250)自身250日分位 7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ts_pct
+  n: 250
+  of:
+    op: ulcer_n
+    n: 120
+  weight: -0.225
+- op: ts_pct
+  n: 250
+  of:
+    op: vol_n
+    n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

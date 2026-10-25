@@ -1,0 +1,19 @@
+name: b_r4_s2_33_dualwin_turn120_250__f1n_u
+type: score
+desc: 同时给换手两个尺度——250 日平均换手与 120 日平均换手各 -0.45、pb -0.40、规模 -0.65：假设常年冷清是结构、最近半年转冷是状态，两者不是同一件事，各占一半权重检验叠加是否比任何单一窗口都稳。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+- op: pb
+  weight: -0.4
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

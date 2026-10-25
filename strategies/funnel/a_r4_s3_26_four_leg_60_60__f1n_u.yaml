@@ -1,0 +1,19 @@
+name: a_r4_s3_26_four_leg_60_60__f1n_u
+type: score
+desc: 四腿均衡且全部窗口收到季度：turn(60) -0.6、vol(60) -0.6、size -0.5、pb -0.4。作为 25 号的短窗对照，检验“腿多更稳”是否依赖长窗才成立。
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -0.6
+- op: vol_n
+  n: 120
+  weight: -0.6
+- op: size_ln
+  weight: -0.5
+- op: pb
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,23 @@
+name: b_r2_s3_16_dual_low_neutral_size
+type: score
+desc: 现象：低波与低PB都与市值强相关（大票天生低波低PB），不做市值中性时"双低"实际是"大盘价值"的beta押注，2019到2020那种成长牛市必然跑输等权全池。为什么该有超额：等权全池+15.11%的年化里主要来自小盘，剥掉size赌注、在每个市值档内取最平静最便宜的，才能既保留小盘溢价又不裸露单一风格。怎么进出：vol_n(250)截面分位负权0.45、PB截面分位负权0.45、PS自身120日时序分位负权0.10，市值分5档内取秩，月度调仓持30只。相对第1轮：把中性化维度从行业换到市值档，并加入PS时序分位做第三维，直接检验"是双低有效还是市值驱动"。
+factors:
+- op: xsec_pct
+  of:
+    op: vol_n
+    n: 250
+  weight: -0.45
+- op: xsec_pct
+  of:
+    op: pb
+  weight: -0.45
+- op: ts_pct
+  n: 120
+  of:
+    op: ps_ttm
+  weight: -0.1
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: false
+neut_size: true
+industry_cap: 0

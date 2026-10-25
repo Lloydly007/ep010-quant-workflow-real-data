@@ -1,0 +1,13 @@
+name: b_r1_s1_10_ulcer_panic_rebound
+type: rule
+desc: 20日溃疡指数高于8%却伴随换手低于1%的深跌属于无量恐慌，缺乏真实抛售对手盘、价格更多是流动性折价，情绪修复带来的反弹幅度大于继续下跌，故逆向买入、极短持有3日、溃疡回落到3%以下即止盈
+buy:
+- {op: ulcer_n, n: 20, dir: above, threshold: 8}
+- {op: turn, dir: below, threshold: 1}
+sell:
+- {op: ulcer_n, n: 20, dir: below, threshold: 3}
+rank: {op: ulcer_n, n: 20, order: desc}
+max_hold_days: 3
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

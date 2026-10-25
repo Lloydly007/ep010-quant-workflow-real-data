@@ -1,0 +1,16 @@
+name: b_r4_s2_26_turn250_pblight_sizestd
+type: score
+desc: 250 日换手 × 轻 pb × 规模 -0.65：以年度冷清为主信号、估值设下限、规模取标准档，这是 250 日窗口的基准配置，沿用与第 3 轮同类骨架相同的权重结构以便跨轮比较。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: a_r3_s3_14_mom60_lowpb
+type: score
+desc: 60日动量正权配PB负权：小盘动量若同时估值不高，说明上涨由盈利预期而非纯情绪推动，低PB用于剔除涨上去后估值已透支的动量票。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: ret_n
+  n: 60
+  weight: 0.75
+- op: pb
+  weight: -0.5
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

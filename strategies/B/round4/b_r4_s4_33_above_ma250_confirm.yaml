@@ -1,0 +1,19 @@
+name: b_r4_s4_33_above_ma250_confirm
+type: score
+desc: "用年线位置做确认腿：close_over_ma_n(250) 正权 +0.40，配合 pe_ttm +0.60、pb −0.60、turn_ma_n(20) −0.60。与 b_r4_s4_32 的动量确认不同，年线位置是‘长期趋势是否仍在’的状态量，几乎不随时间衰减，因此与 20 日快换手腿形成快慢互补：只要股价还在年线上，便宜与成长两条腿的信号就不必担心逆势。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 20
+  weight: -0.6
+- op: close_over_ma_n
+  n: 250
+  weight: 0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

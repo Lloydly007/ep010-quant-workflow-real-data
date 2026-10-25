@@ -1,0 +1,16 @@
+name: a_r4_s1_29_t250_w075
+type: score
+desc: "250 日换手 -0.75：一年期低换手，长窗不受单次炒作干扰，选中的票天然换手低、周度换仓的边际成本也小，检验低换手溢价的窗口是不是越长越好。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

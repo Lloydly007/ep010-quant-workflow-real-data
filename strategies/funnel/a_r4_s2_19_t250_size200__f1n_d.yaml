@@ -1,0 +1,14 @@
+name: a_r4_s2_19_t250_size200__f1n_d
+type: score
+desc: 250 日年度窗口、规模 -2.00（占 72.7%），阶梯第 4 档：年度窗口配极端小盘，检验长期被忽视与最小市值两个维度互为替代而非叠加。
+factors:
+- op: size_ln
+  weight: -2.0
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r1_s4_03_pullback_ma60
+type: rule
+desc: 站稳60日线的股票短期跌破10日线、5日累计回吐超3%，属于上升趋势中的正常回调而非趋势反转，回调给出比追高更低的入场成本——故只在长期趋势完好的前提下买短期回调，并用20日涨幅更靠前者优先，跌破60日线离场，10日为限、8%止损。
+buy:
+  - {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+  - {op: close_over_ma_n, n: 10, dir: below, threshold: 1.0}
+  - {op: ret_n, n: 5, dir: below, threshold: -3}
+sell:
+  - {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+rank: {op: ret_n, n: 20, order: desc}
+max_hold_days: 10
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

@@ -1,0 +1,12 @@
+name: b_r3_s4_06_slow_windows_60_250
+type: score
+desc: "两个慢窗口（60日与250日）同时低波、PB只给0.3：季度与年度都不惊说明安静是结构性的而非某段行情的偶然，慢窗口信号衰减慢、月度调仓足够，是本组交易成本最低的一份。"
+factors:
+- {op: pb, weight: -0.3}
+- {op: vol_n, n: 60, weight: -0.35}
+- {op: vol_n, n: 250, weight: -0.35}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

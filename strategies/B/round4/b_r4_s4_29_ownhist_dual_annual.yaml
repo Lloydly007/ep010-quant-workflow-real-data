@@ -1,0 +1,22 @@
+name: b_r4_s4_29_ownhist_dual_annual
+type: score
+desc: "双自身分位口径：ts_pct(pe_ttm, n=120) 正权 +0.50 对 ts_pct(pb, n=120) 负权 −0.50，换手 250 日 −0.75。两条腿都只和自己过去半年比，天然消掉行业与规模的绝对水平差异，等于问‘相对自己历史高 PE、同时相对自己历史低 PB’的名字在哪里。这是全组最接近‘个股时序价值-成长’的形态，与截面口径的 b_r4_s4_05 形成方法论对照。"
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: pe_ttm
+  weight: 0.5
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

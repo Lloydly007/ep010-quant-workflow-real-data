@@ -1,0 +1,12 @@
+name: b_r2_s5_07_pb_ts_low_breakout
+type: rule
+desc: 现象：A 路 100 份突破动量配置全军覆没，说明「创 N 日新高就买」在 A 股等于买在情绪高点；但把同样的突破信号限定在自身估值分位最低的股票上，含义完全不同。为什么在 A 股该有超额：低位突破不是追高，而是空头结构被打破的证据——估值还在自身历史底部、价格已创 20 日新高，说明压制价格的是情绪而非基本面，情绪一旦转向修复速度快。怎么进出：当日最高价突破前 20 日最高价时买入，按自身 250 日 PB 分位升序取 10 只，收盘重新跌破 20 日均线(突破失败)或满 20 日离场，止损 8%、同行业最多 5 只。改了什么：把 A 路失效的趋势信号放进 B 路的估值约束里，只买便宜股里的突破，不买高位题材突破。
+buy:
+- {op: break_high_n, n: 20, dir: above, threshold: 0.5}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+rank: {op: ts_pct, n: 250, of: {op: pb}, order: asc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

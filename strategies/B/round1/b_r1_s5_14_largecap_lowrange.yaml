@@ -1,0 +1,12 @@
+name: b_r1_s5_14_largecap_lowrange
+type: rule
+desc: "半年维度日内振幅低于2%的大市值股票接近类债资产，波动预算受限的资金愿为其稳定性付溢价；按流通市值从大到小取，振幅放大到5%以上（类债属性消失）或持有满60日离场（不设止损）。"
+buy:
+- {op: atr_close_n, n: 120, dir: below, threshold: 2.0}
+sell:
+- {op: atr_close_n, n: 60, dir: above, threshold: 5.0}
+rank: {op: size_ln, order: desc}
+max_hold_days: 60
+stop_loss: null
+max_positions: 10
+industry_cap: 5

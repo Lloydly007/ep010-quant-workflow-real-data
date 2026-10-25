@@ -1,0 +1,16 @@
+name: a_r5_s1_24_ps_with_turn250
+type: score
+desc: "换手窗口换到 250 日做窗口对照（单腿 −0.75）：一年期换手率最低，是纯度最高的被忽视代理，也最容易撞上流动性陷阱与退市风险。与第 29 份（60 日）夹住 120 日基准，构成换手窗口三档。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.50
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,20 @@
+name: a_r6_s1_18_mass18_parity__f3n_u
+type: score
+desc: 均分配重估值块（1.80）：与 17 成对，唯一差别是两条估值腿各翻一倍。检验均分在高估值话语权下是否会把名单推成纯「便宜的成长陷阱」集合——权重一重，尾部极端营收倍数的样本会被更彻底地排除，集中度也会上升。归一化权重：size_ln
+  28.2% / ps_ttm 25.4% / pb 25.4% / turn_ma_n(120) 21.1%（ps:pb=0.90:0.90=1.00:1，总
+  |w|=3.55，估值块 50.7%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.9
+- op: pb
+  weight: -0.9
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

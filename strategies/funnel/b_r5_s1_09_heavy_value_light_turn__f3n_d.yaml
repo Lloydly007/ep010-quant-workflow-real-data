@@ -1,0 +1,18 @@
+name: b_r5_s1_09_heavy_value_light_turn__f3n_d
+type: score
+desc: 1:1:1 等权放大到单口径 -0.75，换手压到 -0.30。假设估值本身足够，换手只需微调剔除最极端的活跃股；若 07 号明显好于 09 号，说明本轮所谓“低估值”很可能只是低换手的代理变量。
+factors:
+- op: pb
+  weight: -0.75
+- op: ps_ttm
+  weight: -0.75
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 60
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

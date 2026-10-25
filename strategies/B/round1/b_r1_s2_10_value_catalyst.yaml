@@ -1,0 +1,19 @@
+name: b_r1_s2_10_value_catalyst
+type: rule
+desc: 估值便宜本身不构成买入理由，必须有单日换手放大到8%以上的资金确认，才区分得开「低估值加催化」与「低估值价值陷阱」，故在放量当天买其中最便宜的10只，持有10日，若放量持续扩散（20日均换手升到3%以上）说明催化已充分定价则提前兑现，8%止损。
+buy:
+- op: turn
+  dir: above
+  threshold: 8
+rank:
+  op: pb
+  order: asc
+sell:
+- op: turn_ma_n
+  n: 20
+  dir: above
+  threshold: 3
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

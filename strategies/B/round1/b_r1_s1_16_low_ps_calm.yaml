@@ -1,0 +1,12 @@
+name: b_r1_s1_16_low_ps_calm
+type: rule
+desc: PS以营业收入为分母、不受会计利润与减值操纵影响，低PS个股的收入性价比在成交平静期不会被恐慌情绪打折，故在20日振幅低于3%时按PS升序买入、换手放大过8%（投机资金介入）时离场
+buy:
+- {op: atr_close_n, n: 20, dir: below, threshold: 3}
+sell:
+- {op: turn, dir: above, threshold: 8}
+rank: {op: ps_ttm, order: asc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 0

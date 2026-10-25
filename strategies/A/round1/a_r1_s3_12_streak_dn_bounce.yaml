@@ -1,0 +1,13 @@
+name: a_r1_s3_12_streak_dn_bounce
+type: rule
+desc: 连续下跌4天以上、且20日累计跌幅超过10%的股票，短期抛压已被过度释放，容易出现技术性反弹；按20日跌幅从大到小挑最超跌的几只买入，反弹使5日涨幅达到5%即离场，5日持有、8%止损——赔率来自超跌，胜率来自连跌计数给出的抛压衰竭时点。
+buy:
+  - {op: streak_down, dir: above, threshold: 3}
+  - {op: ret_n, n: 20, dir: below, threshold: -10}
+sell:
+  - {op: ret_n, n: 5, dir: above, threshold: 5}
+rank: {op: ret_n, n: 20, order: asc}
+max_hold_days: 5
+stop_loss: 8%
+max_positions: 10
+industry_cap: 3

@@ -1,0 +1,11 @@
+name: b_r3_s4_02_cheap_calm_250d
+type: score
+desc: "与01同一权重但把波动窗口拉到250日：一年波动率几乎不含个股噪声，度量的是结构性跌不动的便宜股，这类股票换手与交易成本天然更低，溢价更容易在扣成本后留下。"
+factors:
+- {op: pb, weight: -0.6}
+- {op: vol_n, n: 250, weight: -0.4}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

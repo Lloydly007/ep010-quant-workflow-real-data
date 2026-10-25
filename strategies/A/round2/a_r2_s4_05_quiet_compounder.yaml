@@ -1,0 +1,14 @@
+name: a_r2_s4_05_quiet_compounder
+type: rule
+desc: 现象：上升趋势中20日 ATR 除以收盘价低于3%的低振幅股票，长期复利高于同趋势的高振幅同类（实测全池 atr20 中位3.57%，低振幅档约占三分之一）。为什么A股该有超额：本轮真正的对手是等权全池买入持有（年化+15.11%），它包含大量高波动小盘，波动拖累（sigma平方/2）会吃掉相当部分算术收益；低振幅股票的多空分歧小、日内被游资反向博弈的幅度小，且A股散户系统性偏好高波动，低波动品种长期存在定价折价。进出：买入需收盘价高于120日均线、120日溃疡指数低于5%、20日ATR除以收盘低于3%，按20日ATR除以收盘升序取前10；持有40日、止损10%，ATR除以收盘升破5%（原资金结构改变、波动放大）即卖出。相对第1轮失败模式的改动：第1轮主动挑动量最猛与放量最凶的标的，等于主动挑高波动高回撤；本轮把波动率当成主筛选轴，目标是降低波动拖累而不是放大收益。
+buy:
+- {op: atr_close_n, n: 20, dir: below, threshold: 3}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: ulcer_n, n: 120, dir: below, threshold: 5}
+rank: {op: atr_close_n, n: 20, order: asc}
+sell:
+- {op: atr_close_n, n: 20, dir: above, threshold: 5}
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 10

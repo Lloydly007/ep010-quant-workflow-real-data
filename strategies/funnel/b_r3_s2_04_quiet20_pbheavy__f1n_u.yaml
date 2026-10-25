@@ -1,0 +1,14 @@
+name: b_r3_s2_04_quiet20_pbheavy__f1n_u
+type: score
+desc: 选 PB 最低、近 20 日换手偏低的股票，理由是账面价值折价是慢变量，而换手只用来确认这只票还没被资金炒过一轮。
+factors:
+- op: pb
+  weight: -1.45
+- op: turn_ma_n
+  n: 60
+  weight: -0.55
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

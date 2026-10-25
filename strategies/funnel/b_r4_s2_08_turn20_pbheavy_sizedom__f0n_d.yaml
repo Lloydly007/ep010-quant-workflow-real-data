@@ -1,0 +1,17 @@
+name: b_r4_s2_08_turn20_pbheavy_sizedom__f0n_d
+type: score
+desc: 20 日窗口下规模推到 -2.00、pb 也给到 -0.80：极端小盘 + 极端便宜 + 短期冷清，理论上最无人问津的一角，但也最容易落入流动性陷阱，用于检验强规模主导下
+  20 日换手是否还剩信息。
+factors:
+- op: turn_ma_n
+  n: 10
+  weight: -0.75
+- op: pb
+  weight: -0.8
+- op: size_ln
+  weight: -2.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

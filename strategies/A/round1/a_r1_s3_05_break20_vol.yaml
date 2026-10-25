@@ -1,0 +1,13 @@
+name: a_r1_s3_05_break20_vol
+type: rule
+desc: 创20日新高且当日5日量比超过1.5倍，说明突破是由新增资金而不是存量博弈推动的，带量突破后的动量延续概率明显高于缩量假突破；跌破10日线或持满10日离场，8%止损。
+buy:
+  - {op: break_high_n, n: 20, dir: above, threshold: 0.5}
+  - {op: vol_ratio_n, n: 5, dir: above, threshold: 1.5}
+sell:
+  - {op: close_over_ma_n, n: 10, dir: below, threshold: 1.0}
+rank: {op: vol_ratio_n, n: 5, order: desc}
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

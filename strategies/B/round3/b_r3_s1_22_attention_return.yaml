@@ -1,0 +1,18 @@
+name: b_r3_s1_22_attention_return
+type: score
+desc: 三镜低估叠加 20 日均换手偏高者优先，低估值碰上关注度回流（换手抬升）才是折价开始被资金定价的信号，这与越冷越好的低换手假设正好相反、用同一组估值因子做方向对冲，超额来自估值修复的启动点而非安静的等待。
+factors:
+- op: pb
+  weight: -0.35
+- op: ps_ttm
+  weight: -0.35
+- op: pe_ttm
+  weight: -0.30
+- op: turn_ma_n
+  n: 20
+  weight: 0.50
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

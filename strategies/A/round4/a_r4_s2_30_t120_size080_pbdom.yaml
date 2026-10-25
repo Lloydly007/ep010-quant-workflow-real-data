@@ -1,0 +1,16 @@
+name: a_r4_s2_30_t120_size080_pbdom
+type: score
+desc: "120 日窗口的对称对照：PB -1.20 主导、规模只 -0.80（占 29.1%）——若与 29 号超额相当，说明规模倾斜是可被低估值替代的风格暴露而非独立 alpha。"
+factors:
+- op: size_ln
+  weight: -0.8
+- op: pb
+  weight: -1.2
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

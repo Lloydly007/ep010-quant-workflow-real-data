@@ -1,0 +1,18 @@
+name: a_r3_s2_14_xsec_dual_pct
+type: score
+desc: 规模与20日换手都先转成当日截面分位再加权，两因子量纲统一、极端值被压平，权重才真正代表风险预算而不是被市值量级吃掉。
+factors:
+- op: xsec_pct
+  of:
+    op: size_ln
+  weight: -1.25
+- op: xsec_pct
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

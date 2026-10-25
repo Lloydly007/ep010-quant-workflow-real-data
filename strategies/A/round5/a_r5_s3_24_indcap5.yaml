@@ -1,0 +1,20 @@
+name: a_r5_s3_24_indcap5
+type: score
+desc: "行业持仓上限收到 5：pb -0.5、行业内分位 -0.5、size_ln -0.6、250 日换手 -0.45，industry_cap 5。与 23 同轴更极端，测分散到六个以上门类后是否还留得住便宜度；年窗换手保证分散后选出来的仍是被长期冷落的名字，而不是各门类里最贵的活跃票。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 5

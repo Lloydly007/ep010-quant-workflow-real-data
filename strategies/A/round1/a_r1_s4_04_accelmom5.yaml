@@ -1,0 +1,14 @@
+name: a_r1_s4_04_accelmom5
+type: rule
+desc: 5日急涨超8%、收盘站在5日线之上且量比放大到1.2倍，说明有资金在极短窗口内加速建仓，短期动能惯性会延续但基础脆弱——故只做超短持有，价跌回5日线立即离场，5日为限、5%硬止损，用3日涨幅排序取最强的前10只。
+buy:
+  - {op: ret_n, n: 5, dir: above, threshold: 8}
+  - {op: close_over_ma_n, n: 5, dir: above, threshold: 1.0}
+  - {op: vol_ratio_n, n: 5, dir: above, threshold: 1.2}
+sell:
+  - {op: close_over_ma_n, n: 5, dir: below, threshold: 1.0}
+rank: {op: ret_n, n: 3, order: desc}
+max_hold_days: 5
+stop_loss: 5
+max_positions: 10
+industry_cap: 0

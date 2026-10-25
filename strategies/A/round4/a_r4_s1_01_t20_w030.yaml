@@ -1,0 +1,16 @@
+name: a_r4_s1_01_t20_w030
+type: score
+desc: "把 size_ln 固定 -1.5、pb 固定 -0.5 当底仓，只给 20 日均换手 -0.30 的最轻刹车：假设一个月的清淡已足够标出短期无人问津的名字，轻权重让规模腿仍占七成预算，用来测 20 日窗在换手预算里的下限贡献。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

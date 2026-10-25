@@ -1,0 +1,21 @@
+name: a_r6_s1_01_ratio_1to3_psfloor__f3n_u
+type: score
+desc: 估值块把账面给到四分之三、营收只留四分之一，是本轮区间的 pb 极端端。假设在行业中性化之后，净资产折价仍是最可交易的那条便宜定义（同行业内 pb 的可比性最好），ps
+  的边际信息主要是剔除「资产便宜但营收塌陷」的个别标的，因此只配给它一票否决的分量。这一档要回答：当 ps 从母本的 0.50 掉到 0.25，前 30 只是否被银行、电力、钢铁这类重资产行业整体接管。归一化权重：size_ln
+  36.4% / turn_ma_n(120) 27.3% / pb 27.3% / ps_ttm 9.1%（ps:pb=0.25:0.75=1:3.00，总 |w|=2.75，估值块
+  36.4%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.25
+- op: pb
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

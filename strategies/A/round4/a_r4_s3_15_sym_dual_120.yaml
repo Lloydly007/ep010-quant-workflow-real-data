@@ -1,0 +1,15 @@
+name: a_r4_s3_15_sym_dual_120
+type: score
+desc: "同窗半年双低：turn(120) 与 vol(120) 各 -0.75，两因子在同一时间尺度上度量，排除“20 日换手配 250 日波动”造成的信号打架，是 07/09 的窗口对齐对照。"
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: vol_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

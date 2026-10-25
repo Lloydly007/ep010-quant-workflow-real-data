@@ -1,0 +1,16 @@
+name: b_r4_s1_25_pb_lead_ps_sanity
+type: score
+desc: PB 主导 + PS 体检：pb -1.05 / turn_ma_n(120) -0.45 / ps_ttm -0.30（归一化 58%/25%/17%），假设深度低 PB 里混着资产虚高或营收崩塌的价值陷阱，用 PS 做第二道筛可提高折价修复命中率，是与 15 只差一个 PS 项的对照。
+factors:
+- op: pb
+  weight: -1.05
+- op: turn_ma_n
+  n: 120
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

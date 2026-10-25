@@ -1,0 +1,20 @@
+name: a_r6_s3_07_dose050_u250_t120__f2n_d
+type: score
+desc: ulcer_n(250) -0.50 与 pb -0.50 平权，防御腿首次追平估值腿：假设在震荡格局里「跌得慢」比「便宜」更能解释持有体验，代价是估值腿被稀释。归一化权重：size_ln
+  36.4% / pb 18.2% / turn_ma_n(120) 27.3% / ulcer_n(250) 18.2%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,21 @@
+name: a_r6_s1_08_ratio_1p15to1_ps_lean__f3n_d
+type: score
+desc: parity 的另一侧（ps 53% / pb 47%，实际 1.13:1）：与 07 构成镜像对，唯一差别是那 3 个百分点从 pb 挪到 ps。成对设计的目的很直接——若
+  07 与 08 的名单差异大于 07 与 06 的差异，说明 parity 附近存在非对称敏感方向，冻结时就应偏向更稳的那一侧而不是取中点。归一化权重：size_ln
+  36.4% / turn_ma_n(120) 27.3% / ps_ttm 19.3% / pb 17.1%（ps:pb=0.53:0.47=1.13:1，总
+  |w|=2.75，估值块 36.4%）。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.53
+- op: pb
+  weight: -0.47
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

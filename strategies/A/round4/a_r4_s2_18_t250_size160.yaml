@@ -1,0 +1,14 @@
+name: a_r4_s2_18_t250_size160
+type: score
+desc: "250 日年度窗口、规模 -1.60（占 68.1%），阶梯第 3 档：年度换手变化极慢，周度调仓只削减边际名次，规模倾斜在此更像静态风格而非交易信号。"
+factors:
+- op: size_ln
+  weight: -1.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r1_s1_19_presszone_hold
+type: rule
+desc: 收盘贴着20日高点3%以内却尚未突破（当日最高价未越过前20根K线高点）、同时站稳20日线，是压力位下方蓄势且卖压已被消化的形态，后续向上突破概率高于向下破位｜按20日动量取蓄势最强，10日涨8%兑现，10日上限、5%止损，跌破20日线离场。
+buy:
+- {op: dist_high_n, n: 20, dir: above, threshold: -3.0}
+- {op: break_high_n, n: 20, dir: below, threshold: 0.5}
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+rank: {op: ret_n, n: 20, order: desc}
+sell:
+- {op: ret_n, n: 10, dir: above, threshold: 8.0}
+max_hold_days: 10
+stop_loss: 5%
+max_positions: 10
+industry_cap: 5

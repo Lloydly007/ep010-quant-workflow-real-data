@@ -1,0 +1,19 @@
+name: b_r3_s2_23_quiet250_own_ps_pct__f1n_u
+type: score
+desc: 选 PS 处于自身半年低位、PB 偏低、近 250 日换手低的股票，理由是营收倍数的时序低位捕捉的是相对自己变便宜，配合长期冷清可避开正在估值下修的票。
+factors:
+- op: pb
+  weight: -0.45
+- op: ts_pct
+  n: 250
+  of:
+    op: ps_ttm
+  weight: -0.55
+- op: turn_ma_n
+  n: 250
+  weight: -0.9
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

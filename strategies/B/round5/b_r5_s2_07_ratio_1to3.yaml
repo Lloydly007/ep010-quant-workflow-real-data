@@ -1,0 +1,16 @@
+name: b_r5_s2_07_ratio_1to3
+type: score
+desc: "比值 1:3（pb -0.60 / size_ln -1.80），估值腿降到 19% 的归一化权重。检验更极端的“小盘为主、估值为辅”结构是否仍有超额，还是已经退化成在 1,545 只池里按市值排序的近似复制；若 07 与 06 接近但 09 变差，说明比值在三倍附近饱和。归一化权重：pb 19.0% / size_ln 57.1% / turn_ma_n(120) 23.8%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.80
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

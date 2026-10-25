@@ -1,0 +1,18 @@
+name: b_r4_s3_15_ps_pe_complement_small
+type: score
+desc: "ps 主体 + pe_ttm 轻补：ps −0.45 / pe −0.20 / size −0.50 / turn 120 −0.60。假设营收口径覆盖了亏损股（pe 在 10.2% 的负值上失效），但盈利口径能拦掉'收入便宜、利润极贵'的伪低估，所以让 pe 以小额负权只做盈利侧的否决。pe 用负权而非正权，刻意避开'把亏损股排最前'的低 pe 陷阱。"
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: pe_ttm
+  weight: -0.2
+- op: size_ln
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

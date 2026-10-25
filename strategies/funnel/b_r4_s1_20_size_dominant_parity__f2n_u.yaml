@@ -1,0 +1,17 @@
+name: b_r4_s1_20_size_dominant_parity__f2n_u
+type: score
+desc: 在 1:1 基准上叠加小市值主导项：size_ln -1.25（归一化 53%）压过 pb -0.50 与 turn_ma_n(120) -0.60（21%/26%），假设小盘溢价是更强的一阶效应、估值与换手只作风格控制器；与
+  08 的唯一差别是 size_ln，用于隔离市值维度的增量。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

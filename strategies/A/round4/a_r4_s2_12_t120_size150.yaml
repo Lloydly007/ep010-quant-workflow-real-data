@@ -1,0 +1,14 @@
+name: a_r4_s2_12_t120_size150
+type: score
+desc: "120 日窗口、规模 -1.50（占 66.7%），阶梯第 3 档：规模与慢换手权重比达 2:1，检验半年冷门是否足以把最小盘里的高风险个股筛掉。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

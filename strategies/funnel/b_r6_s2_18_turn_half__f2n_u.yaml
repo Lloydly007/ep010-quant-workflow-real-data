@@ -1,0 +1,24 @@
+name: b_r6_s2_18_turn_half__f2n_u
+type: score
+desc: 把换手腿减半（turn_ma_n(120) −0.375），防御预算保持 0.45 对半：换手、波动、溃疡都在度量「安静」，三条腿可能三重计数。若 18
+  与 01 同档，说明换手腿在与两条防御腿共存时是冗余的，下一轮可把换手让位给估值；若 18 变差，说明换手携带了防御腿没有的信息（筹码交换速度），三者不是同义词。归一化权重：pb
+  22.9% / size_ln 45.7% / turn_ma_n(120) 14.3% / ulcer_n(250) 8.6% / vol_n(250) 8.6%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 250
+  weight: -0.375
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

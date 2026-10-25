@@ -1,0 +1,18 @@
+name: b_r6_s3_24_pslead_120
+type: score
+desc: "PS 主导档：ps_ttm -0.85 占 34%，pb 退到 -0.35，规模 -0.75、换手 -0.55。假设营收倍数比账面倍数更难被折旧政策与商誉扭曲，在行业中性化之后更贴“为每单位收入付了多少钱”；pb 留 14% 只作反制，防止组合掉进账面便宜但营收崩塌的价值陷阱。本档与 19 号互为镜像。归一化权重：pb 14.0% / ps_ttm 34.0% / size_ln 30.0% / turn_ma_n(120) 22.0%。"
+factors:
+- op: pb
+  weight: -0.35
+- op: ps_ttm
+  weight: -0.85
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

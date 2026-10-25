@@ -1,0 +1,15 @@
+name: b_r1_s4_05_drawdown_rebound
+type: rule
+desc: 60日溃疡指数（回撤深度均方根）超过10%说明恐慌盘已出清、赔率进入修复区，PS低则说明收入端仍有支撑→买入深跌且PS低的票，持有10日、亏5%即止损以防跌势延续，同行业最多3只。
+buy:
+- op: ulcer_n
+  n: 60
+  dir: above
+  threshold: 10.0
+rank:
+  op: ps_ttm
+  order: asc
+max_hold_days: 10
+stop_loss: 5
+max_positions: 10
+industry_cap: 3

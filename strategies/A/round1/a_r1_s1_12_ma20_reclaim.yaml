@@ -1,0 +1,14 @@
+name: a_r1_s1_12_ma20_reclaim
+type: rule
+desc: 收盘仍在60日线下方（中期弱势未修复）却刚收复20日线、且距20日低点不足8%，是空头排列被打破的第一确认信号，此时介入赔率最高、止损位也最近｜按5日反弹动能取最强确认者，重新跌破20日线即认错，10日上限、8%止损。
+buy:
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+- {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+- {op: dist_low_n, n: 20, dir: below, threshold: 8.0}
+rank: {op: ret_n, n: 5, order: desc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+max_hold_days: 10
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

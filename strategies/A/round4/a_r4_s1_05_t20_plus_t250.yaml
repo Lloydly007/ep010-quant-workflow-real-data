@@ -1,0 +1,19 @@
+name: a_r4_s1_05_t20_plus_t250
+type: score
+desc: "短窗 20 日 -0.75 再加长窗 250 日 -0.40 做双层确认：既要近期缩量、也要全年无人问津，把只是一次性事件安静下来的名字剔掉，权重仍以短窗为主、长窗只作否决。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

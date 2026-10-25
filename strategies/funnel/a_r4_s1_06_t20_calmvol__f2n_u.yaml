@@ -1,0 +1,19 @@
+name: a_r4_s1_06_t20_calmvol__f2n_u
+type: score
+desc: 20 日换手 -0.75 叠加同窗 20 日波动 -0.40：换手低且波动也低才是真的没人交易，换手低而波动高的票更像停牌或事件真空，这条腿专门把两种安静拆开。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: vol_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

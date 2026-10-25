@@ -1,0 +1,16 @@
+name: b_r4_s4_18_turn60_dominant_200
+type: score
+desc: "换手权重幅值轴端点：60 日换手 −2.00，约为估值腿总权重的 1.7 倍，是‘低换手支配一切’的极端档。本份与 b_r4_s4_11（PE 仅作筛子）构成同一问题的两面：一面把估值压到最低、一面把换手压到最高，用两者共同界定混合形态里两条腿的真实相对贡献。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -2.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

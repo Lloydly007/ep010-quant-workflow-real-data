@@ -1,0 +1,20 @@
+name: a_r4_s4_31_dual_mom_20_120
+type: score
+desc: "动量拆双腿：ret_n(20) +0.50 与 ret_n(120) +0.50，配 turn_ma_n(120) -0.75、size_ln -1.25：短期启动与半年趋势各占一半，检验双窗叠加是否比单窗 60 日更稳。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: 0.5
+- op: ret_n
+  n: 120
+  weight: 0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

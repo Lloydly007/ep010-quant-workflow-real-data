@@ -1,0 +1,25 @@
+name: a_r1_s2_12_regime_kill_switch
+type: rule
+desc: 个股只凭中期动量（60日涨超10%且站上20日线）持有，但用"300ETF跌破250日年线"作为组合级无差别清仓开关，用市场状态而非个股信号控制系统性回撤；60日长持有，不设个股止损以免被个股噪音误杀。
+buy:
+- op: ret_n
+  n: 60
+  dir: above
+  threshold: 10
+- op: close_over_ma_n
+  n: 20
+  dir: above
+  threshold: 1.0
+rank:
+  op: ret_n
+  n: 60
+  order: desc
+sell:
+- op: etf_above_ma_n
+  n: 250
+  dir: below
+  threshold: 0.5
+max_hold_days: 60
+stop_loss: none
+max_positions: 10
+industry_cap: 0

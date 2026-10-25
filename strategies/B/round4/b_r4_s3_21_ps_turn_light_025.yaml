@@ -1,0 +1,16 @@
+name: b_r4_s3_21_ps_turn_light_025
+type: score
+desc: "换手权重最轻档：turn 120 −0.25，ps −0.45 与 size −0.55 固定。假设冷清只是让估值折价得以持续的辅助条件，真正决定收益的是 ps 便宜，所以换手只给微调权重；这一档几乎等于'便宜小盘，稍偏好冷清'。与 23/24 一起构成本组的换手幅值切片，回答换手到底是不是必要条件。"
+factors:
+- op: ps_ttm
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

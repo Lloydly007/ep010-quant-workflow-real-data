@@ -1,0 +1,16 @@
+name: a_r5_s2_08_size_mid_250
+type: score
+desc: "规模 -0.8 / 估值 -0.5 的中间剂量点：夹在 07 与 09 之间，检验超额对规模权重是否单调，避免把某一档的偶然结果当成规律。"
+factors:
+- op: size_ln
+  weight: -0.8
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

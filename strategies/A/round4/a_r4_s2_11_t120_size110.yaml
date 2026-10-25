@@ -1,0 +1,14 @@
+name: a_r4_s2_11_t120_size110
+type: score
+desc: "120 日窗口、规模 -1.10（占 59.5%），阶梯第 2 档：慢换手股本身冷门，规模倾斜起点权重可以更低就达到同等小盘暴露，检验这一替代关系。"
+factors:
+- op: size_ln
+  weight: -1.1
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,24 @@
+name: b_r2_s3_13_lowps_calm_repro
+type: rule
+desc: 现象：round1最好的一份（超额+9.9%、夏普0.98）用的是vol_n(20)<2 加 ulcer_n(60)<3 加 PS升序，而不是PB，说明在1545只池里"低波+低PS"这一支可能真的比"低波+低PB"有效——PB被商誉、折旧政策和破净套利污染。为什么该有超额：营收比账面价值更难被会计手段操纵，低PS叠加低波等于"经营规模覆盖市值且有安全边际"，还不依赖账面价值真实存在。怎么进出：买vol_n(120)<2且60日均换手低于3%的股票、按PS升序取10只；20日波动升破5%即卖，持有60日，10%止损。相对第1轮：把上一轮的赢家从随机命中变成显式可复现的假设，并换用更长的时间尺度检验它是否真能重复。
+buy:
+- op: vol_n
+  n: 120
+  dir: below
+  threshold: 2
+- op: turn_ma_n
+  n: 60
+  dir: below
+  threshold: 3
+rank:
+  op: ps_ttm
+  order: asc
+sell:
+- op: vol_n
+  n: 20
+  dir: above
+  threshold: 5
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

@@ -1,0 +1,23 @@
+name: a_r4_s4_26_plus_ownhist_mom
+type: score
+desc: "动量加一腿自身历史口径：ts_pct 以 250 日窗包 ret_n(60) 给 +0.60，同时保留横截面 ret_n(60) +0.45，配 turn_ma_n(120) -0.75、size_ln -1.25：横截面比涨幅会被全市场 beta 带偏，改比自己在一年里的相对位置。"
+factors:
+- op: size_ln
+  weight: -1.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 60
+  weight: 0.45
+- op: ts_pct
+  n: 250
+  of:
+    op: ret_n
+    n: 60
+  weight: 0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

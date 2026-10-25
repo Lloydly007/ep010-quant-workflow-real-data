@@ -1,0 +1,28 @@
+name: a_r1_s2_14_lowpos_volume_ignite
+type: rule
+desc: 收盘仍在250日低点15%以内的低位股若出现量比1.5倍以上的放量，代表底部区域换手放大、有资金开始吸筹，与缩量筑底互补；在放量股中优先选量能相对自身60日分位最高者，跌破20日线离场，-8%止损。
+buy:
+- op: dist_low_n
+  n: 250
+  dir: below
+  threshold: 15
+- op: vol_ratio_n
+  n: 20
+  dir: above
+  threshold: 1.5
+rank:
+  op: ts_pct
+  n: 60
+  of:
+    op: vol_ratio_n
+    n: 20
+  order: desc
+sell:
+- op: close_over_ma_n
+  n: 20
+  dir: below
+  threshold: 1.0
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

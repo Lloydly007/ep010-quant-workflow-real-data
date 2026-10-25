@@ -1,0 +1,14 @@
+name: a_r3_s1_06_size_lowvol60
+type: score
+desc: 小市值叠60日低波，用季度尺度的波动筛掉业绩爆雷型小盘，低波异象在小盘内部更强，因为小盘的极端波动多来自事件冲击而不是基本面趋势。
+factors:
+- op: size_ln
+  weight: -1.3
+- op: vol_n
+  n: 60
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

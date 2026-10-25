@@ -1,0 +1,21 @@
+name: b_r5_s1_33_cross_own_mixed_pe
+type: score
+desc: pb 与 ps 用横截面原值（各 -0.30），pe 单独换成 250 日时序分位（-0.30）：假设 pe 的横截面不可用（负值排序失真）但纵向可用（亏损转盈的拐点在自身历史分位里看得见），这是“pe 只做纵向”的折中方案。
+factors:
+- op: pb
+  weight: -0.3
+- op: ps_ttm
+  weight: -0.3
+- op: ts_pct
+  n: 250
+  of:
+    op: pe_ttm
+  weight: -0.3
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

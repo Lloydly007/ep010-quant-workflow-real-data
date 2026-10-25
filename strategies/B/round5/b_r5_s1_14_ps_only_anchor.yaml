@@ -1,0 +1,14 @@
+name: b_r5_s1_14_ps_only_anchor
+type: score
+desc: 纯 ps_ttm 单口径（-1.00）+ 120 日换手：收入端便宜，对毛利率差异不敏感，会把低毛利重资产商（贸易、建筑）与高毛利轻资产商同等对待；假设盈利周期底部时 ps 比 pe 稳，因为分母不会变负。
+factors:
+- op: ps_ttm
+  weight: -1.0
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

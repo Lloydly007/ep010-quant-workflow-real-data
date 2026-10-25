@@ -1,0 +1,18 @@
+name: b_r3_s1_05_pe_token_antitrap
+type: score
+desc: PE 压到微调权重而让 PB 与 PS 共同做主，因为约一成标的的 PE 为负且负值在截面秩上会被当成极度便宜，压低其权重可避免亏损股占领组合，PB 与 PS 全为正可放心重仓，再配 120 日低波过滤波动放大的破净陷阱，超额来自绕开 PE 符号缺陷后的三镜重叠折价。
+factors:
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.45
+- op: pe_ttm
+  weight: -0.10
+- op: vol_n
+  n: 120
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

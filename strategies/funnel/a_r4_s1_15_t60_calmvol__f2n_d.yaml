@@ -1,0 +1,19 @@
+name: a_r4_s1_15_t60_calmvol__f2n_d
+type: score
+desc: 60 日换手 -0.75 叠同窗 60 日波动 -0.40：同窗配对让没人交易与价格没波动互相验证，若两腿截面秩高度相关，加波动腿应只改稳定性不改幅度。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

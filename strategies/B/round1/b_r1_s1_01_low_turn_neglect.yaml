@@ -1,0 +1,12 @@
+name: b_r1_s1_01_low_turn_neglect
+type: rule
+desc: 换手率20日均值低于1%的个股处在关注度真空，缺乏研究与交易关注使价格对基本面消息反应迟钝、折价长期不修复，故在冷门期买入并持有到单日换手放大过5%（关注度回归、折价收敛）即离场
+buy:
+- {op: turn_ma_n, n: 20, dir: below, threshold: 1}
+sell:
+- {op: turn, dir: above, threshold: 5}
+rank: {op: turn_ma_n, n: 20, order: asc}
+max_hold_days: 60
+stop_loss: 10
+max_positions: 10
+industry_cap: 0

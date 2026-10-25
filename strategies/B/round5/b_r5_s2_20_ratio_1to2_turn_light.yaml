@@ -1,0 +1,16 @@
+name: b_r5_s2_20_ratio_1to2_turn_light
+type: score
+desc: "在 05 基准（1:2）上把 120 日换手权重从 -0.75 降到 -0.35，换手只占归一化权重 16%，评分几乎由 pb 与 size_ln 两条腿决定。用于剥离换手项的干扰，测量估值-规模比值本身单独能提供多少可复现的超额；与 21 一起把换手权重的两端夹住，形成对换手项必要性的区间检验。归一化权重：pb 27.9% / size_ln 55.8% / turn_ma_n(120) 16.3%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

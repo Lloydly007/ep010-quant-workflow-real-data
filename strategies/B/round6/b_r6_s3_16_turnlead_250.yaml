@@ -1,0 +1,18 @@
+name: b_r6_s3_16_turnlead_250
+type: score
+desc: "13 号的长窗版：42% 的权重全压在一年平均换手上。假设换手作为拥挤度代理是慢变量，短窗量到的是事件噪声，只有年度均值才对应“这只票常年有没有机构在倒手”；极端之处在于四条腿里近一半权重挂在一个需要 250 根 K 线的零件上，会明显收窄可选样本。归一化权重：pb 16.0% / ps_ttm 16.0% / size_ln 26.0% / turn_ma_n(250) 42.0%。"
+factors:
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -1.05
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

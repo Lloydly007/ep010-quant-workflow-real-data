@@ -1,0 +1,22 @@
+name: a_r4_s1_25_t120_own_turn_pct__f2n_d
+type: score
+desc: 120 日换手 -0.75 再叠它自身 250 日历史分位 -0.45：半年绝对换手只能说现在冷，时序分位说明相对自己最冷，两者叠加度量的是关注度的异常程度而非绝对水平。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 120
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

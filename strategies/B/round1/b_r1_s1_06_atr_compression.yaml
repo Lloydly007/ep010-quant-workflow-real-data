@@ -1,0 +1,12 @@
+name: b_r1_s1_06_atr_compression
+type: rule
+desc: ATR除以收盘价压缩到2%以下说明日内没有大额抛压、持有者结构稳定，这类股票的走势延续概率更高且回撤可控，故买入振幅最窄者、5日ATR放大过5%（结构破坏）即离场
+buy:
+- {op: atr_close_n, n: 20, dir: below, threshold: 2}
+sell:
+- {op: atr_close_n, n: 5, dir: above, threshold: 5}
+rank: {op: atr_close_n, n: 20, order: asc}
+max_hold_days: 40
+stop_loss: 5
+max_positions: 10
+industry_cap: 0

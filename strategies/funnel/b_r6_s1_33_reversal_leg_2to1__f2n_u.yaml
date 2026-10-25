@@ -1,0 +1,25 @@
+name: b_r6_s1_33_reversal_leg_2to1__f2n_u
+type: score
+desc: 第三腿检验（短期反转）：在 07（分割 2:1）上追加 ret_n(20) 负权 -0.35，即“最近一个月跌得多”得分高，占 14.6%。这里要回答的是换手短窗到底是什么——如果
+  120 日低换手捕捉的是“关注度空窗”，那么最近一月跌幅大的冷门股应该更便宜，反转腿应与之互补；如果它捕捉的其实是“没人要的下跌票”，那反转腿就是同义叠加，会显著加深名单的尾部风险。33
+  与 31/32 一起构成三条互不相同的第三腿，用来判断终版是否值得再并一条腿。归一化权重：pb 20.8% / size_ln 27.1% / turn_ma_n(120)
+  25.0% / turn_ma_n(250) 12.5% / ret_n(20) 14.6%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 250
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.3
+- op: ret_n
+  n: 20
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

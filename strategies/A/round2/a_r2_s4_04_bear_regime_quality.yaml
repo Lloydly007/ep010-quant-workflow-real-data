@@ -1,0 +1,14 @@
+name: a_r2_s4_04_bear_regime_quality
+type: rule
+desc: 现象（含反向假设）：只在沪深300ETF跌破250日均线（市场处于年线下方的防守状态，搜索期约占44%的交易日）时出手，且要求个股仍站在120日均线上方、120日溃疡指数低于5%。为什么A股该有超额：A股熊市是资金向确定性集中的过程，指数年线下方时绝大多数股票下跌，还能守住120日线且路径无伤的少数品种往往是被动与长线资金的加仓对象；而在牛市里反向做多这类抗跌滞涨股会被风格切换惩罚，所以必须用市场状态把这类交易限制在防守段。进出：etf_above_ma_n(250) 取 below 0.5（年线之下才买，是明确的反向状态假设），个股准入为收盘价高于120日均线且 ulcer120 低于5%，按 ulcer120 升序取前10；持有40日、止损8%，收盘跌破120日均线即卖出。相对第1轮失败模式的改动：第1轮全程满仓高beta趋势股，2018与2022的下跌完全无法规避（全池买入持有在2018为-29%）；本轮首次引入只在熊市出手的市场状态开关，并把选股口径从动量换成路径质量。
+buy:
+- {op: etf_above_ma_n, n: 250, dir: below, threshold: 0.5}
+- {op: close_over_ma_n, n: 120, dir: above, threshold: 1.0}
+- {op: ulcer_n, n: 120, dir: below, threshold: 5}
+rank: {op: ulcer_n, n: 120, order: asc}
+sell:
+- {op: close_over_ma_n, n: 120, dir: below, threshold: 1.0}
+max_hold_days: 40
+stop_loss: 8%
+max_positions: 10
+industry_cap: 0

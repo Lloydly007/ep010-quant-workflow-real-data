@@ -1,0 +1,12 @@
+name: b_r3_s4_13_ulcer_var_120
+type: score
+desc: "同一120日窗口内同时压收益标准差与溃疡指数（各0.3）、PB0.4：把上下都震与只往下砸分开惩罚，单位波动带来的回撤更浅说明没有恐慌性抛压，持有体验接近固收替代、被长期资金偏好。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 120, weight: -0.3}
+- {op: ulcer_n, n: 120, weight: -0.3}
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

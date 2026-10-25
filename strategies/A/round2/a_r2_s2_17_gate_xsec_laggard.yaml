@@ -1,0 +1,15 @@
+name: a_r2_s2_17_gate_xsec_laggard
+type: rule
+desc: 现象：第1轮的排序全部按动量降序，等于专挑领涨股，而A股领涨股在指数上行期的后段最容易先被兑现。为何A股有超额：60日涨幅已进入市场前20%但距250日高点仍有15%以上空间的股票，是趋势已确认、上方无套牢盘、又还没被透支的“次强股”，指数上行期这类补涨轮动的赔率高于领涨股。进出：ETF120日线上方、60日涨幅超3%但距250日高点仍超过15%、站上20日线时买入，按60日动量的截面分位降序优先；跌破20日线离场，最长20日、8%止损、同行业最多10只。相对第1轮改动：把“买最强”改成“买次强且上方有空间”，用截面分位加距高点空间双重剔除已被兑现的领涨股。
+buy:
+- {op: etf_above_ma_n, n: 120, dir: above, threshold: 0.5}
+- {op: ret_n, n: 60, dir: above, threshold: 3}
+- {op: dist_high_n, n: 250, dir: below, threshold: -15}
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+rank: {op: xsec_pct, of: {op: ret_n, n: 60}, order: desc}
+sell:
+- {op: close_over_ma_n, n: 20, dir: below, threshold: 1.0}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 10

@@ -1,0 +1,12 @@
+name: a_r2_s5_08_pool_rs5_fast
+type: rule
+desc: 现象：极短周期的横截面动量在 A 股仍有正溢价，但只存在于当日买盘完全控盘的股票上——收盘落在振幅上沿 80% 以上，是尾盘主动买入而不是冲高回落的证据。为什么在 A 股该有超额：短周期动量的收益来自订单流不平衡的延续，T+1 制度让强势股的次日跟风盘集中，故信号衰减极快、必须短持；第 1 轮把短周期信号也配上 10 到 20 日持有期，等于用长持承担衰减后的均值回归。怎么进出：站上 20 日线且收盘位置高于 0.8 者，按 5 日涨幅的全池截面分位降序取前 10；收盘位置跌回 0.5 以下即离场，3 日上限、5% 止损。相对第 1 轮的改动：第 1 轮给短周期信号配的是长持有期；本配置把持有期压到 3 日与信号衰减对齐，并用当日日内结构做进出确认。
+buy:
+- {op: close_over_ma_n, n: 20, dir: above, threshold: 1.0}
+- {op: close_pos_range, dir: above, threshold: 0.8}
+rank: {op: xsec_pct, of: {op: ret_n, n: 5}, order: desc}
+sell:
+- {op: close_pos_range, dir: below, threshold: 0.5}
+max_hold_days: 3
+stop_loss: 5%
+max_positions: 10

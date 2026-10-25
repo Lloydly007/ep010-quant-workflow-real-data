@@ -1,0 +1,20 @@
+name: b_r5_s3_16_dual_turn_20_250
+type: score
+desc: "换手双窗（月度 -0.45 + 年度 -0.7）+ 一年估值分位：既要求长期成交清淡（结构性无人问津），又要求最近一个月仍在冷却（没有资金回补），把“一直冷”和“刚开始冷”区分开，避免买到已经被人捡起来的标的。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.85
+- op: turn_ma_n
+  n: 20
+  weight: -0.45
+- op: turn_ma_n
+  n: 250
+  weight: -0.7
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

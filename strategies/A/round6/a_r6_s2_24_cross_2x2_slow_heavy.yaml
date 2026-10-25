@@ -1,0 +1,27 @@
+name: a_r6_s2_24_cross_2x2_slow_heavy
+type: score
+desc: "2×2 的整张单一起偏慢：每个信号的 250/长端都拿大头（估值 250 -0.50、换手 250 -0.55），120/短端只留微调（-0.25 与 -0.30）。这不是改比例而是改「可信度随尺度递增」的假设——长窗更少受单次事件污染，所以同一信号在长端该有更高票数。与 21 的等权对照，可以把差直接读成尺度权重曲线的斜率；若 24 更强，说明本池的有效信息密度随窗口变长而单调上升。归一化权重：size_ln 38.5% / ts_pct(250, pb) 19.2% / ts_pct(120, pb) 9.6% / turn_ma_n(250) 21.2% / turn_ma_n(120) 11.5%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.50
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.25
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+- op: turn_ma_n
+  n: 120
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

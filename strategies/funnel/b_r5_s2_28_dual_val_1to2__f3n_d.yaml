@@ -1,0 +1,20 @@
+name: b_r5_s2_28_dual_val_1to2__f3n_d
+type: score
+desc: 双估值腿：pb 主腿 0.45、ps_ttm 副腿 0.15，估值家族合计 0.60 对 size_ln -1.20，家族比值 1:2（其中 pb 单腿严格为
+  1:2.67），叠加 120 日换手 -0.75。资产端为主、营收端只做四分之一的口径补充，降低单一估值尺的风险；与 05 的估值总权重相同，因此两格之差只反映估值腿的内部结构，而不是估值总剂量。归一化权重：pb
+  17.6% / ps_ttm 5.9% / size_ln 47.1% / turn_ma_n(120) 29.4%。
+factors:
+- op: pb
+  weight: -0.45
+- op: ps_ttm
+  weight: -0.15
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

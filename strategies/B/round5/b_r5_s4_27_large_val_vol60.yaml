@@ -1,0 +1,12 @@
+name: b_r5_s4_27_large_val_vol60
+type: score
+desc: "PB 0.6 + 大市值 0.3 + 60 日低波 0.3：大市值腿给的是流动性与类债券属性，配便宜与安静即低估值蓝筹。规模符号与 25/26 相反，用来检验低波异象在大市值端是否以红利风格的形式存在，而不是只在小盘端有效。"
+factors:
+- {op: pb, weight: -0.6}
+- {op: size_ln, weight: 0.3}
+- {op: vol_n, n: 60, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

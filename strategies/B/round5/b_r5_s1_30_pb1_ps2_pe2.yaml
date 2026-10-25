@@ -1,0 +1,18 @@
+name: b_r5_s1_30_pb1_ps2_pe2
+type: score
+desc: 配比 pb:ps:pe = 1:2:2（-0.25/-0.50/-0.50）：ps 与 pe 对称、pb 减半。假设本池里资产端（银行、地产、钢铁这类重资产权重高）已被充分定价，边际信息在收入与盈利两端；与 28 号互为镜像。
+factors:
+- op: pb
+  weight: -0.25
+- op: ps_ttm
+  weight: -0.5
+- op: pe_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

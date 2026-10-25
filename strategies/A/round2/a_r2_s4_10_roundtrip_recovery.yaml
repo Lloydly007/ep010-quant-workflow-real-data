@@ -1,0 +1,15 @@
+name: a_r2_s4_10_roundtrip_recovery
+type: rule
+desc: 现象：已从120日低点反弹超过15%、但仍距120日高点15%以内的股票，是完成了大半修复的形态；再叠加近20日溃疡指数低于3%，说明反弹有承接而非脉冲（日均约180只候选，加上60日线条件后百只量级）。为什么A股该有超额：A股的超跌反转在反弹初期波动极大，靠抄底入场常被二次探底打掉；等到修复过半再买，牺牲第一段涨幅换取确认度，上方空间已打开、下方有前期低点作参照，赔率结构更好，且这类标的在指数反弹时弹性不弱于新高股。进出：买入需距120日低点高于15%、距120日高点不足15%（即仍在高点下方15%以内）、20日溃疡指数低于3%、收盘价高于60日均线，按20日溃疡指数升序取前10；持有20日、止损10%，跌离120日高点超过15%（修复失败）即卖出。相对第1轮失败模式的改动：第1轮是纯顺势追涨，没有反转类假设；本轮承认反转机会但只用"已被市场验证过半"的形态，把抄底风险换成确认成本，并用路径平滑度决定谁值得等。
+buy:
+- {op: dist_low_n, n: 120, dir: above, threshold: 15}
+- {op: dist_high_n, n: 120, dir: above, threshold: -15}
+- {op: ulcer_n, n: 20, dir: below, threshold: 3}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: ulcer_n, n: 20, order: asc}
+sell:
+- {op: dist_high_n, n: 120, dir: below, threshold: -15}
+max_hold_days: 20
+stop_loss: 10%
+max_positions: 10
+industry_cap: 10

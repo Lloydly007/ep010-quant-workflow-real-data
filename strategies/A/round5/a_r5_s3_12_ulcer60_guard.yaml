@@ -1,0 +1,23 @@
+name: a_r5_s3_12_ulcer60_guard
+type: score
+desc: "季度回撤路径作护栏：ulcer_n 60 日 -0.4，pb -0.5、行业内分位 -0.5、size_ln -0.6，配 120 日换手 -0.35。假设便宜但季度内一路阴跌的名字是价值陷阱（分母在恶化而不是价格被错杀），溃疡指数把便宜的下跌路径直接扣分，比低波更贴近路径而非幅度。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: ulcer_n
+  n: 60
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

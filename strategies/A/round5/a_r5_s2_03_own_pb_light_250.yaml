@@ -1,0 +1,16 @@
+name: a_r5_s2_03_own_pb_light_250
+type: score
+desc: "估值时序分位只给 -0.25，规模腿独占八成预算：假设'自身历史便宜'方向对但信息量弱，轻权重只做微调，测该信号在近零权重下是否仍能改变前 30 名的排序。"
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.25
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

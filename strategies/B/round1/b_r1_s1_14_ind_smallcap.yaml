@@ -1,0 +1,12 @@
+name: b_r1_s1_14_ind_smallcap
+type: rule
+desc: 行业内市值排名靠后的个股在20日均换手低于2%时承受更重的流动性折价，用行业内分位剔除行业的规模结构差异后小盘溢价更干净，故按行业内规模分位升序买入、20日溃疡破10%离场
+buy:
+- {op: turn_ma_n, n: 20, dir: below, threshold: 2}
+sell:
+- {op: ulcer_n, n: 20, dir: above, threshold: 10}
+rank: {op: ind_rank, of: {op: size_ln}, order: asc}
+max_hold_days: 40
+stop_loss: 10
+max_positions: 10
+industry_cap: 5

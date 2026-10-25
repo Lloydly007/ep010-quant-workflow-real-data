@@ -1,0 +1,19 @@
+name: a_r6_s2_11_turn20_120_mid_lean
+type: score
+desc: "10 的镜像（120 日 -0.65 / 20 日 -0.35）：认为月内换手太吵——一次大宗、一次复牌、指数调仓前后几天的成交都能把它打乱，季度均值才是「持续无人问津」的可靠度量，月内窗只保留方向否决权。若 11 明显强于 10，本池的清淡信号应以季度为最短尺度，月内数据在打分形态里不值得承担权重；若两者都弱于 01，则短中轴整体不如年度轴，前沿应回到 120+250。归一化权重：size_ln 40.0% / ps_ttm 20.0% / turn_ma_n(20) 14.0% / turn_ma_n(120) 26.0%。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.50
+- op: turn_ma_n
+  n: 20
+  weight: -0.35
+- op: turn_ma_n
+  n: 120
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

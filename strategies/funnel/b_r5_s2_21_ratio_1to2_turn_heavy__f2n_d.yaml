@@ -1,0 +1,18 @@
+name: b_r5_s2_21_ratio_1to2_turn_heavy__f2n_d
+type: score
+desc: 在 05 基准（1:2）上把 120 日换手权重抬到 -1.40，换手占 43.75%。检验换手是否在本池承担了“剔除高换手投机股”的过滤器功能、从而必须与估值-规模同向配合：若
+  21 强于 20，说明换手不是噪声项而是主过滤器，比值轴的解释必须把换手当作共变量。归一化权重：pb 18.8% / size_ln 37.5% / turn_ma_n(120)
+  43.8%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -1.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

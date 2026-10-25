@@ -1,0 +1,20 @@
+name: b_r5_s2_31_reversal_extra_1to2__f2n_d
+type: score
+desc: 在 05 基准（1:2）上加 ret_n(20) -0.30（短期反转，越跌越买）：检验估值-规模轴是否与短期反转独立。若两者叠加后明显强于 05，说明小盘低估股的超额有相当部分来自超跌反弹而非估值修复；若变差，则说明比值轴里的“便宜”已包含足够的下跌信息，再加反转就是重复计价。归一化权重：pb
+  21.1% / size_ln 42.1% / turn_ma_n(120) 26.3% / ret_n(20) 10.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

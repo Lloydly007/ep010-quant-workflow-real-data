@@ -1,0 +1,20 @@
+name: a_r5_s4_21_pe250_plus_ret250_mom__f3n_d
+type: score
+desc: 补年度动量正权：ret_n(250) +0.40（弱权），配 size_ln -1.00、pe_ttm -0.75、turn_ma_n(250) -0.75。低估值低换手最容易选到“一年多没人要”的名字，加一条年度趋势只保留其中已经止跌回升的，检验价值
+  + 清淡是否需要趋势确认。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pe_ttm
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: ret_n
+  n: 120
+  weight: 0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

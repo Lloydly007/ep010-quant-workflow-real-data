@@ -1,0 +1,22 @@
+name: a_r4_s3_34_ind20_vol20_ulcer60
+type: score
+desc: "三个口径各不相同的短窗组合：近月换手取行业内分位 -0.7、近月波动取截面分位 -0.7、再加 60 日浅回撤 -0.4。检验短窗双低在混合口径下是否仍成立，而非只是量纲巧合。"
+factors:
+- op: ind_rank
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.7
+- op: xsec_pct
+  of:
+    op: vol_n
+    n: 20
+  weight: -0.7
+- op: ulcer_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

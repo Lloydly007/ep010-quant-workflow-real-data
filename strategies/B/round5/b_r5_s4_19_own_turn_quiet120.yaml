@@ -1,0 +1,12 @@
+name: b_r5_s4_19_own_turn_quiet120
+type: score
+desc: "60 日以外的新腿：把「最近 20 日换手在自身一年历史中的分位」加进低波组合（PB 0.4、120 日低波 0.3、自身换手分位 0.3）。关注度衰减相对自身基准度量，比绝对换手更不容易被行业活跃度差污染；与 31 的绝对换手版本构成同一假设的两种基准。"
+factors:
+- {op: pb, weight: -0.4}
+- {op: vol_n, n: 120, weight: -0.3}
+- {op: ts_pct, n: 250, of: {op: turn_ma_n, n: 20}, weight: -0.3}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

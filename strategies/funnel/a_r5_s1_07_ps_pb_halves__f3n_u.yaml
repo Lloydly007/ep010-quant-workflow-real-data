@@ -1,0 +1,18 @@
+name: a_r5_s1_07_ps_pb_halves__f3n_u
+type: score
+desc: 营收与账面各半（ps −0.50 / pb −0.50）：两条估值腿等权，检验口径是互补还是冗余。假设 ps 更干净、pb 更贴资产端，两者叠加应让名单同时避开「高营收倍数」与「高净资产倍数」，代价是便宜的定义变严、可选标的变少。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,14 @@
+name: a_r4_s2_13_t120_size180_pair__f1n_u
+type: score
+desc: 120 日窗口、规模 -1.80（占 70.6%），阶梯第 4 档：与 20 日窗口同权重档直接配对，窗口长度换成 6 倍时的超额差即窗口本身的边际贡献。
+factors:
+- op: size_ln
+  weight: -1.8
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

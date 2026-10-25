@@ -1,0 +1,17 @@
+name: a_r3_s3_08_mom20_turncalm
+type: score
+desc: 小盘加20日动量之上再压低20日均换手：动量超额多来自尚未被交易拥挤的票，换手已高的强势小盘易在情绪退潮时急跌，低换手是还没被发现的代理。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ret_n
+  n: 20
+  weight: 0.75
+- op: turn_ma_n
+  n: 20
+  weight: -0.5
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

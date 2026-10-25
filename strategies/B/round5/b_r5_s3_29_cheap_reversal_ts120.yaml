@@ -1,0 +1,20 @@
+name: b_r5_s3_29_cheap_reversal_ts120
+type: score
+desc: "半年估值分位 -0.7 + 季度换手 -0.6 + 20 日反转 ret_n(20) -0.3：在“便宜且冷”的名单里再偏好刚被砸过的名字，假设短期超跌提供了周度调仓的入场时点；反转腿权重刻意压低，避免把组合变成纯短线反转。"
+factors:
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.7
+- op: turn_ma_n
+  n: 60
+  weight: -0.6
+- op: ret_n
+  n: 20
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

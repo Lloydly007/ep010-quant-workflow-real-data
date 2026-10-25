@@ -1,0 +1,14 @@
+name: a_r1_s4_08_dryup_consol
+type: rule
+desc: 站在60日线上方的股票出现当日量比低于0.8的缩量整理，是卖盘枯竭而非需求消失，缩量且不跌破20日高点8%以内的整理往往是放量突破前的蓄势——故在趋势中买缩量不破位，量能最萎缩者优先，跌破60日线离场，20日为限、8%止损。
+buy:
+  - {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+  - {op: vol_ratio_n, n: 5, dir: below, threshold: 0.8}
+  - {op: dist_high_n, n: 20, dir: above, threshold: -8}
+sell:
+  - {op: close_over_ma_n, n: 60, dir: below, threshold: 1.0}
+rank: {op: vol_ratio_n, n: 5, order: asc}
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 0

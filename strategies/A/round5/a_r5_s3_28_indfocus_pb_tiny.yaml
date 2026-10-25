@@ -1,0 +1,20 @@
+name: a_r5_s3_28_indfocus_pb_tiny
+type: score
+desc: "几乎不吃绝对便宜：行业内 PB 分位 -0.95、pb 只 -0.25，size_ln -0.55、vol_n 20 日 -0.4。与 27 反向对照，假设 PB 的绝对水平在本池主要是行业标签，真正的横截面信息全部落在同一门类的排序里，本份把这个假设推到极端。"
+factors:
+- op: size_ln
+  weight: -0.55
+- op: pb
+  weight: -0.25
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.95
+- op: vol_n
+  n: 20
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

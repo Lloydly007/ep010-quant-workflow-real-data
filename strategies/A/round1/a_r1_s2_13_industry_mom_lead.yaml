@@ -1,0 +1,27 @@
+name: a_r1_s2_13_industry_mom_lead
+type: rule
+desc: 在300ETF站上120日线的环境中持有站上20日线的股票，但用"同行业内60日动量排名"只取行业内相对最强者，赚的是同基本面驱动下资金向行业内龙头集中的溢价；行业最多3只防抱团，跌破20日线离场，-8%止损。
+buy:
+- op: etf_above_ma_n
+  n: 120
+  dir: above
+  threshold: 0.5
+- op: close_over_ma_n
+  n: 20
+  dir: above
+  threshold: 1.0
+rank:
+  op: ind_rank
+  of:
+    op: ret_n
+    n: 60
+  order: desc
+sell:
+- op: close_over_ma_n
+  n: 20
+  dir: below
+  threshold: 1.0
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 3

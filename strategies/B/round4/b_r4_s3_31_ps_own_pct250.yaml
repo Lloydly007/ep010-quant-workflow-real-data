@@ -1,0 +1,21 @@
+name: b_r4_s3_31_ps_own_pct250
+type: score
+desc: "自身历史分位口径：ts_pct(ps_ttm, 250) −0.55 为主腿，绝对 ps_ttm −0.25 为辅，配 size −0.50 与 turn 120 −0.55。假设跨公司比较 ps 会混淆商业模式（高毛利轻资产天然高 ps），真正该问的是'这只票现在比它自己过去一年贵还是便宜'；辅以绝对 ps 负权，避免把'从极贵跌到很贵'的名字当成便宜。与 01-05 的绝对口径形成估值尺度上的对照。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: ps_ttm
+  weight: -0.55
+- op: ps_ttm
+  weight: -0.25
+- op: size_ln
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

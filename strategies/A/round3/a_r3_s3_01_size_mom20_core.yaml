@@ -1,0 +1,14 @@
+name: a_r3_s3_01_size_mom20_core
+type: score
+desc: 只取市值最小、且近20日涨幅靠前的票：小盘股关注度低、信息扩散慢，短期强势一旦形成往往延续数周，规模负权叠加20日动量正权捕捉小而强的延续段。
+factors:
+- op: size_ln
+  weight: -1.25
+- op: ret_n
+  n: 20
+  weight: 0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

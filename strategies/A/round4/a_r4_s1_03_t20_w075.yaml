@@ -1,0 +1,16 @@
+name: a_r4_s1_03_t20_w075
+type: score
+desc: "20 日换手权重 -0.75，与 size_ln -1.5、pb -0.5 形成约四三二的风险预算：短窗换手在这里被当作纯交易拥挤度，检验一周一调的名单能否靠月度交易清淡把抢跑资金挡在门外。"
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

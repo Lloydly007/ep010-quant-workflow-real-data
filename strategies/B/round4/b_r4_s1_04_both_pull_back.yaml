@@ -1,0 +1,14 @@
+name: b_r4_s1_04_both_pull_back
+type: score
+desc: 两轴同时往回退一格：pb -0.40 / turn_ma_n(120) -0.90（0.444:1，换手 69%），假设纯换手端存在过度拟合换手数值的风险、让估值多说一点话能提升稳健性；与 02（只降换手）、03（只抬 PB）构成 2x2 对照，单独识别两轴回撤的交互项。
+factors:
+- op: pb
+  weight: -0.40
+- op: turn_ma_n
+  n: 120
+  weight: -0.90
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

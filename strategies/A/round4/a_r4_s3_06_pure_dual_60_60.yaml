@@ -1,0 +1,15 @@
+name: a_r4_s3_06_pure_dual_60_60
+type: score
+desc: "同窗季度双低：60 日换手与 60 日波动完全同频、各 -0.75，假设“一个季度的安静”既足以过滤事件冲击又不至于滞后，是窗口对齐的基准腿。"
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: vol_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

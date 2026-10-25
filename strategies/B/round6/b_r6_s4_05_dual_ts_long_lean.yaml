@@ -1,0 +1,21 @@
+name: b_r6_s4_05_dual_ts_long_lean
+type: score
+desc: 双窗但长端偏心（50/30/20）：分位半块里 60% 给一年、40% 给半年，假设长期低估更接近定价错误、短期回升更接近噪音，长端应更重。与 04 只差分位内部的一次分配，用来判断「长窗优先」是否成立。归一化权重：pb 50.0% / ts_pct(pb,250) 30.0% / ts_pct(pb,120) 20.0%。
+factors:
+- op: pb
+  weight: -0.5
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.3
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

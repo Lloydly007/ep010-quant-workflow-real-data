@@ -1,0 +1,22 @@
+name: b_r6_s3_27_pslead_xsecps__f3n_u
+type: score
+desc: 24 号的 ps 口径替换：把 34% 的 ps 权重换成 xsec_pct(ps_ttm)（当日全池截面分位），其余不动。假设 ps 的绝对水平受行业与规模的双重影响，截面分位先把它压成相对便宜度，再交给行业中性化处理，等于把“排名”这一步显式写进因子；与
+  24 对比可读出绝对口径与相对口径是否等价。归一化权重：pb 14.0% / xsec_pct(ps_ttm) 34.0% / size_ln 30.0% /
+  turn_ma_n(120) 22.0%。
+factors:
+- op: pb
+  weight: -0.35
+- op: xsec_pct
+  of:
+    op: ps_ttm
+  weight: -0.85
+- op: size_ln
+  weight: -0.75
+- op: turn_ma_n
+  n: 250
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

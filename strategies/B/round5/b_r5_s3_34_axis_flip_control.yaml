@@ -1,0 +1,17 @@
+name: b_r5_s3_34_axis_flip_control
+type: score
+desc: "反向对照（证伪用）：刻意把两条腿都翻正——一年 PB 分位 +0.8、一年换手 +0.6，选“估值已抬到自身一年高位且成交最热”的名字。若本轴超额真来自低估值低关注，此份应显著跑输；若它也赚钱，则说明本轮收益来自风格 beta 而非轴本身。"
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: 0.8
+- op: turn_ma_n
+  n: 250
+  weight: 0.6
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

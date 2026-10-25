@@ -1,0 +1,14 @@
+name: a_r2_s2_12_gate_bull_shortdip
+type: rule
+desc: 现象：第1轮的ETF条件只用来“允许买入”，从未利用指数自身的短期位置，结果常在指数短期冲高时进场、在指数回落时被个股卖点打出。为何A股有超额：300ETF仍在250日线上方（结构性上行）但跌破20日线时，市场只是情绪性调整，此时个股5日跌幅最深者往往被错杀，指数修复的第一波弹性最大；等指数回到20日线上方即卖，赚的是修复段而非趋势段。进出：ETF250日线上方且ETF跌破20日线、个股仍站上60日线时买入，按5日跌幅最深优先；ETF回到20日线上方即止盈，最长20日、8%止损、同行业最多5只。相对第1轮改动：把ETF拆成“结构上行（许可）”与“短期弱势（买点）”两层状态，第1轮只有单一层闸门。
+buy:
+- {op: etf_above_ma_n, n: 250, dir: above, threshold: 0.5}
+- {op: etf_above_ma_n, n: 20, dir: below, threshold: 0.5}
+- {op: close_over_ma_n, n: 60, dir: above, threshold: 1.0}
+rank: {op: ret_n, n: 5, order: asc}
+sell:
+- {op: etf_above_ma_n, n: 20, dir: above, threshold: 0.5}
+max_hold_days: 20
+stop_loss: 8%
+max_positions: 10
+industry_cap: 5

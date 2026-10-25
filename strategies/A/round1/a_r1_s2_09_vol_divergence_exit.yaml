@@ -1,0 +1,29 @@
+name: a_r1_s2_09_vol_divergence_exit
+type: rule
+desc: 中期多头（站上60日线且60日涨超5%）持仓期内若出现"20日涨超10%但量比低于0.8"，是价涨量缩的动能背离，通常先于价格见顶；因此不等均线破位就先卖，其余靠60日长持有与-10%止损兜底。
+buy:
+- op: close_over_ma_n
+  n: 60
+  dir: above
+  threshold: 1.0
+- op: ret_n
+  n: 60
+  dir: above
+  threshold: 5
+rank:
+  op: ret_n
+  n: 120
+  order: desc
+sell:
+- op: ret_n
+  n: 20
+  dir: above
+  threshold: 10
+- op: vol_ratio_n
+  n: 20
+  dir: below
+  threshold: 0.8
+max_hold_days: 60
+stop_loss: 10%
+max_positions: 10
+industry_cap: 0

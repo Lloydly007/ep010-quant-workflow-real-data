@@ -1,0 +1,16 @@
+name: b_r4_s2_11_turn60_pblight_sizelean
+type: score
+desc: 60 日冷清 + -1.20 小盘 + pb -0.40：假设季度级别的低换手在小盘股上更可能是被忽略而不是被抛弃，因此让规模倾斜的绝对权重超过估值项，由换手与规模共同主导。
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -1.20
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

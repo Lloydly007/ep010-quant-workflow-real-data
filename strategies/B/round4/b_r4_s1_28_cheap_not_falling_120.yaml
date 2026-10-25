@@ -1,0 +1,17 @@
+name: b_r4_s1_28_cheap_not_falling_120
+type: score
+desc: 便宜且未下跌：turn_ma_n(120) -0.60 / ret_n(120) +0.45 / pb -0.30（归一化 44%/33%/22%），假设低换手标的里有一类“被遗忘在下跌途中”的价值陷阱，要求正 120 日动量即价格企稳，是换手主导轴上唯一引入趋势确认的配置，动量窗口与换手同取 120 便于对齐。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.60
+- op: ret_n
+  n: 120
+  weight: 0.45
+- op: pb
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

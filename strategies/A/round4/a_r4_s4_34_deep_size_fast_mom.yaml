@@ -1,0 +1,17 @@
+name: a_r4_s4_34_deep_size_fast_mom
+type: score
+desc: "规模深倾斜 -1.60、turn_ma_n(120) -0.75、动量压到最短 20 日且给 +1.00：把越小越好与越近越强两个方向同时推到极端，检验二者在小盘内部是否互相打架。"
+factors:
+- op: size_ln
+  weight: -1.6
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ret_n
+  n: 20
+  weight: 1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

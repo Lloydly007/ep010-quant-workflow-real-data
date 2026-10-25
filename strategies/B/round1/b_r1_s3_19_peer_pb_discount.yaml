@@ -1,0 +1,22 @@
+name: b_r1_s3_19_peer_pb_discount
+type: rule
+desc: 同一行业内PB排名最低的股票是同业中最便宜的一只，行业内比价自动控制了商业模式与会计口径差异、比全市场比价更稳定；再用60日溃疡低于5%排除基本面已崩的同业便宜货，按行业内PB排名升序取10只、持有20日，60日溃疡回升破15%（折价变成恶化）离场，止损8%。
+buy:
+- op: ulcer_n
+  n: 60
+  dir: below
+  threshold: 5.0
+rank:
+  op: ind_rank
+  of:
+    op: pb
+  order: asc
+sell:
+- op: ulcer_n
+  n: 60
+  dir: above
+  threshold: 15.0
+max_hold_days: 20
+stop_loss: 8
+max_positions: 10
+industry_cap: 5

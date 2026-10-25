@@ -1,0 +1,16 @@
+name: b_r4_s3_01_ps_quiet250_size_core
+type: score
+desc: "本轮主线基准点：把 b_r3_s3_03 的估值腿从 pb 换成 ps_ttm（权重同为 −0.40），规模 −0.60、年度换手 −0.75 全部保持不动，只换估值口径。假设营收口径比账面口径更少受资产结构差异干扰——小盘公司账面值里商誉、在建、金融资产的杂音最多，营收则更接近经营真值，因此 ps 在小盘上应该比 pb 更干净。"
+factors:
+- op: ps_ttm
+  weight: -0.4
+- op: size_ln
+  weight: -0.6
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

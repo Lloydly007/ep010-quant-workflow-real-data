@@ -1,0 +1,16 @@
+name: b_r4_s3_06_pb_quiet250_control
+type: score
+desc: "pb 对照臂的第一份：骨架与 01 逐项对齐（规模 −0.60、年度换手 −0.75、同为周度与行业中性），只把估值腿换成 pb −0.45。权重比 01 的 ps 略高 0.05，是为了避免与第 3 轮已落盘的 pb 骨架重复，而不是引入额外假设——本份的作用是和 01 配对，把'口径差'从'窗口差'里剥出来。"
+factors:
+- op: pb
+  weight: -0.45
+- op: size_ln
+  weight: -0.55
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

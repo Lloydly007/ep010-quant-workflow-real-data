@@ -1,0 +1,19 @@
+name: b_r4_s1_30_own_pb_pct_250
+type: score
+desc: 自身历史 PB 分位替代绝对 PB + 换手满档：ts_pct(pb, n=250) -0.60 / turn_ma_n(120) -1.00 / pb -0.90（归一化 24%/40%/36%），假设跨行业 PB 水平不可比、个股自身 250 日分位才可比，检验 01/09 的超额来自绝对折价还是相对自身历史的折价。
+factors:
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.60
+- op: turn_ma_n
+  n: 120
+  weight: -1.00
+- op: pb
+  weight: -0.90
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

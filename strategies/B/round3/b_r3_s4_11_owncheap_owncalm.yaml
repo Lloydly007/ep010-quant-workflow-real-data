@@ -1,0 +1,18 @@
+name: b_r3_s4_11_owncheap_owncalm
+type: score
+desc: "PB原值、PB自身120日分位、波动自身250日分位三条腿同向（0.3/0.3/0.4），周度调仓：既要求绝对折价给赔率，又要求折价相对自己历史更深、价格相对自己历史更静，三重口径都指向错杀。"
+factors:
+- {op: pb, weight: -0.3}
+- op: ts_pct
+  n: 120
+  of: {op: pb}
+  weight: -0.3
+- op: ts_pct
+  n: 250
+  of: {op: vol_n, n: 250}
+  weight: -0.4
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

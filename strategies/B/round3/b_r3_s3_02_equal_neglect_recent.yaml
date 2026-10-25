@@ -1,0 +1,19 @@
+name: b_r3_s3_02_equal_neglect_recent
+type: score
+desc: "把中长期冷落换成 20 日均换手与 120 日波动率的双重压制、同时保留 1:1 的估值规模配比，捕捉刚变冷且波动刚收敛的小盘便宜股：短窗口换手回落常出现在利空出尽后的筹码沉淀期，低波则剔除仍在放量出逃的标的，周度调仓让入场点更贴近情绪拐点。"
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.3
+- op: vol_n
+  n: 120
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

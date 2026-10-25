@@ -1,0 +1,12 @@
+name: b_r5_s4_23_ps_dual_vol20
+type: score
+desc: "PB 0.3 与 PS 0.35 双腿估值加 20 日低波 0.35：收入端便宜对周期与重资产行业更稳健，与账面便宜互补；短窗安静负责择时，避免在景气顶点用低 PS 买入即将变贵的收入。PS 略高于 PB，因为收入倍数更难被一次性资产减值扭曲。"
+factors:
+- {op: pb, weight: -0.3}
+- {op: ps_ttm, weight: -0.35}
+- {op: vol_n, n: 20, weight: -0.35}
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

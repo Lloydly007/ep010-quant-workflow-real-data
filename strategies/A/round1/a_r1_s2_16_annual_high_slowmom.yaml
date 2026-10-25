@@ -1,0 +1,21 @@
+name: a_r1_s2_16_annual_high_slowmom
+type: rule
+desc: 突破250日年内新高是慢动量信号，出现次数少但往往对应基本面拐点被确认、机构建仓周期长，所以用40日长持有与-10%宽止损让利润奔跑；回落离60日高点超15%才判定长周期结构破坏并离场。
+buy:
+- op: break_high_n
+  n: 250
+  dir: above
+  threshold: 0.5
+rank:
+  op: ret_n
+  n: 250
+  order: desc
+sell:
+- op: dist_high_n
+  n: 60
+  dir: below
+  threshold: -15
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 3

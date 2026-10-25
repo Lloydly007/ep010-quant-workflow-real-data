@@ -1,0 +1,16 @@
+name: a_r5_s1_23_ps_with_turn60__f2n_d
+type: score
+desc: 换手窗口换到 60 日做窗口对照（单腿 −0.75）：只有两个月清淡。与 120 日基准的差异，度量的是「清淡」需要多长的记忆——短窗更容易抓到交易性缩量，长窗才抓得到股东结构性的没人管。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

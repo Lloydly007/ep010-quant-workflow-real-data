@@ -1,0 +1,22 @@
+name: b_r6_s2_09_path250_vol20
+type: score
+desc: "窗口错配的第一格：一年路径（ulcer_n(250) −0.225）+ 一月波动（vol_n(20) −0.225）。假设两条腿该看不同期限——「一年没挖过大坑」是结构属性，「最近一个月是否开始震」是当下风险制度，短波动能在坑变深之前先报警。若本份优于 01（同窗对半），说明错配窗口提供了 250/250 拿不到的前瞻信息；若更差，说明短波动只是噪声，防御腿应当统一到长窗。归一化权重：pb 20.0% / size_ln 40.0% / turn_ma_n(120) 25.0% / ulcer_n(250) 7.5% / vol_n(20) 7.5%。"
+factors:
+- op: pb
+  weight: -0.60
+- op: size_ln
+  weight: -1.20
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.225
+- op: vol_n
+  n: 20
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

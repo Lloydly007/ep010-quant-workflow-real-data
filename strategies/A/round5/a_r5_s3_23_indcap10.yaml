@@ -1,0 +1,20 @@
+name: a_r5_s3_23_indcap10
+type: score
+desc: "行业持仓上限 10：便宜两腿各 -0.5、size_ln -0.6、20 日换手 -0.45，industry_cap 10。便宜股在 A 股常集中在银行、地产、钢铁、电力几个门类，不加约束时前 30 名会被两三个门类占满、组合退化成行业押注，本份用上限强制跨门类分散。"
+factors:
+- op: size_ln
+  weight: -0.6
+- op: pb
+  weight: -0.5
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.45
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 10

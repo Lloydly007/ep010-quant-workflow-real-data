@@ -1,0 +1,19 @@
+name: b_r6_s1_34_window60_probe_2to1
+type: score
+desc: "窗口身份探针：保持分割 2:1 与换手总预算 0.90，把短窗从 120 日换成 60 日（turn_ma_n(60) -0.60 / turn_ma_n(250) -0.30），其余三条腿与 07 逐字相同。这是本组唯一的“换窗不改权”配置，回答一个必要问题——07 相对母本的差异到底来自“短窗权重更大”，还是来自“120 日这个具体窗口”？若 34 与 07 接近，说明短窗身份无关紧要，梯度结论可外推到任何 60~120 日的短窗，终版取哪个都行；若 34 明显不同，则窗口本身就是参数，冻结时 120 日必须被显式写进理由，不能含糊成“短窗”。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(60) 29.3% / turn_ma_n(250) 14.6%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 60
+  weight: -0.60
+- op: turn_ma_n
+  n: 250
+  weight: -0.30
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

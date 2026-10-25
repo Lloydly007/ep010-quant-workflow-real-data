@@ -1,0 +1,25 @@
+name: a_r5_s3_08_own_pb_year
+type: score
+desc: "便宜度改成跟自己比：ts_pct 250 日套 pb 给 -0.55 主预算，叠加绝对 pb -0.35 与行业内 PB 分位 -0.4，配 size_ln -0.5 与 60 日低波 -0.3。假设 PB 的分母口径常变性，跟自己过去一年比最便宜才是均值回归的触发条件（口径漂移被自比消掉），超额来自个股自身估值低位修复。"
+factors:
+- op: size_ln
+  weight: -0.5
+- op: pb
+  weight: -0.35
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.55
+- op: ind_rank
+  of:
+    op: pb
+  weight: -0.4
+- op: vol_n
+  n: 60
+  weight: -0.3
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

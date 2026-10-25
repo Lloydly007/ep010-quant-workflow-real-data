@@ -1,0 +1,14 @@
+name: a_r3_s1_02_size_turn120_balance__f1n_d
+type: score
+desc: 压低市值同时用120日均换手做中期冷门过滤，半年级别的低换手说明没有游资反复炒作，这类小盘的定价错误更容易在随后一两个季度被修正。
+factors:
+- op: size_ln
+  weight: -1.1
+- op: turn_ma_n
+  n: 60
+  weight: -0.4
+holdings: 30
+rebalance: monthly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

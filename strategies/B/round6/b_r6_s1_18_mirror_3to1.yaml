@@ -1,0 +1,19 @@
+name: b_r6_s1_18_mirror_3to1
+type: score
+desc: "镜像上界：250:120 = 3:1（250 日 -0.675 / 120 日 -0.225），长窗 32.9% 独大，短窗 11.0%。方向轴的极端端与 10 一一对应，两端一起给出“比值到底往哪边推才不亏”的完整答案：若 18 与 10 都弱于 2:1 附近，则梯度在两侧都饱和，最优在中间区间，冻结时应取中段而非端点；若只有一侧明显弱，则方向本身有信息，冻结取强侧。本档同时是“长窗过拟合”的守门配置——长窗越重，样本外越依赖少数冷门股的持续性。归一化权重：pb 24.4% / size_ln 31.7% / turn_ma_n(120) 11.0% / turn_ma_n(250) 32.9%。"
+factors:
+- op: pb
+  weight: -0.50
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.225
+- op: turn_ma_n
+  n: 250
+  weight: -0.675
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

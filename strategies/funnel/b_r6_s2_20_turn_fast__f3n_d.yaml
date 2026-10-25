@@ -1,0 +1,24 @@
+name: b_r6_s2_20_turn_fast__f3n_d
+type: score
+desc: 换手腿换成 60 日窗（快换手）+ 两条 250 日防御腿：账面变成「快换手 × 慢防御」。假设换手的价值在「最近有没有资金进来」而不是半年的平均水平。若
+  20 优于 01，说明换手腿应当短、防御腿应当长，账面各腿的窗口应当分层；若更差，说明快换手只是把噪声放进来，半年的平均换手才是筹码稳定度的有效度量。归一化权重：pb
+  20.0% / size_ln 40.0% / turn_ma_n(60) 25.0% / ulcer_n(250) 7.5% / vol_n(250) 7.5%。
+factors:
+- op: pb
+  weight: -0.6
+- op: size_ln
+  weight: -1.2
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 120
+  weight: -0.225
+- op: vol_n
+  n: 250
+  weight: -0.225
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

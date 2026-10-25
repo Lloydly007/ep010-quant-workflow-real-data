@@ -1,0 +1,27 @@
+name: b_r6_s4_24_own_turn_pct
+type: score
+desc: 半半轴心 + 换手自身的 250 日分位 20%（ts_pct of turn_ma_n(20)）：不要求换手绝对低，只要求处于自身历史低位——把「关注度枯竭」也做成时序口径，与 pb 分位同构。嵌套基零件带窗，L5 会同时枚举 n 与 of.n。归一化权重：pb 40.0% / ts_pct(pb,250) 20.0% / ts_pct(pb,120) 20.0% / ts_pct(turn_ma_n(20),250) 20.0%。
+factors:
+- op: pb
+  weight: -0.4
+- op: ts_pct
+  n: 250
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 120
+  of:
+    op: pb
+  weight: -0.2
+- op: ts_pct
+  n: 250
+  of:
+    op: turn_ma_n
+    n: 20
+  weight: -0.2
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

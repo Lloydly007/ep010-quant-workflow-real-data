@@ -1,0 +1,16 @@
+name: b_r4_s2_15_turn60_pbheavy_sizelean
+type: score
+desc: 60 日换手 + 重 pb + -1.20 小盘：假设季度冷清的小盘低估股处在无人跟踪与账面便宜的交集，在行业中性化之后仍能在行业内排到前列；三者同时加权检验叠加是否近似线性。
+factors:
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -1.20
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

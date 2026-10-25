@@ -1,0 +1,16 @@
+name: b_r4_s2_20_turn120_pblight_sizedom
+type: score
+desc: 120 日换手退居 -2.00 规模之后、pb -0.40：最强的规模独大检验——半年窗口下若极端小盘仍吃掉几乎全部超额，说明 120 日换手在本池上只是规模的影子。
+factors:
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+- op: pb
+  weight: -0.40
+- op: size_ln
+  weight: -2.00
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

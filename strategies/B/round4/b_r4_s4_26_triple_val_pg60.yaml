@@ -1,0 +1,18 @@
+name: b_r4_s4_26_triple_val_pg60
+type: score
+desc: "三估值口径并用：pe_ttm +0.60（成长/亏损筛）、pb −0.40、ps_ttm −0.40（收入端便宜），换手 60 日 −0.75。三条腿分别锚定盈利、净资产、营收三个分母，避免单一估值口径被行业会计差异污染；PE 仍为正权是这份与前几份的连续处，PB/PS 只负责把资产端和收入端的贵票压下去。"
+factors:
+- op: pe_ttm
+  weight: 0.6
+- op: pb
+  weight: -0.4
+- op: ps_ttm
+  weight: -0.4
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

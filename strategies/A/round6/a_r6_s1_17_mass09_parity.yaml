@@ -1,0 +1,18 @@
+name: a_r6_s1_17_mass09_parity
+type: score
+desc: "均分配轻估值块（0.90）：母本比例在只有三分之一估值话语权下的复现，同时也是本组「parity × 估值块 0.90」窗口梯子的 120 日节点（另两格是 23 的近月窗与 24 的年度窗）。若 17 与 Block 1 的均分邻格几乎同名单，说明 1:1 是结构性的而非权重规模造成的偶然；这一档也是判定「比例」与「量级」是否可分离的第二把尺。归一化权重：size_ln 37.7% / turn_ma_n(120) 28.3% / ps_ttm 17.0% / pb 17.0%（ps:pb=0.45:0.45=1.00:1，总 |w|=2.65，估值块 34.0%）。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: ps_ttm
+  weight: -0.45
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

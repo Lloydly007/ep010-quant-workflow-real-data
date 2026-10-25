@@ -1,0 +1,19 @@
+name: a_r4_s1_22_t120_plus_t20__f2n_u
+type: score
+desc: 半年 120 日 -0.75 加 20 日 -0.35：长窗选结构性被遗忘、短窗剔掉刚被炒热的名字，检验中期为主的双窗是否比纯长窗更能压住回撤。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: turn_ma_n
+  n: 20
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

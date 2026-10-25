@@ -1,0 +1,19 @@
+name: a_r4_s1_14_t60_plus_t20__f2n_d
+type: score
+desc: 季窗 60 日 -0.75 配短窗 20 日 -0.35：60 日定基调、20 日剔掉刚刚放量的名字，检验中期为主的双窗里到底是慢窗还是快窗在提供边际信息。
+factors:
+- op: size_ln
+  weight: -1.5
+- op: pb
+  weight: -0.5
+- op: turn_ma_n
+  n: 20
+  weight: -0.75
+- op: turn_ma_n
+  n: 20
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

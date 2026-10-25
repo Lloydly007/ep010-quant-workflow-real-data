@@ -1,0 +1,16 @@
+name: a_r5_s4_07_pe250_pe_heavy
+type: score
+desc: "PE 加重到与规模同权：pe_ttm -1.00、size_ln -1.00、turn_ma_n(250) -0.75。检验估值腿成为并列主腿后是否开始主导排序，以及低 PE 集中度上升会不会招来价值陷阱——pe_ttm 有 10.2% 负值，负权重会把亏损股直接推到名单最前。"
+factors:
+- op: size_ln
+  weight: -1.00
+- op: pe_ttm
+  weight: -1.00
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

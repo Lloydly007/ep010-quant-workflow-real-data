@@ -1,0 +1,24 @@
+name: a_r6_s2_12_turn20_120_250_cascade__f4n_d
+type: score
+desc: 三尺度级联（20 日 -0.25 / 120 日 -0.40 / 250 日 -0.55，权重按月→季→年递增）：一次把「多尺度平滑」推到本零件集的上限，检验两窗已经够用还是仍有第三尺度的增益。递增票数的含义是可信度随窗口长度上升（长窗更少受单次事件污染），短窗只做调整。若本份不劣于
+  01 与 09，说明平滑到第三尺度仍不亏，后续可把级联作为主形态；若明显变差，说明过度平滑把「正在转冷」的信号抹平成「一直冷」，反而买进永久性冷门。归一化权重：size_ln
+  37.7% / pb 17.0% / turn_ma_n(20) 9.4% / turn_ma_n(120) 15.1% / turn_ma_n(250) 20.8%。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: pb
+  weight: -0.45
+- op: turn_ma_n
+  n: 20
+  weight: -0.25
+- op: turn_ma_n
+  n: 120
+  weight: -0.4
+- op: turn_ma_n
+  n: 120
+  weight: -0.55
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

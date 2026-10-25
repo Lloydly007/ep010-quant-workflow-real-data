@@ -1,0 +1,21 @@
+name: b_r3_s1_17_dual_window_neglect
+type: score
+desc: 三镜低估叠加长短双窗低换手，250 日冷清代表长期没有机构覆盖、20 日冷清代表当下没人抢筹，两窗同时冷才是真正的关注度真空，超额来自冷门标的的估值折价长期不被定价而在均值回归时集中释放。
+factors:
+- op: pb
+  weight: -0.40
+- op: ps_ttm
+  weight: -0.30
+- op: pe_ttm
+  weight: -0.30
+- op: turn_ma_n
+  n: 250
+  weight: -0.60
+- op: turn_ma_n
+  n: 20
+  weight: -0.40
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

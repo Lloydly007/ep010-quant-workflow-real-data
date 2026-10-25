@@ -1,0 +1,28 @@
+name: a_r1_s2_06_weakclose_exit
+type: rule
+desc: 只在站上60日线且60日涨超5%的中期多头里建仓，但用"收盘落在当日振幅下半区且近5日跌超3%"提前离场，因为尾盘抛压结构早于均线破位暴露趋势转弱；40日长持有配合行业最多5只、-10%止损。
+buy:
+- op: close_over_ma_n
+  n: 60
+  dir: above
+  threshold: 1.0
+- op: ret_n
+  n: 60
+  dir: above
+  threshold: 5
+rank:
+  op: ret_n
+  n: 60
+  order: desc
+sell:
+- op: close_pos_range
+  dir: below
+  threshold: 0.5
+- op: ret_n
+  n: 5
+  dir: below
+  threshold: -3
+max_hold_days: 40
+stop_loss: 10%
+max_positions: 10
+industry_cap: 5

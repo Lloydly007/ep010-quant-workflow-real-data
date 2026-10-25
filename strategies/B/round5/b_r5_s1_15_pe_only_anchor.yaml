@@ -1,0 +1,14 @@
+name: b_r5_s1_15_pe_only_anchor
+type: score
+desc: 纯 pe_ttm 单口径（-1.00）+ 120 日换手：故意保留最大污染——亏损股的负 pe 会被排成最便宜。这条是本轮估值轴的负向哨兵：若它明显跑输 10/11 号，可判定 pe 横截面口径在本池不能单独使用。
+factors:
+- op: pe_ttm
+  weight: -1.0
+- op: turn_ma_n
+  n: 120
+  weight: -0.75
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

@@ -1,0 +1,16 @@
+name: b_r4_s2_30_turn250_pbheavy_sizestd
+type: score
+desc: 250 日换手 -0.75 与 pb -0.80 共决、规模 -0.65：年度冷门 + 低估值 + 标准小盘，作为 pb 加重后的年度窗口基准，用来判断窗口拉到一年时是估值还是换手在决定名单。
+factors:
+- op: turn_ma_n
+  n: 250
+  weight: -0.75
+- op: pb
+  weight: -0.80
+- op: size_ln
+  weight: -0.65
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

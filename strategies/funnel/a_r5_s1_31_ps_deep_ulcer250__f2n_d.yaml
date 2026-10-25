@@ -1,0 +1,20 @@
+name: a_r5_s1_31_ps_deep_ulcer250__f2n_d
+type: score
+desc: 把 ps 提到 −0.60、溃疡窗口拉到 250 日（−0.35）：一年路径平滑的要求最严，配合营收便宜去看长期修复型低估。与第 26 份（120 日溃疡）只差窗口与
+  ps 一档权重，用来区分「季度扛跌」与「年度扛跌」两种质量。
+factors:
+- op: size_ln
+  weight: -1.0
+- op: ps_ttm
+  weight: -0.6
+- op: turn_ma_n
+  n: 60
+  weight: -0.75
+- op: ulcer_n
+  n: 250
+  weight: -0.35
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0

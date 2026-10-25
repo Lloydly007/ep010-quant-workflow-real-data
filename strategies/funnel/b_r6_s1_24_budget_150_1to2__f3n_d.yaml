@@ -1,0 +1,22 @@
+name: b_r6_s1_24_budget_150_1to2__f3n_d
+type: score
+desc: 预算轴镜像上界：分割 1:2，预算 1.50（250 日 -1.00 / 120 日 -0.50），换手占 56.6%，估值腿只剩 18.9%。与 21
+  互为镜像端点，构成 2×3 的预算-方向因子格（0.60/1.20/1.50 × 2:1/1:2），同预算同方向之外唯一变化的是分割。若该方格出现“同为端点、只有一侧强”的格局，说明本组不该用单一最优参数冻结，而应保留中段两席；反之若全格平坦，则换手腿的权重旋钮在本池上不可识别，冻结应回到母本的
+  1:1 稳健形态。归一化权重：pb 18.9% / size_ln 24.5% / turn_ma_n(120) 18.9% / turn_ma_n(250)
+  37.7%。
+factors:
+- op: pb
+  weight: -0.5
+- op: size_ln
+  weight: -0.65
+- op: turn_ma_n
+  n: 120
+  weight: -0.5
+- op: turn_ma_n
+  n: 120
+  weight: -1.0
+holdings: 30
+rebalance: weekly_first_trade_day
+neut_industry: true
+neut_size: false
+industry_cap: 0
