@@ -1,41 +1,52 @@
-# 命令速查
+# 命令速查（本仓真实数据版）
 
-以下命令都在research目录、激活本地环境后执行。日期与筛选定义见rules.md。不会自动调用大模型，A/B配置需通过第4步提示词产生。
+所有命令在研究目录、激活 `.venv` 后执行。时间切分见 `rules.md`。
 
+## 数据
 ```powershell
-# 无行情也能运行的检查；完整检查需先下载raw
-python tools/check.py
-python tools/check.py --full
-python tools/fetch_tushare.py --help
-python tools/fetch_tushare.py
-python tools/data_check.py
-
-# 单配置/单轮搜索（--dir只扫描本层目录，不递归）
-python engine/backtest.py strategies/examples/b_trend_value.yaml --group example
-python engine/run_batch.py --dir strategies/a/round1 --group A --workers 2
-
-# 主随机组：示例637必须替换为本次实际A组基础配置数
-python engine/funnel.py gen-monkey --seed 43 --count 637 --out strategies/random
-python engine/run_batch.py --dir strategies/random --group monkey_43 --workers 2
-
-# 正式全量漏斗；先检查任务状态，不能把资源错误当筛选失败
-python engine/funnel.py layers --formal --workers 2
-python engine/funnel.py shortlist --group AI
-python engine/funnel.py shortlist --group monkey_43
-python engine/funnel.py report
-
-# 20组随机对照；正式任务较长，按本机资源调度并保留进度
-python engine/funnel.py farm --seeds 1-20 --count 637 --formal --workers 2
-# 农场完成后用共同池重新终判，再生成名单
-python engine/funnel.py layers --formal --workers 2
-python engine/funnel.py shortlist --group AI
-python engine/funnel.py shortlist --group monkey_43
-python engine/funnel.py report
-python engine/compare.py
+python engine\prices.py --check            # 面板自检（必须先过）
+python tools\fetch_baostock.py             # 行情/估值/ST/停牌/成分（BaoStock）
+python tools\fetch_baostock.py --codes-file data\universe.txt --shard 0 --nshards 5 --outdir data\shard_0 --bs-ip 127.0.0.1 --bs-port 11031
+python tools\merge_shards.py --check       # 分片合并前的硬闸
+python tools\fetch_lhb.py                  # 龙虎榜
+python tools\fetch_fina.py                 # 财务指标（带公告日）
+python tools\fetch_forecast.py             # 业绩预告
+python tools\fix_stk_limit.py              # 涨跌停价按档位重算
+python tools\verify_limit_in_panel.py      # 验证是否真进面板
 ```
 
-配置仅允许rules.md指定档位。例子与测试使用group=example/test，不计入研究组N。CLI直接调用会写本地台账；审计请使用tools/check.py的隔离工作区。
+## 回测
+```powershell
+python engine\backtest.py strategies\A\round6\xxx.yaml --group test
+python engine\run_batch.py --dir strategies\A\round6 --group A --workers 6
+python tools\check_form.py --round 6 --min-score 0.8     # 形态门
+python tools\farm_chunked.py --seeds 1-20 --count 600 --chunk 60 --workers 8
+```
 
-`engine/run_pipeline.py`还包含自动验证与组合阶段，不用于绕过八步数据权限纪律，尤其不能在搜索角色中调用全流程去预看验证表现。
+## 漏斗与名单
+```powershell
+pwsh -File tools\layers_robust.ps1 -Workers 6   # L1~L8，带死锁自愈
+python engine\funnel.py shortlist --group AI
+python engine\funnel.py shortlist --group monkey_43
+python engine\funnel.py report
+```
 
-锁定六席后按第7步提示词评估，不在此处提供自动开封命令，避免提前读取测试集。
+## 封存期（不可逆）
+```powershell
+New-Item OPEN_SEALED
+python tools\sealed_eval.py
+Remove-Item OPEN_SEALED        # 无论成败都必须删
+```
+
+## 统计与交付
+```powershell
+python tools\round_stats.py         # 分轮统计（已剔除 __ 探针与 test 组）
+python tools\progress.py            # 进度速览
+python tools\plot_curves.py         # 回测曲线
+python tools\make_deliverables.py   # xlsx + pptx
+python tools\verify_report.py       # 报告数字回源门
+python tools\check_corr.py          # 三席相关性
+python tools\check_limit_impact.py  # 涨跌停口径影响面
+```
+
+`--group` 只接受 `A` / `B` / `monkey_<种子>` / `example` / `test`；后两者不计入研究组 N。
