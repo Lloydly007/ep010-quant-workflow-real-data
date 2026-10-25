@@ -37,6 +37,7 @@ sys.path.insert(0, str(ROOT / "engine"))
 
 import guard  # noqa: E402  必须先于 numpy/pandas（钉死 BLAS 线程）
 
+import gates  # noqa: E402
 import panel_store  # noqa: E402
 from backtest import (_ch14_compute, _ch14_sanitize,  # noqa: E402
                       annualized_return, max_drawdown, run_backtest)
@@ -67,6 +68,14 @@ def main(argv: list[str] | None = None) -> int:
     if not guard.OPEN_SEALED_MARKER.is_file():
         print("[sealed] 拒绝执行：项目根目录没有 OPEN_SEALED（rules.md 第 1 节）")
         return 2
+
+    # 冻结闸门（engine/gates.py）：开封前必须先把名单冻结成 SHA256，
+    # 开封时校验名单没被改过。第 7 步的"先冻结再开封"从文字纪律变成代码约束。
+    ok, fmsg = gates.freeze_matches()
+    if not ok:
+        print(f"[sealed] 拒绝执行：{fmsg}")
+        return 2
+    print(f"[sealed] 冻结校验通过：{fmsg}")
 
     groups = [("AI", DATA / "shortlist_AI.json"), ("monkey_43", DATA / "shortlist_monkey_43.json")]
     existing = {g: (json.loads(p.read_text(encoding="utf-8"))["shortlist"] if p.exists() else [])

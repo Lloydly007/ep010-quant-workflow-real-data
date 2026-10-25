@@ -25,6 +25,7 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import gates  # noqa: E402
 import guard  # noqa: E402
 import panel_store
 from backtest import DEFAULT_END, DEFAULT_START, check_group, run_backtest  # noqa: E402
@@ -48,6 +49,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--end", default=DEFAULT_END)
     ap.add_argument("--workers", type=int, default=None,
                     help="并行 worker 数（缺省 = CPU 核数 − 2，rules.md 第 12 章；1 = 顺序）")
+    ap.add_argument("--force-form", action="store_true",
+                    help="显式绕过形态门（score 占比不足时仍要回测）；会在输出里留痕")
     ap.add_argument("--role", default="search", choices=("search", "owner"),
                     help="执行角色（P13）：search=只能跑搜索期（默认，rules.md 第 1 章）；"
                          "owner=研究负责人，可跑验证期")
@@ -71,6 +74,14 @@ def main(argv: list[str] | None = None) -> int:
     if not cfgs:
         print(f"[batch] 目录下没有 YAML 配置单：{cfg_dir}")
         return 2
+
+    # 形态门（engine/gates.py）：只对 strategies/{A,B}/roundN 生效。
+    # 第 1~2 轮就是没这道门，200 份 rule 型配置白跑，两轮回测作废。
+    rc, msg = gates.require_form_gate(cfg_dir, force=a.force_form)
+    if msg:
+        print(msg)
+    if rc != 0:
+        return rc
 
     workers = default_workers() if a.workers is None else max(1, int(a.workers))
     print(f"[batch] {len(cfgs)} 个配置单，区间 {a.start} ~ {a.end}，group={a.group}，"
